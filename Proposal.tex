@@ -1,0 +1,292 @@
+\documentclass[twoside]{article}
+\usepackage{amsmath}
+\usepackage{lipsum} % Package to generate dummy text throughout this template
+\usepackage[english]{isodate}% http://ctan.org/pkg/isodate
+\usepackage{pgfgantt}
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.5} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage{minted}
+\usemintedstyle{autumn}
+\usepackage[hmarginratio=1:1,top=32mm,left=25mm,right=25mm,columnsep=18pt,bottom=27mm]{geometry} % Document margins
+\usepackage{multicol} % Used for the two-column layout of the document
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Naomi Pentrel $\bullet$ \href{mailto:n.pentrel@jacobs-university.de}{n.pentrel@jacobs-university.de} $\bullet$ \today} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\usepackage{tocloft}
+
+%\usepackage{csquotes}
+%\MakeOuterQuote{"}
+
+\hypersetup{
+    bookmarks=true,
+    unicode=false,
+    pdftoolbar=true,
+    pdfmenubar=true,
+    pdffitwindow=false,
+    pdfstartview={FitH},
+    pdftitle={My title},
+    pdfauthor={Author},
+    pdfsubject={Subject},
+    pdfcreator={Creator},
+    pdfproducer={Producer},
+    pdfkeywords={keyword1} {key2} {key3},
+    pdfnewwindow=true,
+    colorlinks=false,
+    linkcolor=red,
+    citecolor=green,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[section]{placeins}
+\usepackage{qtree}
+\usepackage{gensymb}
+
+\usepackage{setspace}
+
+\usepackage{color}
+
+%\doublespacing
+% or:
+%\onehalfspacing
+
+%\renewcommand\cftchapafterpnum{\vskip10pt}
+%\renewcommand\cftsecafterpnum{\vskip15pt}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{// All comments are NOT created equal}} % Article title
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\thispagestyle{empty}
+\pagenumbering{roman}
+\begin{flushright}
+    \includegraphics[scale=0.7]{Logo}
+  \end{flushright}
+  \vspace{20mm}
+  \begin{center}
+    \huge
+    \textbf{Visualization of Theory Graphs of Semantically Annotated Documents in the Form of Spatial Presentations}
+  \end{center}
+  \vspace*{4mm}
+  \begin{center}
+   \Large by
+  \end{center}
+  \vspace*{4mm}
+  \begin{center}
+    \Large
+    \textbf{Naomi Pentrel}
+  \end{center}
+  \vspace*{20mm}
+  \begin{center}
+    \large
+    Bachelor Thesis Proposal in Computer Science
+  \end{center}
+  \vfill
+  \begin{flushright}
+    \large
+    \begin{tabular}{l}
+      
+      \hline
+      Prof. Dr. Michael Kohlhase \\
+      \\
+    \end{tabular}
+  \end{flushright}
+  \vspace*{8mm}
+  \begin{flushleft}
+    \large
+    Date of Submission: \today \\
+    \rule{\textwidth}{1pt}
+  \end{flushleft}
+  \begin{center}
+    \Large Jacobs University Bremen - School of Engineering and Science
+  \end{center}
+
+\newpage
+\noindent
+  With my signature, I certify that this thesis has been written by me
+  using only the indicates resources and materials. Where I have
+  presented data and results, the data and results are complete,
+  genuine, and have been obtained by me unless otherwise acknowledged;
+  where my results derive from computer programs, these computer
+  programs have been written by me unless otherwise acknowledged. I
+  further confirm that this thesis has not been submitted, either in
+  part or as a whole, for any other academic degree at this or another
+  institution.
+
+  \vspace{20mm}
+
+    \includegraphics[scale=0.2]{Signature}
+ \hfill Bremen, \today
+  
+\newpage
+
+\thispagestyle{fancy} % All pages have headers and footers
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+ \section*{Abstract}
+  
+  Consider this a separate document, although it is submitted together
+  with the rest. The abstract aims at another audience than the rest
+  of the proposal. It is directed at the final decision maker or
+  generalist, who typically is not an expert at all in your field, but
+  more a manager kind of person. Thus, don't go into any technical
+  description in the abstract, but use it to motivate the work and to
+  highlight the importance of your project.
+
+  (target size: 15-20 lines)
+
+  \newpage
+  \tableofcontents
+
+  \clearpage
+  \pagenumbering{arabic}
+
+  \section{Introduction}
+
+  This, like the rest, addresses fellow experts from your field (but
+  not from your particular topic of research). Here you should
+  technically connect to the main concepts from that field and give an
+  outline of your project, stating the research/engineering question
+  that you want to get answered by your project.
+
+
+
+  (target size: 1 page)
+\newpage
+  \section{Statement and Motivation of Research}
+
+  This part should make clear which question, exactly, you are
+  pursuing, and why your project is relevant/interesting. This is the
+  place to cite relevant literature. Where does your project extend
+  the state of the art? what weaknesses in known approaches to you
+  hope to overcome? If you have carried out preliminary experiments,
+  describe them here.
+
+What is the idea?
+Why is this important for the world?
+
+What is Prezi?
+How will this improve learning?
+What's the best representation one could do
+
+
+  (target size: 3-5 pages)
+\newpage
+  \section{Planned Investigation}
+
+  This is the technical core of the proposal. Here you lay out your
+  plans of how you want to answer your research question specify your
+  design of experiments or simulations, point out difficulties that
+  you expect to encounter, etc.
+
+3. Planning
+How will this be implemented?
+Using which frameworks?
+
+
+  (target size: 3-4 pages)
+\newpage
+  \section{Evaluation Criteria}
+
+  This section discusses criteria which can be used to evaluate the
+  research results and which can be used to related research results
+  to the already known state-of-the-art.
+
+  (target size: 1-2 page)
+\newpage
+  \section{Timeline}
+
+\textbf{Milestones}
+\begin{itemize}
+\item \textbf{Until February 15th}: Complete preliminary development to create a presentation from an XML
+\item \textbf{Until April 1st}: Complete development of organized presentations that are generated from ordered knowledge graphs.
+\item \textbf{Until May 1st}: Testing and Performance Measurement.
+\item \textbf{Until May 10th}: Complete development of organized presentations that are generated from ordered knowledge graphs.
+\end{itemize}
+
+
+\begin{figure}[h]
+\begin{center}
+\begin{ganttchart}[y unit title=0.4cm,
+y unit chart=0.5cm,
+vgrid,hgrid, 
+title label anchor/.style={below=-1.6ex},
+title left shift=.05,
+title right shift=-.05,
+title height=1,
+bar/.style={fill=gray!50},
+incomplete/.style={fill=white},
+progress label text={},
+bar height=0.7,
+group right shift=0,
+group top shift=.6,
+group height=.3,
+group peaks={}{}{.2}]{24}
+%labels
+\gantttitle{Proposed Timeline}{24} \\
+\gantttitle{December}{4} 
+\gantttitle{January}{4} 
+\gantttitle{February}{4} 
+\gantttitle{March}{4} 
+\gantttitle{April}{4} 
+\gantttitle{May}{4} \\
+%tasks
+\ganttbar{Preliminary development}{2}{10} \\
+\ganttbar{Graph visualization}{11}{16} \\
+\ganttbar{Testing \& Performance}{17}{20} \\
+\ganttbar{Final Report submission}{21}{21.5}
+
+%relations 
+\ganttlink{elem0}{elem1} 
+\ganttlink{elem1}{elem2} 
+\ganttlink{elem2}{elem3} 
+\end{ganttchart}
+\end{center}
+\caption{Gantt Chart}
+\end{figure}
+
+  \section{Conclusions}
+
+  Summarize the main aspects of the proposal.
+
+  (target size: 1/2 page)
+
+
+\end{document}
