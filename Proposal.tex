@@ -18,7 +18,8 @@
 
 \usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
-
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 \usepackage{abstract} % Allows abstract customization
 \renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
 \renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
@@ -165,7 +166,7 @@ Visualization of knowledge is important to foster learning. To optimize the repr
 
 Consider the typical lecture one attends as a student. Towards the end of the lecture students might have difficulties remembering earlier topics. When introducing a new topic it would be ideal to have a simple way to find the knowledge dependencies and present students with a simple way to catch up.\\
 
-The OMDoc (Open Mathematical Documents) format is a content markup scheme for mathematical documents. Using OMDoc, this research aims to visualize connecting some of what is written on Mathematics or other fields in a way that allows students to go back to the concepts they have forgotten to understand the topics currently covered in class. As such it will foster learning and could transform how we interact with course material as a whole. It is easy to see that this research would also have many other real world applications anywhere where knowledge is supposed to be transferred.\\ 
+The OMDoc (Open Mathematical Documents) format is a content markup scheme for mathematical documents.\cite{OMDoc book} Using OMDoc, this research aims to visualize connecting some of what is written on Mathematics or other fields in a way that allows students to go back to the concepts they have forgotten to understand the topics currently covered in class. As such it will foster learning and could transform how we interact with course material as a whole. It is easy to see that this research would also have many other real world applications anywhere where knowledge is supposed to be transferred.\\ 
 
   \newpage
   \tableofcontents
@@ -177,11 +178,13 @@ The OMDoc (Open Mathematical Documents) format is a content markup scheme for ma
 
 
 
+
+"Knowledge is the information necessary to support intelligent reasoning." \cite{Kohlhase}
+
+In this paper we want to go form merely displaying information to representing knowledge by displaying a network/context the information is in. In this we will not try to semantically represent the meaning of the information that is shown but rather on showing the network, i.e. context the information is in.\cite{Probst} \\
+
 -addresses fellow experts from your field (but not from your particular topic of research). 
 - Here you should technically connect to the main concepts from that field and give an outline of your project, stating the research/engineering question that you want to get answered by your project.
-
-
-
   (target size: 1 page)
 \newpage
   \section{Statement and Motivation of Research}
@@ -306,5 +309,15 @@ group peaks={}{}{.2}]{24}
 
   (target size: 1/2 page)
 
+\newpage
+\section{References}
+\begin{thebibliography}{} % Bibliography - this is intentionally simple in this template
+\bibitem {Kohlhase}
+Kohlhase, Michael. "320441 CompLog Lecture Notes." (n.d.): n. pag. 17 Nov. 2014. Web. 19 Nov. 2014.
+\bibitem {OMDoc book}
+Kohlhase, Michael, and Alan Bundy. OMDoc - an Open Markup Format for Mathematical Documents. Berlin: SpringerLink, 2006. Print.
+\bibitem {Probst}
+Probst, Gilbert, Steffen Raub, and Kai Romhardt. \newblock Wissen Managen. \newblock Wiesbaden: S.n., 1997. Print.
+\end{thebibliography}
 
 \end{document}
