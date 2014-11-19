@@ -3,6 +3,7 @@
 \usepackage{lipsum} % Package to generate dummy text throughout this template
 \usepackage[english]{isodate}% http://ctan.org/pkg/isodate
 \usepackage{pgfgantt}
+\usepackage[show]{ed}
 \usepackage[sc]{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \linespread{1.5} % Line spacing - Palatino needs more space between lines
@@ -185,9 +186,16 @@ In this paper we want to go form merely displaying information to representing k
 
 -addresses fellow experts from your field (but not from your particular topic of research). 
 - Here you should technically connect to the main concepts from that field and give an outline of your project, stating the research/engineering question that you want to get answered by your project.
-  (target size: 1 page)
-\newpage
-  \section{Statement and Motivation of Research}
+
+Why is this important for the world?
+How will this improve learning?
+More effective education. 
+
+(target size: 1 page)
+
+\ednote{Include in introduction Statement and Motivation of Research  } 
+\newpage 
+\section{Preliminaries}
   This part should make clear which question, exactly, you are
   pursuing, and why your project is relevant/interesting. This is the
   place to cite relevant literature. Where does your project extend
@@ -196,6 +204,7 @@ In this paper we want to go form merely displaying information to representing k
   describe them here.
 
 (target size: 3-4 pages)
+\ednote {explain primitives and apply to prezi.}
 
 \subsection{OMDoc}
 (half a page)
@@ -204,20 +213,11 @@ In this paper we want to go form merely displaying information to representing k
 What is Prezi?
 (half a page)
 \vspace*{8cm}
-\subsection{Combining OMDoc and Spatial Narration}
-What is the idea?
-(half a page)
-\newpage
-\subsection{Positive Effects of the Combination of Spatial Narration and OMDoc}
-Why is this important for the world?
-How will this improve learning?
-(1 page)
-\newpage
 \subsection{Different Representations of Data}
 What's the best representation one could do?
 (1 page)
-  (target size: 3-5 pages)
-\newpage
+
+
 \section{Planned Investigation}
 
   This is the technical core of the proposal. Here you lay out your
@@ -239,12 +239,35 @@ Using which frameworks?
 
 \subsection{Meaningful Representation of Knowledge Graphs}
 (1 page)
+
+\ednote{evaluation criteria from lecture slides}
+\newpage
+
+\section{Work Plan}
+\subsection{WP1: Understand API of Prezi or similar software}
+
+\subsection{WP2: Combining OMDoc and Spatial Narration}
+
+What is the idea?
+(half a page)
+\newpage
+\subsection{WP3: Evaluation}
+1. Positive Effects of the Combination of Spatial Narration and OMDoc
+2. How fast does this work?
+-> qualitative analysis. 
+
+(1 page)
+\newpage
+  (target size: 3-5 pages)
 \newpage
 
 
 \section{Evaluation Criteria}
 
-????
+\ednote{When do I feel successful?\\
+-running system (or I can tell why it didn't/couldn't work) \& \\
+-users can understand it and reconstruct the original graph. }
+
 
   This section discusses criteria which can be used to evaluate the
   research results and which can be used to related research results
@@ -262,6 +285,7 @@ Using which frameworks?
 \item \textbf{Until May 10th}: Complete development of organized presentations that are generated from ordered knowledge graphs.
 \end{itemize}
 
+\ednote {wp 4 - thesis writing}
 
 \begin{figure}[h]
 \begin{center}
@@ -289,10 +313,10 @@ group peaks={}{}{.2}]{24}
 \gantttitle{April}{4} 
 \gantttitle{May}{4} \\
 %tasks
-\ganttbar{Preliminary development}{2}{10} \\
-\ganttbar{Graph visualization}{11}{16} \\
-\ganttbar{Testing \& Performance}{17}{20} \\
-\ganttbar{Final Report submission}{21}{21.5}
+\ganttbar{WP 1}{2}{10} \\
+\ganttbar{WP 2}{11}{16} \\
+\ganttbar{WP 3}{17}{20} \\
+\ganttbar{WP 4}{21}{21.5}
 
 %relations 
 \ganttlink{elem0}{elem1} 
@@ -319,5 +343,9 @@ Kohlhase, Michael, and Alan Bundy. OMDoc - an Open Markup Format for Mathematica
 \bibitem {Probst}
 Probst, Gilbert, Steffen Raub, and Kai Romhardt. \newblock Wissen Managen. \newblock Wiesbaden: S.n., 1997. Print.
 \end{thebibliography}
+
+\ednote {
+-knowledge representation, semantic web
+}
 
 \end{document}
