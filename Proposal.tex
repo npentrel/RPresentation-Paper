@@ -91,6 +91,11 @@
 
 
 %----------------------------------------------------------------------------------------
+% Macros
+%----------------------------------------------------------------------------------------
+\newcommand{\sys}{Knowledge Presentation System}
+
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 \thispagestyle{empty}
@@ -193,7 +198,16 @@ More effective education.
 
 (target size: 1 page)
 
+\sys
+
+\ednote{
+not towards a semantic representation of data but towards representing the network and context to not display information but represent knowledge http://rhizomik.net/html/~roberto/thesis/html/KnowledgeRepresentation.html}
+\ednote{Knowledge Representation in the Social Semantic Web} 
 \ednote{Include in introduction Statement and Motivation of Research  } 
+
+\ednote{link}
+% http://reader.eblib.com/(S(gkwt4h53aadjotp03mi25zsi))/Reader.aspx?p=655998&o=1706&u=tkyUhRRU8oBFV92xtGUdWNHfafo%3d&t=1416427415&h=AAEABAAD4041366D9CC8528AF618690B20349073&s=31025691&ut=5736&pg=1&r=img&c=-1&pat=n&cms=-1&sd=2
+
 \newpage 
 \section{Preliminaries}
   This part should make clear which question, exactly, you are
@@ -209,6 +223,21 @@ More effective education.
 \subsection{OMDoc}
 (half a page)
 \vspace*{8cm}
+\subsection{Status of Information within Discourse}
+
+In linguistics the concept of information packaging is know. Within this one discriminates between \textit{familiar} and \textit{old} information. Familiar information is shared by speaker and addressee whereas new information not. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.\\
+
+[1] \textit{"My sister went to the circus the other day; \underline{she} said \underline{it} was brilliant."}
+
+In this example in the first part of the sentence information pertaining to my sister and to a circus are introduced, i.e. \textit{discourse-new}. In the second part the underlined parts are considered \textit{discourse-old} since they have already been introduced.\cite{Cambridge}\\
+
+These concepts can be adapted to the situation of teaching Mathematics or Computer Science to students in a class. In general the information that the speaker is sharing with the addressees/students is \textit{discourse-new}\ednote{call course-new?} and depend on  information that is \textit{discourse-old}. I would like to introduce the term \textit{discourse-ancient} which covers the situation where the addressee has difficulties following the speaker since the \textit{discourse-new} information depends on \textit{discourse-old} information that might be 'too old', i.e. ancient, to be easily remembered.
+
+(half a page)
+\vspace*{8cm}
+
+\subsection{Context}
+
 \subsection{Spatial Narration}
 What is Prezi?
 (half a page)
@@ -244,7 +273,11 @@ Using which frameworks?
 \newpage
 
 \section{Work Plan}
-\subsection{WP1: Understand API of Prezi or similar software}
+\subsection{WP1: Understand API of Impress.js}
+
+Prezi is a software that has changed how people think about presentations. When doing a good prezi presentation one has to understand the topic one is presenting and think about how one can portray connections between content visually. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} is an open-source presentation framework which is based on CSS3 transforms and transitions.\cite{Impress}
+
+
 
 \subsection{WP2: Combining OMDoc and Spatial Narration}
 
@@ -264,9 +297,7 @@ What is the idea?
 
 \section{Evaluation Criteria}
 
-\ednote{When do I feel successful?\\
--running system (or I can tell why it didn't/couldn't work) \& \\
--users can understand it and reconstruct the original graph. }
+\ednote{When do I feel successful? when I have running system (or I can tell why it didn't/couldn't work) or when users can understand it and reconstruct the original graph. }
 
 
   This section discusses criteria which can be used to evaluate the
@@ -336,12 +367,17 @@ group peaks={}{}{.2}]{24}
 \newpage
 \section{References}
 \begin{thebibliography}{} % Bibliography - this is intentionally simple in this template
+\bibitem {Cambridge}
+Huddleston, Rodney, Geoffrey K. Pullum, Laurie Bauer, Betty J. Birner, and Ted Briscoe. "Chapter 16 Information Packaging." The Cambridge Grammar of the English Language. Cambridge: Cambridge UP, 2002. N. pag. Print.
 \bibitem {Kohlhase}
 Kohlhase, Michael. "320441 CompLog Lecture Notes." (n.d.): n. pag. 17 Nov. 2014. Web. 19 Nov. 2014.
 \bibitem {OMDoc book}
 Kohlhase, Michael, and Alan Bundy. OMDoc - an Open Markup Format for Mathematical Documents. Berlin: SpringerLink, 2006. Print.
 \bibitem {Probst}
 Probst, Gilbert, Steffen Raub, and Kai Romhardt. \newblock Wissen Managen. \newblock Wiesbaden: S.n., 1997. Print.
+\bibitem {Impress}
+Szopka, Bartek. "Impress.js." Impress.js. Github, 28 Dec. 2011. Web. 23 Nov. 2014.
+
 \end{thebibliography}
 
 \ednote {
