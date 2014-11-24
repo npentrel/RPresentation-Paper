@@ -194,7 +194,7 @@ In this paper we want to go from merely displaying information to visualizing in
 \ednote{INSERT GRAPH that leads from info to knowledge
 \cite{Probst} \\}
 
-"Knowledge is the information necessary to support intelligent reasoning." \cite{Kohlhase} That said, it is imperative to facilitate knowledge transfer.  Thus, we will examine how visually representing information and its context can make knowledge transfer easier. For this we will be examining the OMDoc (Open Mathematical Documents) format as the example that will provide us with an annotated set of documents of which we will visualize the dependencies of the contained information. We will however not visualize the dependencies as a simple graph but use an API such as Impress.js to allow for us to show the current piece of information of interest in context with dependent information.
+"Knowledge is the information necessary to support intelligent reasoning." \cite{Kohlhase} That said, it is imperative to facilitate knowledge transfer.  Thus, we will examine how visually representing information and its context can make knowledge transfer easier. For this we will be examining the OMDoc (Open Mathematical Documents) format as the example that will provide us with an annotated set of documents of which we will visualize the dependencies of the contained information. We will however not visualize the dependencies as a simple graph but use an API such as Impress.js to allow for us to show the current piece of information of interest in context with dependent information.\\
 
 To exemplify this: Annie, a young student learning Spanish is watching her teacher give a presentation on how to form sentences. She wants to form the sentence 'I read books'. After struggling and looking up the word for reading she forms the sentence 'Yo leer libros'. For this Annie had to find the dependency on knowing the vocabulary words for 'I', 'read', and 'books'. However Annie made a mistake and did not know that the verb 'leer' needs to be conjugated appropriately. Her teacher tells her this. Now Annie has to try to find the information on how to conjugate verbs. This shows the dependencies of different pieces of information, i.e. the formulation of a sentence depends on knowledge of grammar and vocabulary. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.
 
@@ -280,21 +280,17 @@ Using which frameworks?
 
 The first step to implementing a \sys is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} is an open-source presentation framework which is based on CSS3 transforms and transitions.\cite{Impress} \ednote{Impressionist and jimpress}\\
 
-\subsection{WP2: Combining OMDoc and Spatial Narration}
+\subsection{WP2: Using OMDoc to create ordered information graphs}
+The idea is to use the General Computer Science Lecture notes as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an information graph out of the annotated set of documents. This information graph should be ordered based on dependencies of knowledge.\\
 
-What is the idea?
-(half a page)
-\newpage
+\subsection{WP3: Combining OMDoc and Spatial Narration}
+Once we have an ordered information graph we will visualize the information in different ways and analyze each way. The outcome of the analysis should be a model which we will then use to visualize the information in WP4.\\
 
 \subsection{WP3: Implement OMDoc examples in Impress.js}
-\newpage
+After the best model for spatial narration is found, we will implement a system that will take the ordered information graph and transform it into a spatial presentation using Impress.js.
 
 \subsection{WP4: Evaluation}
-
-Perform qualitative analysis of the visualization produced by the implementet \sys. Determine whether the implemented \sys meats the goals that were outlined in the Evaluation Criteria. Measure the speed of the system.
-\ednote{SMART goals?}
-\newpage
-
+Once we have results, a qualitative analysis of the visualization produced by the implemented \sys should be perfomed. In addition we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria. Lastly we will measure the speed of the system.
 
 \section{Evaluation Criteria}
 
