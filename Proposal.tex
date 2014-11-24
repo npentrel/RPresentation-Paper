@@ -286,26 +286,29 @@ The idea is to use the General Computer Science Lecture notes as an experiment. 
 \subsection{WP3: Combining OMDoc and Spatial Narration}
 Once we have an ordered information graph we will visualize the information in different ways and analyze each way. The outcome of the analysis should be a model which we will then use to visualize the information in WP4.\\
 
-\subsection{WP3: Implement OMDoc examples in Impress.js}
+\subsection{WP4: Implement OMDoc examples in Impress.js}
 After the best model for spatial narration is found, we will implement a system that will take the ordered information graph and transform it into a spatial presentation using Impress.js.
 
-\subsection{WP4: Evaluation}
+\subsection{WP5: Evaluation}
 Once we have results, a qualitative analysis of the visualization produced by the implemented \sys should be perfomed. In addition we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria. Lastly we will measure the speed of the system.
 
 \section{Evaluation Criteria}
 
-\ednote{When do I feel successful? when I have running system (or I can tell why it didn't/couldn't work) or when users can understand it and reconstruct the original graph. }
+\ednote{should users be able to reconstruct the original graph after a presentation? }
 
 The evaluation criteria for the research at hand are as follows. 
 \begin{enumerate}
 \item Does the \sys that was developed allow for the creation of a full presentation out of a given annotated document?
 \item  How fast does the \sys work? Can this be used in real time? Could a student request a presentation on a certain topic and could this be generated on the fly within seconds?
 \item Does a qualitative analysis yield the result that the developed system provide a better system for knowledge transfer?
-\item What are the possitive effects on the combination of Spatial Narrative and OMDoc?
+\item What are the positive effects on the combination of Spatial Narrative and OMDoc?
 \item Are there negative side effects?
 \end{enumerate}
 \ednote{I am missing SMART goals... Can I use a scale from 0 - 10 for each point?}
 
+If the implemented \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers what is impossible. \\
+
+A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations.
 
 \ednote{(target size: 1-2 page)}
 \newpage
@@ -313,10 +316,11 @@ The evaluation criteria for the research at hand are as follows.
 
 \textbf{Milestones}
 \begin{itemize}
-\item \textbf{Until February 15th}: Complete preliminary development to create a presentation from an XML
-\item \textbf{Until April 1st}: Complete development of organized presentations that are generated from ordered knowledge graphs.
-\item \textbf{Until May 1st}: Testing and Performance Measurement.
-\item \textbf{Until May 10th}: Complete development of organized presentations that are generated from ordered knowledge graphs.
+\item \textbf{Until February 1st}: Understanding the API of Impress.js
+\item \textbf{Until March 1st}: Complete the creation of ordered information graphs using OMDoc
+\item \textbf{Until March 15th}: Find an ideal model for the visualization of the information graph
+\item \textbf{Until April 15th}: Implement/Automate the visualization of the information graph
+\item \textbf{Until May 10th}: Qualitative Analysis and evaluation of findings 
 \end{itemize}
 
 \ednote {wp 4 - thesis writing}
@@ -347,15 +351,16 @@ group peaks={}{}{.2}]{24}
 \gantttitle{April}{4} 
 \gantttitle{May}{4} \\
 %tasks
-\ganttbar{WP 1}{2}{10} \\
-\ganttbar{WP 2}{11}{16} \\
-\ganttbar{WP 3}{17}{20} \\
-\ganttbar{WP 4}{21}{21.5}
-
+\ganttbar{WP 1}{2}{8} \\
+\ganttbar{WP 2}{9}{12} \\
+\ganttbar{WP 3}{11}{14} \\
+\ganttbar{WP 4}{15}{18}\\
+\ganttbar{WP 5}{19}{21.5}
 %relations 
 \ganttlink{elem0}{elem1} 
 \ganttlink{elem1}{elem2} 
 \ganttlink{elem2}{elem3} 
+\ganttlink{elem3}{elem4} 
 \end{ganttchart}
 \end{center}
 \caption{Gantt Chart}
