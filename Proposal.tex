@@ -210,9 +210,11 @@ After reading this contrived story, I leave the reader to think about examples i
 % http://reader.eblib.com/(S(gkwt4h53aadjotp03mi25zsi))/Reader.aspx?p=655998&o=1706&u=tkyUhRRU8oBFV92xtGUdWNHfafo%3d&t=1416427415&h=AAEABAAD4041366D9CC8528AF618690B20349073&s=31025691&ut=5736&pg=1&r=img&c=-1&pat=n&cms=-1&sd=2
 
 \section{Preliminaries}
+To understand the problem of information that lacks context, this part will provide the necessary background information to allow us to derive a possible solution. While doing so it will demonstrate why this research is important and how it will improve the transfer of knowledge.
+
 \ednote{ This part should make clear which question, exactly, you are pursuing, and why your project is relevant/interesting. This is the place to cite relevant literature. Where does your project extend the state of the art? what weaknesses in known approaches to you hope to overcome? If you have carried out preliminary experiments, describe them here.}
 
-(target size: 3-4 pages)
+\ednote{(target size: 3-4 pages)}
 \ednote {explain primitives and apply to prezi.}
 
 \subsection{OMDoc}
@@ -228,14 +230,21 @@ In this example in the first part of the sentence information pertaining to my s
 
 These concepts can be adapted to the situation of teaching Mathematics or Computer Science to students in a class. In general the information that the speaker is sharing with the addressees/students is \textit{discourse-new}\ednote{call course-new?} and depend on  information that is \textit{discourse-old}. I would like to introduce the term \textit{discourse-ancient} which covers the situation where the addressee has difficulties following the speaker since the \textit{discourse-new} information depends on \textit{discourse-old} information that might be 'too old', i.e. ancient, to be easily remembered.\\
 
+\subsection{Primitives}
+
 \subsection{Context}
 
 \ednote{prezi - cell example.}
 
-\subsection{Spatial Narration}
-What is Prezi?
-(half a page)
-\vspace*{8cm}
+\subsection{Spatial Narrative}
+The development of of presentation tools like Impress.js and Prezi, "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas"\cite{Prezi}, has  changed how people think about presentations. When doing a good prezi presentation one has to understand the topic one is presenting and think about how one can portray connections between content visually.\\
+
+The concept of Spatial Narrative stems from the establishment of frameworks for "the creation of computer-assisted flexibile 'guided tours' based on the thematically and narrative linking of a set of locations within an area into a 'spatial narrative'". An example for this is the experience of a tour guide for a certain topic.\cite{Narrative}\\
+
+The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form. \ednote{find source}\\
+
+In this research we will use this knowledge to form an interconnected web of information that tells a visual story to facilitate the transfer of knowledge.
+
 \subsection{Different Representations of Data}
 What's the best representation one could do?
 (1 page)
@@ -269,9 +278,7 @@ Using which frameworks?
 \section{Work Plan}
 \subsection{WP1: Understand API of Impress.js}
 
-The first step to implementing a \sys is to understand the tool we want to represent the knowledge in later: Prezi is a software that has changed how people think about presentations. When doing a good prezi presentation one has to understand the topic one is presenting and think about how one can portray connections between content visually. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} is an open-source presentation framework which is based on CSS3 transforms and transitions.\cite{Impress}\ednote{Impressionist and jimpress}\\
-
-the development of of presentation tools like Prezi,  "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas"\cite{Prezi}
+The first step to implementing a \sys is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} is an open-source presentation framework which is based on CSS3 transforms and transitions.\cite{Impress} \ednote{Impressionist and jimpress}\\
 
 \subsection{WP2: Combining OMDoc and Spatial Narration}
 
@@ -283,13 +290,9 @@ What is the idea?
 \newpage
 
 \subsection{WP4: Evaluation}
-1. Positive Effects of the Combination of Spatial Narration and OMDoc
-2. How fast does this work?
--> qualitative analysis. 
 
-(1 page)
-\newpage
-  (target size: 3-5 pages)
+Perform qualitative analysis of the visualization produced by the implementet \sys. Determine whether the implemented \sys meats the goals that were outlined in the Evaluation Criteria. Measure the speed of the system.
+\ednote{SMART goals?}
 \newpage
 
 
@@ -297,12 +300,18 @@ What is the idea?
 
 \ednote{When do I feel successful? when I have running system (or I can tell why it didn't/couldn't work) or when users can understand it and reconstruct the original graph. }
 
+The evaluation criteria for the research at hand are as follows. 
+\begin{enumerate}
+\item Does the \sys that was developed allow for the creation of a full presentation out of a given annotated document?
+\item  How fast does the \sys work? Can this be used in real time? Could a student request a presentation on a certain topic and could this be generated on the fly within seconds?
+\item Does a qualitative analysis yield the result that the developed system provide a better system for knowledge transfer?
+\item What are the possitive effects on the combination of Spatial Narrative and OMDoc?
+\item Are there negative side effects?
+\end{enumerate}
+\ednote{I am missing SMART goals... Can I use a scale from 0 - 10 for each point?}
 
-  This section discusses criteria which can be used to evaluate the
-  research results and which can be used to related research results
-  to the already known state-of-the-art.
 
-  (target size: 1-2 page)
+\ednote{(target size: 1-2 page)}
 \newpage
   \section{Timeline}
 
@@ -376,6 +385,8 @@ Huddleston, Rodney, Geoffrey K. Pullum, Laurie Bauer, Betty J. Birner, and Ted B
 Kohlhase, Michael. "320441 CompLog Lecture Notes." (n.d.): n. pag. 17 Nov. 2014. Web. 19 Nov. 2014.
 \bibitem {OMDoc book}
 Kohlhase, Michael, and Alan Bundy. OMDoc - an Open Markup Format for Mathematical Documents. Berlin: SpringerLink, 2006. Print.
+\bibitem{Narrative}
+M{\o}ller-Jensen, Lasse. "Mobile GIS Strategies for Disseminating Thematic Tourist Information: Examples of Spatial Narratives." Diss. U of Copenhagen, n.d. Web. 24 Nov. 2014. \href{http://ifgi.uni-muenster.de/archives/tipugg/paper/tipugg2008_Lasse.pdf}{http://ifgi.uni-muenster.de/archives/tipugg/paper/tipugg2008\_Lasse.pdf}.
 \bibitem {Probst}
 Probst, Gilbert, Steffen Raub, and Kai Romhardt. \newblock Wissen Managen. \newblock Wiesbaden: S.n., 1997. Print.
 \bibitem {Impress}
