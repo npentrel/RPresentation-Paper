@@ -17,7 +17,7 @@
 \usepackage{booktabs} % Horizontal rules in tables
 \usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
 \usepackage{hyperref} % For hyperlinks in the PDF
-
+\usepackage{xspace}
 \usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
 \usepackage{etoolbox}
@@ -27,8 +27,8 @@
 \renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
 
 \usepackage{titlesec} % Allows customization of titles
-\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
-\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+%\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+%\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
 \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
 
@@ -94,7 +94,7 @@
 %----------------------------------------------------------------------------------------
 % Macros
 %----------------------------------------------------------------------------------------
-\newcommand{\sys}{Knowledge Presentation System}
+\newcommand{\sys}{Knowledge Presentation System\xspace}
 
 %----------------------------------------------------------------------------------------
 
@@ -387,7 +387,7 @@ Kohlhase, Michael. "320441 CompLog Lecture Notes." (n.d.): n. pag. 17 Nov. 2014.
 \bibitem {OMDoc book}
 Kohlhase, Michael, and Alan Bundy. OMDoc - an Open Markup Format for Mathematical Documents. Berlin: SpringerLink, 2006. Print.
 \bibitem{Narrative}
-M{\o}ller-Jensen, Lasse. "Mobile GIS Strategies for Disseminating Thematic Tourist Information: Examples of Spatial Narratives." Diss. U of Copenhagen, n.d. Web. 24 Nov. 2014. \href{http://ifgi.uni-muenster.de/archives/tipugg/paper/tipugg2008_Lasse.pdf}{http://ifgi.uni-muenster.de/archives/tipugg/paper/tipugg2008\_Lasse.pdf}.
+M{\o}ller-Jensen, Lasse. "Mobile GIS Strategies for Disseminating Thematic Tourist Information: Examples of Spatial Narratives." Diss. University of Copenhagen, n.d. Web. 24 Nov. 2014. \href{http://ifgi.uni-muenster.de/archives/tipugg/paper/tipugg2008_Lasse.pdf}{http://ifgi.uni-muenster.de/archives/tipugg/paper/tipugg2008\_Lasse.pdf}.
 \bibitem {Probst}
 Probst, Gilbert, Steffen Raub, and Kai Romhardt. \newblock Wissen Managen. \newblock Wiesbaden: S.n., 1997. Print.
 \bibitem {Impress}
