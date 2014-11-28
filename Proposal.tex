@@ -183,13 +183,13 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 
   \section{Introduction}
 
-The Semantic Web \cite{BernersLee:tsw98} approach aims to transform the World Wide Web (WWW) from a mere information space to an information web that is processable by machines. There exists an interesting similarity in other fields such as that of new presentation tools that aim to enable you to present information in a more interconnected way that provides context. Both developments strive to connect pieces of information and through providing context elevate pure information that is provided to knowledge.\\
+The Semantic Web \cite{BernersLee:tsw98} approach aims to transform the World Wide Web (WWW) from a web of mere human readable information to an information web that is processable by machines. There is an interesting similarity in other fields such as that of new presentation tools that aim to enable the presentation of information in a more interconnected way that provides context. Both developments strive to connect pieces of information and through providing context elevate pure information that is provided to knowledge.\\
 
-These two developments have more in common than one would think. Looking at the history of the WWW, the era of Web 2.0, where everyone is now able to generate content lead to a lot of information but comparatively little knowledge \cite{Weller:npentrel14}. Here the processing of information to provide knowledge is lacking. Similarly I would argue that the existance of tools like Powerpoint have lead to virtually everyone doing presentations. As everyone who has witnessed many presentation knows, these are easily compared to blogs: they contain some knowledge but are often badly delivered and lack structure and context.\\
+These two developments have more in common than one would think. Looking at the history of the WWW, the era of Web 2.0, where everyone is now able to generate content lead to a lot of information but comparatively little knowledge \cite{Weller:npentrel14}. Here the processing of information to provide knowledge is lacking. Similarly I would argue that the existence of tools like Powerpoint have lead to virtually everyone doing presentations. As everyone who has witnessed many presentations knows, these are easily compared to blogs: they contain some knowledge but are often badly delivered and lack structure and context.\\
 
-Semantic Web is aiming to change the former, whereas new, more visual presentation tools provide a solution to help provide presentations that are easier to process and thus will facilitate knowledge transfer. This research intends to bridge the gap and provide a tool for contextual visualization of information. It adapts some of the concepts of the semantic web on a smaller scale.
+Semantic Web is aiming to change the former, whereas new, more visual presentation tools provide a solution to help provide presentations that are easier to process and thus will facilitate knowledge transfer. The work proposed here intends to bridge the gap and provide a tool for contextual visualization of information. It adapts some of the concepts of the semantic web on a smaller scale.
 
-In this proposed research, we want to go from merely displaying information to visualizing information to provide knowledge by displaying the network/context a piece of information is in. In this we will not try to semantically represent the meaning of the information that is shown but rather on showing the network, i.e. context the information is in.
+We want to go from merely displaying information to visualizing information to provide knowledge by displaying the network/context a piece of information is in. In this we will not try to semantically represent the meaning of the information that is shown but rather on showing the network, i.e. context the information is in.
 
 \ednote{INSERT GRAPH that leads from info to knowledge}
 \cite{ProbstRaubRomhardt}
@@ -222,7 +222,7 @@ To understand the problem of information that lacks context, this part will prov
 \vspace*{8cm}
 \subsection{Status of Information within Discourse}
 
-In linguistics the concept of information packaging \cite{CambridgeGrammar:npentrel14} is know. Within this, one discriminates between \textit{familiar} and \textit{old} information. Familiar information is shared by speaker and addressee whereas new information not. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.\\
+In linguistics the concept of information packaging \cite{CambridgeGrammar:npentrel14} is known. Within this, one discriminates between \textit{familiar} and \textit{old} information. \textit{Familiar} information is shared by speaker and addressee, ie. common ground, whereas new information not. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.\\
 
 [1] \textit{"My sister went to the circus the other day; \underline{she} said \underline{it} was brilliant."}\\
 
@@ -248,40 +248,20 @@ In this research we will use this knowledge to form an interconnected web of inf
 \subsection{Different Representations of Data}
 What's the best representation one could do?
 (1 page)
-
-
-\section{Planned Investigation}
-
-  This is the technical core of the proposal. Here you lay out your
-  plans of how you want to answer your research question specify your
-  design of experiments or simulations, point out difficulties that
-  you expect to encounter, etc.
-
-How will this be implemented?
-Using which frameworks?
-  
-
-\subsection{Forming Visualizations out of Knowledge Graphs which Convey Meaning}
-(1 page)
-\newpage
-
-\subsection{Ordered Knowledge Graphs}
-(1 page)
-\newpage
-
-\subsection{Meaningful Representation of Knowledge Graphs}
-(1 page)
+Forming Visualizations out of Knowledge Graphs which Convey Meaning
+Meaningful Representation of Knowledge Graphs
 
 \ednote{evaluation criteria from lecture slides}
 \newpage
 
 \section{Work Plan}
+\ednote {Add some speculation HOW}
 \subsection{WP1: Understand API of Impress.js}
-
+\ednote {should Impress.js go into the introduction/preliminaries? - I decided agains this as I haven't examined Impress.js enough yet.}
 The first step to implementing a \sys is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} \cite{JSImpress:npentrel14} is an open-source presentation framework which is based on CSS3 transforms and transitions. \ednote{Impressionist and jimpress}\\
 
 \subsection{WP2: Using OMDoc to create ordered information graphs}
-The idea is to use the General Computer Science Lecture notes as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an information graph out of the annotated set of documents. This information graph should be ordered based on dependencies of knowledge.\\
+The idea is to use the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an information graph out of the annotated set of documents. This information graph should be ordered based on dependencies of knowledge.\\
 
 \subsection{WP3: Combining OMDoc and Spatial Narration}
 Once we have an ordered information graph we will visualize the information in different ways and analyze each way. The outcome of the analysis should be a model which we will then use to visualize the information in WP4.\\
@@ -290,25 +270,21 @@ Once we have an ordered information graph we will visualize the information in d
 After the best model for spatial narration is found, we will implement a system that will take the ordered information graph and transform it into a spatial presentation using Impress.js.
 
 \subsection{WP5: Evaluation}
-Once we have results, a qualitative analysis of the visualization produced by the implemented \sys should be perfomed. In addition we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria. Lastly we will measure the speed of the system.
+Once we have examples, we will undertake a qualitative analysis of the visualization produced by the implemented \sys . In addition we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria. Lastly we will measure the speed of the system.
 
 \section{Evaluation Criteria}
 
 \ednote{should users be able to reconstruct the original graph after a presentation? }
 
-The evaluation criteria for the research at hand are as follows. 
-\begin{enumerate}
-\item Does the \sys that was developed allow for the creation of a full presentation out of a given annotated document?
-\item  How fast does the \sys work? Can this be used in real time? Could a student request a presentation on a certain topic and could this be generated on the fly within seconds?
-\item Does a qualitative analysis yield the result that the developed system provide a better system for knowledge transfer?
-\item What are the positive effects on the combination of Spatial Narrative and OMDoc?
-\item Are there negative side effects?
-\end{enumerate}
+The evaluation criteria for the research at hand are on the one hand systematic and on the otherhand cognitive. Systematically we will be evaluating two main challenges: First we will evaluate whether the \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of the \sys . Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and could this be generated on the fly within seconds.\\
+
+Cognitively we will be examining whether the developed system provides a better system for knowledge transfer. For this a qualitative analysis will be conducted. Based on that we will be able to understand the positive and possibly negative effects of the combination of Spatial Narrative and OMDoc. 
+
 \ednote{I am missing SMART goals... Can I use a scale from 0 - 10 for each point?}
 
 If the implemented \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers what is impossible. \\
 
-A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations.
+A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. It is not the goal of this research that users should be able to reconstruct the original graph from the presentation.
 
 \ednote{(target size: 1-2 page)}
 \newpage
@@ -372,6 +348,7 @@ group peaks={}{}{.2}]{24}
 
   (target size: 1/2 page)
 
+\newpage
 \section{References}
 
 \ednote{Research field: information systems}
