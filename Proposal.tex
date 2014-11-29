@@ -91,10 +91,12 @@
 \title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{// All comments are NOT created equal}} % Article title
 
 
+\newenvironment{myfont}{\fontfamily{\sfdefault}\selectfont}{\par}
+
 %----------------------------------------------------------------------------------------
 % Macros
 %----------------------------------------------------------------------------------------
-\newcommand{\sys}{Knowledge Presentation System\xspace}
+\newcommand{\sys}{\textsc{Knowtation}\xspace}
 
 %----------------------------------------------------------------------------------------
 
@@ -187,18 +189,18 @@ The Semantic Web \cite{BernersLee:tsw98} approach aims to transform the World Wi
 
 These two developments have more in common than one would think. Looking at the history of the WWW, the era of Web 2.0, where everyone is now able to generate content lead to a lot of information but comparatively little knowledge \cite{Weller:npentrel14}. Here the processing of information to provide knowledge is lacking. Similarly I would argue that the existence of tools like Powerpoint have lead to virtually everyone doing presentations. As everyone who has witnessed many presentations knows, these are easily compared to blogs: they contain some knowledge but are often badly delivered and lack structure and context.\\
 
-Semantic Web is aiming to change the former, whereas new, more visual presentation tools provide a solution to help provide presentations that are easier to process and thus will facilitate knowledge transfer. The work proposed here intends to bridge the gap and provide a tool for contextual visualization of information. It adapts some of the concepts of the semantic web on a smaller scale.
+Semantic Web is aiming to change the former, whereas new, more visual presentation tools provide a solution to help provide presentations that are easier to process and thus will facilitate knowledge transfer. The work proposed here intends to bridge the gap and provide a tool for contextual visualization of information. It adapts some of the concepts of the semantic web on a smaller scale.\\
 
-We want to go from merely displaying information to visualizing information to provide knowledge by displaying the network/context a piece of information is in. In this we will not try to semantically represent the meaning of the information that is shown but rather on showing the network, i.e. context the information is in.
+We want to go from merely displaying information to visualizing information to provide knowledge by displaying the network/context a piece of information is in. In this we will not try to semantically represent the meaning of the information that is shown but rather on showing the network, i.e. context the information is in.\\
 
 \ednote{INSERT GRAPH that leads from info to knowledge}
 \cite{ProbstRaubRomhardt}
 
 "Knowledge is the information necessary to support intelligent reasoning." \cite{Kohlhase:Complog:base} That said, it is imperative to facilitate knowledge transfer.  Thus, we will examine how visually representing information and its context can make knowledge transfer easier. For this we will be examining the OMDoc (Open Mathematical Documents) format as the example that will provide us with an annotated set of documents of which we will visualize the dependencies of the contained information. We will however not visualize the dependencies as a simple graph but use an API such as Impress.js to allow for us to show the current piece of information of interest in context with dependent information.\\
 
-To exemplify this: Annie, a young student learning Spanish is watching her teacher give a presentation on how to form sentences. She wants to form the sentence 'I read books'. After struggling and looking up the word for reading she forms the sentence 'Yo leer libros'. For this Annie had to find the dependency on knowing the vocabulary words for 'I', 'read', and 'books'. However Annie made a mistake and did not know that the verb 'leer' needs to be conjugated appropriately. Her teacher tells her this. Now Annie has to try to find the information on how to conjugate verbs. This shows the dependencies of different pieces of information, i.e. the formulation of a sentence depends on knowledge of grammar and vocabulary. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.
+To exemplify this: Annie, a young student learning Math is watching her teacher give a presentation on how to use the Pythagorean theorem. She is given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already know how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is. This shows the dependencies of different pieces of information, i.e. the Pythagorean theorem depends on knowledge of squares, lengths, area calculation, angles, and right angles. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.\\
 
-After reading this contrived story, I leave the reader to think about examples in his or her own life where he or she would have appreciated having the context of the information he or she was looking at at the time. Many of these stories exist in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole. 
+After reading this contrived story, I leave the reader to think about examples in his or her own life where he or she would have appreciated having the context of the information he or she was looking at at the time. Many of these stories exist in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole. \\
 
 
 \ednote{-addresses fellow experts from your field (but not from your particular topic of research). }
@@ -208,20 +210,26 @@ After reading this contrived story, I leave the reader to think about examples i
 \ednote{http://rhizomik.net/html/~roberto/thesis/html/KnowledgeRepresentation.html}
 \ednote{link}
 % http://reader.eblib.com/(S(gkwt4h53aadjotp03mi25zsi))/Reader.aspx?p=655998&o=1706&u=tkyUhRRU8oBFV92xtGUdWNHfafo%3d&t=1416427415&h=AAEABAAD4041366D9CC8528AF618690B20349073&s=31025691&ut=5736&pg=1&r=img&c=-1&pat=n&cms=-1&sd=2
-
+\ednote{use Knowledge Presentation System}
+\ednote {KEEP - real question: does spatial narrative work together with inherent semantic closeness -cogn. question: how does the spatial narrative work - should we use the inherent semantic closeness
+}
 \section{Preliminaries}
-To understand the problem of information that lacks context, this part will provide the necessary background information to allow us to derive a possible solution. While doing so it will demonstrate why this research is important and how it will improve the transfer of knowledge.
+To understand the problem of information that lacks context, this part will provide the necessary background information to allow us to derive a possible solution. While doing so it will demonstrate why this research is important and how it will improve the transfer of knowledge.\\
 
-\ednote{ This part should make clear which question, exactly, you are pursuing, and why your project is relevant/interesting. This is the place to cite relevant literature. Where does your project extend the state of the art? what weaknesses in known approaches to you hope to overcome? If you have carried out preliminary experiments, describe them here.}
+\ednote{This part should make clear which question, exactly, you are pursuing, and why your project is relevant/interesting. This is the place to cite relevant literature. Where does your project extend the state of the art? what weaknesses in known approaches to you hope to overcome? If you have carried out preliminary experiments, describe them here.}
 
 \ednote{(target size: 3-4 pages)}
 \ednote {explain primitives and apply to prezi.}
 
 \subsection{OMDoc}
-(half a page)
-\vspace*{8cm}
-\subsection{Status of Information within Discourse}
+OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OMDoc1.2} is an XML-based system that provides a data model and a format for content markup for mathematical documents. As such it is a semi-formal domain ontology. An ontology provides the framework for creating a semantic structure. It formally describes concepts within a specified area. A semi-formal ontology \cite{Sheth:npentrel14} is an ontology where formality of semantics is not a given. The semi-formal ontology can consist of partial or incomplete knowledge. \\
 
+If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
+
+In \cite{LK:MathOntoAuthDoc09} it is stated that "documents consist of narrative and content layers". The content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
+
+\subsection{Status of Information within Discourse}
+\ednote{intersection of knowledge of student and teacher aka shared knowledge base (also called “content commons”)}
 In linguistics the concept of information packaging \cite{CambridgeGrammar:npentrel14} is known. Within this, one discriminates between \textit{familiar} and \textit{old} information. \textit{Familiar} information is shared by speaker and addressee, ie. common ground, whereas new information not. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.\\
 
 [1] \textit{"My sister went to the circus the other day; \underline{she} said \underline{it} was brilliant."}\\
@@ -229,7 +237,7 @@ In linguistics the concept of information packaging \cite{CambridgeGrammar:npent
 In this example in the first part of the sentence information pertaining to my sister and to a circus are introduced, i.e. \textit{discourse-new}. In the second part the underlined parts are considered \textit{discourse-old} since they have already been introduced.\\
 
 These concepts can be adapted to the situation of teaching Mathematics or Computer Science to students in a class. In general the information that the speaker is sharing with the addressees/students is \textit{discourse-new}\ednote{call course-new?} and depend on  information that is \textit{discourse-old}. I would like to introduce the term \textit{discourse-ancient} which covers the situation where the addressee has difficulties following the speaker since the \textit{discourse-new} information depends on \textit{discourse-old} information that might be 'too old', i.e. ancient, to be easily remembered.\\
-
+\ednote {- reference old example from introduction -> and add onto it showing discourse-ancient.}
 \subsection{Primitives}
 
 \subsection{Context}
@@ -252,16 +260,19 @@ Forming Visualizations out of Knowledge Graphs which Convey Meaning
 Meaningful Representation of Knowledge Graphs
 
 \ednote{evaluation criteria from lecture slides}
+\ednote{add how to work packages. -> my first approach will be...}
 \newpage
 
 \section{Work Plan}
 \ednote {Add some speculation HOW}
 \subsection{WP1: Understand API of Impress.js}
-\ednote {should Impress.js go into the introduction/preliminaries? - I decided agains this as I haven't examined Impress.js enough yet.}
-The first step to implementing a \sys is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} \cite{JSImpress:npentrel14} is an open-source presentation framework which is based on CSS3 transforms and transitions. \ednote{Impressionist and jimpress}\\
+\ednote {should Impress.js go into the introduction/preliminaries? - I decided against this as I haven't examined Impress.js enough yet.}
+The first step to implementing a \sys \ednote{Is the font format ok?} is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} \cite{JSImpress:npentrel14} is an open-source presentation framework which is based on CSS3 transforms and transitions. \ednote{Impressionist and jimpress}\\
 
 \subsection{WP2: Using OMDoc to create ordered information graphs}
 The idea is to use the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an information graph out of the annotated set of documents. This information graph should be ordered based on dependencies of knowledge.\\
+
+
 
 \subsection{WP3: Combining OMDoc and Spatial Narration}
 Once we have an ordered information graph we will visualize the information in different ways and analyze each way. The outcome of the analysis should be a model which we will then use to visualize the information in WP4.\\
@@ -274,7 +285,11 @@ Once we have examples, we will undertake a qualitative analysis of the visualiza
 
 \section{Evaluation Criteria}
 
-\ednote{should users be able to reconstruct the original graph after a presentation? }
+\ednote {- work out concepts not a binding contract.}
+\ednote{ 1. - 2. system goals -> kinda measurable}
+\ednote{ 3.-5. cognitive goals -> exploring space of information systems}
+
+\ednote{ make 2nd eval criteria last}
 
 The evaluation criteria for the research at hand are on the one hand systematic and on the otherhand cognitive. Systematically we will be evaluating two main challenges: First we will evaluate whether the \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of the \sys . Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and could this be generated on the fly within seconds.\\
 
