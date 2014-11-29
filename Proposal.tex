@@ -192,12 +192,15 @@ The concept behind these two developments is quite similar. Looking at the histo
 
 In essence, both issues stem from information being generated without enough context or structure. This makes the information hard to process by humans and/or machines. The Semantic Web hopes to change the former, whereas new, more visual presentation tools using spatial narrative, provide a framework for the creation of presentations that are easier to process for humans and thus facilitate knowledge transfer. The work proposed here intends to provide a tool for automatic contextual visualization of information through the usage of spatial narrative and semantic closeness of information. It adapts some of the concepts of the semantic web on a smaller scale.\\
 
-\begin{center}
-\includegraphics[scale=0.5]{model}
-\end{center}
+\begin{figure}[H]
+        \centering
+                \fbox{\includegraphics[width=0.8\textwidth]{model}}
+                \caption{From Data to Knowledge}
+                \label{fig:dataknow}
+\end{figure}
 
-"Knowledge is the information necessary to support intelligent reasoning." \cite{Kohlhase:Complog:base} That said, it is imperative to facilitate knowledge transfer. The above graph is based on \cite{ProbstRaubRomhardt} and \cite{Kohlhase:Complog:base}. It shows the path from mere data to knowledge through adding context such that we gain information and then through adding networking to get knowledge.\\
-\newpage
+"Knowledge is the information necessary to support intelligent reasoning." \cite{Kohlhase:Complog:base} That said, it is imperative to facilitate knowledge transfer. Figure \ref{fig:dataknow} is based on \cite{ProbstRaubRomhardt} and \cite{Kohlhase:Complog:base}. It shows the path from mere data to knowledge through adding context such that we gain information and then through adding networking to get knowledge.\\
+
 We want to go from merely displaying information to visualizing information by displaying the network/context a piece of information is in. In this we will not try to semantically represent the meaning of the information that is shown but rather on showing the network, i.e. the context the information is in. Specifically we want to examine whether spatial narrative can be combined with inherent semantic closeness of different pieces of information to facilitate knowledge transfer.\\
 
 To achieve this goal, we intend to create a knowledge presentation system \sys to visually present information and its context (and networks). For this we will be using the OMDoc (Open Mathematical Documents) format which will provide us with an annotated set of documents. This will give us information about the semantic closeness of different pieces of information. From there on we will visualize the dependencies of the information contained in these documents. Of course we will not visualize the dependencies as a simple graph but use the approach of spatial narrative in the form of an API such as Impress.js to allow for us to show the current piece of information of interest within the network of dependent information.\\
@@ -208,10 +211,7 @@ After reading this contrived story, I leave the reader to think about examples i
 
 \newpage
 \section{Preliminaries}
-To understand the problem of information that lacks context, this part will provide the necessary background information to allow us to understand why combining spatial narrative with inherent semantic closeness might be a solution. While doing so we will demonstrate why this research is important and how it will improve the transfer of knowledge.\\
-
-\ednote{This part should make clear which question, exactly, you are pursuing, and why your project is relevant/interesting. Where does your project extend the state of the art? what weaknesses in known approaches to you hope to overcome?}
-
+To understand the problem of information that lacks context, this part will provide the necessary background information to allow us to understand why combining spatial narrative with inherent semantic closeness might be a solution to allow Annie's teacher to transfer knowledge more effectively. While doing so we will demonstrate why this research is important and how it will improve the transfer of knowledge.\\
 
 \subsection{Terminology}
 Before we delve into the actual subject matter, we need to ensure that the terminology used is understood as intended. In the following we will use the terms information, knowledge, and context.\\
@@ -227,45 +227,66 @@ If OMDoc was used in every part of mathematics (and related fields), we would ha
 
 In \cite{LK:MathOntoAuthDoc09} it is stated that "documents consist of narrative and content layers". Here, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. Through the annotations within the document, we can establish levels of semantic closeness for different mathematical objects. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently through combining spatial narrative and semantic closeness. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
 
-\subsection{Status of Information within Discourse}
-\ednote{intersection of knowledge of student and teacher aka shared knowledge base (also called “content commons”)}
-In linguistics the concept of information packaging \cite{CambridgeGrammar:npentrel14} is known. Within this, one discriminates between \textit{familiar} and \textit{old} information. \textit{Familiar} information is shared by speaker and addressee, ie. common ground, whereas new information not. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.\\
+\subsection{Status of Information within the (Dis)Course}
+In linguistics the concept of information packaging \cite{CambridgeGrammar:npentrel14} is known. Within this, one discriminates between \textit{familiar} and \textit{old} information. \textit{Familiar} information is shared by speaker and addressee, ie. it is in the intersection of knowledge of student and teacher. New information is not in the shared knowledge base or the content commons \cite{CNX:whitepaper}. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.
 
-[1] \textit{"My sister went to the circus the other day; \underline{she} said \underline{it} was brilliant."}\\
+\begin{center}
+\textit{"My sister went to the circus the other day; \underline{she} said \underline{it} was brilliant."}\\
+\end{center}
 
-In this example in the first part of the sentence information pertaining to my sister and to a circus are introduced, i.e. \textit{discourse-new}. In the second part the underlined parts are considered \textit{discourse-old} since they have already been introduced.\\
+In this example in the first part of the sentence, information pertaining to my sister and to a circus are introduced, i.e. \textit{discourse-new}. In the second part, the underlined parts are considered \textit{discourse-old} since they have already been introduced.\\
 
-These concepts can be adapted to the situation of teaching Mathematics or Computer Science to students in a class. In general the information that the speaker is sharing with the addressees/students is \textit{discourse-new}\ednote{call course-new?} and depend on  information that is \textit{discourse-old}. I would like to introduce the term \textit{discourse-ancient} which covers the situation where the addressee has difficulties following the speaker since the \textit{discourse-new} information depends on \textit{discourse-old} information that might be 'too old', i.e. ancient, to be easily remembered.\\
-\ednote {- reference old example from introduction -> and add onto it showing discourse-ancient.}
+These concepts can be adapted to the situation of teaching Mathematics or Computer Science to students in a class. In general we will call the information that the speaker is sharing with the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
+
+Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides us we will be able to determine the status of information within the (dis)course. \\
 
 \subsection{Primitives}
 
 Within knowledge representation, five evaluation criteria for knowledge representation are known \cite{Kohlhase:Complog:base}: Expressive Adequacy, Reasoning Efficiency, Primitives, Meta-representation, and Incompleteness. Primitives are the different elements of representation. In terms of evaluation it is important to have intuitive primitive elements. \\
 
-For Impress.js, the primitive elements are text, images, frame-like structures, and the visual relation between the different frame-like structures. \ednote {not sure whether I understand this correctly}
+For Impress.js, the primitive elements are text, images, slide-like structures (frames), and the visual relation between the different frame-like structures. The exact layout of the frames and the best visualization of the relation between the frames is to be determined. Ideally this should lead to Annie having the information about the Pythagorean theorem on a slide-like structure while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily.  \ednote {not sure whether I understand this correctly - does this need more explanation?}
 
-\ednote {explain primitives and apply to prezi.}
+\subsection{Different Representations of Information}
+
+Information can be (re)presented in different ways: text, visuals, images, etc. Actually everything that is in the world around us conveys information to us. A sign of a women on a door conveys to most of us that this is a bathroom for women. The information graphs that OMDoc provides us with could also be simply visualized as that - a tree of information. But this would not be very engaging and it would be hard for a human to process. Similarly traditional slide-based presentations do not provide a very engaging or interactive form of presenting information. \\  
+
+In the proposed research we will focus less on text, tree-like structures, or metaphors like the sign of a woman on a door. We will rather focus on the spatial narrative and placing content that inherently belongs together visually close together since this can convey the meaning that these objects belong together.\\
+
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+                \fbox{\includegraphics[width=\textwidth]{size-of-objects}}
+                \caption{Importance of Objects}
+                \label{fig:imp_objects}
+        \end{subfigure}%
+        \qquad %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+                \fbox{\includegraphics[width=\textwidth]{relation}}
+                \caption{Relation of Objects}
+                \label{fig:rel_objects}
+        \end{subfigure}
+        \caption{Conveying Visual Meaning}\label{fig:Objects}
+\end{figure}
+
+The figures above clarify what we mean by 'meaningful representations'. Figure \ref{fig:imp_objects} shows how size conveys importance. When asked, people generally say that the circle on the left is most important, the ones on the right are less important. Considering the relation of the three circles most people say that the two circles on the left belong together whereas the circle on the right is clearly something different. When shown Figure \ref{fig:rel_objects} they quickly change their mind and say that they are now actually related.\\
+
+These perceptions can be used to convey meaning visually. For the example of Annie this means that the \textit{course-new} information would likely be important and therefore bigger than the \textit{content-old} or \textit{content-ancient} information. From there on it depends how important the topics related to this topic are and we will use different sizes to differentiate between more important and less important topics. Similarly we will employ visual relations as in \ref{fig:rel_objects} to show related content. Thus we will provide Annie with a meaningful representation of the information taken from the information graph. In turn this should allow Annie to absorb information about importance and relations instinctively which improves knowledge transfer.\\
+
+\ednote{ These are things I derive from what I have been teaching my APS seminars and have probably been told by multile people during my training as a prezi ambassador. Do I need to cite my teaching material? Not sure...}
 
 \subsection{Spatial Narrative}
-The development of of presentation tools like Impress.js and Prezi, "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas" \cite{Prezi:npentrel14}, has  changed how people think about presentations. When doing a good prezi presentation one has to understand the topic one is presenting and think about how one can portray connections between content visually.\\
 
-The concept of Spatial Narrative \cite{SpatialNarratives:npentrel14} stems from the establishment of frameworks for "the creation of computer-assisted flexibile 'guided tours' based on the thematically and narrative linking of a set of locations within an area into a 'spatial narrative'". An example for this is the experience of a tour guide for a certain topic.\\
+Prezi is "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas" \cite{Prezi:npentrel14}. When doing a good prezi presentation one has to understand the topic one is presenting on a deeper level and think about how one can portray connections between content visually. The development of presentation tools like Impress.js and Prezi, has changed how people think about presentations while making use of spatial narrative.\\
 
-The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form. \ednote{find source}\\
+The concept of Spatial Narrative stems from the establishment of frameworks for "the creation of computer-assisted flexibile 'guided tours' based on the thematically and narrative linking of a set of locations within an area into a 'spatial narrative'" \cite{SpatialNarratives:npentrel14}. Teachers that are presenting a topic are an example for the experience of a tour guide for a certain topic.\\
 
-In this research we will use this knowledge to form an interconnected web of information that tells a visual story to facilitate the transfer of knowledge.
+The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \ednote{Storytelling:npentrel14}.\\
 
-\subsection{Different Representations of Data}
-What's the best representation one could do?
-(1 page)
-Forming Visualizations out of Knowledge Graphs which Convey Meaning
-Meaningful Representation of Knowledge Graphs
-
-\ednote{evaluation criteria from lecture slides}
-\ednote{add how to work packages. -> my first approach will be...}
-\newpage
+In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected. It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
 
 \section{Work Plan}
+\ednote{add how to work packages. -> my first approach will be...}
 \ednote {Add some speculation HOW}
 \subsection{WP1: Understand API of Impress.js}
 \ednote {should Impress.js go into the introduction/preliminaries? - I decided against this as I haven't examined Impress.js enough yet.}
@@ -286,6 +307,7 @@ After the best model for spatial narration is found, we will implement a system 
 Once we have examples, we will undertake a qualitative analysis of the visualization produced by the implemented \sys . In addition we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria. Lastly we will measure the speed of the system.
 
 \section{Evaluation Criteria}
+\ednote{Expressive Adequacy, Reasoning Efficiency, Primitives, Meta-representation, and Incompleteness}
 \ednote {KEEP - real question: does spatial narrative work together with inherent semantic closeness -cogn. question: how does the spatial narrative work - should we use the inherent semantic closeness
 }
 \ednote {- work out concepts not a binding contract.}
