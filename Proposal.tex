@@ -21,6 +21,7 @@
 \usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
 \usepackage{etoolbox}
+\usepackage{eurosym}
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 \usepackage{abstract} % Allows abstract customization
 \renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
@@ -175,7 +176,7 @@ Visualization of knowledge is important to foster learning. To optimize the visu
 
 Consider the typical lecture one attends as a student. Towards the end of the lecture students might have difficulties remembering earlier topics. When a new topic is introduced it would be ideal to have a simple way to find the dependencies and present students with a simple way to catch up.\\
 
-The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a content markup scheme for mathematical documents. Using OMDoc, this research aims to visualize the connections of Mathematical knowledge in a way that allows students to learn the concepts the current topic depends on should they need to refresh their memories. As such it will foster learning and could transform how we interact with course material as a whole. This research has many other real world applications, namely, anywhere where knowledge is supposed to be transferred.\\ 
+The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a content markup scheme for mathematical documents. Using OMDoc, this research aims to visualize the connections of Mathematical knowledge in a way that allows students to learn the concepts the current topic depends on should they need to refresh their memories. It will examine if and how spatial narrative and semantic closeness can be combined to foster learning. Thus it could transform how we interact with course material and learning as a whole. This research has many other real world applications, namely, anywhere where knowledge is supposed to be transferred.\\ 
 
   \newpage
   \tableofcontents
@@ -205,25 +206,26 @@ To exemplify this: Annie, a young student learning Math, is watching her teacher
 
 After reading this contrived story, I leave the reader to think about examples in his or her own life where he or she would have appreciated having the context of the information he or she was learning at the time. Many of these stories exist in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole. \\
 
+\newpage
 \section{Preliminaries}
-To understand the problem of information that lacks context, this part will provide the necessary background information to allow us to derive a possible solution. While doing so it will demonstrate why this research is important and how it will improve the transfer of knowledge.\\
+To understand the problem of information that lacks context, this part will provide the necessary background information to allow us to understand why combining spatial narrative with inherent semantic closeness might be a solution. While doing so we will demonstrate why this research is important and how it will improve the transfer of knowledge.\\
 
-\ednote{This part should make clear which question, exactly, you are pursuing, and why your project is relevant/interesting. This is the place to cite relevant literature. Where does your project extend the state of the art? what weaknesses in known approaches to you hope to overcome? If you have carried out preliminary experiments, describe them here.}
+\ednote{This part should make clear which question, exactly, you are pursuing, and why your project is relevant/interesting. Where does your project extend the state of the art? what weaknesses in known approaches to you hope to overcome?}
 
-\ednote{(target size: 3-4 pages)}
-\ednote {explain primitives and apply to prezi.}
 
 \subsection{Terminology}
-Information 
-Knowledge
-Context.
+Before we delve into the actual subject matter, we need to ensure that the terminology used is understood as intended. In the following we will use the terms information, knowledge, and context.\\
+
+The Oxford Dictionary of English \cite{OED:npentrel14} defines \textbf{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Looking back at the figure from section 1, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textbf{Knowledge}, we will use the definition in Merriam-Webster \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". Of special importance for us is the association. We will take this as meaning that the knowledge is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used.\\ 
+
+Merriam-Webster \cite{Webster:npentrel14} defines \textbf{context} as "the parts of a discourse that surround a word or passage and can throw light on its meaning". A Context can be easily explained with the example of Annie learning the Pythagorean theorem. The information about the calculation of the length of the third side of the triangle is only helpful for Annie within the context of the pieces of information this depends on, i.e. calculating squares, lengths, area calculation, angles, and right angles. This is the context that the Pythagorean theorem needs. We will be using the terms context and network almost interchangeably and depend on the reader to have the right intuition about these terms.\\
 
 \subsection{OMDoc}
 OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OMDoc1.2} is an XML-based system that provides a data model and a format for content markup for mathematical documents. As such it is a semi-formal domain ontology. An ontology provides the framework for creating a semantic structure. It formally describes concepts within a specified area. A semi-formal ontology \cite{Sheth:npentrel14} is an ontology where formality of semantics is not a given. The semi-formal ontology can consist of partial or incomplete knowledge. \\
 
 If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
 
-In \cite{LK:MathOntoAuthDoc09} it is stated that "documents consist of narrative and content layers". The content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
+In \cite{LK:MathOntoAuthDoc09} it is stated that "documents consist of narrative and content layers". Here, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. Through the annotations within the document, we can establish levels of semantic closeness for different mathematical objects. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently through combining spatial narrative and semantic closeness. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
 
 \subsection{Status of Information within Discourse}
 \ednote{intersection of knowledge of student and teacher aka shared knowledge base (also called “content commons”)}
@@ -242,12 +244,7 @@ Within knowledge representation, five evaluation criteria for knowledge represen
 
 For Impress.js, the primitive elements are text, images, frame-like structures, and the visual relation between the different frame-like structures. \ednote {not sure whether I understand this correctly}
 
-
-\subsection{Context}
-
-Context can be easily explained with the example of Annie learning the Pythagorean theorem. The information about the calculation of the length of the third side of the triangle is only helpful for Annie within the context of the pieces of information this depends on, i.e. calculating squares, lengths, area calculation, angles, and right angles. This is the context that the Pythagorean theorem needs.\\
-
-Within this regard one should also consider context-sensitive and context-opaque\ednote{cite} information.  
+\ednote {explain primitives and apply to prezi.}
 
 \subsection{Spatial Narrative}
 The development of of presentation tools like Impress.js and Prezi, "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas" \cite{Prezi:npentrel14}, has  changed how people think about presentations. When doing a good prezi presentation one has to understand the topic one is presenting and think about how one can portray connections between content visually.\\
