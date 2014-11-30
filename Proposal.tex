@@ -10,6 +10,7 @@
 \linespread{1.5} % Line spacing - Palatino needs more space between lines
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage{minted}
+\usepackage{nameref}
 \usemintedstyle{autumn}
 \usepackage[hmarginratio=1:1,top=32mm,left=25mm,right=25mm,columnsep=18pt,bottom=27mm]{geometry} % Document margins
 \usepackage{multicol} % Used for the two-column layout of the document
@@ -294,14 +295,14 @@ Prezi is "a virtual whiteboard that transforms presentations from monologues int
 
 The concept of Spatial Narrative stems from the establishment of frameworks for "the creation of computer-assisted flexibile 'guided tours' based on the thematically and narrative linking of a set of locations within an area into a 'spatial narrative'" \cite{SpatialNarratives:npentrel14}. Teachers that are presenting a topic are an example for the experience of a tour guide for a certain topic.\\
 
-The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \ednote{Storytelling:npentrel14}.\\
+The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \cite{Storytelling:npentrel14}.\\
 
 In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected. It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
 
 \section{Work Plan}
 \label{sec:workplan}
 
-\subsection{WP1: Understand API of Impress.js}
+\subsection{WP1: Understanding API of Impress.js}
 \label{sec:wp1}
 
 \ednote {should Impress.js go into the introduction/preliminaries? - I decided against this as I haven't examined Impress.js enough yet and this will take several days to do.}
@@ -313,7 +314,7 @@ After finishing this part we should have several different presentation styles a
 
 \ednote{look at Impressionist and jimpress when writing actual thesis}\\
 
-\subsection{WP2: Using OMDoc to create ordered information graphs}
+\subsection{WP2: Creation of Ordered Information Graphs using OMDoc}
 \label{sec:wp2}
 
 The idea is to use the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an XML information graph out of the annotated set of documents.\\
@@ -322,17 +323,17 @@ The information graph we receive from OMDoc should be topologically sorted based
 
 Each piece of information needs to also have an importance level assigned to it as well (see section \ref{sec:inforep}). This ought to be determined by knowing how often the concept is used and how important it is for the student to grasp it.\\
 
-\subsection{WP3: Combining OMDoc and Spatial Narration}
+\subsection{WP3: Combination OMDoc and Spatial Narration}
 \label{sec:wp3}
 
 Once we have an ordered information graph with all the additional attribute values mentioned in section \ref{sec:wp2}, we will create the knowledge presentation system \sys. \sys will visualize the information from the graph. The outcome of this part should be a general \sys presentation model, that implements the models according to the models chosen in section \ref{sec:wp1}. We will then use \sys to visualize the information in WP4.\\
 
-\subsection{WP4: Implement OMDoc examples in Impress.js}
+\subsection{WP4: Implementation of OMDoc Examples in Impress.js}
 \label{sec:wp4}
 
 \sys will take the ordered information graph of the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} with all the additional attributes we generated in \ref{sec:wp2} and transform it into a spatial presentation using Impress.js. This will be done by parsing the created XML and creating the markup that Impress.js is using to create the chosen presentation models from section \ref{sec:wp1}. After this work package, we should have one (or more) presentations of the topics covered in the General Computer Science Lecture notes.\\
 
-\subsection{WP5: Evaluation}
+\subsection{WP5: Qualitative Analysis and Evaluation of Findings}
 \label{sec:wp5}
 
 Once we have examples, we will undertake a qualitative analysis of the visualization produced by the implemented knowledge presentation system \sys . To achieve this, we will use the newly created examples from \ref{sec:wp4} and the general General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base}. We will have two groups: a control group that is shown the lecture notes and a test group that is shown the new, interactive Impress.js presentations. Afterwards both groups have to answer a set of questions. In addition, we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria (see section \ref{sec:evalcriteria}).\\
@@ -355,11 +356,11 @@ A stretch goal of this project is to have this research accessible for common us
 
 \textbf{Milestones}
 \begin{itemize}
-\item \textbf{Until February 1st}: Understanding the API of Impress.js
-\item \textbf{Until March 1st}: Complete the creation of ordered information graphs using OMDoc
-\item \textbf{Until March 15th}: Find an ideal model for the visualization of the information graph
-\item \textbf{Until April 15th}: Implement/Automate the visualization of the information graph
-\item \textbf{Until May 10th}: Qualitative Analysis and evaluation of findings 
+\item \textbf{Until February 1st}: \nameref{sec:wp1}
+\item \textbf{Until March 1st}: \nameref{sec:wp2}
+\item \textbf{Until March 15th}: \nameref{sec:wp3}
+\item \textbf{Until April 15th}:\nameref{sec:wp4}
+\item \textbf{Until May 10th}: \nameref{sec:wp5}
 \end{itemize}
 \begin{figure}[h]
 \begin{center}
@@ -387,11 +388,11 @@ group peaks={}{}{.2}]{24}
 \gantttitle{April}{4} 
 \gantttitle{May}{4} \\
 %tasks
-\ganttbar{WP 1}{2}{8} \\
-\ganttbar{WP 2}{9}{12} \\
-\ganttbar{WP 3}{11}{14} \\
-\ganttbar{WP 4}{15}{18}\\
-\ganttbar{WP 5}{19}{21.5}
+\ganttbar{\ref{sec:wp1} WP1}{2}{8} \\
+\ganttbar{\ref{sec:wp2} WP2}{9}{12} \\
+\ganttbar{\ref{sec:wp3} WP3}{11}{14} \\
+\ganttbar{\ref{sec:wp4} WP4}{15}{18}\\
+\ganttbar{\ref{sec:wp5} WP5}{19}{21.5}
 %relations 
 \ganttlink{elem0}{elem1} 
 \ganttlink{elem1}{elem2} 
