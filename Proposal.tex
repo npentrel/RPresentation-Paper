@@ -172,6 +172,7 @@
 %----------------------------------------------------------------------------------------
 
  \section*{Abstract}
+ \label{sec:abstract}
 Visualization of knowledge is important to foster learning. To optimize the visualization of information and its interdependencies, we will focus on identifying ways to present information without loosing context. The proposed research aims at taking an existing annotated corpus and presenting its contents in a way that allows the audience to see the dependencies of the covered topics. This form of presenting knowledge should enable users to examine materials they may have forgotten which form the basis for the understanding of the topics the audience is interested in.\\
 
 Consider the typical lecture one attends as a student. Towards the end of the lecture students might have difficulties remembering earlier topics. When a new topic is introduced it would be ideal to have a simple way to find the dependencies and present students with a simple way to catch up.\\
@@ -185,6 +186,7 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
   \pagenumbering{arabic}
 
   \section{Introduction}
+  \label{sec:introduction}
 
 The intention behind the Semantic Web \cite{BernersLee:tsw98} is to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. There are an interesting similar developments in other fields such as that of new presentation tools. These aim to enable the presentation of information in a more interconnected way that provides context. Both developments strive to connect pieces of information and through providing context to elevate pure information to knowledge.\\
 
@@ -211,9 +213,13 @@ After reading this contrived story, I leave the reader to think about examples i
 
 \newpage
 \section{Preliminaries}
+\label{sec:preliminaries}
+
 To understand the problem of information that lacks context, this part will provide the necessary background information to allow us to understand why combining spatial narrative with inherent semantic closeness might be a solution to allow Annie's teacher to transfer knowledge more effectively. While doing so we will demonstrate why this research is important and how it will improve the transfer of knowledge.\\
 
 \subsection{Terminology}
+\label{sec:terminology}
+
 Before we delve into the actual subject matter, we need to ensure that the terminology used is understood as intended. In the following we will use the terms information, knowledge, and context.\\
 
 The Oxford Dictionary of English \cite{OED:npentrel14} defines \textbf{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Looking back at the figure from section 1, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textbf{Knowledge}, we will use the definition in Merriam-Webster \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". Of special importance for us is the association. We will take this as meaning that the knowledge is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used.\\ 
@@ -221,6 +227,8 @@ The Oxford Dictionary of English \cite{OED:npentrel14} defines \textbf{informati
 Merriam-Webster \cite{Webster:npentrel14} defines \textbf{context} as "the parts of a discourse that surround a word or passage and can throw light on its meaning". A Context can be easily explained with the example of Annie learning the Pythagorean theorem. The information about the calculation of the length of the third side of the triangle is only helpful for Annie within the context of the pieces of information this depends on, i.e. calculating squares, lengths, area calculation, angles, and right angles. This is the context that the Pythagorean theorem needs. We will be using the terms context and network almost interchangeably and depend on the reader to have the right intuition about these terms.\\
 
 \subsection{OMDoc}
+\label{sec:OMDoc}
+
 OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OMDoc1.2} is an XML-based system that provides a data model and a format for content markup for mathematical documents. As such it is a semi-formal domain ontology. An ontology provides the framework for creating a semantic structure. It formally describes concepts within a specified area. A semi-formal ontology \cite{Sheth:npentrel14} is an ontology where formality of semantics is not a given. The semi-formal ontology can consist of partial or incomplete knowledge. \\
 
 If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
@@ -228,6 +236,8 @@ If OMDoc was used in every part of mathematics (and related fields), we would ha
 In \cite{LK:MathOntoAuthDoc09} it is stated that "documents consist of narrative and content layers". Here, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. Through the annotations within the document, we can establish levels of semantic closeness for different mathematical objects. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently through combining spatial narrative and semantic closeness. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
 
 \subsection{Status of Information within the (Dis)Course}
+\label{sec:infostatus}
+
 In linguistics the concept of information packaging \cite{CambridgeGrammar:npentrel14} is known. Within this, one discriminates between \textit{familiar} and \textit{old} information. \textit{Familiar} information is shared by speaker and addressee, ie. it is in the intersection of knowledge of student and teacher. New information is not in the shared knowledge base or the content commons \cite{CNX:whitepaper}. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.
 
 \begin{center}
@@ -241,12 +251,14 @@ These concepts can be adapted to the situation of teaching Mathematics or Comput
 Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides us we will be able to determine the status of information within the (dis)course. \\
 
 \subsection{Primitives}
+\label{sec:primitives}
 
 Within knowledge representation, five evaluation criteria for knowledge representation are known \cite{Kohlhase:Complog:base}: Expressive Adequacy, Reasoning Efficiency, Primitives, Meta-representation, and Incompleteness. Primitives are the different elements of representation. In terms of evaluation it is important to have intuitive primitive elements. \\
 
 For Impress.js, the primitive elements are text, images, slide-like structures (frames), and the visual relation between the different frame-like structures. The exact layout of the frames and the best visualization of the relation between the frames is to be determined. Ideally this should lead to Annie having the information about the Pythagorean theorem on a slide-like structure while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily.  \ednote {not sure whether I understand this correctly - does this need more explanation?}
 
 \subsection{Different Representations of Information}
+\label{sec:inforep}
 
 Information can be (re)presented in different ways: text, visuals, images, etc. Actually everything that is in the world around us conveys information to us. A sign of a women on a door conveys to most of us that this is a bathroom for women. The information graphs that OMDoc provides us with could also be simply visualized as that - a tree of information. But this would not be very engaging and it would be hard for a human to process. Similarly traditional slide-based presentations do not provide a very engaging or interactive form of presenting information. \\  
 
@@ -273,9 +285,10 @@ The figures above clarify what we mean by 'meaningful representations'. Figure \
 
 These perceptions can be used to convey meaning visually. For the example of Annie this means that the \textit{course-new} information would likely be important and therefore bigger than the \textit{content-old} or \textit{content-ancient} information. From there on it depends how important the topics related to this topic are and we will use different sizes to differentiate between more important and less important topics. Similarly we will employ visual relations as in \ref{fig:rel_objects} to show related content. Thus we will provide Annie with a meaningful representation of the information taken from the information graph. In turn this should allow Annie to absorb information about importance and relations instinctively which improves knowledge transfer.\\
 
-\ednote{ These are things I derive from what I have been teaching my APS seminars and have probably been told by multile people during my training as a prezi ambassador. Do I need to cite my teaching material? Not sure...}
+\ednote{ These are things I derive from what I have been in teaching my APS seminars and have probably been told by multile people during my training as a prezi ambassador. Do I need to cite my teaching material? Not sure...}
 
 \subsection{Spatial Narrative}
+\label{sec:spatialnarrative}
 
 Prezi is "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas" \cite{Prezi:npentrel14}. When doing a good prezi presentation one has to understand the topic one is presenting on a deeper level and think about how one can portray connections between content visually. The development of presentation tools like Impress.js and Prezi, has changed how people think about presentations while making use of spatial narrative.\\
 
@@ -286,49 +299,59 @@ The benefits of spatial narrative is that the audience gains a more thorough und
 In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected. It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
 
 \section{Work Plan}
-\ednote{add how to work packages. -> my first approach will be...}
-\ednote {Add some speculation HOW}
+\label{sec:workplan}
+
 \subsection{WP1: Understand API of Impress.js}
-\ednote {should Impress.js go into the introduction/preliminaries? - I decided against this as I haven't examined Impress.js enough yet.}
-The first step to implementing a \sys \ednote{Is the font format ok?} is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} \cite{JSImpress:npentrel14} is an open-source presentation framework which is based on CSS3 transforms and transitions. \ednote{Impressionist and jimpress}\\
+\label{sec:wp1}
+
+\ednote {should Impress.js go into the introduction/preliminaries? - I decided against this as I haven't examined Impress.js enough yet and this will take several days to do.}
+The first step to implementing \sys \ednote{Is the font format ok?} is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an API that would allow for the generation of a whole presentation without using the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} \cite{JSImpress:npentrel14} is an open-source presentation framework which is based on CSS3 transforms and transitions.\\
+
+Impress.js gives us all the necessary primitives that were outlined in section \ref{sec:primitives}. Therefore it will give us the perfect environment to transform the XML data that OMDoc provides us with into an interactive presentation. In this step we will define several models of how data is presented within a frame. Next we will automate that the different frames have different sizes according to the importance of the presented information (see section \ref{sec:inforep}). Last but not least we need to create several models of how the relations between the different frames can be portrayed within Impress.js.\\
+
+After finishing this part we should have several different presentation styles and one should be chosen with which we will continue our work.\\ 
+
+\ednote{look at Impressionist and jimpress when writing actual thesis}\\
 
 \subsection{WP2: Using OMDoc to create ordered information graphs}
-The idea is to use the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an information graph out of the annotated set of documents. This information graph should be ordered based on dependencies of knowledge.\\
+\label{sec:wp2}
 
+The idea is to use the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an XML information graph out of the annotated set of documents.\\
 
+The information graph we receive from OMDoc should be topologically sorted based on dependencies of knowledge. This will allow us to assign values representing the status of information within the course as as in section \ref{sec:infostatus}. It will also allow us to create values for the relative semantic closeness of information which will be needed for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
+
+Each piece of information needs to also have an importance level assigned to it as well (see section \ref{sec:inforep}). This ought to be determined by knowing how often the concept is used and how important it is for the student to grasp it.\\
 
 \subsection{WP3: Combining OMDoc and Spatial Narration}
-Once we have an ordered information graph we will visualize the information in different ways and analyze each way. The outcome of the analysis should be a model which we will then use to visualize the information in WP4.\\
+\label{sec:wp3}
+
+Once we have an ordered information graph with all the additional attribute values mentioned in section \ref{sec:wp2}, we will create the knowledge presentation system \sys. \sys will visualize the information from the graph. The outcome of this part should be a general \sys presentation model, that implements the models according to the models chosen in section \ref{sec:wp1}. We will then use \sys to visualize the information in WP4.\\
 
 \subsection{WP4: Implement OMDoc examples in Impress.js}
-After the best model for spatial narration is found, we will implement a system that will take the ordered information graph and transform it into a spatial presentation using Impress.js.
+\label{sec:wp4}
+
+\sys will take the ordered information graph of the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} with all the additional attributes we generated in \ref{sec:wp2} and transform it into a spatial presentation using Impress.js. This will be done by parsing the created XML and creating the markup that Impress.js is using to create the chosen presentation models from section \ref{sec:wp1}. After this work package, we should have one (or more) presentations of the topics covered in the General Computer Science Lecture notes.\\
 
 \subsection{WP5: Evaluation}
-Once we have examples, we will undertake a qualitative analysis of the visualization produced by the implemented \sys . In addition we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria. Lastly we will measure the speed of the system.
+\label{sec:wp5}
+
+Once we have examples, we will undertake a qualitative analysis of the visualization produced by the implemented knowledge presentation system \sys . To achieve this, we will use the newly created examples from \ref{sec:wp4} and the general General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base}. We will have two groups: a control group that is shown the lecture notes and a test group that is shown the new, interactive Impress.js presentations. Afterwards both groups have to answer a set of questions. In addition, we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria (see section \ref{sec:evalcriteria}).\\
 
 \section{Evaluation Criteria}
-\ednote{Expressive Adequacy, Reasoning Efficiency, Primitives, Meta-representation, and Incompleteness}
-\ednote {KEEP - real question: does spatial narrative work together with inherent semantic closeness -cogn. question: how does the spatial narrative work - should we use the inherent semantic closeness
-}
-\ednote {- work out concepts not a binding contract.}
-\ednote{ 1. - 2. system goals -> kinda measurable}
-\ednote{ 3.-5. cognitive goals -> exploring space of information systems}
+\label{sec:evalcriteria}
 
-\ednote{ make 2nd eval criteria last}
+The evaluation criteria for the research at hand are on the one hand systematic and on the other hand cognitive. Systematically, we will be evaluating two main challenges: First we will evaluate whether the knowledge presentation system \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of \sys. Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and whether this could be generated on the fly within seconds.\\
 
-The evaluation criteria for the research at hand are on the one hand systematic and on the otherhand cognitive. Systematically we will be evaluating two main challenges: First we will evaluate whether the \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of the \sys . Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and could this be generated on the fly within seconds.\\
+Cognitively, we will be exploring the space of information systems. Therefore we will be examining whether the developed system provides a better system for knowledge transfer. For this a qualitative analysis will be conducted as outlined in section \ref{sec:wp5}. Based on that we will be able to understand the positive and possibly negative effects of the combination of Spatial Narrative and OMDoc within \sys .\\
 
-Cognitively we will be examining whether the developed system provides a better system for knowledge transfer. For this a qualitative analysis will be conducted. Based on that we will be able to understand the positive and possibly negative effects of the combination of Spatial Narrative and OMDoc. 
+Furthermore, with the above evaluation, we want to answer the main question of this proposed research, namely how and whether spatial narrative can be combined with inherent semantic closeness to facilitate and improfe knowledge transfer.
 
-\ednote{I am missing SMART goals... Can I use a scale from 0 - 10 for each point?}
+If \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers what is impossible.\\
 
-If the implemented \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers what is impossible. \\
+A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. It is not the goal of this research that users should be able to reconstruct the original graph from the presentation.\\
 
-A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. It is not the goal of this research that users should be able to reconstruct the original graph from the presentation.
-
-\ednote{(target size: 1-2 page)}
-\newpage
-  \section{Timeline}
+\section{Timeline}
+\label{sec:timeline}
 
 \textbf{Milestones}
 \begin{itemize}
@@ -338,9 +361,6 @@ A stretch goal of this project is to have this research accessible for common us
 \item \textbf{Until April 15th}: Implement/Automate the visualization of the information graph
 \item \textbf{Until May 10th}: Qualitative Analysis and evaluation of findings 
 \end{itemize}
-
-\ednote {wp 4 - thesis writing}
-
 \begin{figure}[h]
 \begin{center}
 \begin{ganttchart}[y unit title=0.4cm,
@@ -390,8 +410,6 @@ group peaks={}{}{.2}]{24}
 
 \newpage
 \section{References}
-
-\ednote{Research field: information systems}
 
 \bibliography{kwarc}{}
 \bibliographystyle{alpha}
