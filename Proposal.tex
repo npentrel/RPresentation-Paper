@@ -211,7 +211,18 @@ We want to go from merely displaying information to visualizing information by d
 
 To achieve this goal, we intend to create a knowledge presentation system \sys to visually present information and its context (and networks). For this we will be using the OMDoc (Open Mathematical Documents) format which will provide us with an annotated set of documents. This will give us information about the semantic closeness of different pieces of information. Taking this as a starting point, we will visualize the dependencies of the information contained in these documents. Of course we will not visualize the dependencies as a simple graph but use the approach of spatial narrative with the help of a presentation framework such as Impress.js in order to show the current piece of information of interest within the network of dependent information.\\
 
-To exemplify this: Annie, a young student learning Math, is watching her teacher give a presentation on how to use the Pythagorean theorem. She is given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is. This shows the dependencies of different pieces of information, i.e. the Pythagorean theorem depends on knowledge of squares, lengths, area calculation, angles, and right angles. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.\\
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+                \fbox{\includegraphics[width=0.4\textwidth]{assets/Annie1}}
+\end{center}
+  \vspace{-20pt}
+  \caption{Slide about the Pythagorean Theorem}
+                \label{fig:Annie-presentation-teacher}
+  \vspace{-10pt}
+\end{wrapfigure}
+
+To exemplify this: Annie, a young student learning Math, is watching her teacher give a presentation on how to use the Pythagorean theorem (see figure \ref{fig:Annie-presentation-teacher}). She is given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is. This shows the dependencies of different pieces of information, i.e. the Pythagorean theorem depends on knowledge of squares, lengths, area calculation, angles, and right angles. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.\\
 
 After this contrived story, it is left to the reader to think about examples in his or her own life where he or she would have appreciated having the context of the information he or she was learning at the time. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole. \\
 
@@ -223,7 +234,7 @@ To understand the problem of information that lacks context, this part of the pr
 \subsection{Terminology}
 \label{sec:terminology}
 
-In this section we will introduce some basic terminology which will be needed to discuss the actual subject matter in the following part. We will define the terms information, knowledge, and context.\\
+In this section we will introduce some basic terminology which will be needed to discuss the actual subject matter in the following part. We will conceptualize what we mean by the terms information, knowledge, and context.\\
 
 The Oxford Dictionary of English \cite{OED:npentrel14} defines \textbf{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling figure \ref{fig:dataknow} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textbf{Knowledge}, we will use the definition in Merriam-Webster \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". \textbf{Association} is of special importance for the current project. We will define this as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used.\\ 
 
@@ -237,7 +248,7 @@ OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OM
 If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
 
 In \textit{A mathematical approach to ontology authoring and
-documentation} \cite{LK:MathOntoAuthDoc09} it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. Through the annotations within the document, we can establish levels of semantic closeness for different mathematical objects. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently through combining spatial narrative and semantic closeness. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
+documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. Through the annotations within the document, we can establish levels of semantic closeness for different mathematical objects. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently through combining spatial narrative and semantic closeness. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
 
 \subsection{Status of Information within the (Dis)Course}
 \label{sec:infostatus}
@@ -304,9 +315,10 @@ In this research we will use this knowledge to form an interconnected web of inf
 \subsection{Related Works}
 \label{sec:relatedworks}
 
-When searching for related works there is little to be found. There has been work done to make teaching more effective by providing students with materials from the lecture after the lectures. To make this more effective systems that can automatically capture and index classroom events as videos and images have been devised \cite{indexedclass:npentrel14}. It has been found that allowing students to review all class material has a positive influence on learning \cite{DBLP:dblp_journals/tochi/BrothertonA04}, hence these systems are a good approach. However, while this approach also aims at improving the learning experience, it does not in any way link content or allow for more interactive presentations through combining semantic closeness and spatial narrative.\\
+When searching for related works there is little to be found. Some works have focused on making teaching more effective by providing students with all lecture materials directly after class which has been found to have a positive influence on learning \cite{DBLP:dblp_journals/tochi/BrothertonA04}. For this systems that can automatically capture and index classroom events as videos and images have been devised \cite{indexedclass:npentrel14}. Some of these systems use temporal information \cite{DBLP:dblp_journals/isci/ChungS97} to show multiple resources in sync as they appeared in the lecture. However, while this approach also aims at improving the learning experience, it does not in any way link content semantically based on dependencies or allow for more interactive presentations through combining semantic closeness and spatial narrative.\\
 
-In \ednote{continue}
+Another piece of research has focused on the automatic generation of mind maps from text {Direct automatic generation of mind maps from text with M 2 Gen}. The software they developed uses Semantic Web technologies to create mind maps that show the relations between nodes that represent different objects. While this is close to what the proposed research intends in showing the relation between pieces of information, it does it on a word level. For instance, it can represent that Shakespeare lived in Stratford but it would not be able to show the dependencies of mathematical concepts as it is limited to representing nodes in single words within the mind map. We, on the other hand, will focus on exactly that, i.e. dependencies and the creation of interactive presentations.\\
+
 
 \section{Work Plan}
 \label{sec:workplan}
