@@ -7,3 +7,11 @@ read kohhases other paper
 http://rhizomik.net/html/~roberto/thesis/html/KnowledgeRepresentation.html
 
 http://reader.eblib.com/(S(gkwt4h53aadjotp03mi25zsi))/Reader.aspx?p=655998&o=1706&u=tkyUhRRU8oBFV92xtGUdWNHfafo%3d&t=1416427415&h=AAEABAAD4041366D9CC8528AF618690B20349073&s=31025691&ut=5736&pg=1&r=img&c=-1&pat=n&cms=-1&sd=2
+
+
+1) You talk very superficially about OMDoc and the connection with spatial representation of informatiion. This would make a reader feel unsure about wether this approach is a good idea at all. To make it more solid, I would recommed you giving an example of a small OMDoc and a possible sketch about how the information in that document can be spatially visualized. Ie. someone who is not familiar with Prezi for example would hardly see the benefit of your approach.
+
+2) If you could provide strong evidence that presentation formats like Powerpoing are inferior to Prezi would make the proposal more solid. I know is hard, but if you could cite a study or a success story about the matter it would be a nice easter egg for the proposal.
+
+3) You didn't cite any previous/related work. Has no one ever tried to automatically create spatial representation of information based on some source? Is the automatic generation of "Mind Maps" relevant for your purpuses? If that is the case, you should mention that you are not aware of any similar approach. It is very bad to submit a proposal and not cite the relevant work because it gives the impression that you are not knowledgeable about the topic.
+
