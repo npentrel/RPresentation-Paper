@@ -3,7 +3,7 @@
 \usepackage{lipsum} % Package to generate dummy text throughout this template
 \usepackage[english]{isodate}% http://ctan.org/pkg/isodate
 \usepackage{pgfgantt}
-\usepackage[show]{ed}
+%\usepackage[show]{ed}
 \setlength{\parindent}{0pt}
 \usepackage[sc]{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
@@ -266,11 +266,11 @@ OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OM
 
 If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
 
-\begin{wrapfigure}{l}{0.6\textwidth}
+\begin{wrapfigure}{l}{0.5\textwidth}
 \vspace{-26pt}
   \begin{center}
   \fbox{
-    \includegraphics[width=0.58\textwidth]{assets/Annie4xml3}
+    \includegraphics[width=0.48\textwidth]{assets/Annie4xml3}
     }
   \end{center}
 \vspace{-20pt}
@@ -340,7 +340,7 @@ These perceptions can be used to convey meaning visually. For the example of Ann
 
 \begin{figure}[H]
         \centering
-		    \fbox{\includegraphics[width=0.65\textwidth]{assets/Annie4size}}
+		    \fbox{\includegraphics[width=0.6\textwidth]{assets/Annie4size}}
   \caption{Relative size and relations} 
   \label{fig:Annie-relsize}
 \end{figure}
@@ -348,15 +348,15 @@ These perceptions can be used to convey meaning visually. For the example of Ann
 \subsection{Primitives}
 \label{sec:primitives}
 
-Within knowledge representation, five evaluation criteria for knowledge representation are known \cite{Kohlhase:Complog:base}: Expressive Adequacy, Reasoning Efficiency, Primitives, Meta-representation, and Incompleteness. Primitives are the different elements of representation. In terms of evaluation it is important to have intuitive primitive elements. \\
+Within knowledge representation, five evaluation criteria for knowledge representation are known \cite{Kohlhase:Complog:base}: Expressive Adequacy, Reasoning Efficiency, Primitives, Meta-representation, and Incompleteness. Primitives are the different elements of representation. In terms of evaluation it is important to have intuitive primitive elements. The primitive elements can be further subdivided into structural and semantic primitives \cite{DBLP:dblp_conf/acl/Salveter80}. The structural primitives have little inherent semantics associated with them whereas the semantic primitives carry meaning.\\
 
-Visual and normal tree-like graph language have different primitives and it is interesting how one can be mapped to the another. When we consider tree-like graphs, there are two structural primitives, namely the nodes, which represent concepts, and the edges, which represent relations between nodes. Additionally we can add semantic primitives like attributes to the concepts and to the relations. In normal graphs a relation between two nodes is often quite simple there is one node that is the subject, one node that acts as an object, and the relation that acts like a predicate. Thus we can, for instance, express that the Pythagorean Theorem depends on information about right angles. These structural primitives and semantic primitives provide the basics that graphs can be built on.\\
+Visual and normal tree-like graph language have different primitives and it is interesting how one can be mapped to the other. When we consider tree-like graphs, there are two structural primitives, namely the nodes, which represent concepts, and the edges, which represent relations between nodes. Additionally we can add semantic primitives like attributes to the concepts and to the relations to show what kind of a relation it is. In normal graphs a relation between two nodes is often quite simple: there is one node that acts as the subject, one node that acts as an object, and the relation that acts like a predicate. Thus we can, for instance, express that the Pythagorean Theorem depends on information about right angles (similar to figure \ref{fig:Annie-context}). These structural primitives and semantic primitives provide the basics that graphs can be built on.\\
 
 For Impress.js, the primitive elements are text, images, slide-like structures (frames), and the visual relation between the different frame-like structures. The frames can be mapped directly to the nodes/concepts that graphs use. Text and images are taken for granted within the frames. Similarly, the visual relation between different frames is very much like the relations between nodes. However, the relations can be much more expressive within Impress.js.\\
 
-Since Impress.js provides us with different representation options as outlined in section \ref{sec:inforep}, we can make use of relative size and visual closeness to additionally convey importance, relatedness, and even accessibility of information. Additionally, the connections between different frames do not just connect content that depends on one another but also content that has a temporal connection, similar to slides following one after another. As such the temporal associations show the path that a normal lecture would take. The dependencies that are visualized around each frame allow for the interactiveness.\\
+Since Impress.js provides us with different representation options as outlined in section \ref{sec:inforep}, we can make use of relative size and visual closeness to additionally convey importance, relatedness, and even accessibility of information. Additionally, the connections between different frames do not just connect content that depends on one another but also content that has a temporal connection, similar to slides following one after another. As such the temporal associations show the path that a normal lecture would take. The dependencies that are visualized around each frame allow for interactiveness.\\
 
-The exact layout of the frames and the best visualization of the relation between the frames is to be determined. Ideally the added expressiveness should lead to Annie having the information about the Pythagorean theorem on a slide-like structure while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
+The exact layout of the frames and the best visualization of the relation between the frames is to be determined but figure \ref{fig:Annie-relsize} can be seen as a first draft. Ideally the added expressiveness that Impress.js offers should lead to Annie having the information about the Pythagorean theorem on a slide-like structure while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
 
 \subsection{Spatial Narrative}
 \label{sec:spatialnarrative}
@@ -367,7 +367,20 @@ The concept of Spatial Narrative stems from the establishment of frameworks for 
 
 The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \cite{Storytelling:npentrel14}.\\
 
-In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected. It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
+\begin{wrapfigure}{l}{0.4\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.35\textwidth]{assets/Annie3spatial}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Guided spatial tour}
+  \label{fig:Annie-guided}
+\vspace{-10pt}
+\end{wrapfigure}
+
+In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected (see figure \ref{fig:Annie-guided}). It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
 
 \subsection{Related Work}
 \label{sec:relatedworks}
@@ -427,7 +440,7 @@ Furthermore, with the above evaluation, we want to answer the main question of t
 If \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers which other parameters need to be kept in mind in order to succeed in future.\\
 
 A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. Another stretch goal is for \sys to create or change presentations on the fly as outlined in \ref{sec:wp4}. It is not the goal of this research that users should be able to reconstruct the original information graph from the presentation.\\
-
+\newpage
 \section{Timeline}
 \label{sec:timeline}
 
