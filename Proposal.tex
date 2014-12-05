@@ -152,7 +152,7 @@
 
 \newpage
 \noindent
-  With my signature, I certify that this thesis has been written by me
+  With my signature, I certify that this thesis proposal has been written by me
   using only the indicated resources and materials. Where I have
   presented data and results, the data and results are complete,
   genuine, and have been obtained by me unless otherwise acknowledged;
@@ -177,11 +177,11 @@
 
  \section*{Abstract}
  \label{sec:abstract}
-Visualization of knowledge is important to foster learning. To optimize the visualization of information and its interdependencies, we will focus on identifying ways to present information without loosing context. The proposed research aims at taking an existing annotated corpus and presenting its contents in a way that allows the audience to see the dependencies of the covered topics. This form of presenting knowledge should enable users to examine materials which they may have forgotten which form the basis for the understanding of the topics the audience is interested in.\\
+Visualization of knowledge is important to foster learning. To optimize the visualization of information and its interdependencies, we will focus on identifying ways to present information without loosing context. The proposed research aims at taking an existing annotated corpus and presenting its contents in an interactive way that allows the audience to see the dependencies of the covered topics. This form of presenting knowledge should enable users to interactively examine materials that are related to the topics the audience is interested in.\\
 
-Taking the typical lectures as an example, it is often the case that especially towards the end of the lecture students might have difficulties remembering earlier topics. When a new topic is introduced it would be ideal to have a simple way to find the dependencies and present students with an easy way to catch up.\\
+Taking the typical lectures as an example, it is often the case that, especially towards the end of the semester, students have difficulties remembering earlier topics. When a new topic is introduced it would be ideal to have a simple way to find the dependencies and present students with an easy way to catch up.\\
 
-The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a content markup scheme for mathematical documents. Using OMDoc, this research aims at visualizing the connections of different pieces of Mathematical concepts in a way that allows students to learn the concepts the current topic depends on, should they need to refresh their memories. It will examine if and how spatial narrative and semantic closeness can be combined to foster learning. If this approach proves successful it will transform how we interact with course material and learning processes in general. Ultimately, this research may be applicable to almost all areas in which knowledge is supposed to be transferred.\\ 
+The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a content markup scheme for mathematical documents. Using OMDoc, this research aims at visualizing the connections of different pieces of mathematical concepts in an interactive way that allows students to learn the concepts the current topic depends on, should they need to refresh their memories. It will examine if and how spatial narrative and semantic closeness can be combined to foster learning. If this approach proves successful it will transform how we interact with course material and learning processes in general. Ultimately, this research may be applicable to almost all areas in which knowledge is supposed to be transferred.\\ 
 
   \newpage
   \tableofcontents
@@ -211,18 +211,24 @@ We want to go from merely displaying information to visualizing information by d
 
 To achieve this goal, we intend to create a knowledge presentation system \sys to visually present information and its context (and networks). For this we will be using the OMDoc (Open Mathematical Documents) format which will provide us with an annotated set of documents. This will give us information about the semantic closeness of different pieces of information. Taking this as a starting point, we will visualize the dependencies of the information contained in these documents. Of course we will not visualize the dependencies as a simple graph but use the approach of spatial narrative with the help of a presentation framework such as Impress.js in order to show the current piece of information of interest within the network of dependent information.\\
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-  \vspace{-20pt}
-  \begin{center}
-                \fbox{\includegraphics[width=0.4\textwidth]{assets/Annie1}}
-\end{center}
-  \vspace{-20pt}
-  \caption{Slide about the Pythagorean Theorem}
-                \label{fig:Annie-presentation-teacher}
-  \vspace{-10pt}
-\end{wrapfigure}
+To exemplify this: Annie, a young student learning Math, is watching her teacher give a presentation on how to use the Pythagorean theorem (see figure \ref{fig:Annie-presentation-teacher}). She is given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is. This shows the dependencies of different pieces of information (see figure \ref{fig:Annie-presentation-information}), i.e. the Pythagorean theorem depends on knowledge of squares,triangles, lengths, area calculation, and right angles. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.\\
 
-To exemplify this: Annie, a young student learning Math, is watching her teacher give a presentation on how to use the Pythagorean theorem (see figure \ref{fig:Annie-presentation-teacher}). She is given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is. This shows the dependencies of different pieces of information, i.e. the Pythagorean theorem depends on knowledge of squares, lengths, area calculation, angles, and right angles. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.\\
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+                \fbox{\includegraphics[width=\textwidth]{assets/Annie1}}
+			   \caption{Simple, explanatory slide}
+                \label{fig:Annie-presentation-teacher}
+        \end{subfigure}%
+        \qquad %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.45\textwidth}
+                \fbox{\includegraphics[width=\textwidth]{assets/Annie2}}
+		  \caption{Information dependencies}
+                \label{fig:Annie-presentation-information}
+        \end{subfigure}
+        \caption{Pythagorean Theorem}\label{fig:PythagoreanTheorem}
+\end{figure}
 
 After this contrived story, it is left to the reader to think about examples in his or her own life where he or she would have appreciated having the context of the information he or she was learning at the time. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole. \\
 
@@ -236,9 +242,22 @@ To understand the problem of information that lacks context, this part of the pr
 
 In this section we will introduce some basic terminology which will be needed to discuss the actual subject matter in the following part. We will conceptualize what we mean by the terms information, knowledge, and context.\\
 
-The Oxford Dictionary of English \cite{OED:npentrel14} defines \textbf{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling figure \ref{fig:dataknow} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textbf{Knowledge}, we will use the definition in Merriam-Webster \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". \textbf{Association} is of special importance for the current project. We will define this as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used.\\ 
+The Oxford Dictionary of English \cite{OED:npentrel14} defines \textbf{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling figure \ref{fig:PythagoreanTheorem} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$} (see \ref{fig:Annie-presentation-teacher}). For the term \textbf{Knowledge}, we will use the definition in Merriam-Webster \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". \textbf{Association} is of special importance for the current project. We will define this as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see \ref{fig:Annie-presentation-information}).\\ 
 
-According to the Merriam-Webster dictionary \cite{Webster:npentrel14}, \textbf{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". A Context can be easily explained with the example of Annie learning the Pythagorean theorem. The information about the calculation of the length of the third side of the triangle is only helpful for Annie within the context of the pieces of information this depends on, i.e. calculating squares, lengths, area calculation, angles, and right angles. This is the context that the Pythagorean theorem needs. We will be using the terms context and network almost interchangeably and depend on the reader to have the right intuition about these terms.\\
+\begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.45\textwidth]{assets/Annie3}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Information in context}
+  \label{fig:Annie-context}
+\vspace{-10pt}
+\end{wrapfigure}
+
+According to the Merriam-Webster dictionary \cite{Webster:npentrel14}, \textbf{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". Context can be easily explained with the example of Annie learning the Pythagorean theorem. The information about the calculation of the length of the third side of the triangle is only helpful for Annie within the context of the pieces of information this depends on, i.e. calculating squares, area calculation, triangles, and right angles. This is the context that the Pythagorean theorem needs. We will be using the terms context and network almost interchangeably and depend on the reader to have the right intuition about these terms.\\
 
 \subsection{OMDoc}
 \label{sec:OMDoc}
@@ -247,8 +266,23 @@ OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OM
 
 If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
 
+\begin{wrapfigure}{l}{0.5\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.45\textwidth]{assets/Annie4xml}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Information in context}
+  \label{fig:Annie-context}
+\vspace{-10pt}
+\end{wrapfigure}
+
 In \textit{A mathematical approach to ontology authoring and
 documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. Through the annotations within the document, we can establish levels of semantic closeness for different mathematical objects. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently through combining spatial narrative and semantic closeness. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
+
+\ednote{on top of the info about when it appears within the course.}
 
 \subsection{Status of Information within the (Dis)Course}
 \label{sec:infostatus}
@@ -262,6 +296,19 @@ In linguistics the concept of information packaging \cite{CambridgeGrammar:npent
 In this example in the first part of the sentence, information pertaining to my sister and to a circus are introduced, i.e. \textit{discourse-new}. In the second part, the underlined parts are considered \textit{discourse-old} since they have already been introduced. These terms are coined to refer to the accessibility of the information to participants of the discourse \cite{Newness:npentrel14}. The accessibility depends on the relative \textit{newness}, i.e. recency of mention, of this information.\\
 
 These concepts can be adapted to the situation of teaching Mathematics or Computer Science to students in a class. In general we will call the information that the speaker is sharing with the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.45\textwidth]{assets/Annie4ancient2}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Course-ancient information}
+  \label{fig:Annie-context}
+\vspace{-10pt}
+\end{wrapfigure}
 
 Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides us we will be able to determine the status of information within the (dis)course. \\
 
@@ -312,12 +359,12 @@ The benefits of spatial narrative is that the audience gains a more thorough und
 
 In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected. It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
 
-\subsection{Related Works}
+\subsection{Related Work}
 \label{sec:relatedworks}
 
 When searching for related works there is little to be found. Some works have focused on making teaching more effective by providing students with all lecture materials directly after class which has been found to have a positive influence on learning \cite{DBLP:dblp_journals/tochi/BrothertonA04}. For this systems that can automatically capture and index classroom events as videos and images have been devised \cite{indexedclass:npentrel14}. Some of these systems use temporal information \cite{DBLP:dblp_journals/isci/ChungS97} to show multiple resources in sync as they appeared in the lecture. However, while this approach also aims at improving the learning experience, it does not in any way link content semantically based on dependencies or allow for more interactive presentations through combining semantic closeness and spatial narrative.\\
 
-Another piece of research has focused on the automatic generation of mind maps from text {Direct automatic generation of mind maps from text with M 2 Gen}. The software they developed uses Semantic Web technologies to create mind maps that show the relations between nodes that represent different objects. While this is close to what the proposed research intends in showing the relation between pieces of information, it does it on a word level. For instance, it can represent that Shakespeare lived in Stratford but it would not be able to show the dependencies of mathematical concepts as it is limited to representing nodes in single words within the mind map. We, on the other hand, will focus on exactly that, i.e. dependencies and the creation of interactive presentations.\\
+Another piece of research has focused on the automatic generation of mind maps from text \cite{abdeen2009direct}. The software they developed uses Semantic Web technologies to create mind maps that show the relations between nodes that represent different objects. While the proposed research also intends to show the relation between pieces of information, it does it on a different level. For instance, it can represent that Shakespeare lived in Stratford but it would not be able to show the dependencies of mathematical concepts as it is limited to representing nodes in single words within the mind map. We, on the other hand, will focus on exactly that, i.e. dependencies and the creation of interactive presentations.\\
 
 
 \section{Work Plan}
