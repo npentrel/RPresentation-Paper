@@ -335,30 +335,28 @@ In the proposed research we will focus less on text, tree-like structures, metap
 \end{figure}
 
 Figure \ref{fig:Objects} above clarifies what we mean by meaningful representations. Figure \ref{fig:imp_objects} shows how size conveys importance. It is well known that people tend to identify the circle on the right as most important, the ones on the left are less important due to their relative size. Considering the relation of the three circles most people say that the two circles on the left belong together whereas the circle on the right is clearly something different. When shown Figure \ref{fig:rel_objects} they quickly change their mind and say that they are now actually related.\\
-\newpage
-\begin{wrapfigure}{l}{0.5\textwidth}
-\vspace{-10pt}
-  \begin{center}
-  \fbox{
-    \includegraphics[width=0.45\textwidth]{assets/Annie4size}
-    }
-  \end{center}
-\vspace{-20pt}
-  \caption{Relative size and relations} 
-  \label{fig:Annie-relsize}
-\vspace{-10pt}
-\end{wrapfigure}
 
 These perceptions can be used to convey meaning visually. For the example of Annie this means that the \textit{course-new} information would likely be important and therefore bigger than the \textit{content-old} or \textit{content-ancient} information. Then, it depends on how important the topics related to this topic are and we will use different sizes to differentiate between more important and less important topics. Similarly, we will employ visual relations as in figure \ref{fig:rel_objects} to show related content. Considering figure \ref{fig:Annie-ancient}, we already have different sizes based on the relatedness of the concepts. Adding on to that in figure \ref{fig:Annie-relsize}, we have nodes that represent concepts that are very important for the course, here the next topic, represented as bigger. Thus we will provide Annie with a meaningful representation of the information taken from the information graph. In turn this should allow Annie to absorb information about importance and relations instinctively which improves knowledge transfer.\\
+
+\begin{figure}[H]
+        \centering
+		    \fbox{\includegraphics[width=0.65\textwidth]{assets/Annie4size}}
+  \caption{Relative size and relations} 
+  \label{fig:Annie-relsize}
+\end{figure}
 
 \subsection{Primitives}
 \label{sec:primitives}
 
 Within knowledge representation, five evaluation criteria for knowledge representation are known \cite{Kohlhase:Complog:base}: Expressive Adequacy, Reasoning Efficiency, Primitives, Meta-representation, and Incompleteness. Primitives are the different elements of representation. In terms of evaluation it is important to have intuitive primitive elements. \\
 
-For Impress.js, the primitive elements are text, images, slide-like structures (frames), and the visual relation between the different frame-like structures. The exact layout of the frames and the best visualization of the relation between the frames is to be determined. Ideally this should lead to Annie having the information about the Pythagorean theorem on a slide-like structure while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
+Visual and normal tree-like graph language have different primitives and it is interesting how one can be mapped to the another. When we consider tree-like graphs, there are two structural primitives, namely the nodes, which represent concepts, and the edges, which represent relations between nodes. Additionally we can add semantic primitives like attributes to the concepts and to the relations. In normal graphs a relation between two nodes is often quite simple there is one node that is the subject, one node that acts as an object, and the relation that acts like a predicate. Thus we can, for instance, express that the Pythagorean Theorem depends on information about right angles. These structural primitives and semantic primitives provide the basics that graphs can be built on.\\
 
-Visual and normal tree-like graph language have different primitives and it is interesting how one can be mapped to the another. When we consider tree-like graphs, there are two structural primitives, namely the nodes/ concepts and the relations between nodes. Additionally we can add semantic primitives like attributes to the concepts and to the relations. These structural primitives and semantic primitives provide the basics that graphs can be built on.\\
+For Impress.js, the primitive elements are text, images, slide-like structures (frames), and the visual relation between the different frame-like structures. The frames can be mapped directly to the nodes/concepts that graphs use. Text and images are taken for granted within the frames. Similarly, the visual relation between different frames is very much like the relations between nodes. However, the relations can be much more expressive within Impress.js.\\
+
+Since Impress.js provides us with different representation options as outlined in section \ref{sec:inforep}, we can make use of relative size and visual closeness to additionally convey importance, relatedness, and even accessibility of information. Additionally, the connections between different frames do not just connect content that depends on one another but also content that has a temporal connection, similar to slides following one after another. As such the temporal associations show the path that a normal lecture would take. The dependencies that are visualized around each frame allow for the interactiveness.\\
+
+The exact layout of the frames and the best visualization of the relation between the frames is to be determined. Ideally the added expressiveness should lead to Annie having the information about the Pythagorean theorem on a slide-like structure while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
 
 \subsection{Spatial Narrative}
 \label{sec:spatialnarrative}
@@ -387,30 +385,28 @@ Another piece of research has focused on the automatic generation of mind maps f
 
 The first step to implementing \sys is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an Application Programming Interface (API) that would allow for the generation of a whole presentation without using the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} \cite{JSImpress:npentrel14} is an open-source presentation framework which is based on CSS3 transforms and transitions.\\
 
-Impress.js gives us all the necessary primitives that were outlined in section \ref{sec:primitives}. Therefore it will give us the perfect environment to transform the XML data that OMDoc provides us with into an interactive presentation. In this step we will define several models of how data is presented within a frame. Next we will automate that the different frames have different sizes according to the importance of the presented information (see section \ref{sec:inforep}). Last but not least we need to create several models of how the relations between the different frames can be portrayed within Impress.js.\\
+Impress.js gives us all the necessary primitives that were outlined in section \ref{sec:primitives}. Therefore it will give us the perfect environment to transform the XML data that OMDoc provides us with into an interactive presentation. In this step we will define several models of how data is presented within a frame. Next we will automate that the different frames have different sizes according to the importance of the presented information (see section \ref{sec:inforep}). Last but not least we need to create several models of how the temporal and dependency relations between the different frames can be portrayed within Impress.js.\\
 
 After finishing this part we should have several different presentation styles from which one can be chosen to continue the main research question.\\ 
-
-\ednote{look at Impressionist and jimpress when writing actual thesis}\\
 
 \subsection{WP2: Creation of Ordered Information Graphs using OMDoc}
 \label{sec:wp2}
 
 The idea is to use the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an XML information graph out of the annotated set of documents.\\
 
-The information graph we receive from OMDoc should be topologically sorted based on dependencies of knowledge. This will allow us to assign values representing the status of information within the course as as in section \ref{sec:infostatus}. It will also allow us to create values for the relative semantic closeness of information which will be needed for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
+The information graph OMDoc provides us with should be topologically sorted based on dependencies of knowledge. This will allow us to assign values representing the status of information within the course as outlined in section \ref{sec:infostatus}. It will also allow us to create values for the relative semantic closeness of information which will be needed for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
 
-Each piece of information needs to also have an importance level assigned to it as well (see section \ref{sec:inforep}). This ought to be determined by knowing how often the concept is used and how important it is for the student to grasp it.\\
+Each piece of information needs to also have an importance level assigned to it (see section \ref{sec:inforep}). This ought to be determined by counting how often the concept is used and how important it is for the student to grasp it.\\
 
-\subsection{WP3: Combination OMDoc and Spatial Narration}
+\subsection{WP3: Combination of OMDoc and Spatial Narration}
 \label{sec:wp3}
 
-Once we have an ordered information graph with all the additional attribute values mentioned in section \ref{sec:wp2}, we will create the knowledge presentation system \sys. \sys will visualize the information from the graph. The outcome of this part should be a general \sys presentation model, that implements the models according to the models chosen in section \ref{sec:wp1}. We will then use \sys to visualize the information in WP4.\\
+Once we have an ordered information graph with all the additional attribute values mentioned in section \ref{sec:wp2}, we will create the knowledge presentation system \sys. \sys will visualize the information from the graph including all the attributes we added. The outcome of this part should be a general \sys presentation model, that implements the models according to the models chosen in section \ref{sec:wp1}. We will then use \sys to visualize information in WP4.\\
 
 \subsection{WP4: Implementation of OMDoc Examples in Impress.js}
 \label{sec:wp4}
 
-\sys will take the ordered information graph of the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} with all the additional attributes we generated in \ref{sec:wp2} and transform it into a spatial presentation using Impress.js. This will be done by parsing the created XML and creating the markup that Impress.js is using to create the chosen presentation models from section \ref{sec:wp1}. After this work package, we should have one (or more) presentations of the topics covered in the General Computer Science Lecture notes.\\
+\sys will take the ordered information graph of the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} with all the additional attributes we generated in \ref{sec:wp2} and transform it into a spatial presentation using Impress.js. This will be done by parsing the generated XML and creating the markup that Impress.js is using to create the chosen presentation models from section \ref{sec:wp1}. After this work package, we should have one (or more) presentations of the topics covered in the General Computer Science Lecture notes.\\
 
 It is a stretch goal for \sys to create or change these presentations on the fly as needed by the audience. The specific use case would be when Annie asks her teacher about right angles. The teacher would then just have to click on right angles and \sys would create a short guided tour through the topic of right angles before returning to the subject of the Pythagorean theorem.\\
 
@@ -422,15 +418,15 @@ Once we have examples, we will undertake a qualitative analysis of the visualiza
 \section{Evaluation Criteria}
 \label{sec:evalcriteria}
 
-The evaluation criteria for the research at hand are on the one hand systematic and on the other hand cognitive. Systematically, we will be evaluating two main challenges: First we will evaluate whether the knowledge presentation system \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of \sys. Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and whether this could be generated on the fly within seconds.\\
+The evaluation criteria for the research at hand are, on the one hand, systematic and, on the other hand, cognitive. Systematically, we will be evaluating two main challenges: First we will evaluate whether the knowledge presentation system \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of \sys. Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and whether this could be generated on the fly within seconds.\\
 
 Cognitively, we will be exploring the space of information systems. Therefore we will be examining whether the developed system provides a better system for knowledge transfer. For this a qualitative analysis will be conducted as outlined in section \ref{sec:wp5}. Based on that we will be able to understand the positive and possibly negative effects of the combination of Spatial Narrative and OMDoc within \sys .\\
 
-Furthermore, with the above evaluation, we want to answer the main question of this proposed research, namely how and whether spatial narrative can be combined with inherent semantic closeness to facilitate and improve knowledge transfer.
+Furthermore, with the above evaluation, we want to answer the main question of this proposed research, namely how and whether spatial narrative can be combined with inherent semantic closeness to facilitate and improve knowledge transfer.\\
 
-If \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers which other parameters need to be kept in mind in order to succeed in future.
+If \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers which other parameters need to be kept in mind in order to succeed in future.\\
 
-A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. Another stretch goal is for \sys to create or change presentations on the fly as outlined in \ref{sec:wp4}. It is not the goal of this research that users should be able to reconstruct the original graph from the presentation.\\
+A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. Another stretch goal is for \sys to create or change presentations on the fly as outlined in \ref{sec:wp4}. It is not the goal of this research that users should be able to reconstruct the original information graph from the presentation.\\
 
 \section{Timeline}
 \label{sec:timeline}
@@ -492,9 +488,9 @@ The proposed research will evaluate if and how spatial narrative can be combined
 
 Going back to our contrived example, \sys will provide Annie's teacher with a tool that allows her to use her normal lecture material in a more interactive way. Thus when the teacher realizes that Annie needs to revise previous material, the teacher can easily go to that material and provide Annie with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
 
-But not only will \sys make courses more engaging, interactive, and easier to follow. It will also lead to better knowledge absorption because students learn the concepts and in addition how they relate to one another. This allows faster revision of material and facilitates studying without a teacher present. \\
+But not only will \sys make courses more engaging, interactive, and easier to follow, it will also lead to better knowledge absorption because students learn the concepts and in addition intuitively understand how they relate to one another. This allows faster revision of material and facilitates studying without a teacher present.\\
 
-In essence, this proposed research will be beneficial for education and knowledge transfer. It aims to make the creation of engaging and interactive presentations simple and fast for current users of OMDoc. Should this research prove successful it could be adapted for other areas. In the future creating a meaningful, interactive presentation might be just a matter of uploading a document.
+In essence, this proposed research will be beneficial for education and knowledge transfer. It aims to make the creation of engaging and interactive presentations simple and fast for current users of OMDoc. Should this research prove successful it could be adapted for other areas. In the future creating a meaningful, interactive presentation might be just a matter of uploading an annotated document.
 
 \newpage
 \section{References}
