@@ -1,9 +1,42 @@
 Meeting tomorrow:
 
-- Global Hackers of Tomorrow Scholarship
+-> Studienstiftung
+	- academic excellence
+	- zweites standbein - have you done something extracurricular -> put everything on it that matters
 
-- Studienstiftung
+-> xml von Michael/Mihnea
+
+-XPATH
+
+6108 -
 
 - Thesis
+Nicely motivated, well written, good SoA and Workplan Work packages somewhat vague about how to attack them some structural problems in S2. Methoden, erwartete Probleme
+
+
 - Feedback on Proposal
+
 - Next steps
+
+Impress.js gives us all the necessary primitives that were outlined in section 2.5.
+
+Therefore it will give us the perfect environment to transform the XML data that OMDoc provides us with into an interactive presentation.
+
+In this step we will define several models of how data is presented within a frame.
+
+Last but not least we need to create several models of how the temporal
+and dependency relations between the different frames can be portrayed within Impress.js. one can be chosen to continue the main research question.
+
+-links.
+-arrows
+-if we have a maximum of 4 dependencies we could arrange it around the slide of interest
+- x axis for the narration of the lecture and primary path, y axis for continuation of the subject if it stretches multiple slides z axis for related content.
+	-> this takes away the overview idea but provides everything else. Maybe have keywords that show up to point to related topics if h (help) is pressed?
+
+-x and y axis for primary path. - branch out into subfield and show relatedness by lines
+
+-help could be an additional view that shows where on a relatedness map for the topic we are.
+
+-> always display a 'go back to...' link
+
+- metaphor z axix - going into depth
