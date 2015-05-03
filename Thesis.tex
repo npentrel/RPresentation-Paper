@@ -39,7 +39,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Naomi Pentrel $\bullet$ \href{mailto:n.pentrel@jacobs-university.de}{n.pentrel@jacobs-university.de} $\bullet$ \today} % Custom header text
+\fancyhead[C]{Naomi Pentrel $\cdot$ \href{mailto:n.pentrel@jacobs-university.de}{n.pentrel@jacobs-university.de} $\cdot$ \today} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -101,7 +101,7 @@
 %----------------------------------------------------------------------------------------
 % Macros
 %----------------------------------------------------------------------------------------
-\newcommand{\sys}{\textsc{Knowtation}\xspace}
+\newcommand{\sys}{\textsc{RPresentation}\xspace}
 
 %----------------------------------------------------------------------------------------
 
@@ -152,15 +152,7 @@
 
 \newpage
 \noindent
-  With my signature, I certify that this thesis has been written by me
-  using only the indicated resources and materials. Where I have
-  presented data and results, the data and results are complete,
-  genuine, and have been obtained by me unless otherwise acknowledged;
-  where my results derive from computer programs, these computer
-  programs have been written by me unless otherwise acknowledged. I
-  further confirm that this thesis has not been submitted, either in
-  part or as a whole, for any other academic degree at this or another
-  institution.
+With my signature, I certify that this thesis has been written by me using only the indicated resources and materials. Where I have presented data and results, the data and results are complete, genuine, and have been obtained by me unless otherwise acknowledged; where my results derive from computer programs, these computer programs have been written by me unless otherwise acknowledged. I further confirm that this thesis has not been submitted, either in part or as a whole, for any other academic degree at this or another institution.
 
   \vspace{20mm}
 
@@ -177,26 +169,30 @@
 
  \section*{Abstract}
  \label{sec:abstract}
-Visualization of knowledge is important to foster learning. To optimize the visualization of information and its interdependencies, we will focus on identifying ways to present information without loosing context. The following research takes an existing annotated corpus and presents its contents in an interactive way that allows the audience to see the dependencies of the covered topics. This form of presenting knowledge enable susers to interactively examine materials that are related to the topics the audience is interested in.\\
+Visualization of knowledge is important to foster learning. To optimize the visualization of information and its interdependencies, we focus on identifying ways to present information without loosing context. The following research takes an existing annotated corpus and presents its contents in an interactive way that allows the audience to see the dependencies of the covered topics. This form of presenting knowledge enables users to interactively examine materials that are related to the topics the audience is interested in.\\
 
 Taking the typical lecture as an example, it is often the case that, especially towards the end of the semester, students have difficulties remembering earlier topics. When a new topic is introduced it would be ideal to have a simple way to find dependencies and present students with an easy way to catch up.\\
 
-The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a content markup scheme for mathematical documents. Using OMDoc, this research presents different pieces of mathematical concepts in an interactive and connected way that allows students to learn the concepts the current topic depends on, should they need to refresh their memories. Along these lines it examines if and how spatial narrative and semantic closeness can be combined to foster learning while discussing several different schema that are ditaktisch wertvoll\ednote{check translation}.This approach to presenting learning materials changes how we interact with course material which will allow students to learn better. Ultimately, this research is applicable to almost all areas in which knowledge needs to be transferred.\\ 
+The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a content markup scheme for mathematical documents. Using OMDoc, the implemented system can present different pieces of mathematical concepts in an interactive and connected way that allows students to learn the concepts the current topic depends on, should they need to refresh their memories. Along these lines it examines if and how spatial narrative and semantic closeness can be combined to foster learning while discussing several different presentation schemata that are valuable for learning. This approach to presenting learning materials changes how we interact with course material which will allow students to learn better. Ultimately, this research is applicable to almost all areas in which knowledge needs to be transferred.\\ 
 
-  \newpage
-  \tableofcontents
+\newpage
+\tableofcontents
 
-  \clearpage
-  \pagenumbering{arabic}
+\clearpage
+\pagenumbering{arabic}
 
-  \section{Introduction}
-  \label{sec:introduction}
+\section{Introduction \& Motivation}
+\label{sec:introduction}
 
-%The intention behind the Semantic Web \cite{BernersLee:tsw98} is to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. There are interesting similar developments in other fields such as that of new presentation tools. These aim to enable the presentation of information in a more interconnected way that provides context. Both developments strive to connect pieces of information through adding context, to not just provide information, but rather knowledge.\\
+Normally we only have one path for a narration. That is true for books, movies, Facebook timelines, and also presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are, however, able to change the way presentations and their narratives work. In essence we should be able to make it possible to link content that logically belongs together, in other words, content that is semantically close. Through that it becomes possible for a presenter to seamlessly lead an audience, not along a predetermined path, but rather along the path that will allow the audience to make the most out of the presentation.\\
 
-%The concept behind these two developments is quite similar. Looking at the history of the WWW, specifically at the era of Web 2.0 \cite{Weller:npentrel14}, we notice that the web changed from an entity that only few people could add information to, to an entity that enables everyone to generate content. While this led to a lot of information on the web, it provided comparatively little knowledge. Here the processing of information to provide knowledge is lacking. Similarly, the existence of tools like Powerpoint have lead to virtually everyone creating presentations in this format. As everyone who has witnessed many of these presentations knows, these are often easily compared to blogs: they contain some pieces of information but often lack structure and context.\\
+This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in a more interconnected way that provides context and thus facilitates understanding and learning. \\
 
-%In essence, both issues stem from information being generated without enough context or structure. This makes the information hard to process by humans and/or machines. The Semantic Web hopes to change the former, whereas new, more visual presentation tools, using spatial narrative, provide a framework for the creation of presentations that are easier to process for humans and thus facilitate knowledge transfer. The work proposed here intends to provide a tool for automatic contextual visualization of information through the usage of spatial narrative and semantic closeness of information. It adapts some of the concepts of the semantic web on a smaller scale.\\
+As pointed out in \ednote{Do I need to cite my proposal?}, the concept behind the semantic web and changing presentations is quite similar. Looking at the history of the WWW, specifically at the era of Web 2.0 \cite{Weller:npentrel14}, we notice that the web changed from an entity that only few people could add information to, to an entity that enables everyone to generate content. While this led to a lot of information on the web, it provided comparatively little knowledge. Here the processing of information to provide knowledge is lacking. Similarly, the existence of tools like Powerpoint have lead to virtually everyone creating presentations in this format. As everyone who has witnessed many of these presentations knows, these are often easily compared to blogs: they contain some pieces of information but often lack structure and context.\\
+
+In essence, both issues stem from information being generated without enough context or structure. This makes the information hard to process by humans and/or machines. The Semantic Web hopes to change the former, whereas new, more visual presentation tools, using spatial narrative, provide a framework for the creation of presentations that are easier to process for humans and thus facilitate knowledge transfer.\\
+
+The work proposed here intends to provide a tool for automatic contextual visualization of information through the usage of spatial narrative and semantic closeness of information. It adapts some of the concepts of the semantic web on a smaller scale and connects information logically. The end product should be a system that creates presentations which allow users to choose their own narrative path where users can seamlessly look at related topics and brush up on half-forgotten topics.\\
 
 \begin{figure}[H]
         \centering
@@ -205,110 +201,106 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
                 \label{fig:dataknow}
 \end{figure}
 
-%One can define knowledge as "the information necessary to support intelligent reasoning." \cite{Kohlhase:Complog:base} That said, it is imperative to facilitate knowledge transfer. Figure \ref{fig:dataknow} (based on \cite{ProbstRaubRomhardt} and \cite{Kohlhase:Complog:base}) shows the path from mere data to knowledge, through adding context, such that we gain information. From information, we can then obtain knowledge through adding networking.\\
+One can define knowledge as "the information necessary to support intelligent reasoning." \cite{Kohlhase:Complog:base} That said, it is imperative to facilitate knowledge transfer. Figure \ref{fig:dataknow} (based on \cite{ProbstRaubRomhardt} and \cite{Kohlhase:Complog:base}) shows the path from mere data to knowledge, through adding context, such that we gain information. From information, we can then obtain knowledge through adding networking.\\
 
-%We want to go from merely displaying information to visualizing information by displaying the network/context of which a piece of information is part of. In this we will not try to semantically represent the meaning of the information that is shown but rather to show the network, i.e. the context the information is a part of. Specifically we want to examine whether spatial narrative can be combined with inherent semantic closeness of different pieces of information to facilitate knowledge transfer.\\
+We want to go from merely displaying information to allowing users to interact with information and choosing a learning path that suits them individually. The concept of information existing in networks and relatedness of information will be used to display not just the prescribed presentation path but also allow the user to deviate from the path to go back to topics that form the preliminary knowledge base for the current topic. Specifically this research examines whether spatial narrative can be combined with inherent semantic closeness of different pieces of information to facilitate knowledge transfer.\\
 
-%To achieve this goal, we intend to create a knowledge presentation system \sys to visually present information and its context (and networks). For this we will be using the OMDoc (Open Mathematical Documents) format which will provide us with an annotated set of documents. This will give us information about the semantic closeness of different pieces of information. Taking this as a starting point, we will visualize the dependencies of the information contained in these documents. Of course we will not visualize the dependencies as a simple graph but use the approach of spatial narrative with the help of a presentation framework such as Impress.js in order to show the current piece of information of interest within the network of dependent information.\\
+To achieve this goal, we intend to create a knowledge presentation system \sys to visually present information and its context (and networks). For this we will be using the OMDoc (Open Mathematical Documents) format which, given an annotated set of documents, will provide us with the necessary HTML-representation of the information. This will also allow us to extract information about the semantic closeness of different pieces of information. Taking this as a starting point, we will visualize the dependencies of the information contained in these documents. We will visualize the dependencies in a simple but effective approach with basic elements of spatial narrative using the presentation framework Impress.js. The final product will allow for an interactive way of viewing a presentation.\\
 
-\begin{figure}[H]
-        \centering
-        \begin{subfigure}[b]{0.47\textwidth}
-                \fbox{\includegraphics[width=\textwidth]{assets/Annie1}}
-			   \caption{Simple, explanatory slide}
-                \label{fig:Annie-presentation-teacher}
-        \end{subfigure}%
-        \qquad %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-          %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.47\textwidth}
-                \fbox{\includegraphics[width=\textwidth]{assets/Annie2}}
-		  \caption{Information dependencies}
-                \label{fig:Annie-presentation-information}
-        \end{subfigure}
-        \caption{Pythagorean Theorem}\label{fig:PythagoreanTheorem}
-\end{figure}
+\ednote{readd slide images}
+To exemplify this: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem (see figure %\ref{fig:Annie-presentation-teacher}
+). She is given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is. This shows the dependencies of different pieces of information (see figure %\ref{fig:Annie-presentation-information}
+), i.e. the Pythagorean theorem depends on knowledge of squares, triangles, lengths, area calculation, and right angles. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.\\
 
-%To exemplify this: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem (see figure \ref{fig:Annie-presentation-teacher}). She is given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is. This shows the dependencies of different pieces of information (see figure \ref{fig:Annie-presentation-information}), i.e. the Pythagorean theorem depends on knowledge of squares, triangles, lengths, area calculation, and right angles. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.\\
+After this contrived story, it is left to the reader to think about examples in his or her own life where he or she would have appreciated having the context of the information he or she was learning at the time. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole. \\
 
-%After this contrived story, it is left to the reader to think about examples in his or her own life where he or she would have appreciated having the context of the information he or she was learning at the time. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole. \\
+
+
+\section{Research Questions}
+
+As we have pointed out in \autoref{sec:introduction}, presenting information in an effective way is essential to foster learning. This research will answer the following basic questions:
+
+\begin{itemize}
+\item How can we combine spatial narrative and semantic closeness of information to improve the presentation of information?
+\item Which ways of visualizing information dependencies are there?
+\end{itemize}
+
+\section{Related Work}
+\label{sec:relatedworks}
+
+When searching for related work there is little to be found. Some works have focused on making teaching more effective by providing students with all lecture materials directly after class which has been found to have a positive influence on learning \cite{DBLP:dblp_journals/tochi/BrothertonA04}. For this systems that can automatically capture and index classroom events as videos and images have been devised \cite{indexedclass:npentrel14}. Some of these systems use temporal information \cite{DBLP:dblp_journals/isci/ChungS97} to show multiple resources in sync as they appeared in the lecture. However, while this approach also aims at improving the learning experience, it does not in any way link content semantically based on dependencies or allow for more interactive presentations through combining semantic closeness and spatial narrative.\\
+
+Another piece of research has focused on the automatic generation of mind maps from text \cite{abdeen2009direct}. The software they developed uses Semantic Web technologies to create mind maps that show the relations between nodes that represent different objects. While the research at hand also intends to show the relation between pieces of information, it does it on a different level. For instance, it can represent that Shakespeare lived in Stratford but it would not be able to show the dependencies of mathematical concepts as it is limited to representing nodes in single words within the mind map. We, on the other hand, will focus on exactly that, i.e. dependencies and the creation of interactive presentations.\\
+
 
 \section{Preliminaries}
 \label{sec:preliminaries}
 
-As we have pointed out in the \ref{sec:introduction}, presenting information in an efficient way is essential in order for any learning to occur. In the following we will examine some prerequisite knowledge. By engaging with our example presentation we will show how Annie's teacher can transfer knowledge more effectively.\\
+In the following we will examine some prerequisite knowledge. By engaging with our example presentation we will show how Annie's teacher can transfer knowledge more effectively.\\
 
 \subsection{Terminology}
 \label{sec:terminology}
 
 Before discussing the buzzword knowledge transfer further, we will first engage in the conceptualization of the terms \textit{information}, \textit{knowledge}, and \textit{context}.\\
 
-%The Oxford Dictionary of English \cite{OED:npentrel14} defines \textit{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling figure \ref{fig:PythagoreanTheorem} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textit{knowledge}, we will use the definition in Merriam-Webster's thesaurus \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". This \textit{association} is of special importance for the current project. We will define it as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see figure \ref{fig:Annie-presentation-information}).\\ 
+The Oxford Dictionary of English \cite{OED:npentrel14} defines \textit{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling figure %\ref{fig:PythagoreanTheorem}
+\ednote{readd figures}
+ and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textit{knowledge}, we will use the definition in Merriam-Webster's thesaurus \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". This \textit{association} is of special importance for the current project. We will define it as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see figure %\ref{fig:Annie-presentation-information}
+ ).\\ 
 
-\ednote{In current presentations there is only one context. By adding more levels of context we can allow viewers to understand the subject on a deeper level.}
+According to the Merriam-Webster thesaurus \cite{Webster:npentrel14}, \textit{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". Context can be easily explained with the example of Annie learning the Pythagorean theorem. The \textit{information} about the calculation of the length of the third side of the triangle is only helpful for Annie within the \textit{context} of the pieces of \textit{information} this depends on. Without this \textit{context}, Annie cannot understand the theorem. Figure \ref{fig:Annie-context} illustrates the context by showing the dependencies of the theorem, i.e. calculating squares, area calculation, triangles, and right angles. It semiotically represents relatedness of \textit{concepts} by linking the different \textit{concepts} with lines, thus creating \textit{associations} between the different pieces of \textit{information}. We will be using the terms \textit{context} and \textit{network} almost interchangeably and depend on the reader to have the right intuition about these terms.\\
 
-
-%According to the Merriam-Webster thesaurus \cite{Webster:npentrel14}, \textit{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". Context can be easily explained with the example of Annie learning the Pythagorean theorem. The \textit{information} about the calculation of the length of the third side of the triangle is only helpful for Annie within the \textit{context} of the pieces of \textit{information} this depends on. Without this \textit{context}, Annie cannot understand the theorem. Figure \ref{fig:Annie-context} illustrates the context by showing the dependencies of the theorem, i.e. calculating squares, area calculation, triangles, and right angles. It semiotically represents relatedness of \textit{concepts} by linking the different \textit{concepts} with lines, thus creating \textit{associations} between the different pieces of \textit{information}. We will be using the terms \textit{context} and \textit{network} almost interchangeably and depend on the reader to have the right intuition about these terms.\\
-\newpage
 \subsection{OMDoc}
 \label{sec:OMDoc}
 
-%OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OMDoc1.2} is an XML-based system that provides a data model and a format for content markup for mathematical documents. As such it is a semi-formal domain ontology. An ontology provides the framework for creating a semantic structure. It formally describes concepts within a specified area. A semi-formal ontology \cite{Sheth:npentrel14} is an ontology where formality of semantics is not a given. The semi-formal ontology can consist of partial or incomplete knowledge. \\
+OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OMDoc1.2} is an XML-based system that provides a data model and a format for content markup for mathematical documents. As such it is a semi-formal domain ontology. An ontology provides the framework for creating a semantic structure. It formally describes concepts within a specified area. A semi-formal ontology \cite{Sheth:npentrel14} is an ontology where formality of semantics is not a given. The semi-formal ontology can consist of partial or incomplete knowledge. \\
 
-%If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
-
+If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
 
 %In \textit{A mathematical approach to ontology authoring and documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. In figure \ref{fig:Annie-semantic-closeness}, this temporal information is represented through the arrows that connect the topics as the lecturer intends to teach them. Through the annotations within the document, we can establish levels of semantic closeness for different mathematical objects. These levels of semantic closeness are represented through the different sizes of the frames of the related information. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently through combining spatial narrative and semantic closeness of content. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
-\newpage
+
 \subsection{Status of Information within the (Dis)Course}
 \label{sec:infostatus}
 
-%In linguistics the concept of information packaging \cite{CambridgeGrammar:npentrel14} is well known and widely discussed. Within the study of \textit{information structure}, one discriminates between \textit{familiar/ old} and \textit{unfamiliar/ new} information. \textit{Familiar/ old} information is shared by speaker and addressee, i.e. it is in the intersection of knowledge of student and teacher. \textit{New/ unfamiliar} information is not in the shared knowledge base or the content commons \cite{CNX:whitepaper}. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.
+In linguistics the concept of information packaging \cite{CambridgeGrammar:npentrel14} is well known and widely discussed. Within the study of \textit{information structure}, one discriminates between \textit{familiar/ old} and \textit{unfamiliar/ new} information. \textit{Familiar/ old} information is shared by speaker and addressee, i.e. it is in the intersection of knowledge of student and teacher. \textit{New/ unfamiliar} information is not in the shared knowledge base or the content commons \cite{CNX:whitepaper}. In addition one distinguishes information that is old or new with respect to the discourse or with respect to the addressee.
 
 \begin{center}
 \textit{"My sister went to the circus the other day; \underline{she} said \underline{it} was brilliant."}\\
 \end{center}
 
-%In this example in the first part of the sentence, \textit{discourse-new} information pertaining to my sister and to a circus are introduced. In the second part, the underlined parts are considered \textit{discourse-old} since they have already been introduced. These terms are coined to refer to the accessibility of the information to participants of the discourse \cite{Newness:npentrel14}. The accessibility depends on the relative \textit{newness}, i.e. recency of mention, of this information.\\
+In this example in the first part of the sentence, \textit{discourse-new} information pertaining to my sister and to a circus are introduced. In the second part, the underlined parts are considered \textit{discourse-old} since they have already been introduced. These terms are coined to refer to the accessibility of the information to participants of the discourse \cite{Newness:npentrel14}. The accessibility depends on the relative \textit{newness}, i.e. recency of mention, of this information.\\
 
-%These concepts can be adapted to the situation of teaching mathematics or computer science to students in a class. In general we will call the information that the speaker is sharing with the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
+These concepts can be adapted to the situation of teaching mathematics or computer science to students in a class. In general we will call the information that the speaker is sharing with the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
 
+Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. This is marked orange in figure \ref{fig:Annie-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course. \ednote{check example and later on refer to this with the different levels.} \\
 
-%Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. This is marked orange in figure \ref{fig:Annie-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course. \\
-\newpage
 \subsection{Different Representations of Information}
 \label{sec:inforep}
-
+\ednote{Needs a lot of changing. Maybe it won't fit anymore at all.}
 %Information can be (re)presented in different ways: text, visuals, images, etc. Actually everything that is in the world around us conveys information to us. A sign of a women on a door conveys to most of us that this is a bathroom for women. The information graphs that OMDoc provides us with could also be simply visualized as a tree of information. But this would not be very engaging and it would be hard for a person to process. Similarly, traditional slide-based presentations do not provide a very engaging or interactive form of presenting information. \\  
 
 %In the proposed research we will focus less on text, tree-like structures, metaphors, or semiotics, like the sign of a woman on a door. We will rather focus on spatial narrative and placing content, that is inherently related, visually close together since this conveys the meaning that these objects belong together.\\
 
-\begin{figure}[H]
-        \centering
-        \begin{subfigure}[b]{0.3\textwidth}
-                \fbox{\includegraphics[width=\textwidth]{assets/size-of-objects}}
-                \caption{Importance of Objects}
-                \label{fig:imp_objects}
-        \end{subfigure}%
-        \qquad %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-          %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3\textwidth}
-                \fbox{\includegraphics[width=\textwidth]{assets/relation}}
-                \caption{Relation of Objects}
-                \label{fig:rel_objects}
-        \end{subfigure}
-        \caption{Conveying Visual Meaning}\label{fig:Objects}
-\end{figure}
+%\begin{figure}[H]
+%        \centering
+%        \begin{subfigure}[b]{0.3\textwidth}
+%                \fbox{\includegraphics[width=\textwidth]{assets/size-of-objects}}
+%                \caption{Importance of Objects}
+%                \label{fig:imp_objects}
+%        \end{subfigure}%
+%        \qquad %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+%          %(or a blank line to force the subfigure onto a new line)
+%        \begin{subfigure}[b]{0.3\textwidth}
+%                \fbox{\includegraphics[width=\textwidth]{assets/relation}}
+%                \caption{Relation of Objects}
+%                \label{fig:rel_objects}
+%        \end{subfigure}
+%        \caption{Conveying Visual Meaning}\label{fig:Objects}
+%\end{figure}
 
 %Figure \ref{fig:Objects} above clarifies what we mean by meaningful representations. Figure \ref{fig:imp_objects} shows how size conveys importance. It is well known that people tend to identify the circle on the right as most important, the ones on the left are less important due to their relative size. Considering the relation of the three circles most people say that the two circles on the left belong together whereas the circle on the right is clearly something different. When shown Figure \ref{fig:rel_objects} they quickly change their mind and say that they are now actually related.\\
 
 %These perceptions can be used to convey meaning visually. For the example of Annie this means that the \textit{course-new} information would likely be important and therefore bigger than the \textit{content-old} or \textit{content-ancient} information. Then, it depends on how important the topics related to this topic are and we will use different sizes to differentiate between more important and less important topics. Similarly, we will employ visual relations as in figure \ref{fig:rel_objects} to show related content. Considering figure \ref{fig:Annie-ancient}, we already have different sizes based on the relatedness of the concepts. Adding on to that in figure \ref{fig:Annie-relsize}, we have nodes that represent concepts that are very important for the course, here the next topic, represented as bigger. Thus we will provide Annie with a meaningful representation of the information taken from the information graph. In turn this should allow Annie to absorb information about importance and relations instinctively which improves knowledge transfer.\\
-
-\begin{figure}[H]
-        \centering
-		    \fbox{\includegraphics[width=0.6\textwidth]{assets/Annie4size}}
-  \caption{Relative size and relations} 
-  \label{fig:Annie-relsize}
-\end{figure}
 
 \subsection{Primitives}
 \label{sec:primitives}
@@ -322,7 +314,7 @@ Before discussing the buzzword knowledge transfer further, we will first engage 
 %Since Impress.js provides us with different representation options as outlined in section \ref{sec:inforep}, we can make use of relative size and visual closeness to additionally convey importance, relatedness, and even accessibility of information. Additionally, the connections between different frames do not just connect content that depends on one another but also content that has a temporal connection, similar to slides following one after another. As such the temporal associations show the path that a normal lecture would take. The dependencies that are visualized around each frame allow for interactiveness.\\
 
 %The exact layout of the frames and the best visualization of the relations between the frames is to be determined but figure \ref{fig:Annie-relsize} can be seen as a first draft. Ideally the added expressiveness that Impress.js offers should lead to Annie having the information about the Pythagorean theorem on a slide-like structure, while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
-\newpage
+
 \subsection{Spatial Narrative}
 \label{sec:spatialnarrative}
 
@@ -333,10 +325,13 @@ Before discussing the buzzword knowledge transfer further, we will first engage 
 %The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \cite{Storytelling:npentrel14}.\\
 
 %In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected (see figure \ref{fig:Annie-guided}). It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
-\newpage
-\subsection{Impress.js}
 
-The jQuery plugin Impress.js was created by bartez. It works jointly with HTML and CSS3 which makes it highly customizable but unfortunately renders it unsupported by older browsers. The presentation data is entered in the html file; each slide in its own div with data-x, data-y, and data-z attributes to change the position of the slide. The data-x and data-y axis change the position of the element according to the normal x- and y-axes. The data-z attribute changes the closeness of the elements along the z axis.\\
+\subsection{Impress.js}
+\label{sec:Impressjs}
+
+\ednote{here or rather in 5.3?}
+
+For the implementation of \sys, we chose to use Impress.js, as applications like Prezi do not provide us with an Application Programming Interface (API) that allows the generation of whole presentations. The open-source presentation framework \textbf{Impress.js} \cite{JSImpress:npentrel14} was created by Bartek Szopka's. It combines HTML and CSS3 which makes it highly customizable but unfortunately renders it unsupported by older browsers. The presentation data is entered in the html file; each slide in its own div with data-x, data-y, and data-z attributes to change the position of the slide. The data-x and data-y axis change the position of the element according to the normal x- and y-axes. The data-z attribute changes the closeness of the elements along the z axis.\\
 \\
 \definecolor{bg}{rgb}{0.95,0.95,0.95}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
@@ -345,176 +340,134 @@ The jQuery plugin Impress.js was created by bartez. It works jointly with HTML a
 </div>
 \end{minted}
 
-Apart from these basic attributes, Impress.js offers the data-scale attribute to scale content, making slides appear bigger or smaller, and the data-rotate attribute which rotates slides in 3 dimensions using data-rotate-x, data-rotate-y, and data-rotate-z.\ednote{show robotics slide of 3d rotations - this allows the dependency timeline to go into the third dimension!!}\\
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.28 \textwidth]{assets/rotate}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Rotations}
+  \label{fig:Rotate}
+\vspace{-10pt}
+\end{wrapfigure}
+
+Apart from these basic attributes, Impress.js offers the data-scale attribute to scale content, making slides appear bigger or smaller, and the data-rotate attribute which rotates slides in 3 dimensions using data-rotate-x, data-rotate-y, and data-rotate-z. As shown in \autoref{fig:Rotate} this allows the dependency graph to go into the third dimension.\\
 
 In the following code snippets, a few other basic functionalities we will be using are explained.\ednote{cite http://www.andismith.com/blog/2012/01/impress-with-impress/} 
 The opacity attribute allows us to discriminate between active and inactive slides which will later on allow us to hide content so as to not throw too much information at a user. Adding an overview can be accomplished with the last past of the CSS snippet and the html snippet below that.\\
+
+\begin{minted}[linenos=true, bgcolor=bg]{C}
+.step { opacity: 0.2; }
+.step.active { opacity: 1; }
+.step-overview .step { opacity: 1; cursor: pointer; }
+\end{minted}
+\vspace*{2mm}\\
+\begin{minted}[linenos=true, bgcolor=bg]{C}
+<div id="overview" class="step" data-x="8000" data-y="1000" data-scale="10">
+</div>
+\end{minted}
 \\
-
-\begin{minted}[linenos=true, bgcolor=bg]{C}
-.step {
-  opacity: 0.2;
-}
-
-.step.active {
-  opacity: 1;
-}
-
-.step-overview .step {
-  opacity: 1;
-  cursor: pointer;
-}
-
-\end{minted}
-
-\begin{minted}[linenos=true, bgcolor=bg]{C}
-<div id="overview" class="step" data-x="600" data-y="300" data-scale="2"></div>
-\end{minted}
+To link back to a slide, slides are accessible via IDs. The slide with the ID "conclusion" will thus be accessible by appending "\#/conclusion" to the end of the URL.
 
 
-
-\ednote{check no cite} %http://www.1stwebdesigner.com/creating-stunning-visualizations-with-impress-js/#/slide1}
-
+\ednote{check link} %http://www.1stwebdesigner.com/creating-stunning-visualizations-with-impress-js/#/slide1}
 %http://www.andismith.com/blog/2012/01/impress-with-impress/
 
-Linking to a slide
-%For example, a slide with an ID of "statistics" will be accessible by appending "#/statistics" to the end of the URL.
-
-
-presenter notes:
-%https://github.com/twenty-seven/im_present
-
-progress bar:
+%progress bar:
 %https://github.com/m42e/impress.js-progress
 
 
-Read the book
-Rakhitha Nimesh Ratnayake
-Building Impressive Presentations with impress.js
+%Read the book
+%Rakhitha Nimesh Ratnayake
+%Building Impressive Presentations with impress.js
 
 
-\subsection{Related Work}
-\label{sec:relatedworks}
-
-%When searching for related works there is little to be found. Some works have focused on making teaching more effective by providing students with all lecture materials directly after class which has been found to have a positive influence on learning \cite{DBLP:dblp_journals/tochi/BrothertonA04}. For this systems that can automatically capture and index classroom events as videos and images have been devised \cite{indexedclass:npentrel14}. Some of these systems use temporal information \cite{DBLP:dblp_journals/isci/ChungS97} to show multiple resources in sync as they appeared in the lecture. However, while this approach also aims at improving the learning experience, it does not in any way link content semantically based on dependencies or allow for more interactive presentations through combining semantic closeness and spatial narrative.\\
-
-%Another piece of research has focused on the automatic generation of mind maps from text \cite{abdeen2009direct}. The software they developed uses Semantic Web technologies to create mind maps that show the relations between nodes that represent different objects. While the proposed research also intends to show the relation between pieces of information, it does it on a different level. For instance, it can represent that Shakespeare lived in Stratford but it would not be able to show the dependencies of mathematical concepts as it is limited to representing nodes in single words within the mind map. We, on the other hand, will focus on exactly that, i.e. dependencies and the creation of interactive presentations.\\
+\section{Towards a More Effective Presentation Format}
+\label{sec:TowardsAMoreEffectivePresentationFormat}
 
 
-\section{Work Plan}
-\label{sec:workplan}
-
-\subsection{WP1: Understanding the API of Impress.js}
-\label{sec:wp1}
-
-The first step to implementing \sys is to understand the tool we want to represent the knowledge in later. Since Prezi at the current time does not have an Application Programming Interface (API) that would allow for the generation of a whole presentation without using the editor, this research will employ another tool that is inspired by the idea behind Prezi. Bartek Szopka's \textbf{Impress.js} \cite{JSImpress:npentrel14} is an open-source presentation framework which is based on CSS3 transforms and transitions.\\
-
-Impress.js gives us all the necessary primitives that were outlined in section \ref{sec:primitives}. Therefore it will give us the perfect environment to transform the XML data that OMDoc provides us with into an interactive presentation. In this step we will define several models of how data is presented within a frame. Next we will automate that the different frames have different sizes according to the importance of the presented information (see section \ref{sec:inforep}). Last but not least we need to create several models of how the temporal and dependency relations between the different frames can be portrayed within Impress.js.\\
-
-After finishing this part we should have several different presentation styles from which one can be chosen to continue the main research question.\\ 
-
-\subsection{WP2: Creation of Ordered Information Graphs using OMDoc}
+\subsection{Creation of Ordered Information Graphs using OMDoc}
 \label{sec:wp2}
 
-The idea is to use the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} as an experiment. The General Computer Science Lecture notes are an annotated set of documents. Using OMDoc, we will create an XML information graph out of the annotated set of documents.\\
+With the OMDoc framework and its tools it is possible to write down a paper in stex. From this paper we can then, in theory, seamlessly create slides both in pdf format as well as in xhtml format. Using a test paper that is supposed to explain the pythagorean theorem and related topics, we can thus create an XML information graph out of the annotated set of documents.\\
 
-The information graph OMDoc provides us with should be topologically sorted based on dependencies of knowledge. This will allow us to assign values representing the status of information within the course as outlined in section \ref{sec:infostatus}. It will also allow us to create values for the relative semantic closeness of information which will be needed for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
+\begin{minted}[linenos=true, bgcolor=bg]{C}
+theory path/to/file?theory_name
+Includes path/to/file path/to/dependent/file?theory_name
+\end{minted}
 
-Each piece of information needs to also have an importance level assigned to it (see section \ref{sec:inforep}). This ought to be determined by counting how often the concept is used and how important it is for the student to grasp it.\\
+The system itself outputs information about dependencies of topics as shown above. Using the \sys \ednote{should I cite my github?} tool we created for this research project, it is possible to get the order of the slides as well as dependencies. The order of information in certain topics will be referred to as levels. If we look at the pythagorean theorem and then realize we lack knowledge the concept of squares we could then read about that topic by going to that resource. From there on we are on a different \textit{level} which we can follow and dig deeper into until we understand squares.\\
+\ednote{draw the whole graph and add here}
+\ednote{add somewhere: By adding more levels of context we can allow viewers to understand the subject on a deeper level.}
 
-\subsection{WP3: Combination of OMDoc and Spatial Narration}
-\label{sec:wp3}
+%narrative and mroe info
 
-Once we have an ordered information graph with all the additional attribute values mentioned in section \ref{sec:wp2}, we will create the knowledge presentation system \sys. \sys will visualize the information from the graph including all the attributes we added. The outcome of this part should be a general \sys presentation model, that implements the models according to the models chosen in section \ref{sec:wp1}. We will then use \sys to visualize information in WP4.\\
+% for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
 
-\subsection{WP4: Implementation of OMDoc Examples in Impress.js}
+\subsubsection{Narrative Paths}
+\subsubsection{Levels}
+
+\subsection{Using Impress.js to Combine OMDoc and Spatial Narration}
+\label{sec:wp1}
+
+With the information about the order and the dependencies of information within the paper, \sys automatically creates a presentation by parsing the XHTML the created from the OMDocs which is then parsed and added to a presentation file. Each xhtml file represents its own slide and is hence put into its own div as shown in section \ref{sec:Impressjs}. The primary narrative that the presenter wants to follow is formed by a horizontal stream of slides. \ednote{add picture of this}\\
+
+This horizontal stream of slides is achieved by giving the slides incremental data-x values in the attributes. If a slide has dependencies then these will be added as slides below the slide itself. This, in turn, is achieved by keeping the data-x value but increasing the data-y value. Thus users can now simply press down and explore all the dependent information.\\ 
+
+If they, while browsing through these different levels, realize that they need to refresh their memory or learn more about any of the dependent information they can enter that level. The presentation will then continue on that level and give all the slides from that topic in the correct order. Once the user has gone through this short excursion, he or she can return to the initial slide and resume the normal narrative path. These modular excursions are included in the presentation in 3D by making use of CSS3-transitions. Thus when the user enters an excursion a 90\degree rotation around the x-axis occurs and the user can now follow that story line.\\
+
+
+%Impress.js gives us all the necessary primitives that were outlined in section \ref{sec:primitives}. Therefore it will give us the perfect environment to transform the XML data that OMDoc provides us with into an interactive presentation. In this step we will define several models of how data is presented within a frame. Next we will automate that the different frames have different sizes according to the importance of the presented information (see section \ref{sec:inforep}). Last but not least we need to create several models of how the temporal and dependency relations between the different frames can be portrayed within Impress.js.\\
+
+%Once we have an ordered information graph with all the additional attribute values mentioned in section \ref{sec:wp2}, we will create the knowledge presentation system \sys. \sys will visualize the information from the graph including all the attributes we added. The outcome of this part should be a general \sys presentation model, that implements the models according to the models chosen in section \ref{sec:wp1}. We will then use \sys to visualize information in WP4.\\
+
+\subsection{Implementation of \sys}
 \label{sec:wp4}
+\ednote{Do I need this or is it okay if I explain it on the go as I do so far?}
 
-\sys will take the ordered information graph of the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} with all the additional attributes we generated in \ref{sec:wp2} and transform it into a spatial presentation using Impress.js. This will be done by parsing the generated XML and creating the markup that Impress.js is using to create the chosen presentation models from section \ref{sec:wp1}. After this work package, we should have one (or more) presentations of the topics covered in the General Computer Science Lecture notes.\\
+%\sys will take the ordered information graph of the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} with all the additional attributes we generated in \ref{sec:wp2} and transform it into a spatial presentation using Impress.js. This will be done by parsing the generated XML and creating the markup that Impress.js is using to create the chosen presentation models from section \ref{sec:wp1}. After this work package, we should have one (or more) presentations of the topics covered in the General Computer Science Lecture notes.\\
 
-It is a stretch goal for \sys to create or change these presentations on the fly as needed by the audience. The specific use case would be when Annie asks her teacher about right angles. The teacher would then just have to click on right angles and \sys would create a short guided tour through the topic of right angles before returning to the subject of the Pythagorean theorem.\\
+%It is a stretch goal for \sys to create or change these presentations on the fly as needed by the audience. The specific use case would be when Annie asks her teacher about right angles. The teacher would then just have to click on right angles and \sys would create a short guided tour through the topic of right angles before returning to the subject of the Pythagorean theorem.\\
 
-\subsection{WP5: Qualitative Analysis and Evaluation of Findings}
-\label{sec:wp5}
 
-Once we have examples, we will undertake a qualitative analysis of the visualization produced by the implemented knowledge presentation system \sys . To achieve this, we will use the newly created examples from \ref{sec:wp4} and the general General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base}. We will have two groups: a control group that is shown the lecture notes and a test group that is shown the new, interactive Impress.js presentations. Afterwards both groups have to answer a set of questions. In addition, we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria (see section \ref{sec:evalcriteria}).\\
 
-\section{Evaluation Criteria}
+\section{Evaluation}
 \label{sec:evalcriteria}
 
-The evaluation criteria for the research at hand are, on the one hand, systematic and, on the other hand, cognitive. Systematically, we will be evaluating two main challenges: First we will evaluate whether the knowledge presentation system \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of \sys. Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and whether this could be generated on the fly within seconds.\\
+\subsection{General Evaluation}
 
-Cognitively, we will be exploring the space of information systems. Therefore we will be examining whether the developed system provides a better system for knowledge transfer. For this a qualitative analysis will be conducted as outlined in section \ref{sec:wp5}. Based on that we will be able to understand the positive and possibly negative effects of the combination of Spatial Narrative and OMDoc within \sys .\\
+\subsection{Shortcomings and Problems with the System}
 
-Furthermore, with the above evaluation, we want to answer the main question of this proposed research, namely how and whether spatial narrative can be combined with inherent semantic closeness to facilitate and improve knowledge transfer.\\
+%Once we have examples, we will undertake a qualitative analysis of the visualization produced by the implemented knowledge presentation system \sys . To achieve this, we will use the newly created examples from \ref{sec:wp4} and the general General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base}. We will have two groups: a control group that is shown the lecture notes and a test group that is shown the new, interactive Impress.js presentations. Afterwards both groups have to answer a set of questions. In addition, we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria (see section \ref{sec:evalcriteria}).\\
 
-If \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers which other parameters need to be kept in mind in order to succeed in future.\\
+%The evaluation criteria for the research at hand are, on the one hand, systematic and, on the other hand, cognitive. Systematically, we will be evaluating two main challenges: First we will evaluate whether the knowledge presentation system \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of \sys. Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and whether this could be generated on the fly within seconds.\\
 
-A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. Another stretch goal is for \sys to create or change presentations on the fly as outlined in \ref{sec:wp4}. It is not the goal of this research that users should be able to reconstruct the original information graph from the presentation.\\
-\newpage
-\section{Timeline}
-\label{sec:timeline}
+%Cognitively, we will be exploring the space of information systems. Therefore we will be examining whether the developed system provides a better system for knowledge transfer. For this a qualitative analysis will be conducted as outlined in section \ref{sec:wp5}. Based on that we will be able to understand the positive and possibly negative effects of the combination of Spatial Narrative and OMDoc within \sys .\\
 
-\begin{figure}[H]
-\begin{center}
-\begin{ganttchart}[y unit title=0.4cm,
-y unit chart=0.5cm,
-vgrid,hgrid, 
-title label anchor/.style={below=-1.6ex},
-title left shift=.05,
-title right shift=-.05,
-title height=1,
-bar/.style={fill=gray!50},
-incomplete/.style={fill=white},
-progress label text={},
-bar height=0.7,
-group right shift=0,
-group top shift=.6,
-group height=.3,
-group peaks={}{}{.2}]{24}
-%labels
-\gantttitle{Proposed Timeline}{24} \\
-\gantttitle{December}{4} 
-\gantttitle{January}{4} 
-\gantttitle{February}{4} 
-\gantttitle{March}{4} 
-\gantttitle{April}{4} 
-\gantttitle{May}{4} \\
-%tasks
-\ganttbar{\ref{sec:wp1} WP1}{2}{8} \\
-\ganttbar{\ref{sec:wp2} WP2}{9}{12} \\
-\ganttbar{\ref{sec:wp3} WP3}{11}{14} \\
-\ganttbar{\ref{sec:wp4} WP4}{15}{18}\\
-\ganttbar{\ref{sec:wp5} WP5}{19}{21.5}
-%relations 
-\ganttlink{elem0}{elem1} 
-\ganttlink{elem1}{elem2} 
-\ganttlink{elem2}{elem3} 
-\ganttlink{elem3}{elem4} 
-\end{ganttchart}
-\end{center}
-\caption{Gantt Chart}
-\end{figure}
+%Furthermore, with the above evaluation, we want to answer the main question of this proposed research, namely how and whether spatial narrative can be combined with inherent semantic closeness to facilitate and improve knowledge transfer.\\
 
-\textbf{Milestones}
-\begin{itemize}
-\item \textbf{Until February 1st}: \nameref{sec:wp1}
-\item \textbf{Until March 1st}: \nameref{sec:wp2}
-\item \textbf{Until March 15th}: \nameref{sec:wp3}
-\item \textbf{Until April 15th}:\nameref{sec:wp4}
-\item \textbf{Until May 10th}: \nameref{sec:wp5}
-\end{itemize}
+%If \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers which other parameters need to be kept in mind in order to succeed in future.\\
 
-  \section{Conclusion}
-  \label{sec:conclusion}
+%A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. Another stretch goal is for \sys to create or change presentations on the fly as outlined in \ref{sec:wp4}. It is not the goal of this research that users should be able to reconstruct the original information graph from the presentation.\\
 
-The proposed research will evaluate if and how spatial narrative can be combined with semantic closeness to form visual presentations that will facilitate knowledge transfer. The knowledge presentation systen \sys that we will implement will allow us to automatically create these visual presentations from the OMDoc format. Through using semantic closeness the presentations can be created with meaningful visual connections between information. Similarly to how the Semantic Web tries to add relations between different resources for machines, \sys will add meaningful relations between course content.\\
+\section{Further Developments}
 
-Going back to our contrived example, \sys will provide Annie's teacher with a tool that allows her to use her normal lecture material in a more interactive way. Thus when the teacher realizes that Annie needs to revise previous material, the teacher can easily go to that material and provide Annie with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
+\ednote{e.g. need to test this via qualitative analysis}
 
-But not only will \sys make courses more engaging, interactive, and easier to follow, it will also lead to better knowledge absorption because students learn the concepts and in addition intuitively understand how they relate to one another. This allows faster revision of material and facilitates studying without a teacher present.\\
 
-In essence, this proposed research will be beneficial for education and knowledge transfer. It aims to make the creation of engaging and interactive presentations simple and fast for current users of OMDoc. Should this research prove successful it could be adapted for other areas. In the future creating a meaningful, interactive presentation might be just a matter of uploading an annotated document.
+\section{Conclusion}
+\label{sec:conclusion}
+
+%The proposed research will evaluate if and how spatial narrative can be combined with semantic closeness to form visual presentations that will facilitate knowledge transfer. The knowledge presentation systen \sys that we will implement will allow us to automatically create these visual presentations from the OMDoc format. Through using semantic closeness the presentations can be created with meaningful visual connections between information. Similarly to how the Semantic Web tries to add relations between different resources for machines, \sys will add meaningful relations between course content.\\
+
+%Going back to our contrived example, \sys will provide Annie's teacher with a tool that allows her to use her normal lecture material in a more interactive way. Thus when the teacher realizes that Annie needs to revise previous material, the teacher can easily go to that material and provide Annie with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
+
+%But not only will \sys make courses more engaging, interactive, and easier to follow, it will also lead to better knowledge absorption because students learn the concepts and in addition intuitively understand how they relate to one another. This allows faster revision of material and facilitates studying without a teacher present.\\
+
+%In essence, this proposed research will be beneficial for education and knowledge transfer. It aims to make the creation of engaging and interactive presentations simple and fast for current users of OMDoc. Should this research prove successful it could be adapted for other areas. In the future creating a meaningful, interactive presentation might be just a matter of uploading an annotated document.
 
 \newpage
 \section{References}
