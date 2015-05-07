@@ -43,8 +43,11 @@
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 \usepackage{graphicx}
 \usepackage{wrapfig}
-
+\usepackage[]{natbib}
 \usepackage{tocloft}
+
+\def\stex{\texorpdfstring{\raisebox{-.5ex}S\kern-.5ex\TeX}{sTeX}\xspace}
+\def\sTeX{\stex}
 
 %\usepackage{csquotes}
 %\MakeOuterQuote{"}
@@ -183,12 +186,14 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 
 \section{Introduction \& Motivation}
 \label{sec:introduction}
+\ednote{shorten}
 
-Normally we only have one path for a narration. That is true for books, movies, Facebook timelines, and also presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are, however, able to change the way presentations and their narratives work. In essence we should be able to make it possible to link content that logically belongs together, in other words, content that is semantically close. Through that it becomes possible for a presenter to seamlessly lead an audience, not along a predetermined path, but rather along the path that will allow the audience to make the most out of the presentation.\\
+Normally we only have one path for a narration. That is true for books, movies, Facebook timelines, and also slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are, however, able to change the way presentations and their narratives work. In essence we should be able to make it possible to link content that logically belongs together, in other words, content that is semantically close. Through that it becomes possible for a presenter to seamlessly lead an audience, not along a predetermined path, but rather along the path that will allow the audience to make the most out of the presentation.\\
 
 This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in a more interconnected way that provides context and thus facilitates understanding and learning. \\
 
-As pointed out in \ednote{Do I need to cite my proposal?}, the concept behind the semantic web and changing presentations is quite similar. Looking at the history of the WWW, specifically at the era of Web 2.0 \cite{Weller:npentrel14}, we notice that the web changed from an entity that only few people could add information to, to an entity that enables everyone to generate content. While this led to a lot of information on the web, it provided comparatively little knowledge. Here the processing of information to provide knowledge is lacking. Similarly, the existence of tools like Powerpoint have lead to virtually everyone creating presentations in this format. As everyone who has witnessed many of these presentations knows, these are often easily compared to blogs: they contain some pieces of information but often lack structure and context.\\
+\ednote{how relevant?}
+The concept behind the semantic web and changing presentations is quite similar. Looking at the history of the WWW, specifically at the era of Web 2.0 \cite{Weller:npentrel14}, we notice that the web changed from an entity that only few people could add information to, to an entity that enables everyone to generate content. While this led to a lot of information on the web, it provided comparatively little knowledge. Here the processing of information to provide knowledge is lacking. Similarly, the existence of tools like Powerpoint have lead to virtually everyone creating presentations in this format. As everyone who has witnessed many of these presentations knows, these are often easily compared to blogs: they contain some pieces of information but often lack structure and context.\\
 
 In essence, both issues stem from information being generated without enough context or structure. This makes the information hard to process by humans and/or machines. The Semantic Web hopes to change the former, whereas new, more visual presentation tools, using spatial narrative, provide a framework for the creation of presentations that are easier to process for humans and thus facilitate knowledge transfer.\\
 
@@ -201,7 +206,7 @@ The work proposed here intends to provide a tool for automatic contextual visual
                 \label{fig:dataknow}
 \end{figure}
 
-One can define knowledge as "the information necessary to support intelligent reasoning." \cite{Kohlhase:Complog:base} That said, it is imperative to facilitate knowledge transfer. Figure \ref{fig:dataknow} (based on \cite{ProbstRaubRomhardt} and \cite{Kohlhase:Complog:base}) shows the path from mere data to knowledge, through adding context, such that we gain information. From information, we can then obtain knowledge through adding networking.\\
+One can define knowledge as "the information necessary to support intelligent reasoning" \cite{Kohlhase:Complog:base}. That said, it is imperative to facilitate knowledge transfer. Figure \ref{fig:dataknow} (based on \cite{ProbstRaubRomhardt} and \cite{Kohlhase:Complog:base}) shows the path from mere data to knowledge, through adding context, such that we gain information. From information, we can then obtain knowledge through adding networking.\\
 
 We want to go from merely displaying information to allowing users to interact with information and choosing a learning path that suits them individually. The concept of information existing in networks and relatedness of information will be used to display not just the prescribed presentation path but also allow the user to deviate from the path to go back to topics that form the preliminary knowledge base for the current topic. Specifically this research examines whether spatial narrative can be combined with inherent semantic closeness of different pieces of information to facilitate knowledge transfer.\\
 
@@ -216,14 +221,14 @@ After this contrived story, it is left to the reader to think about examples in 
 
 
 
-\section{Research Questions}
+%\section{Research Questions}
 
-As we have pointed out in \autoref{sec:introduction}, presenting information in an effective way is essential to foster learning. This research will answer the following basic questions:
+%As we have pointed out in \autoref{sec:introduction}, presenting information in an effective way is essential to foster learning. This research will answer the following basic questions:
 
-\begin{itemize}
-\item How can we combine spatial narrative and semantic closeness of information to improve the presentation of information?
-\item Which ways of visualizing information dependencies are there?
-\end{itemize}
+%\begin{itemize}
+%\item How can we combine spatial narrative and semantic closeness of information to improve the presentation of information?
+%\item Which ways of visualizing information dependencies are there?
+%\end{itemize}
 
 \section{Related Work}
 \label{sec:relatedworks}
@@ -232,7 +237,10 @@ When searching for related work there is little to be found. Some works have foc
 
 Another piece of research has focused on the automatic generation of mind maps from text \cite{abdeen2009direct}. The software they developed uses Semantic Web technologies to create mind maps that show the relations between nodes that represent different objects. While the research at hand also intends to show the relation between pieces of information, it does it on a different level. For instance, it can represent that Shakespeare lived in Stratford but it would not be able to show the dependencies of mathematical concepts as it is limited to representing nodes in single words within the mind map. We, on the other hand, will focus on exactly that, i.e. dependencies and the creation of interactive presentations.\\
 
+There has also been research focusing on guided tours in mathematics \cite{SieBen:acgap00}. This creates guided tours on topics depending on the background of the user. While following the same ideal to improve knowledge transfer, it differs from this work in the fact that its presentation format is completely different. While Siekmann et al., focused on one topic and displaying it differently to users with different backgrounds, this research will show the topics of a whole course while allowing to see dependencies and while allowing to diverge from the prescribed presentation path.\\
 
+Adding on to the research about guided tours in mathematics, there has also been research on semantic document navigation \cite{Koh:NavigationInMathDocs2012}. It demonstrates the need for assistance in form of navigation support for the reading of mathematical documents by creating a system that allows for semantic navigation in Excel spreadsheets. This research underlines the importance of a system that allows users to navigate information according to dependencies.\\
+  
 \section{Preliminaries}
 \label{sec:preliminaries}
 
@@ -318,28 +326,32 @@ Going back to the example of Annie, the information about the Pythagorean theore
 \subsection{Spatial Narrative}
 \label{sec:spatialnarrative}
 
-%The development of presentation tools like Impress.js and Prezi, has changed how people think about presentations while making use of spatial narrative. Prezi is "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas" \cite{Prezi:npentrel14}. When doing a good prezi presentation one has to understand the topic one is presenting on a deeper level and think about how one can portray connections between content visually.\\
+The development of presentation tools like Impress.js and Prezi, has changed how people think about presentations while making use of spatial narrative. Prezi is "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas" \cite{Prezi:npentrel14}. When doing a good prezi presentation one has to understand the topic one is presenting on a deeper level and think about how one can portray connections between content visually.\\
 
-%The concept of Spatial Narrative stems from the establishment of frameworks for "the creation of computer-assisted flexibile 'guided tours' based on the thematically and narrative linking of a set of locations within an area into a 'spatial narrative'" \cite{SpatialNarratives:npentrel14}. Teachers that are presenting a topic are an example for the experience of a tour guide for a certain topic.\\
+The concept of Spatial Narrative stems from the establishment of frameworks for "the creation of computer-assisted flexibile 'guided tours' based on the thematically and narrative linking of a set of locations within an area into a 'spatial narrative'" \cite{SpatialNarratives:npentrel14}. Teachers that are presenting a topic are an example for the experience of a tour guide for a certain topic.\\
 
-%The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \cite{Storytelling:npentrel14}.\\
+The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \cite{Storytelling:npentrel14}.\\
 
-%In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected (see figure \ref{fig:Annie-guided}). It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
+In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected (see figure \ref{fig:Annie-guided}). It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
 
 \subsection{Impress.js}
 \label{sec:Impressjs}
 
-\ednote{here or rather in 5.3?}
+For the implementation of \sys, we chose to use Impress.js, as commercial applications like Prezi, while more mature in presentations for the general crowd, do not provide us with an Application Programming Interface (API) that allows the generation of whole presentations. The open-source presentation framework \textbf{Impress.js} \cite{JSImpress:npentrel14} was created by Bartek Szopka's. It combines HTML and CSS3 which makes it highly customizable but unfortunately renders it unsupported by older browsers. The presentation data is entered in the html file; each slide in its own div with \texttt{data-x}, \texttt{data-y}, and \texttt{data-z} attributes to change the position of the slide. The \texttt{data-x} and \texttt{data-y} axis change the position of the element according to the normal x- and y-axes. The \texttt{data-z} attribute changes the closeness of the elements along the z-axis.\\
+\definecolor{bg}{rgb}{0.90,0.90,0.90}
 
-For the implementation of \sys, we chose to use Impress.js, as applications like Prezi do not provide us with an Application Programming Interface (API) that allows the generation of whole presentations. The open-source presentation framework \textbf{Impress.js} \cite{JSImpress:npentrel14} was created by Bartek Szopka's. It combines HTML and CSS3 which makes it highly customizable but unfortunately renders it unsupported by older browsers. The presentation data is entered in the html file; each slide in its own div with data-x, data-y, and data-z attributes to change the position of the slide. The data-x and data-y axis change the position of the element according to the normal x- and y-axes. The data-z attribute changes the closeness of the elements along the z axis.\\
-\\
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\begin{wrapfigure}{r}{\textwidth}
+\vspace{-26pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 <div class="step" data-x="1000" data-y="0">
   Slide Content
 </div>
 \end{minted}
-
+\vspace{-5pt}
+  \caption{Code Snippet to Create a Slide}
+  \label{fig:SSlide}
+  \vspace{12pt}
+\end{wrapfigure}
 
 \begin{wrapfigure}{r}{0.3\textwidth}
 \vspace{-26pt}
@@ -349,59 +361,79 @@ For the implementation of \sys, we chose to use Impress.js, as applications like
     }
   \end{center}
 \vspace{-20pt}
-  \caption{Rotations}
+  \caption{Rotations \cite{Rotations:npentrel14}}
   \label{fig:Rotate}
 \vspace{-10pt}
 \end{wrapfigure}
 
-Apart from these basic attributes, Impress.js offers the data-scale attribute to scale content, making slides appear bigger or smaller, and the data-rotate attribute which rotates slides in 3 dimensions using data-rotate-x, data-rotate-y, and data-rotate-z. As shown in \autoref{fig:Rotate} this allows the dependency graph to go into the third dimension.\\
+Apart from these basic attributes, Impress.js offers the \texttt{data-scale} attribute to scale content, making slides appear bigger or smaller, and the \texttt{data-rotate} attribute which rotates slides in 3 dimensions using \texttt{data-rotate-x}, \texttt{data-rotate-y}, and \texttt{data-rotate-z}. As shown in \autoref{fig:Rotate} this allows the dependency graph to go into the third dimension.\\
 
-In the following code snippets, a few other basic functionalities we will be using are explained.\ednote{cite http://www.andismith.com/blog/2012/01/impress-with-impress/} 
-The opacity attribute allows us to discriminate between active and inactive slides which will later on allow us to hide content so as to not throw too much information at a user. Adding an overview can be accomplished with the last past of the CSS snippet and the html snippet below that.\\
+In the following code snippets, a few other basic functionalities we will be using are explained \cite{andismith:npentrel15}. The opacity attribute allows us to discriminate between active and inactive slides which will later on allow us to hide content so as to not throw too much information at a user. Adding an overview can be accomplished with the last past of the CSS snippet and the html snippet below that.\\
 
+\begin{wrapfigure}{l}{\textwidth}
+\vspace{-26pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 .step { opacity: 0.2; }
 .step.active { opacity: 1; }
 .step-overview .step { opacity: 1; cursor: pointer; }
 \end{minted}
-\vspace*{2mm}\\
+\vspace{-5pt}
+  \caption{Code Snippet to Show and Hide Content}
+  \label{fig:SSlide}
+  \vspace{30pt}
+\end{wrapfigure}
+
+\begin{wrapfigure}{l}{\textwidth}
+\vspace{-26pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 <div id="overview" class="step" data-x="8000" data-y="1000" data-scale="10">
 </div>
 \end{minted}
-\\
-To link back to a slide, slides are accessible via IDs. The slide with the ID "conclusion" will thus be accessible by appending "\#/conclusion" to the end of the URL.
+\vspace{-7pt}
+  \caption{Code Snippet for an Overview}
+  \label{fig:SSlide}
+  \vspace{12pt}
+\end{wrapfigure}
 
+\begin{wrapfigure}{l}{\textwidth}
+\vspace{-50pt}
+\end{wrapfigure}
 
-\ednote{check link} %http://www.1stwebdesigner.com/creating-stunning-visualizations-with-impress-js/#/slide1}
-%http://www.andismith.com/blog/2012/01/impress-with-impress/
-
-%progress bar:
-%https://github.com/m42e/impress.js-progress
-
-
-%Read the book
-%Rakhitha Nimesh Ratnayake
-%Building Impressive Presentations with impress.js
-
+To link back to a slide, slides are accessible via IDs. The slide with the ID \texttt{conclusion} will thus be accessible by appending \texttt{\#/conclusion} to the end of the URL.
 
 \section{Towards a More Effective Presentation Format}
 \label{sec:TowardsAMoreEffectivePresentationFormat}
 
+Building on the preliminaries, we will now commence the journey towards building a more effective presentation format. To begin with the creation of a tool, RPresentation \cite{npentrel:npentrel15}, for building these presentations automatically will be discussed. In the next section, we will then examine how this makes presentations more effective.  
 
 \subsection{Creation of Ordered Information Graphs using OMDoc}
 \label{sec:wp2}
 
-With the OMDoc framework and its tools it is possible to write down a paper in stex. From this paper we can then, in theory, seamlessly create slides both in pdf format as well as in xhtml format. Using a test paper that is supposed to explain the pythagorean theorem and related topics, we can thus create an XML information graph out of the annotated set of documents.\\
+With the OMDoc framework and its tools it is possible to write down course notes or other documents in \stex. From this document we can then, in theory, seamlessly create slides both in PDF format as well as in XHTML format. Using a test document that is supposed to explain the pythagorean theorem and related topics, we can thus create an XML information graph out of the annotated documment.\\
 
+\begin{wrapfigure}{r}{\textwidth}
+\vspace{-26pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 theory path/to/file?theory_name
 Includes path/to/file path/to/dependent/file?theory_name
 \end{minted}
+\vspace{-5pt}
+  \caption{Code Snippet of Relational Data}
+  \label{fig:SSlide}
+  \vspace{12pt}
+\end{wrapfigure}
 
-The system itself outputs information about dependencies of topics as shown above. Using the \sys \ednote{should I cite my github?} tool we created for this research project, it is possible to get the order of the slides as well as dependencies. The order of information in certain topics will be referred to as levels. If we look at the pythagorean theorem and then realize we lack knowledge the concept of squares we could then read about that topic by going to that resource. From there on we are on a different \textit{level} which we can follow and dig deeper into until we understand squares.\\
+\begin{wrapfigure}{l}{\textwidth}
+\vspace{-50pt}
+\end{wrapfigure}
+
+\ednote{explain further}
+
+The system itself outputs information about dependencies of topics as shown above. Using the \sys tool I created for this research project, it is possible to get the order of the slides as well as dependencies. The order of information in certain topics will be referred to as levels. If we look at the pythagorean theorem and then realize we lack knowledge the concept of squares we could then read about that topic by going to that resource. From there on we are on a different \textit{level} which we can follow and dig deeper into until we understand squares.\\
 \ednote{draw the whole graph and add here}
 \ednote{add somewhere: By adding more levels of context we can allow viewers to understand the subject on a deeper level.}
+
+\ednote {explain ids of slides}
 
 %narrative and mroe info
 
@@ -410,12 +442,12 @@ The system itself outputs information about dependencies of topics as shown abov
 \subsubsection{Narrative Paths}
 \subsubsection{Levels}
 
-\subsection{Using Impress.js to Combine OMDoc and Spatial Narration}
+\subsection{Creating Relational Presentations}
 \label{sec:wp1}
 
 With the information about the order and the dependencies of information within the paper, \sys automatically creates a presentation by parsing the XHTML the created from the OMDocs which is then parsed and added to a presentation file. Each xhtml file represents its own slide and is hence put into its own div as shown in section \ref{sec:Impressjs}. The primary narrative that the presenter wants to follow is formed by a horizontal stream of slides. \ednote{add picture of this}\\
 
-This horizontal stream of slides is achieved by giving the slides incremental data-x values in the attributes. If a slide has dependencies then these will be added as slides below the slide itself. This, in turn, is achieved by keeping the data-x value but increasing the data-y value. Thus users can now simply press down and explore all the dependent information.\\ 
+This horizontal stream of slides is achieved by giving the slides incremental \texttt{data-x} values in the attributes. If a slide has dependencies then these will be added as slides below the slide itself. This, in turn, is achieved by keeping the \texttt{data-x} value but increasing the \texttt{data-y} value. Thus users can now simply press down and explore all the dependent information.\\ 
 
 If they, while browsing through these different levels, realize that they need to refresh their memory or learn more about any of the dependent information they can enter that level. The presentation will then continue on that level and give all the slides from that topic in the correct order. Once the user has gone through this short excursion, he or she can return to the initial slide and resume the normal narrative path. These modular excursions are included in the presentation in 3D by making use of CSS3-transitions. Thus when the user enters an excursion a 90\degree rotation around the x-axis occurs and the user can now follow that story line.\\
 
@@ -424,39 +456,58 @@ If they, while browsing through these different levels, realize that they need t
 
 %Once we have an ordered information graph with all the additional attribute values mentioned in section \ref{sec:wp2}, we will create the knowledge presentation system \sys. \sys will visualize the information from the graph including all the attributes we added. The outcome of this part should be a general \sys presentation model, that implements the models according to the models chosen in section \ref{sec:wp1}. We will then use \sys to visualize information in WP4.\\
 
-\subsection{Implementation of \sys}
+\subsection{Technical Details}
 \label{sec:wp4}
-\ednote{Do I need this or is it okay if I explain it on the go as I do so far?}
 
-%\sys will take the ordered information graph of the General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base} with all the additional attributes we generated in \ref{sec:wp2} and transform it into a spatial presentation using Impress.js. This will be done by parsing the generated XML and creating the markup that Impress.js is using to create the chosen presentation models from section \ref{sec:wp1}. After this work package, we should have one (or more) presentations of the topics covered in the General Computer Science Lecture notes.\\
+To implement \sys we rely on the Local MathHub Tool (lmh) which creates our input data. As input data we take, the \sTeX files of the document, the information about dependencies, and the XHTML of the slides. We use this information in several steps in our system \sys:
 
-%It is a stretch goal for \sys to create or change these presentations on the fly as needed by the audience. The specific use case would be when Annie asks her teacher about right angles. The teacher would then just have to click on right angles and \sys would create a short guided tour through the topic of right angles before returning to the subject of the Pythagorean theorem.\\
+\begin{enumerate}
+\item Get user input for the location and name of the folder
+\item Parsing \sTeX to retrieve the order of information
+\item Extracting relational information from \ednote{ref}
+\item Extracting necessary HTML parts
+\item Creation of presentation
+\end{enumerate}
 
+For the implementation of  \sys Java was used. It would have been possible to choose other programming languages, however, using Java, we end up with platform-independent code.\\
 
+In the last step, where the presentation is created, we use self-created boilerplate code, in which only some coordinates and the HTML for the slide is added. For the presentation Impress.JS was chosen such that the HTML code, automatically generated by lmh, can be reused. An important additional reason for the choice of Impress.JS is that it enables us to use spatial Narrative as discussed in \autoref{sec:spatialnarrative} and and \autoref{sec:Impressjs}.\\
+
+Due to the choice of Impress.JS \cite{JSImpress:npentrel14}, older browsers and mobile browsers are not able to display the created presentations properly. Impress.JS works in all modern browsers that support CSS 3D transforms.
 
 \section{Evaluation}
 \label{sec:evalcriteria}
 
+Even though an evaluation is not fully possible given the limited time frame, the next subsections will attempt to evaluate the created system and the created presentations as well as their shortcomings. Afterwards we will briefly look at future work and possible extensions to our system.
+
 \subsection{General Evaluation}
 
-\subsection{Shortcomings and Problems with the System}
-
-%Once we have examples, we will undertake a qualitative analysis of the visualization produced by the implemented knowledge presentation system \sys . To achieve this, we will use the newly created examples from \ref{sec:wp4} and the general General Computer Science Lecture notes \cite{Kohlhase:GenCSI:base}. We will have two groups: a control group that is shown the lecture notes and a test group that is shown the new, interactive Impress.js presentations. Afterwards both groups have to answer a set of questions. In addition, we will determine whether the implemented \sys meets the goals outlined in the Evaluation Criteria (see section \ref{sec:evalcriteria}).\\
-
-%The evaluation criteria for the research at hand are, on the one hand, systematic and, on the other hand, cognitive. Systematically, we will be evaluating two main challenges: First we will evaluate whether the knowledge presentation system \sys that was developed allows for the creation of a full presentation from a given annotated document. Then we will evaluate the speed of \sys. Special attention will be given to the question whether this could be used in real time such that a student could request a presentation on a certain topic and whether this could be generated on the fly within seconds.\\
+The evaluation conducted in the following part is on the one hand, systematic and, on the other hand, cognitive. Systematically, the knowledge presentation system \sys that was developed allows for the creation of a full relational presentation from a given annotated document which fulfills the goal of this project. It does so in a very timely manner.
 
 %Cognitively, we will be exploring the space of information systems. Therefore we will be examining whether the developed system provides a better system for knowledge transfer. For this a qualitative analysis will be conducted as outlined in section \ref{sec:wp5}. Based on that we will be able to understand the positive and possibly negative effects of the combination of Spatial Narrative and OMDoc within \sys .\\
 
 %Furthermore, with the above evaluation, we want to answer the main question of this proposed research, namely how and whether spatial narrative can be combined with inherent semantic closeness to facilitate and improve knowledge transfer.\\
 
+
+\subsection{Shortcomings and Problems with the System}
+
+For browsers that cannot display the created presentations fallback styles could be added to make the content accessible.
+
+\ednote{lmh not working :(}
+
 %If \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers which other parameters need to be kept in mind in order to succeed in future.\\
 
-%A stretch goal of this project is to have this research accessible for common users that could use it to create their own presentations. Another stretch goal is for \sys to create or change presentations on the fly as outlined in \ref{sec:wp4}. It is not the goal of this research that users should be able to reconstruct the original information graph from the presentation.\\
+\ednote{ImpressJS had to be changed}
 
-\section{Further Developments}
+\section{Future Work and Possible Extensions}
 
-\ednote{e.g. need to test this via qualitative analysis}
+This section lists some ideas on future work regarding this topic and the created system \sys. Before embarking on improvements of the system, a qualitative and quantitative analysis of the produced visual presentations should be conducted to confirm that this system helps users. For the quantitative analysis it would be ideal to take a course that has already been taught using a more traditional approach to presentations which can then function as a control group. After teaching the whole course using the newly created presentation, the data of how the students in this test group performed can be compared with the gathered data from how students used to perform in the course. For a qualitative analysis, students who have been subject to the use of and who have actively used the new presentation could be interviewed.\\
 
+Apart from an analysis to evaluate the effectiveness of the created presentations, the whole system could be made more user friendly for both the creator and the users of the presentations. By improving the creation user interface and allowing for users to choose their own designs, it becomes more easy to use and more attractive for users. Adding an editor would make this much more user friendly for creators as well. To change a presentation after it has been created, a user currently has to understand how to manipulate HTML, JavaScript, and also CSS.\\
+
+In terms of improving the usability for the users that will view and interact with the presentations, one could try to find a way to make important information bigger than less important information using the \texttt{data-scale} attribute. This would further add more semantic meaning to the slides. Additionally, one could think about adding a progress bar by using the work of Matthias Bilger \cite{bilger:npentrel15} to motivate users to continue.\\
+
+Overall it is even thinkable to create a different version of this system that could be made available to common users outside this research domain. The idea would be to allow users to add slides in an editor and to allow them to add dependencies themselves. Possibly the system could even suggest dependencies. As an example, I could very well envision a biology presentation that explains Photosynthesis and allows the attentive student to catch up on processes that transform ADP to ATP.\\
 
 \section{Conclusion}
 \label{sec:conclusion}
