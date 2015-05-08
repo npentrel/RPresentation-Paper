@@ -414,13 +414,12 @@ This temporal information is also used to create narrative paths for subsections
 \subsection{Levels}
 \label{sec:levels}
 
-When writing a document or course notes in \stex, the creator general writes a top-level file such as \textit{notes.tex} from where other tex-files are included. These included files again include further tex-files etc.. Thus we are automatically provided with levels that we can use for splicing our primary narrative path into smaller narrative paths.\\
+When writing a document or course notes in \stex, the creator general writes a top-level file such as \textit{notes.tex} from where other tex-files are included. These included files again include further tex-files etc.. Thus we are automatically provided with levels that we can use for splicing our primary narrative path into smaller narrative paths. In essence, on any level the order of information in that topic is a narrative path.\\
 
 \ednote{show inclusion graph and add an example to explain further}
 
-
-\subsection{Relational Information}
-\label{sec:relInfo}
+\subsection{Ordered Information Graphs}
+\label{sec:orderedInfoGraphs}
 \ednote{needs work}
 
 The Local MathHub Tool (lmh) outputs information about dependencies of topics as shown below in \autoref{fig:reldatacode}. \\
@@ -445,26 +444,23 @@ Includes path/to/file path/to/dependent/file?theory_name
 
 The system \sys parses the output and thus retrieves the dependencies of the topics. Combining this information with the order in which these pieces of information occur, i.e. with narrative paths and levels, we will be able to create ordered information graphs that allow users to interact with the presentation. 
 
-The order of information in certain topics will be referred to as levels. If we look at the pythagorean theorem and then realize we lack knowledge the concept of squares we could then read about that topic by going to that resource. From there on we are on a different \textit{level} which we can follow and dig deeper into until we understand squares.\\
+If we were to learn about the pythagorean theorem and then suddenly realized that we lack knowledge the concept of squares we could then learn about that topic by going to that resource. In other words, we check the dependencies of the pythagorean theorem, go that that level and follow the narrative path about squares until we understand squares. By adding a way to explore these other levels, the presentation adds more context and allows viewers to understand the subject on a deeper level.
+
 \ednote{draw the whole graph and add here}
-\ednote{add somewhere: By adding more levels of context we can allow viewers to understand the subject on a deeper level.}
 
 %Similarly, we will employ visual relations to show related content. 
 
-\subsection{Ordered Information Graphs}
-\label{sec:orderedInfoGraphs}
-
-
+\ednote{add example in slides and explain the different layers again}
 
 \ednote {explain ids of slides}
-
-%narrative and mroe info
 
 % for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
 
 \ednote{introduce information graphs}
 
 \ednote{structuring of the presentation - link with primitives and spatial narrative}
+
+\ednote{note to self: status of information -> levels}
 
 \subsection{The Relational Presentations}
 \label{sec:RelationalPresentations}
@@ -481,11 +477,9 @@ If they, while browsing through these different levels, realize that they need t
 
 %Once we have an ordered information graph with all the additional attribute values mentioned in section \ref{sec:wp2}, we will create the knowledge presentation system \sys. \sys will visualize the information from the graph including all the attributes we added. The outcome of this part should be a general \sys presentation model, that implements the models according to the models chosen in section \ref{sec:wp1}. We will then use \sys to visualize information in WP4.\\
 
-
 % Layout
 %The exact layout of the frames and the best visualization of the relations between the frames is to be determined but figure \ref{fig:Annie-relsize} can be seen as a first draft. Ideally the added expressiveness that impress.js offers should lead to Annie having the information about the Pythagorean theorem on a slide-like structure, while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
 
-\ednote{note to self: status of information -> levels}
 
 \subsection{Technical Details}
 \label{sec:wp4}
