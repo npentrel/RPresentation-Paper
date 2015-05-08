@@ -10,6 +10,7 @@
 \linespread{1.2} % Line spacing - Palatino needs more space between lines
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage{minted}
+\usepackage{enumitem}
 \usepackage[section]{placeins}
 \usepackage{nameref}
 \usemintedstyle{autumn}
@@ -265,7 +266,6 @@ OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OM
 
 If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
 
-%In \textit{A mathematical approach to ontology authoring and documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented. In figure \ref{fig:Annie-semantic-closeness}, this temporal information is represented through the arrows that connect the topics as the lecturer intends to teach them. Through the annotations within the document, we can establish levels of semantic closeness for different mathematical objects. These levels of semantic closeness are represented through the different sizes of the frames of the related information. In the proposed research the mathematical knowledge will be processed and visualized in a way that enables students to learn more efficiently through combining spatial narrative and semantic closeness of content. Thus it will not only provide the information or provide a narrative but it will provide a more interactive approach to presentations and learning.\\
 
 \subsection{Status of Information within the (Dis)Course}
 \label{sec:infostatus}
@@ -280,35 +280,7 @@ In this example in the first part of the sentence, \textit{discourse-new} inform
 
 These concepts can be adapted to the situation of teaching mathematics or computer science to students in a class. In general we will call the information that the speaker is sharing with the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
 
-Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. This is marked orange in figure \ref{fig:Annie-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course. \ednote{check example and later on refer to this with the different levels.} \\
-
-\subsection{Different Representations of Information}
-\label{sec:inforep}
-\ednote{Needs a lot of changing. Maybe it won't fit anymore at all.}
-%Information can be (re)presented in different ways: text, visuals, images, etc. Actually everything that is in the world around us conveys information to us. A sign of a women on a door conveys to most of us that this is a bathroom for women. The information graphs that OMDoc provides us with could also be simply visualized as a tree of information. But this would not be very engaging and it would be hard for a person to process. Similarly, traditional slide-based presentations do not provide a very engaging or interactive form of presenting information. \\  
-
-%In the proposed research we will focus less on text, tree-like structures, metaphors, or semiotics, like the sign of a woman on a door. We will rather focus on spatial narrative and placing content, that is inherently related, visually close together since this conveys the meaning that these objects belong together.\\
-
-%\begin{figure}[H]
-%        \centering
-%        \begin{subfigure}[b]{0.3\textwidth}
-%                \fbox{\includegraphics[width=\textwidth]{assets/size-of-objects}}
-%                \caption{Importance of Objects}
-%                \label{fig:imp_objects}
-%        \end{subfigure}%
-%        \qquad %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-%          %(or a blank line to force the subfigure onto a new line)
-%        \begin{subfigure}[b]{0.3\textwidth}
-%                \fbox{\includegraphics[width=\textwidth]{assets/relation}}
-%                \caption{Relation of Objects}
-%                \label{fig:rel_objects}
-%        \end{subfigure}
-%        \caption{Conveying Visual Meaning}\label{fig:Objects}
-%\end{figure}
-
-%Figure \ref{fig:Objects} above clarifies what we mean by meaningful representations. Figure \ref{fig:imp_objects} shows how size conveys importance. It is well known that people tend to identify the circle on the right as most important, the ones on the left are less important due to their relative size. Considering the relation of the three circles most people say that the two circles on the left belong together whereas the circle on the right is clearly something different. When shown Figure \ref{fig:rel_objects} they quickly change their mind and say that they are now actually related.\\
-
-%These perceptions can be used to convey meaning visually. For the example of Annie this means that the \textit{course-new} information would likely be important and therefore bigger than the \textit{content-old} or \textit{content-ancient} information. Then, it depends on how important the topics related to this topic are and we will use different sizes to differentiate between more important and less important topics. Similarly, we will employ visual relations as in figure \ref{fig:rel_objects} to show related content. Considering figure \ref{fig:Annie-ancient}, we already have different sizes based on the relatedness of the concepts. Adding on to that in figure \ref{fig:Annie-relsize}, we have nodes that represent concepts that are very important for the course, here the next topic, represented as bigger. Thus we will provide Annie with a meaningful representation of the information taken from the information graph. In turn this should allow Annie to absorb information about importance and relations instinctively which improves knowledge transfer.\\
+Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. This is marked orange in figure \ref{fig:Annie-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course. \ednote{later on refer to this with the different levels.} \\
 
 \subsection{Primitives}
 \label{sec:primitives}
@@ -402,12 +374,56 @@ To link back to a slide, slides are accessible via IDs. The slide with the ID \t
 \section{Towards a More Effective Presentation Format}
 \label{sec:TowardsAMoreEffectivePresentationFormat}
 
-Building on the preliminaries, we will now commence the journey towards building a more effective presentation format. To begin with the creation of a tool, RPresentation \cite{npentrel:npentrel15}, for building these presentations automatically will be discussed. In the next section, we will then examine how this makes presentations more effective.  
+Building on the preliminaries, we will now commence the journey towards building a more effective presentation format. To create these presentations automatically, the tool RPresentation \cite{npentrel:npentrel15} was created.\\
 
-\subsection{Creation of Ordered Information Graphs using OMDoc}
-\label{sec:wp2}
+With the OMDoc framework and its tools it is possible to write down course notes or other documents in \stex. From this document we can then, in theory, seamlessly create slides both in PDF format as well as in XHTML format. Using a test document that is supposed to explain the pythagorean theorem and related topics, the \sys tool can retrieve the the order of the slides as well as dependencies. This combined creates an information graph which we us to create a relational presentation out of the annotated document.\\
 
-With the OMDoc framework and its tools it is possible to write down course notes or other documents in \stex. From this document we can then, in theory, seamlessly create slides both in PDF format as well as in XHTML format. Using a test document that is supposed to explain the pythagorean theorem and related topics, we can thus create an XML information graph out of the annotated documment.\\
+\ednote{should this be longer?}
+
+\subsection{Narrative Paths}
+\label{sec:narrativePaths}
+
+The information graphs that OMDoc provides us with could also be simply visualized as a tree of information. But this would not be very engaging and it would be hard for a person to process. Similarly, traditional slide-based presentations do not provide a very engaging or interactive form of presenting information. Therefore we will focus on using spatial narrative to make presentations more engaging and enhance knowledge transfer.\\ 
+
+One opportunity to employ spatial narrative is to place content which is inherently related visually close together since this conveys the meaning that these objects belong together. In \textit{A mathematical approach to ontology authoring and documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented.\\
+
+In our system \sys, we parse the \stex files to retrieve the traditional narrative the writer intended to use. This is the first narrative layer, which we will refer to as a \textit{primary narrative path} since we go from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as shown in \autoref{fig:narrativePathCode}. This code creates \ednote{insert image of just the primary narrative path from example}. \\
+
+\begin{wrapfigure}{r}{\textwidth}
+\vspace{-26pt}
+\begin{minted}[linenos=true, bgcolor=bg]{C}
+<div class="step" data-x="1250" data-y="0"> ... </div>
+<div class="step" data-x="2500" data-y="0"> ... </div>
+<div class="step" data-x="3750" data-y="0"> ... </div>
+<div class="step" data-x="5000" data-y="0"> ... </div>
+\end{minted}
+\vspace{-5pt}
+  \caption{Code Snippet for a Narrative Path}
+  \label{fig:narrativePathCode}
+  \vspace{12pt}
+\end{wrapfigure}
+
+\begin{wrapfigure}{l}{\textwidth}
+\vspace{-50pt}
+\end{wrapfigure}
+
+The primary narrative path is the traditional path a presenter normally uses when preparing a PowerPoint presentation. This path happens to also contain temporal information. This temporal information is what we extracted from the \stex as the order in which the slides (or the information on the slides) should appear in.\\
+
+This temporal information is also used to create narrative paths for subsections of the whole presentation that only explain one topic. In that these narrative paths are similar to the guided tours mentioned in \autoref{sec:relatedworks} in that they aim to explain one topic but they are different in that they just reuse slides that have already occurred. \ednote{use Annie example} In essence, the \textit{intended narrative path} contains multiple \textit{narrative paths} of its own. These occur on different levels as explained in the next section \autoref{sec:levels}.\\
+
+\subsection{Levels}
+\label{sec:levels}
+
+When writing a document or course notes in \stex, the creator general writes a top-level file such as \textit{notes.tex} from where other tex-files are included. These included files again include further tex-files etc.. Thus we are automatically provided with levels that we can use for splicing our primary narrative path into smaller narrative paths.\\
+
+\ednote{show inclusion graph and add an example to explain further}
+
+
+\subsection{Relational Information}
+\label{sec:relInfo}
+\ednote{needs work}
+
+The Local MathHub Tool (lmh) outputs information about dependencies of topics as shown below in \autoref{fig:reldatacode}. \\
 
 \begin{wrapfigure}{r}{\textwidth}
 \vspace{-26pt}
@@ -417,7 +433,7 @@ Includes path/to/file path/to/dependent/file?theory_name
 \end{minted}
 \vspace{-5pt}
   \caption{Code Snippet of Relational Data}
-  \label{fig:SSlide}
+  \label{fig:reldatacode}
   \vspace{12pt}
 \end{wrapfigure}
 
@@ -425,11 +441,20 @@ Includes path/to/file path/to/dependent/file?theory_name
 \vspace{-50pt}
 \end{wrapfigure}
 
-\ednote{explain further}
+\ednote{add example}
 
-The system itself outputs information about dependencies of topics as shown above. Using the \sys tool I created for this research project, it is possible to get the order of the slides as well as dependencies. The order of information in certain topics will be referred to as levels. If we look at the pythagorean theorem and then realize we lack knowledge the concept of squares we could then read about that topic by going to that resource. From there on we are on a different \textit{level} which we can follow and dig deeper into until we understand squares.\\
+The system \sys parses the output and thus retrieves the dependencies of the topics. Combining this information with the order in which these pieces of information occur, i.e. with narrative paths and levels, we will be able to create ordered information graphs that allow users to interact with the presentation. 
+
+The order of information in certain topics will be referred to as levels. If we look at the pythagorean theorem and then realize we lack knowledge the concept of squares we could then read about that topic by going to that resource. From there on we are on a different \textit{level} which we can follow and dig deeper into until we understand squares.\\
 \ednote{draw the whole graph and add here}
 \ednote{add somewhere: By adding more levels of context we can allow viewers to understand the subject on a deeper level.}
+
+%Similarly, we will employ visual relations to show related content. 
+
+\subsection{Ordered Information Graphs}
+\label{sec:orderedInfoGraphs}
+
+
 
 \ednote {explain ids of slides}
 
@@ -437,11 +462,13 @@ The system itself outputs information about dependencies of topics as shown abov
 
 % for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
 
-\subsubsection{Narrative Paths}
-\subsubsection{Levels}
+\ednote{introduce information graphs}
 
-\subsection{Creating Relational Presentations}
-\label{sec:wp1}
+\ednote{structuring of the presentation - link with primitives and spatial narrative}
+
+\subsection{The Relational Presentations}
+\label{sec:RelationalPresentations}
+\ednote{needs work}
 
 With the information about the order and the dependencies of information within the paper, \sys automatically creates a presentation by parsing the XHTML the created from the OMDocs which is then parsed and added to a presentation file. Each xhtml file represents its own slide and is hence put into its own div as shown in section \ref{sec:Impressjs}. The primary narrative that the presenter wants to follow is formed by a horizontal stream of slides. \ednote{add picture of this}\\
 
@@ -458,12 +485,14 @@ If they, while browsing through these different levels, realize that they need t
 % Layout
 %The exact layout of the frames and the best visualization of the relations between the frames is to be determined but figure \ref{fig:Annie-relsize} can be seen as a first draft. Ideally the added expressiveness that impress.js offers should lead to Annie having the information about the Pythagorean theorem on a slide-like structure, while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
 
+\ednote{note to self: status of information -> levels}
+
 \subsection{Technical Details}
 \label{sec:wp4}
 
 To implement \sys we rely on the Local MathHub Tool (lmh) which creates our input data. As input data we take, the \sTeX files of the document, the information about dependencies, and the XHTML of the slides. We use this information in several steps in our system \sys:
 
-\begin{enumerate}
+\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
 \item Get user input for the location and name of the folder
 \item Parsing \sTeX to retrieve the order of information
 \item Extracting relational information from \ednote{ref}
@@ -478,13 +507,14 @@ In the last step, where the presentation is created, we use self-created boilerp
 Due to the choice of impress.js \cite{JSImpress:npentrel14}, older browsers and mobile browsers are not able to display the created presentations properly. mpress.js works in all modern browsers that support CSS 3D transforms.
 
 \section{Evaluation}
-\label{sec:evalcriteria}
+\label{sec:eval}
+\ednote {rueckschauend bewerten und mit anderen dingen vergleichen so wie prezi best practices und prezis in general}
 
 Even though an evaluation is not fully possible given the limited time frame, the next subsections will attempt to evaluate the created system and the created presentations as well as their shortcomings. Afterwards we will briefly look at future work and possible extensions to our system.
 
 \subsection{General Evaluation}
 
-The evaluation conducted in the following part is on the one hand, systematic and, on the other hand, cognitive. Systematically, the knowledge presentation system \sys that was developed allows for the creation of a full relational presentation from a given annotated document which fulfills the goal of this project. It does so in a very timely manner.
+The evaluation conducted in the following part is on the one hand, systematic and, on the other hand, cognitive. Systematically, the knowledge presentation system \sys that was developed allows for the creation of a clearly structured relational presentation from a given annotated document which fulfills the goal of this project. It does so in a very timely manner.
 
 %Cognitively, we will be exploring the space of information systems. Therefore we will be examining whether the developed system provides a better system for knowledge transfer. For this a qualitative analysis will be conducted as outlined in section \ref{sec:wp5}. Based on that we will be able to understand the positive and possibly negative effects of the combination of Spatial Narrative and OMDoc within \sys .\\
 
@@ -497,9 +527,7 @@ For browsers that cannot display the created presentations fallback styles could
 
 \ednote{lmh not working :(}
 
-%If \sys can create a clearly structured presentation from a given annotated document that provides a better knowledge transfer experience, this research will be a full success. If this should fail and we know why it did not or cannot work the research will have succeeded in exploring an interesting way of trying to improve knowledge transfer and will serve to show future researchers which other parameters need to be kept in mind in order to succeed in future.\\
-
-\ednote{ImpressJS had to be changed}
+\ednote{ImpressJS had to be adapted}
 
 \section{Future Work and Possible Extensions}
 
@@ -523,7 +551,6 @@ Overall it is even thinkable to create a different version of this system that c
 %In essence, this proposed research will be beneficial for education and knowledge transfer. It aims to make the creation of engaging and interactive presentations simple and fast for current users of OMDoc. Should this research prove successful it could be adapted for other areas. In the future creating a meaningful, interactive presentation might be just a matter of uploading an annotated document.
 
 \newpage
-\section{References}
 
 \bibliography{kwarc}{}
 \bibliographystyle{alpha}
