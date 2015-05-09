@@ -46,7 +46,7 @@
 \usepackage{wrapfig}
 \usepackage[]{natbib}
 \usepackage{tocloft}
-
+\renewcommand*{\figureautorefname}{figure}
 \def\stex{\texorpdfstring{\raisebox{-.5ex}S\kern-.5ex\TeX}{sTeX}\xspace}
 \def\sTeX{\stex}
 
@@ -229,7 +229,7 @@ Let us dive into a contrived story that will guide us throughout this research: 
   \end{center}
 \vspace{-20pt}
   \caption{Information Dependency of the Pythagorean Theorem}
-  \label{fig:Pythdep}
+  \label{fig:deppyg}
 \vspace{-10pt}
 \end{wrapfigure}
 
@@ -266,17 +266,16 @@ In the following we will examine some prerequisite knowledge. By engaging with o
 
 Before discussing the buzzword knowledge transfer further, we will first engage in the conceptualization of the terms \textit{information}, \textit{knowledge}, and \textit{context}.\\
 
-The Oxford Dictionary of English \cite{OED:npentrel14} defines \textit{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling \autoref{fig:slideP} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textit{knowledge}, we will use the definition in Merriam-Webster's thesaurus \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". This \textit{association} is of special importance for the current project. We will define it as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see figure %\ref{fig:Annie-presentation-information}
- ).\\ 
+The Oxford Dictionary of English \cite{OED:npentrel14} defines \textit{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling \autoref{fig:slideP} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textit{knowledge}, we will use the definition in Merriam-Webster's thesaurus \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". This \textit{association} is of special importance for the current project. We will define it as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see \autoref{fig:deppyg}).\\ 
 
-According to the Merriam-Webster thesaurus \cite{Webster:npentrel14}, \textit{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". Context can be easily explained with the example of Annie learning the Pythagorean theorem. The \textit{information} about the calculation of the length of the third side of the triangle is only helpful for Annie within the \textit{context} of the pieces of \textit{information} this depends on. Without this \textit{context}, Annie cannot understand the theorem. Figure \ref{fig:Annie-context} illustrates the context by showing the dependencies of the theorem, i.e. calculating squares, area calculation, triangles, and right angles. It semiotically represents relatedness of \textit{concepts} by linking the different \textit{concepts} with lines, thus creating \textit{associations} between the different pieces of \textit{information}. We will be using the terms \textit{context} and \textit{network} almost interchangeably and depend on the reader to have the right intuition about these terms.\\
+According to the Merriam-Webster thesaurus \cite{Webster:npentrel14}, \textit{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". Context can be easily explained with the example of Annie learning the Pythagorean theorem. The \textit{information} about the calculation of the length of the third side of the triangle is only helpful for Annie within the \textit{context} of the pieces of \textit{information} this depends on. Without this \textit{context}, Annie cannot understand the theorem. Figure \ref{fig:deppyg} illustrates the context by showing the dependencies of the theorem, i.e. calculating squares, area calculation, triangles, and right angles. It represents relatedness of \textit{concepts} by linking the different \textit{concepts} with lines, thus creating \textit{associations} between the different pieces of \textit{information}. We will be using the terms \textit{context} and \textit{network} almost interchangeably and depend on the reader to have the right intuition about these terms.\\
 
 \subsection{OMDoc}
 \label{sec:OMDoc}
 
 OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OMDoc1.2} is an XML-based system that provides a data model and a format for content markup for mathematical documents. As such it is a semi-formal domain ontology. An ontology provides the framework for creating a semantic structure. It formally describes concepts within a specified area. A semi-formal ontology \cite{Sheth:npentrel14} is an ontology where formality of semantics is not a given. The semi-formal ontology can consist of partial or incomplete knowledge. \\
 
-If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and one step further to knowledge.\\
+If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and can be used to improve knowledge transfer.\\
 
 
 \subsection{Status of Information within the (Dis)Course}
@@ -290,9 +289,9 @@ In linguistics the concept of information packaging \cite{CambridgeGrammar:npent
 
 In this example in the first part of the sentence, \textit{discourse-new} information pertaining to my sister and to a circus are introduced. In the second part, the underlined parts are considered \textit{discourse-old} since they have already been introduced. These terms are coined to refer to the accessibility of the information to participants of the discourse \cite{Newness:npentrel14}. The accessibility depends on the relative \textit{newness}, i.e. recency of mention, of this information.\\
 
-These concepts can be adapted to the situation of teaching mathematics or computer science to students in a class. In general we will call the information that the speaker is sharing with the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
+These concepts can be adapted to the situation of teaching mathematics or computer science to students in a class. In general we will call the information that the speaker is passing on to the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
 
-Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. This is marked orange in figure \ref{fig:Annie-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course. \ednote{later on refer to this with the different levels.} \\
+Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course.\\
 
 \subsection{Primitives}
 \label{sec:primitives}
@@ -436,6 +435,8 @@ This temporal information is also used to create narrative paths for subsections
 
 \subsection{Levels}
 \label{sec:levels}
+
+\ednote{Refer back to status of information within ... later on refer to this with the different levels.}
 
 When writing a document or course notes in \stex, the creator general writes a top-level file such as \textit{notes.tex} from where other tex-files are included. These included files again include further tex-files etc.. Thus we are automatically provided with levels that we can use for splicing our primary narrative path into smaller narrative paths. In essence, on any level the order of information in that topic is a narrative path.\\
 
