@@ -187,49 +187,51 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 
 \section{Introduction \& Motivation}
 \label{sec:introduction}
-\ednote{shorten}
 
-Normally we only have one path for a narration. That is true for books, movies, Facebook timelines, and also traditional slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it becomes possible for a presenter to seamlessly lead an audience, not along a predetermined path, but rather along the path that will allow the audience to make the most out of the presentation.\\
+\begin{wrapfigure}{l}{0.4\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.38 \textwidth]{assets/final/mountain}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Learning Path}
+  \label{fig:mountain}
+\vspace{-10pt}
+\end{wrapfigure}
 
-This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in a more interconnected way that provides context and thus facilitates understanding and learning. \\
+Learning new things is a bit like hiking up a mountain. If you have ever gone hiking you know that it's relatively hard to hike up a steep mountain directly as shown in AUTOREF. Some people do it but most people will rather hike up as shown in AUTOREF. Both paths lead to the goal. When we look at education, we normally only have one path. That is true for the narration in books, movies, Facebook timelines, and also traditional slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it can become possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that will allow the audience to take small detours and ultimately make the most out of the presentation.\\
 
-\ednote{how relevant?}
-The concept behind the semantic web and changing presentations is quite similar. Looking at the history of the WWW, specifically at the era of Web 2.0 \cite{Weller:npentrel14}, we notice that the web changed from an entity that only few people could add information to, to an entity that enables everyone to generate content. While this led to a lot of information on the web, it provided comparatively little knowledge. Here the processing of information to provide knowledge is lacking. Similarly, the existence of tools like Powerpoint have lead to virtually everyone creating presentations in this format. As everyone who has witnessed many of these presentations knows, these are often easily compared to blogs: they contain some pieces of information but often lack structure and context.\\
+This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both the semantic web and the research at hand strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in a more interconnected way that provides context and thus facilitates understanding and learning.\\
 
-In essence, both issues stem from information being generated without enough context or structure. This makes the information hard to process by humans and/or machines. The Semantic Web hopes to change the former, whereas new, more visual presentation tools, using spatial narrative, provide a framework for the creation of presentations that are easier to process for humans and thus facilitate knowledge transfer.\\
+Let us dive into a contrived story that will guide us throughout this research: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem. She is then given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is.\\
 
-The work proposed here intends to provide a tool for automatic contextual visualization of information through the usage of spatial narrative and semantic closeness of information. It adapts some of the concepts of the semantic web on a smaller scale and connects information logically. The end product should be a system that creates presentations which allow users to choose their own narrative path where users can seamlessly look at related topics and brush up on half-forgotten topics.\\
+\begin{wrapfigure}{r}{0.4\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.38 \textwidth]{assets/final/PythDep}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Information Dependency of the Pythagorean Theorem}
+  \label{fig:Pythdep}
+\vspace{-10pt}
+\end{wrapfigure}
 
-\begin{figure}[H]
-        \centering
-                \fbox{\includegraphics[width=0.8\textwidth]{assets/model2}}
-                \caption{From Data to Knowledge}
-                \label{fig:dataknow}
-\end{figure}
+Annie's example shows the dependencies of different pieces of information (see \autoref{fig:Pythdep}), i.e. the Pythagorean theorem depends on knowledge of area calculation, lengths, squares, right angles, and angles. As Annie and many of us who have witnessed many presentations know, traditional slide-based presentations lack the connectivity and flexibility to allow us to directly look related topics up. By adding connectivity and flexibility, we would allow Annie to not just look up the prerequisite knowledge such as what right angles are but hopefully also to understand the pythagorean theorem.\\
 
-One can define knowledge as "the information necessary to support intelligent reasoning" \cite{Kohlhase:Complog:base}. That said, it is imperative to facilitate knowledge transfer. Figure \ref{fig:dataknow} (based on \cite{ProbstRaubRomhardt} and \cite{Kohlhase:Complog:base}) shows the path from mere data to knowledge, through adding context, such that we gain information. From information, we can then obtain knowledge through adding networking.\\
+To achieve our goal to help Annie, we will set out to create a relational presentation system \sys to visually present information and its context which allows Annie to interact with the content and choose a path that matches her knowledge base. For this we will be using the OMDoc (Open Mathematical Documents) format which, given an annotated set of documents, will provide us with the necessary HTML-representation and PDF-representation of the information. It will also allow us to extract information about the semantic closeness of different pieces of information.\\
 
-We want to go from merely displaying information to allowing users to interact with information and choosing a learning path that suits them individually. The concept of information existing in networks and relatedness of information will be used to display not just the prescribed presentation path but also allow the user to deviate from the path to go back to topics that form the preliminary knowledge base for the current topic. Specifically this research examines whether spatial narrative can be combined with inherent semantic closeness of different pieces of information to facilitate knowledge transfer.\\
+This information alone would tell Annie where she might find the information she seeks but we will only use this as a starting point. We will use this information to visualize the dependencies of the information in a simple but effective approach using the presentation framework impress.js. The visualization of the information will make use of spatial narrative to connect information in a logical way. Thus the final product will allow Annie to intuitively interact with the presentation to find the information she needs.\\
 
-To achieve this goal, we intend to create a knowledge presentation system \sys to visually present information and its context (and networks). For this we will be using the OMDoc (Open Mathematical Documents) format which, given an annotated set of documents, will provide us with the necessary HTML-representation of the information. This will also allow us to extract information about the semantic closeness of different pieces of information. Taking this as a starting point, we will visualize the dependencies of the information contained in these documents. We will visualize the dependencies in a simple but effective approach with basic elements of spatial narrative using the presentation framework impress.js. The final product will allow for an interactive way of viewing a presentation.\\
+Along the way of helping Annie, we will explore the question how to allow users to go through flexible presentations where they can choose their own paths to explore the context of a topic as needed by browsing through related resources seamlessly. Specifically this research examines how spatial narrative can be combined with inherent semantic closeness of different pieces of information to facilitate knowledge transfer by providing the flexibility in a presentation to choose a path that fits.\\
 
-\ednote{readd slide images}
-To exemplify this: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem (see figure %\ref{fig:Annie-presentation-teacher}
-). She is given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is. This shows the dependencies of different pieces of information (see figure %\ref{fig:Annie-presentation-information}
-), i.e. the Pythagorean theorem depends on knowledge of squares, triangles, lengths, area calculation, and right angles. In an ideal presentation this information should have been linked to the current piece of information so that Annie could have directly looked it up instead of having to search for it.\\
+Overall, this work will showcase a tool for automatic contextual visualization of information through the usage of both spatial narrative and semantic closeness of information thus connecting information logically. The end product should be a system that creates presentations which allow users to choose their own narrative path by interacting with the presentation such that they can seamlessly explore related topics and brush up on half-forgotten topics.\\
 
-After this contrived story, it is left to the reader to think about examples in his or her own life where he or she would have appreciated having the context of the information he or she was learning at the time. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole. \\
+It is left to the reader to think about examples in his or her own life where he or she would have appreciated having these type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal. \\
 
-
-
-%\section{Research Questions}
-
-%As we have pointed out in \autoref{sec:introduction}, presenting information in an effective way is essential to foster learning. This research will answer the following basic questions:
-
-%\begin{itemize}
-%\item How can we combine spatial narrative and semantic closeness of information to improve the presentation of information?
-%\item Which ways of visualizing information dependencies are there?
-%\end{itemize}
 
 \section{Related Work}
 \label{sec:relatedworks}
@@ -621,9 +623,15 @@ In terms of improving the usability for the users that will view and interact wi
 
 Overall it is even thinkable to create a different version of this system that could be made available to common users outside this research domain. The idea would be to allow users to add slides in an editor and to allow them to add dependencies themselves. Possibly the system could even suggest dependencies. As an example, I could very well envision a biology presentation that explains Photosynthesis and allows the attentive student to catch up on processes that transform ADP to ATP.\\
 
+\ednote{not just prerequisite knowledge but also knowledge that builds on the current topic - bored students can thus already learn more!}
+
+machine learning to make smart offers of knowledge. 
+
+learn what the user knows and what the user doesnt. - we dont always want to show how to do multiplication
+
 \section{Conclusion}
 \label{sec:conclusion}
-
+Spatial narrative, provide a framework for the creation of presentations that are easier to process for humans and thus facilitate knowledge transfer.\\
 %The proposed research will evaluate if and how spatial narrative can be combined with semantic closeness to form visual presentations that will facilitate knowledge transfer. The knowledge presentation systen \sys that we will implement will allow us to automatically create these visual presentations from the OMDoc format. Through using semantic closeness the presentations can be created with meaningful visual connections between information. Similarly to how the Semantic Web tries to add relations between different resources for machines, \sys will add meaningful relations between course content.\\
 
 %Going back to our contrived example, \sys will provide Annie's teacher with a tool that allows her to use her normal lecture material in a more interactive way. Thus when the teacher realizes that Annie needs to revise previous material, the teacher can easily go to that material and provide Annie with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
