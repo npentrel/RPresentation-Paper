@@ -189,7 +189,7 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 \label{sec:introduction}
 \ednote{shorten}
 
-Normally we only have one path for a narration. That is true for books, movies, Facebook timelines, and also slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are, however, able to change the way presentations and their narratives work. In essence we should be able to make it possible to link content that logically belongs together, in other words, content that is semantically close. Through that it becomes possible for a presenter to seamlessly lead an audience, not along a predetermined path, but rather along the path that will allow the audience to make the most out of the presentation.\\
+Normally we only have one path for a narration. That is true for books, movies, Facebook timelines, and also traditional slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it becomes possible for a presenter to seamlessly lead an audience, not along a predetermined path, but rather along the path that will allow the audience to make the most out of the presentation.\\
 
 This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in a more interconnected way that provides context and thus facilitates understanding and learning. \\
 
@@ -374,11 +374,9 @@ To link back to a slide, slides are accessible via IDs. The slide with the ID \t
 \section{Towards a More Effective Presentation Format}
 \label{sec:TowardsAMoreEffectivePresentationFormat}
 
-Building on the preliminaries, we will now commence the journey towards building a more effective presentation format. To create these presentations automatically, the tool RPresentation \cite{npentrel:npentrel15} was created.\\
+Building on the preliminaries, we will now commence the journey towards building a more effective presentation format. To create these presentations automatically, the tool \sys \cite{npentrel:npentrel15} was created. The implementation details of \sys will be discussed in \ref{sec:implementation}\\
 
-With the OMDoc framework and its tools it is possible to write down course notes or other documents in \stex. From this document we can then, in theory, seamlessly create slides both in PDF format as well as in XHTML format. Using a test document that is supposed to explain the pythagorean theorem and related topics, the \sys tool can retrieve the the order of the slides as well as dependencies. This combined creates an information graph which we us to create a relational presentation out of the annotated document.\\
-
-\ednote{should this be longer?}
+With the OMDoc framework and its tools it is possible to write down course notes or other documents in \stex. From this document we can then, in theory, seamlessly create slides both in PDF format as well as in XHTML format. Using a test document that is supposed to explain the pythagorean theorem and related topics, the \sys tool can retrieve the the order of the slides as well as dependencies. The order of the slides and their dependencies combined lead to an information graph which we then use to create a relational presentation out of the annotated document.\\
 
 \subsection{Narrative Paths}
 \label{sec:narrativePaths}
@@ -387,7 +385,7 @@ The information graphs that OMDoc provides us with could also be simply visualiz
 
 One opportunity to employ spatial narrative is to place content which is inherently related visually close together since this conveys the meaning that these objects belong together. In \textit{A mathematical approach to ontology authoring and documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order the mathematical objects from content layers are presented.\\
 
-In our system \sys, we parse the \stex files to retrieve the traditional narrative the writer intended to use. This is the first narrative layer, which we will refer to as a \textit{primary narrative path} since we go from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as shown in \autoref{fig:narrativePathCode}. This code creates \ednote{insert image of just the primary narrative path from example}. \\
+In our system \sys, we parse the \stex files to retrieve the traditional narrative the writer intended to use. This is the first narrative layer, which we will refer to as a \textit{primary narrative path} since we go from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as shown in \autoref{fig:narrativePathCode}. This code snippet creates the narrative path portrayed in \autoref{fig:primaryNarrativePath}.\\
 
 \begin{wrapfigure}{r}{\textwidth}
 \vspace{-26pt}
@@ -403,20 +401,68 @@ In our system \sys, we parse the \stex files to retrieve the traditional narrati
   \vspace{12pt}
 \end{wrapfigure}
 
+\begin{wrapfigure}{c}{\textwidth}
+\vspace{-20pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.97\textwidth]{assets/final/primaryNarrativePath2}
+    }
+  \end{center}
+\vspace{-16pt}
+  \caption{Primary Narrative Path}
+  \label{fig:primaryNarrativePath}
+\vspace{12pt}
+\end{wrapfigure}
+
 \begin{wrapfigure}{l}{\textwidth}
 \vspace{-50pt}
 \end{wrapfigure}
 
-The primary narrative path is the traditional path a presenter normally uses when preparing a PowerPoint presentation. This path happens to also contain temporal information. This temporal information is what we extracted from the \stex as the order in which the slides (or the information on the slides) should appear in.\\
+The primary narrative path is the traditional path a presenter normally uses when preparing a PowerPoint presentation. This path happens to also contain temporal information which is illustrated by the arrow in \autoref{fig:primaryNarrativePath}. This temporal information is what we extracted from the \stex as the order in which the slides (or the information on the slides) should appear in.\\
 
-This temporal information is also used to create narrative paths for subsections of the whole presentation that only explain one topic. In that these narrative paths are similar to the guided tours mentioned in \autoref{sec:relatedworks} in that they aim to explain one topic but they are different in that they just reuse slides that have already occurred. \ednote{use Annie example} In essence, the \textit{intended narrative path} contains multiple \textit{narrative paths} of its own. These occur on different levels as explained in the next section \autoref{sec:levels}.\\
+This temporal information is also used to create narrative paths for subsections of the whole presentation that only explain one topic. In that these narrative paths are similar to the guided tours mentioned in \autoref{sec:relatedworks} in that they aim to explain one topic but they are different in that they just reuse slides that have already occurred. Going back to our example of Annie, an example of a subsection would be the information concerning angles. In essence, the \textit{intended narrative path} contains multiple \textit{narrative paths} of its own. These occur on different levels as explained in the next section \autoref{sec:levels}.\\
 
 \subsection{Levels}
 \label{sec:levels}
 
 When writing a document or course notes in \stex, the creator general writes a top-level file such as \textit{notes.tex} from where other tex-files are included. These included files again include further tex-files etc.. Thus we are automatically provided with levels that we can use for splicing our primary narrative path into smaller narrative paths. In essence, on any level the order of information in that topic is a narrative path.\\
 
-\ednote{show inclusion graph and add an example to explain further}
+\begin{wrapfigure}{c}{\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+      \includegraphics[width=0.97\textwidth]{assets/final/inclusionGraphPythagorean}
+    } 
+\vspace{-5pt}
+  \caption{Inclusion Graph for the Pythagorean Theorem}
+  \label{fig:inclusionGraph}
+\vspace{12pt}
+  \end{center}
+\end{wrapfigure}
+
+\begin{wrapfigure}{c}{\textwidth}
+\vspace{-50pt}
+\end{wrapfigure}
+
+The graph for CS looks more like this:
+
+\begin{wrapfigure}{c}{\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+      \includegraphics[width=0.3\textwidth]{assets/final/inclusionGraphCS}
+    } 
+\vspace{-5pt}
+  \caption{Inclusion Graph for Gen CS}
+  \label{fig:inclusionGraph}
+\vspace{12pt}
+  \end{center}
+\end{wrapfigure}
+
+\begin{wrapfigure}{c}{\textwidth}
+\vspace{-50pt}
+\end{wrapfigure}
+sda
 
 \subsection{Ordered Information Graphs}
 \label{sec:orderedInfoGraphs}
@@ -442,6 +488,25 @@ Includes path/to/file path/to/dependent/file?theory_name
 
 \ednote{add example}
 
+\begin{wrapfigure}{c}{\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+      \includegraphics[width=0.97\textwidth]{assets/final/depGraphPythagorean}
+    } 
+\vspace{-5pt}
+  \caption{Dependency Graph}
+  \label{fig:depGraphPythagorean}
+\vspace{12pt}
+  \end{center}
+\end{wrapfigure}
+
+\begin{wrapfigure}{c}{\textwidth}
+\vspace{-50pt}
+\end{wrapfigure}
+
+
+
 The system \sys parses the output and thus retrieves the dependencies of the topics. Combining this information with the order in which these pieces of information occur, i.e. with narrative paths and levels, we will be able to create ordered information graphs that allow users to interact with the presentation. 
 
 If we were to learn about the pythagorean theorem and then suddenly realized that we lack knowledge the concept of squares we could then learn about that topic by going to that resource. In other words, we check the dependencies of the pythagorean theorem, go that that level and follow the narrative path about squares until we understand squares. By adding a way to explore these other levels, the presentation adds more context and allows viewers to understand the subject on a deeper level.
@@ -466,6 +531,23 @@ If we were to learn about the pythagorean theorem and then suddenly realized tha
 \label{sec:RelationalPresentations}
 \ednote{needs work}
 
+\begin{wrapfigure}{c}{0.97\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+      \includegraphics[width=0.97\textwidth]{assets/final/fullPresentation}
+    } 
+\vspace{-5pt}
+  \caption{Presentation Overview}
+  \label{fig:fullPresentation}
+\vspace{12pt}
+  \end{center}
+\end{wrapfigure}
+
+\begin{wrapfigure}{c}{\textwidth}
+\vspace{-50pt}
+\end{wrapfigure}
+
 With the information about the order and the dependencies of information within the paper, \sys automatically creates a presentation by parsing the XHTML the created from the OMDocs which is then parsed and added to a presentation file. Each xhtml file represents its own slide and is hence put into its own div as shown in section \ref{sec:Impressjs}. The primary narrative that the presenter wants to follow is formed by a horizontal stream of slides. \ednote{add picture of this}\\
 
 This horizontal stream of slides is achieved by giving the slides incremental \texttt{data-x} values in the attributes. If a slide has dependencies then these will be added as slides below the slide itself. This, in turn, is achieved by keeping the \texttt{data-x} value but increasing the \texttt{data-y} value. Thus users can now simply press down and explore all the dependent information.\\ 
@@ -480,9 +562,15 @@ If they, while browsing through these different levels, realize that they need t
 % Layout
 %The exact layout of the frames and the best visualization of the relations between the frames is to be determined but figure \ref{fig:Annie-relsize} can be seen as a first draft. Ideally the added expressiveness that impress.js offers should lead to Annie having the information about the Pythagorean theorem on a slide-like structure, while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
 
+\ednote{show possible paths thru presentation}
 
 \subsection{Technical Details}
-\label{sec:wp4}
+\label{sec:implementation}
+
+\ednote{this is relatively shallow, about the implementation we only get to know that it is in Java. An architecture diagram would be helpful, and if you have that, you can explain it. That will give you something to guide the level of presentation.}
+
+
+\ednote{where to put the screenshot hack?}
 
 To implement \sys we rely on the Local MathHub Tool (lmh) which creates our input data. As input data we take, the \sTeX files of the document, the information about dependencies, and the XHTML of the slides. We use this information in several steps in our system \sys:
 
@@ -519,11 +607,11 @@ The evaluation conducted in the following part is on the one hand, systematic an
 
 For browsers that cannot display the created presentations fallback styles could be added to make the content accessible.
 
-\ednote{lmh not working :(}
-
 \ednote{ImpressJS had to be adapted}
 
 \section{Future Work and Possible Extensions}
+
+\ednote{think of more extensions when you write up the rest}
 
 This section lists some ideas on future work regarding this topic and the created system \sys. Before embarking on improvements of the system, a qualitative and quantitative analysis of the produced visual presentations should be conducted to confirm that this system helps users. For the quantitative analysis it would be ideal to take a course that has already been taught using a more traditional approach to presentations which can then function as a control group. After teaching the whole course using the newly created presentation, the data of how the students in this test group performed can be compared with the gathered data from how students used to perform in the course. For a qualitative analysis, students who have been subject to the use of and who have actively used the new presentation could be interviewed.\\
 
