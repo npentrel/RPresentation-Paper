@@ -229,7 +229,7 @@ This idea of linking content is not new. When Tim Berners-Lee laid out his Seman
 Let us dive into a contrived story that will guide us throughout this research: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem \autoref{fig:slideP}. She is then given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is.\\
 
 \begin{wrapfigure}{r}{0.4\textwidth}
-\vspace{-26pt}
+\vspace{-28pt}
   \begin{center}
   \fbox{
     \includegraphics[width=0.38 \textwidth]{assets/final/PythDep}
@@ -321,11 +321,11 @@ The concept of Spatial Narrative stems from the establishment of frameworks for 
 
 The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \cite{Storytelling:npentrel14}.\\
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-\vspace{-24pt}
+\begin{wrapfigure}{r}{0.45\textwidth}
+\vspace{-28pt}
   \begin{center}
   \fbox{
-    \includegraphics[width=0.48 \textwidth]{assets/final/arrowsPyth}
+    \includegraphics[width=0.43 \textwidth]{assets/final/arrowsPyth}
     }
   \end{center}
 \vspace{-20pt}
@@ -405,10 +405,49 @@ To link back to a slide, slides are accessible via IDs. The slide with the ID \t
 
 \section{Towards a More Effective Presentation Format}
 \label{sec:TowardsAMoreEffectivePresentationFormat}
+\ednote{is relatively shallow, about the implementation we only get to know that it is in Java. An architecture diagram would be helpful, and if you have that, you can explain it. That will give you something to guide the level of presentation.}
 
-Building on the preliminaries, we will now commence the journey towards building a more effective presentation format. To create these presentations automatically, the tool \sys \cite{npentrel:npentrel15} was created. The implementation details of \sys will be discussed in \ref{sec:implementation}\\
+\ednote{screenshot hack?}
 
-With the OMDoc framework and its tools it is possible to write down course notes or other documents in \stex. From this document we can then, in theory, seamlessly create slides both in PDF format as well as in XHTML format. Using a test document that is supposed to explain the pythagorean theorem and related topics, the \sys tool can retrieve the the order of the slides as well as dependencies. The order of the slides and their dependencies combined lead to an information graph which we then use to create a relational presentation out of the annotated document.\\
+Building on the preliminaries, we will now commence the journey towards building a more effective presentation format to improve knowledge transfer by allowing flexibility in presentations. To create these presentations automatically, the tool \sys \cite{npentrel:npentrel15} was created.\\
+
+\begin{wrapfigure}{l}{\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{
+      \includegraphics[width=0.87\textwidth]{assets/final/Architecture}
+    } 
+\vspace{-5pt}
+  \caption{Architecture Diagram}
+  \label{fig:architecture}
+\vspace{12pt}
+  \end{center}
+\end{wrapfigure}
+
+\begin{wrapfigure}{l}{\textwidth}
+\vspace{-50pt}
+\end{wrapfigure}
+
+With the OMDoc framework and its tools it is possible to write down course notes or other documents in \stex. The Local MathHub Tool (lmh) uses these to create, among other things, PDF slides, XHTML slides, and relational information. To help Annie, let us use a document that explains the pythagorean theorem and related topics. The files that lmh creates, along with the \stex -files will be used as input in the next steps. For the implementation of  \sys Java was used. It would have been possible to choose other programming languages, however, using Java, we end up with platform-independent code.\\
+
+\sys itself operates in five main steps:\\
+\vspace{-12pt}
+\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+\item Get user input for the location and names of folders.
+\item Parse \sTeX to retrieve the order of slides.
+\item Extract dependencies from relationanl info.
+\item Extract necessary XHTML or PDF parts for slides.
+\item Create presentation.
+\end{enumerate}
+\vspace{5pt}
+
+After asking the user for the location and names of the folders we want to work on, \sys can parse the provided \stex files in a recursive fashion to retrieve the slide order. It does this by starting with a given top level file which includes other files via \textit{mhinputref}s.\\
+
+In the next step the relational information is parsed and transformed into a hashtable. The keys are the slides which link to an array of dependent slides. The order of the slides and their dependencies are then combined to an information graph which we use to create a relational presentation out of the annotated document using the slide info. This slide information is created by either parsing the XHTML and directly copying the needed parts into the final presentation or by transforming the PDF into PNGs that are then included in the final presentation.\\
+
+For including the XHTML or the PNGs we use self-created boilerplate code, in which only some coordinates and the XHTML or the PNGs for the slide are added. The exact details of this process will be explained in more detail in sections \ref{sec:narrativePaths}, \ref{sec:levels}, \ref{sec:orderedInfoGraphs}, and \ref{sec:RelationalPresentations}. \ednote{check}\\
+
+To bring the presentation to life the framework impress.js which was introduced in \autoref{sec:Impressjs} was used because it easy to reuse the XHTML code that was automatically generated by lmh. An important additional reason for the choice of impress.js is that it enables us to use spatial Narrative as discussed in \autoref{sec:spatialnarrative} and \autoref{sec:Impressjs}. Due to the choice of impress.js \cite{JSImpress:npentrel14}, older browsers and mobile browsers are not able to display the created presentations properly. impress.js works in all modern browsers that support CSS 3D transforms.\\
 
 \subsection{Narrative Paths}
 \label{sec:narrativePaths}
@@ -599,29 +638,6 @@ If they, while browsing through these different levels, realize that they need t
 
 \ednote{show possible paths thru presentation}
 
-\subsection{Technical Details}
-\label{sec:implementation}
-
-\ednote{this is relatively shallow, about the implementation we only get to know that it is in Java. An architecture diagram would be helpful, and if you have that, you can explain it. That will give you something to guide the level of presentation.}
-
-
-\ednote{where to put the screenshot hack?}
-
-To implement \sys we rely on the Local MathHub Tool (lmh) which creates our input data. As input data we take, the \sTeX files of the document, the information about dependencies, and the XHTML of the slides. We use this information in several steps in our system \sys:
-
-\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
-\item Get user input for the location and name of the folder
-\item Parsing \sTeX to retrieve the order of information
-\item Extracting relational information from \ednote{ref}
-\item Extracting necessary HTML parts
-\item Creation of presentation
-\end{enumerate}
-
-For the implementation of  \sys Java was used. It would have been possible to choose other programming languages, however, using Java, we end up with platform-independent code.\\
-
-In the last step, where the presentation is created, we use self-created boilerplate code, in which only some coordinates and the HTML for the slide is added. For the presentation impress.js was chosen such that the HTML code, automatically generated by lmh, can be reused. An important additional reason for the choice of impress.js is that it enables us to use spatial Narrative as discussed in \autoref{sec:spatialnarrative} and and \autoref{sec:Impressjs}.\\
-
-Due to the choice of impress.js \cite{JSImpress:npentrel14}, older browsers and mobile browsers are not able to display the created presentations properly. mpress.js works in all modern browsers that support CSS 3D transforms.
 
 \section{Evaluation}
 \label{sec:eval}
