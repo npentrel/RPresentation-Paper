@@ -188,34 +188,42 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 \section{Introduction \& Motivation}
 \label{sec:introduction}
 
-\begin{wrapfigure}{l}{0.4\textwidth}
-\vspace{-26pt}
-  \begin{center}
-  \fbox{
-    \includegraphics[width=0.38 \textwidth]{assets/final/mountain}
-    }
-  \end{center}
-\vspace{-20pt}
-  \caption{Learning Path}
-  \label{fig:mountain}
-\vspace{-10pt}
-\end{wrapfigure}
-
-Learning new things is a bit like hiking up a mountain. If you have ever gone hiking you know that it's relatively hard to hike up a steep mountain directly as shown in AUTOREF. Some people do it but most people will rather hike up as shown in AUTOREF. Both paths lead to the goal. When we look at education, we normally only have one straight path. That is true for the narration in books, movies, Facebook timelines, and also traditional slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it can become possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that will allow the audience to take small detours and ultimately make the most out of the presentation.\\
-
-This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both the semantic web and the research at hand strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in a more interconnected way that provides context and thus facilitates understanding and learning.\\
-
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.3\textwidth}
 \vspace{-28pt}
   \begin{center}
   \fbox{
-    \includegraphics[width=0.48 \textwidth]{assets/final/slide_theorem}
+    \includegraphics[width=0.28 \textwidth]{assets/final/straightMountain}
+    }
+\vspace{-20pt}
+  \caption{Straight Learning Path}
+  \label{fig:straight}
+\vspace{5pt}  
+      \fbox{
+    \includegraphics[width=0.28 \textwidth]{assets/final/curvyMountain}
+    }
+
+  \end{center}
+\vspace{-20pt}
+  \caption{Curvy Learning Path}
+  \label{fig:curvy}
+\vspace{-10pt}
+\end{wrapfigure}
+
+Learning new things is a bit like hiking up a mountain. If you have ever gone hiking you know that it is relatively hard to hike up a steep mountain directly as shown in \autoref{fig:straight}. Some people do it but most people will rather hike up as shown in \autoref{fig:curvy}. Both paths lead to the goal. When we look at education, we normally only have one straight path. That is true for the narration in books, movies, Facebook timelines, and also traditional slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it can become possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that will allow the audience to take small detours and ultimately make the most out of the presentation.\\
+
+This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both the semantic web and the research at hand strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in an interconnected way that provides context and thus facilitates understanding and learning.\\
+
+\begin{wrapfigure}{l}{0.45\textwidth}
+\vspace{-28pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.43 \textwidth]{assets/final/slide_theorem}
     }
   \end{center}
 \vspace{-20pt}
   \caption{Theorem Slide}
   \label{fig:slideP}
-\vspace{-10pt}
+\vspace{-15pt}
 \end{wrapfigure}
 
 Let us dive into a contrived story that will guide us throughout this research: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem \autoref{fig:slideP}. She is then given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is.\\
@@ -233,7 +241,7 @@ Let us dive into a contrived story that will guide us throughout this research: 
 \vspace{-10pt}
 \end{wrapfigure}
 
-Annie's example shows the dependencies of different pieces of information (see \autoref{fig:Pythdep}), i.e. the Pythagorean theorem depends on knowledge of area calculation, lengths, squares, right angles, and angles. As Annie and many of us who have witnessed many presentations know, traditional slide-based presentations lack the connectivity and flexibility to allow us to directly look related topics up. By adding connectivity and flexibility, we would allow Annie to not just look up the prerequisite knowledge such as what right angles are but hopefully also to understand the pythagorean theorem.\\
+Annie's example shows the dependencies of different pieces of information (see \autoref{fig:PythDep}), i.e. the Pythagorean theorem depends on knowledge of area calculation, lengths, squares, right angles, and angles. As Annie and many of us who have witnessed many presentations know, traditional slide-based presentations lack the connectivity and flexibility to allow us to directly look related topics up. By adding connectivity and flexibility, we would allow Annie to not just look up the prerequisite knowledge such as what right angles are but hopefully also to understand the pythagorean theorem.\\
 
 To achieve our goal to help Annie, we will set out to create a relational presentation system \sys to visually present information and its context which allows Annie to interact with the content and choose a path that matches her knowledge base. For this we will be using the OMDoc (Open Mathematical Documents) format which, given an annotated set of documents, will provide us with the necessary HTML-representation and PDF-representation of the information. It will also allow us to extract information about the semantic closeness of different pieces of information.\\
 
@@ -243,7 +251,7 @@ Along the way of helping Annie, we will explore the question how to allow users 
 
 Overall, this work will showcase a tool for automatic contextual visualization of information through the usage of both spatial narrative and semantic closeness of information thus connecting information logically. The end product should be a system that creates presentations which allow users to choose their own narrative path by interacting with the presentation such that they can seamlessly explore related topics and brush up on half-forgotten topics.\\
 
-It is left to the reader to think about examples in his or her own life where he or she would have appreciated having these type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal (see AUTOREF). \\
+It is left to the reader to think about examples in his or her own life where he or she would have appreciated having these type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal, whether it be straight or curvy.\\
 
 \section{Related Work}
 \label{sec:relatedworks}
