@@ -201,11 +201,24 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 \vspace{-10pt}
 \end{wrapfigure}
 
-Learning new things is a bit like hiking up a mountain. If you have ever gone hiking you know that it's relatively hard to hike up a steep mountain directly as shown in AUTOREF. Some people do it but most people will rather hike up as shown in AUTOREF. Both paths lead to the goal. When we look at education, we normally only have one path. That is true for the narration in books, movies, Facebook timelines, and also traditional slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it can become possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that will allow the audience to take small detours and ultimately make the most out of the presentation.\\
+Learning new things is a bit like hiking up a mountain. If you have ever gone hiking you know that it's relatively hard to hike up a steep mountain directly as shown in AUTOREF. Some people do it but most people will rather hike up as shown in AUTOREF. Both paths lead to the goal. When we look at education, we normally only have one straight path. That is true for the narration in books, movies, Facebook timelines, and also traditional slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it can become possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that will allow the audience to take small detours and ultimately make the most out of the presentation.\\
 
 This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both the semantic web and the research at hand strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in a more interconnected way that provides context and thus facilitates understanding and learning.\\
 
-Let us dive into a contrived story that will guide us throughout this research: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem. She is then given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is.\\
+\begin{wrapfigure}{l}{0.5\textwidth}
+\vspace{-28pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.48 \textwidth]{assets/final/slide_theorem}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Theorem Slide}
+  \label{fig:slideP}
+\vspace{-10pt}
+\end{wrapfigure}
+
+Let us dive into a contrived story that will guide us throughout this research: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem \autoref{fig:slideP}. She is then given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is.\\
 
 \begin{wrapfigure}{r}{0.4\textwidth}
 \vspace{-26pt}
@@ -230,8 +243,7 @@ Along the way of helping Annie, we will explore the question how to allow users 
 
 Overall, this work will showcase a tool for automatic contextual visualization of information through the usage of both spatial narrative and semantic closeness of information thus connecting information logically. The end product should be a system that creates presentations which allow users to choose their own narrative path by interacting with the presentation such that they can seamlessly explore related topics and brush up on half-forgotten topics.\\
 
-It is left to the reader to think about examples in his or her own life where he or she would have appreciated having these type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal. \\
-
+It is left to the reader to think about examples in his or her own life where he or she would have appreciated having these type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal (see AUTOREF). \\
 
 \section{Related Work}
 \label{sec:relatedworks}
@@ -240,23 +252,21 @@ When searching for related work there is little to be found. Some works have foc
 
 Another piece of research has focused on the automatic generation of mind maps from text \cite{abdeen2009direct}. The software they developed uses Semantic Web technologies to create mind maps that show the relations between nodes that represent different objects. While the research at hand also intends to show the relation between pieces of information, it does it on a different level. For instance, it can represent that Shakespeare lived in Stratford but it would not be able to show the dependencies of mathematical concepts as it is limited to representing nodes in single words within the mind map. We, on the other hand, will focus on exactly that, i.e. dependencies and the creation of interactive presentations.\\
 
-There has also been research focusing on guided tours in mathematics \cite{SieBen:acgap00}. This creates guided tours on topics depending on the background of the user. While following the same ideal to improve knowledge transfer, it differs from this work in the fact that its presentation format is completely different. While Siekmann et al., focused on one topic and displaying it differently to users with different backgrounds, this research will show the topics of a whole course while allowing to see dependencies and while allowing to diverge from the prescribed presentation path.\\
+There has also been research focusing on guided tours in mathematics \cite{SieBen:acgap00}. This creates guided tours on topics depending on the background of the user. While following the same ideal to improve knowledge transfer, it differs from this work in its presentation format. While Siekmann et al., focused on one topic and displaying it differently to users with different backgrounds, this research will show the topics of a whole course while allowing to see dependencies and while allowing to diverge from the prescribed presentation path.\\
 
-Adding on to the research about guided tours in mathematics, there has also been research on semantic document navigation \cite{Koh:NavigationInMathDocs2012}. It demonstrates the need for assistance in form of navigation support for the reading of mathematical documents by creating a system that allows for semantic navigation in Excel spreadsheets. This research underlines the importance of a system that allows users to navigate information according to dependencies.\\
+Adding on to the research about guided tours in mathematics, there has also been research on semantic document navigation \cite{Koh:NavigationInMathDocs2012}. It demonstrates the need for assistance in form of navigation support for the reading of mathematical documents by creating a system that allows for semantic navigation in Excel spreadsheets. This research underlines the importance of a system that allows users like Annie to navigate information according to dependencies.\\
   
 \section{Preliminaries}
 \label{sec:preliminaries}
 
-In the following we will examine some prerequisite knowledge. By engaging with our example presentation we will show how Annie's teacher can transfer knowledge more effectively.\\
+In the following we will examine some prerequisite knowledge. By engaging with our example presentation we will show how the presentation can be improved to transfer knowledge more effectively.\\
 
 \subsection{Terminology}
 \label{sec:terminology}
 
 Before discussing the buzzword knowledge transfer further, we will first engage in the conceptualization of the terms \textit{information}, \textit{knowledge}, and \textit{context}.\\
 
-The Oxford Dictionary of English \cite{OED:npentrel14} defines \textit{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling figure %\ref{fig:PythagoreanTheorem}
-\ednote{readd figures}
- and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textit{knowledge}, we will use the definition in Merriam-Webster's thesaurus \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". This \textit{association} is of special importance for the current project. We will define it as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see figure %\ref{fig:Annie-presentation-information}
+The Oxford Dictionary of English \cite{OED:npentrel14} defines \textit{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling \autoref{fig:slideP} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textit{knowledge}, we will use the definition in Merriam-Webster's thesaurus \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". This \textit{association} is of special importance for the current project. We will define it as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see figure %\ref{fig:Annie-presentation-information}
  ).\\ 
 
 According to the Merriam-Webster thesaurus \cite{Webster:npentrel14}, \textit{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". Context can be easily explained with the example of Annie learning the Pythagorean theorem. The \textit{information} about the calculation of the length of the third side of the triangle is only helpful for Annie within the \textit{context} of the pieces of \textit{information} this depends on. Without this \textit{context}, Annie cannot understand the theorem. Figure \ref{fig:Annie-context} illustrates the context by showing the dependencies of the theorem, i.e. calculating squares, area calculation, triangles, and right angles. It semiotically represents relatedness of \textit{concepts} by linking the different \textit{concepts} with lines, thus creating \textit{associations} between the different pieces of \textit{information}. We will be using the terms \textit{context} and \textit{network} almost interchangeably and depend on the reader to have the right intuition about these terms.\\
