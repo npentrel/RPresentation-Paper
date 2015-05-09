@@ -298,11 +298,11 @@ Going back to the example of Annie, the information about the Pythagorean theore
 
 Within knowledge representation, five evaluation criteria for knowledge representation are known \cite{Kohlhase:Complog:base}: Expressive Adequacy, Reasoning Efficiency, Primitives, Meta-representation, and Incompleteness. Primitives are the different elements of representation. In terms of evaluation it is important to have intuitive primitive elements. The primitive elements can be further subdivided into structural and semantic primitives \cite{DBLP:dblp_conf/acl/Salveter80}. The structural primitives have little inherent semantics associated with them whereas the semantic primitives carry meaning.\\
 
-Visual and normal tree-like graph language have different primitives and it is interesting how the primitives of the former can be mapped to the primitives of the latter. When we consider tree-like graphs, there are two structural primitives, namely the nodes, which represent concepts, and the edges, which represent relations between nodes. Additionally we can add semantic primitives like attributes to the concepts and to the relations to add information or to show what kind of a relation it is. In normal graphs a relation between two nodes is often quite simple: there is one node that acts as the subject, one node that acts as an object, and the relation that acts as a predicate. Thus we can, for instance, express that the Pythagorean theorem depends on information about right angles (similar to figure \ref{fig:Annie-context}). These structural primitives and semantic primitives provide the basics that graphs can be built on.\\
+Visual and normal tree-like graph language have different primitives and it is interesting how the primitives of the former can be mapped to the primitives of the latter. When we consider tree-like graphs, there are two structural primitives, namely the nodes, which represent concepts, and the edges, which represent relations between nodes. Additionally we can add semantic primitives like attributes to the concepts and to the relations to add information or to show what kind of a relation it is. In normal graphs a relation between two nodes is often quite simple: there is one node that acts as the subject, one node that acts as an object, and the relation that acts as a predicate. Thus we can, for instance, express that the Pythagorean theorem depends on information about right angles (similar to \autoref{fig:deppyg}). These structural primitives and semantic primitives provide the basics that graphs can be built on.\\
 
 For impress.js, the primitive elements are text, images, slides, and the visual relation between the different frame-like structures. The slides can be mapped directly to the nodes/concepts that graphs use. Text and images are taken for granted within the slides. Similarly, the visual relation between different slides is very much like the relations between nodes. However, the relations can be much more expressive within impress.js.\\
 
-These relations or connections between different frames do not just connect content that depends on one another but also content that has a temporal connection, similar to slides following one after another. As such the temporal associations show the path that a normal lecture would take. The dependencies that are visualized around each frame allow for additional interactiveness.\\
+These relations or connections between different slides do not just connect content that depends on one another but also content that has a temporal connection, similar to slides following one after another. As such the temporal associations show the path that a traditional lecture would take. The dependencies that are visualized around each slide, mainly above or below the slide, allow for additional interactiveness.\\
 
 \subsection{Spatial Narrative}
 \label{sec:spatialnarrative}
@@ -313,12 +313,25 @@ The concept of Spatial Narrative stems from the establishment of frameworks for 
 
 The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \cite{Storytelling:npentrel14}.\\
 
-In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she would be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected (see figure \ref{fig:Annie-guided}). It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
+\begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-24pt}
+  \begin{center}
+  \fbox{
+    \includegraphics[width=0.48 \textwidth]{assets/final/arrowsPyth}
+    }
+  \end{center}
+\vspace{-20pt}
+  \caption{Connection of Slide}
+  \label{fig:arrowspyg}
+\vspace{-10pt}
+\end{wrapfigure}
+
+In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she will be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected (see figure \ref{fig:arrowspyg}). It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
 
 \subsection{impress.js}
 \label{sec:Impressjs}
 
-For the implementation of \sys, we chose to use impress.js, as commercial applications like Prezi, while more mature in presentations for the general crowd, do not provide us with an Application Programming Interface (API) that allows the generation of whole presentations. The open-source presentation framework \textbf{impress.js} \cite{JSImpress:npentrel14} was created by Bartek Szopka's. It combines HTML and CSS3 which makes it highly customizable but unfortunately renders it unsupported by older browsers. The presentation data is entered in the html file; each slide in its own div with \texttt{data-x}, \texttt{data-y}, and \texttt{data-z} attributes to change the position of the slide. The \texttt{data-x} and \texttt{data-y} axis change the position of the element according to the normal x- and y-axes. The \texttt{data-z} attribute changes the closeness of the elements along the z-axis.\\
+For the implementation of \sys, impress.js will be used, as commercial applications like Prezi, while more mature in presentations for the general crowd, do not provide us with an Application Programming Interface (API) that allows the generation of whole presentations. The open-source presentation framework \textbf{impress.js} \cite{JSImpress:npentrel14} was created by Bartek Szopka's. It combines HTML and CSS3 which makes it highly customizable but unfortunately renders it unsupported by older browsers. The presentation data is entered in the html file; each slide in its own div with \texttt{data-x}, \texttt{data-y}, and \texttt{data-z} attributes to change the position of the slide. The \texttt{data-x} and \texttt{data-y} axis change the position of the element according to the normal x- and y-axes. The \texttt{data-z} attribute changes the closeness of the elements along the z-axis.\\
 \definecolor{bg}{rgb}{0.90,0.90,0.90}
 
 \begin{wrapfigure}{r}{\textwidth}
@@ -543,6 +556,7 @@ If we were to learn about the pythagorean theorem and then suddenly realized tha
 \subsection{The Relational Presentations}
 \label{sec:RelationalPresentations}
 \ednote{needs work}
+\ednote{refer back to primitives: However, the relations can be much more expressive within impress.js.}
 
 \begin{wrapfigure}{c}{0.97\textwidth}
 \vspace{-26pt}
