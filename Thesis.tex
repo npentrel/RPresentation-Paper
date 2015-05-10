@@ -239,7 +239,7 @@ The OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) format \cite{
 \vspace{-10pt}
 \end{wrapfigure}
 
-Learning new things is a bit like hiking up a mountain. If you have ever gone hiking, you know that it is relatively hard to hike up a steep mountain directly as shown in \autoref{fig:straight}. Some people do it but most people will rather hike up as shown in \autoref{fig:curvy}. Both paths lead to the goal. Within education, there is normally only one straight path. That is true for the narration in books, movies, and also traditional slide-based presentations. This has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it can become possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that will allow the audience to take small detours and ultimately make the most out of the presentation.\\
+Learning new things is a bit like hiking up a mountain. If you have ever gone hiking, you know that it is relatively hard to hike up a steep mountain directly as shown in \autoref{fig:straight}. Some people do it but most people will rather hike up as shown in \autoref{fig:curvy}. Both paths lead to the goal. Within education, there is normally only one straight path. That is true for the narration in books, movies, and also traditional slide-based presentations. This has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it becomes possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that allows the audience to take small detours and ultimately make the most out of the presentation.\\
 
 This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both the semantic web and the research at hand strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in an interconnected way that provides context and thus facilitates understanding and learning.\\
 
@@ -277,9 +277,9 @@ To achieve our goal to help Annie, we will set out to create a relational presen
 
 This information alone would tell Annie where she might find the information she seeks but it will only serve as a starting point. In face, this information will be used to visualize the dependencies of the information in a simple but effective approach using the presentation framework impress.js \cite{JSImpress:npentrel14}. The visualization of the information will make use of spatial narrative to connect information in a logical way. Thus the final product will allow Annie to intuitively interact with the presentation to find the information she needs.\\
 
-Along the way of helping Annie, we will explore the question of how to create a flexible presentation which allows Annie to choose her own path to explore the context of a topic as needed by browsing through related resources seamlessly. To create this presentation a tool for automatic contextual visualization of information will be introduced. Through the usage of both spatial narrative and semantic closeness of information it will connect information logically. The end product will be a presentations which allow Annie to choose her own path by interacting with the presentation to seamlessly explore related topics and brush up on half-forgotten topics like right angles.\\
+Along the way of helping Annie, we will explore the question of how to create a flexible presentation, which allows Annie to choose her own path to explore the context of a topic by browsing through related resources as needed. To create this presentation a tool for automatic contextual visualization of information will be introduced. Through the usage of both spatial narrative and semantic closeness of information it will connect information logically. The end product will be a presentations which allow Annie to choose her own path by interacting with the presentation to seamlessly explore related topics and brush up on half-forgotten topics like right angles.\\
 
-It is left to the reader to think about examples in his or her own life where he or she would have appreciated having this type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal, whether it be by following a straight or a curvy path.
+It is left to the reader to think about examples in his or her own life where he or she would have appreciated having this type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide information with its context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal, whether it be by following a straight or a curvy path.
 
 \section{Related Work}
 \label{sec:relatedworks}
@@ -371,7 +371,7 @@ For the implementation of \sys, impress.js will be used, as commercial applicati
 \definecolor{bg}{rgb}{0.90,0.90,0.90}
 
 \begin{wrapfigure}{r}{\textwidth}
-\vspace{-26pt}
+\vspace{-0pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 <div class="step" data-x="1000" data-y="0">
   Slide Content
@@ -616,7 +616,7 @@ With the data about the order and the dependencies of information within the pap
   \fbox{
       \includegraphics[width=0.87\textwidth]{assets/final/fullPresentation2}
     } 
-\vspace{-20pt}
+\vspace{-8pt}
   \caption{Visualization of Dependencies}
   \label{fig:visualDependency}
 \vspace{12pt}
@@ -695,7 +695,7 @@ If Annie, while browsing through the different dependencies, realizes that she n
 
 Combining the information about narrative paths, dependencies, and levels, we derived an ordered information graph out of which we have built a presentation that Annie can interact with to learn about the Pythagorean theorem. In this section we will examine the structure of the created presentation.\\
 
-To begin with, let us examine the choice of layout. The goal of this presentation is to have all the information the Pythagorean theorem depends on easily accessible so that Annie can reach \textit{course-ancient} information easily. The added expressiveness that impress.js offers allowed us to have this in a very structured format. Since Prezi was mentioned in the beginning of this paper as a commercial alternative that was considered for this project, let us examine a sample prezi from afar and outline some differences.\\
+To begin with, let us examine the choice of layout. The goal of this presentation is to have all the information the Pythagorean theorem depends on easily accessible so that Annie can access \textit{course-ancient} information easily. The added expressiveness that impress.js offers allowed us to have this in a very structured format. Since Prezi was mentioned in the beginning of this paper as a commercial alternative that was considered for this project, let us examine a sample prezi from afar and outline some differences.\\
 
 \begin{wrapfigure}{l}{0.45\textwidth}
 \vspace{-26pt}
@@ -710,7 +710,7 @@ To begin with, let us examine the choice of layout. The goal of this presentatio
   \end{center}
 \end{wrapfigure}
 
-A prezi, if done right, is generally full of metaphors and meaningful visual connections. Our tool cannot mimic this creativity as it lacks the capability to abstract on such a high level. Therefore our product is a lot more structured and focused on visualizing relations between content with movement and closeness. This also serves to keep the resulting presentation simple and easily usable.\\
+A prezi, if done correctly, is generally full of metaphors and meaningful visual connections. Our tool cannot mimic this creativity as it lacks the capability to abstract on such a high level. Therefore our product is a lot more structured and focused on visualizing relations between content with movement and closeness. This also serves to keep the resulting presentation simple and easily usable.\\
 
 While focusing on closeness and movement, it can use some of the primitives of impress.js (see \autoref{sec:primitives}) to create meaningful visual relations and semantic movements. These meaningful visual connections are similar to those that prezis often feature. The relations between the content, such as it being the next slide in the narrative or it being a dependency are shown through the closeness and the placement of the slide as well as the movements that come with it. The following movements exist:\\
 \vspace{-12pt}
@@ -723,14 +723,14 @@ While focusing on closeness and movement, it can use some of the primitives of i
 
 The movement along the x-axis has a mostly temporal semantics associated with it. Going to the left is connected with going backwards in the narrative, whereas going to the right is associated with going forwards in the narrative. Apart from going forwards and backwards, we can also move along the y-axis. Moving down intuitively means that we dig deeper into a topic and go to the roots of a problem, whereas moving back up means we will be on a higher level.\\
 
-The most interesting movement is the rotations. It should be briefly mentioned that too much rotation leads to seasickness in users, as anyone who has seen a bad prezi can attest to. These are generally rotations around the x-axis that rotate more than 20\degree. Since we only rotate around the y-axis, our rotations are not affected. Instead of causing seasickness, our rotations aim to give the viewer the feeling of entering a topic and a different storyline. Thus entering a different topic comes with a change of perspective which is underlined by the 3D transformation that the user sees. Overall, these movements add expressiveness to the relations and allow for intuitive interaction with the presentation.\\
+The most interesting movement is the rotations. It should be briefly mentioned that too much rotation leads to seasickness in users, as anyone who has seen a bad prezi can attest to. These are generally rotations around the x-axis that rotate more than 20\degree. Since we only rotate around the y-axis, our rotations are not affected. Instead of causing seasickness, our rotations aim to give the viewer the feeling of entering a topic and a different storyline. Thus entering a different topic comes with a change of perspective which is underlined by the 3D transformation that the user sees. Overall, these movements add expressiveness to the relations and allow for intuitive interaction with the presentation. \footnote{To see the presentation in action visit: \href{http://npentrel.github.io/pythagoreantheorem.html\#/overview}{http://npentrel.github.io/pythagoreantheorem.html\#/overview}}\\
 
-One might think that this is like a PowerPoint, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a birds perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentations is that through these overviews, dependencies become identifiable. More importantly this means that for Annie, dependencies become accessible and allow her to go on small guided tours or small excursions into \textit{course-ancient} topics giving her the flexibility to choose her own path while going through the presentation.
+One might think that this is similar to a PowerPoint presentation, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a bird's eye perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentations is that through these overviews, dependencies become identifiable. More importantly this means that for Annie, dependencies become accessible and allow her to go on small guided tours or small excursions into \textit{course-ancient} topics giving her the flexibility to choose her own path while going through the presentation.
 
 \section{Evaluation}
 \label{sec:eval}
 
-Even though an evaluation is not fully possible given the limited time frame, we will attempt to evaluate the created system and the created presentations as well as their shortcomings. Afterwards we will briefly look at future work and possible extensions to our system.\\
+Even though an evaluation is not fully possible given the limited time frame, we will attempt to evaluate the created system and presentations as well as their shortcomings. Afterwards we will look at future work and possible extensions to our system.\\
 
 \begin{wrapfigure}{l}{0.35\textwidth}
 \vspace{-28pt}
@@ -741,21 +741,21 @@ Even though an evaluation is not fully possible given the limited time frame, we
 \vspace{-20pt}
   \caption{Initial Presentation Idea}
   \label{fig:initialIdea}
-\vspace{-24pt}
+\vspace{-34pt}
   \end{center}
 \end{wrapfigure}
 
 The evaluation conducted in the following part is on the one hand, systematic and, on the other hand, cognitive. Systematically, the knowledge presentation system \sys that was developed allows for the creation of a clearly structured relational presentation from a given annotated document which fulfills the goal of this project. It does so in a very timely manner within seconds. In the starting phase of this research, the created presentations were supposed to look a lot more like clustered graphs such as \autoref{fig:initialIdea}. Possibly with nodes that are close if they are semantically close and the size of the nodes reflecting the importance of the node. While implementing the system, it not only became obvious that such an implementation would be very difficult but also that it would likely confuse our persona, Annie.\\
 
-When using Prezi, it is a human being that can creatively think of links and therefore make more graphical presentations. Due to the fact that our system only has limited intelligence, we end up with a far more structured presentation. However, considering that the goal of the created presentation is to allow users to intuitively understand dependencies and to allow them to deviate from the primary narrative path to enter the level of one of the dependencies and follow its narrative path for a while, it became obvious that a simple structure for this presentation is even preferable.\\
+When using Prezi, human beings can creatively think of links and therefore make more graphical presentations. Due to the fact that our system only has limited intelligence, we end up with a far more structured presentation. However, considering that the goal of the created presentation is to allow users to intuitively understand dependencies and to allow them to deviate from the primary narrative path to enter the level of one of the dependencies and follow its narrative path for a while, it became obvious that a simple structure for this presentation is actually preferable.\\
 
-After having considered the systematic aspects, let us now look at the cognitive aspects. Cognitively, we explored a part of the field of information systems. It is still an open question whether the developed system provides a better system for knowledge transfer. I strongly believe that the created system \sys adds value to presentation and has the power to facilitate and improve knowledge transfer due to some reasons that were already shown in the \autoref{sec:relatedworks}. These sources argued that the linking of learning materials is useful for knowledge transfer and that especially mathematics is a field that could profit from guided tours through topics as a way of learning topics according to users' individual knowledge bases.\\
+After having considered the systematic aspects, let us now look at the other aspects. Cognitively, we explored a part of the field of information systems. It is still an open question whether the developed system provides a better system for knowledge transfer. I strongly believe that the created system \sys adds value to presentation and has the power to facilitate and improve knowledge transfer due to some reasons that were already shown in the \autoref{sec:relatedworks}. There some argued that the linking of learning materials is useful for knowledge transfer and that especially mathematics is a field that could profit from guided tours through topics as a way of learning topics according to users' individual knowledge bases.\\
 
-\begin{wrapfigure}{l}{0.35\textwidth}
+\begin{wrapfigure}{l}{0.3\textwidth}
 \vspace{-28pt}
   \begin{center}
   \fbox{\href{http://prezi.com/i-bhj8xahg3u/?utm_campaign=share&utm_medium=copy&rc=ex0share}{
-      \includegraphics[width=0.33\textwidth]{assets/final/ExamplePathTriangle}
+      \includegraphics[width=0.28\textwidth]{assets/final/ExamplePathTriangle}
     } }
 \vspace{-20pt}
   \caption{Path Example}
@@ -773,17 +773,17 @@ Given this sensible input our persona, Annie can make use of digressions, where 
 
 \section{Future Work and Possible Extensions}
 
-This section lists some ideas on future work regarding this topic and the created system \sys. Before embarking on improvements of the system, a qualitative and quantitative analysis of the produced visual presentations should be conducted to confirm that this system helps users. For the quantitative analysis it would be ideal to take a course that has already been taught using a more traditional approach to presentations which can then function as a control group. After teaching the whole course using the newly created presentation, the data of how the students in this test group performed can be compared with the gathered data from how students used to perform in the course. For a qualitative analysis, students who have been subject to the use of and who have actively used the new presentation could be interviewed.\\
+This section lists some ideas on future work regarding this topic and the created system \sys. Before embarking on improvements of the system, a qualitative and quantitative analysis of the produced visual presentations should be conducted to confirm that this system aids users in understanding content better. For the quantitative analysis it would be ideal to take a course that has already been taught using a more traditional approach to presentations which can then function as a control group. After teaching the whole course using the newly created presentations, the data of how the students in this test group performed can be compared with the gathered data from how students used to perform in the course. For a qualitative analysis, students who have been subject to the use of and who have actively used the new presentation could be interviewed.\\
 
-Apart from an analysis to evaluate the effectiveness of the created presentations, the whole system could be made more user friendly for both the creator and the users of the presentations. By improving the creation user interface and allowing for users to choose their own designs, it becomes more easy to use and more attractive for users. Adding an editor would make this more user friendly for creators as well. To change a presentation after it has been created, a user currently has to understand how to manipulate HTML, JavaScript, and also CSS.\\
+Apart from an analysis to evaluate the effectiveness of the created presentations, the whole system could be made more user friendly for both the creator and the users of the presentations. By improving the creation user interface and allowing for users to choose their own designs, it becomes easier to use and more attractive for users. Adding an editor would make \sys more user friendly for creators as well. To change a presentation after it has been created, a user currently has to understand how to manipulate HTML, JavaScript, and also CSS.\\
 
 In terms of improving the usability for the users that will view and interact with the presentations, one could try to find a way to make use of relative size to additionally convey importance using impress.js' \texttt{data-scale} attribute. This would further add more semantic meaning to the slides. Additionally, one could think about adding a progress bar by using the work of Matthias Bilger \cite{bilger:npentrel15} to motivate users to continue.\\
 
-Overall it is even thinkable to create a different version of this system that could be made available to common users outside this research domain. The idea would be to allow users to add slides in an editor and to allow them to add dependencies themselves. Possibly the system could even suggest dependencies. As an example, I could very well envision a biology presentation that explains photosynthesis and allows the attentive student to catch up on dependencies such as the process that transforms ADP to ATP.\\
+Overall it is even thinkable to create a different version of this system that could be made available to general users outside this research domain. The idea would be to allow users to add slides in an editor and to allow them to add dependencies themselves. Possibly the system could even suggest dependencies. As an example, I could very well envision a biology presentation that explains photosynthesis and allows the attentive student to catch up on dependencies such as the process that transforms ADP to ATP.\\
 
 In terms of improving content, it would be interesting to not just provide paths to dependencies or prerequisite knowledge but also to knowledge that builds on the current topic. That way students that learn fast can already explore higher levels.\\
 
-This whole research project might also benefit from machine learning which could allow us to make smart offers of likely dependencies. On an individual basis we could use it to learn what the user knows and what the user does not know. Ideally we do not always want to show very low level dependencies, such as how to multiply, which our system could then learn. Combining machine learning with the identification of more didactic paths or figures within the data such as the example in \autoref{fig:pathExample} could further improve knowledge transfer.
+This whole research project might also benefit from machine learning which could allow us to suggest likely dependencies. On an individual basis we could use it to learn what the user knows and what the user does not know. Ideally we do not always want to show very low level dependencies, such as how to multiply, which our system could then learn. Combining machine learning with the identification of more didactic paths or figures within the data such as the example in \autoref{fig:pathExample} could further improve knowledge transfer.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -795,7 +795,6 @@ This relational presentation combines spatial narrative with information about t
 The benefits are not just for Annie when she is going through the presentation on her own, though, Annie's teacher now has a tool that allows him to use his normal lecture material in a more interactive way. Thus when the teacher realizes that the students need to revise previous material, the teacher can seamlessly go to that material and provide them with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
 
 In the future, I believe that this research could be adopted in more fields, transforming education into something that allows individuals to learn the way that is best for them. In the introduction, I introduced the metaphor of hiking up a mountain which can be done in different ways. The type of presentations this research built allows for a lot of different paths to reach a learning goal. The flexibility that comes with these presentations is undoubtedly preferable to traditional presentations as it offers clear benefits in allowing to effortlessly change the path of the presentation at any point.\\
-
 
 \newpage
 
