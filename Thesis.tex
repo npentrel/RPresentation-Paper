@@ -673,7 +673,7 @@ If Annie, while browsing through the different dependencies, realizes that she n
     } 
 \vspace{-5pt}
   \caption{Visualization of Dependencies and Levels at 60\degree}
-  \label{fig:visualDependency}
+  \label{fig:visualDependencyDegree}
 \vspace{-24pt}
   \end{center}
 \end{wrapfigure}
@@ -687,17 +687,39 @@ If Annie, while browsing through the different dependencies, realizes that she n
 
 Combining the information about narrative paths, dependencies, and levels, we derived an ordered information graph out of which we have built a presentation that Annie can interact with to learn about the pythagorean theorem. In this section we will examine the structure of the created presentation.\\
 
-To begin with, let us examine the choice of layout. The goal of this presentation is to have all the information the pythagorean theorem depends on easily accessible so that Annie can reach \textit{course-ancient} information easily. The added expressiveness that impress.js offers allowed us to have this in a very structured format. Since Prezi was mentioned in the beginning of this paper as a commercial alternative that was considered for this project, let us examine a sample prezi from afar and outline some differences. 
+To begin with, let us examine the choice of layout. The goal of this presentation is to have all the information the pythagorean theorem depends on easily accessible so that Annie can reach \textit{course-ancient} information easily. The added expressiveness that impress.js offers allowed us to have this in a very structured format. Since Prezi was mentioned in the beginning of this paper as a commercial alternative that was considered for this project, let us examine a sample prezi from afar and outline some differences.\\
 
-draw some conclusions as to why the outcome of this project is so very structured. 
+\begin{wrapfigure}{l}{0.35\textwidth}
+\vspace{-26pt}
+  \begin{center}
+  \fbox{\href{http://prezi.com/i-bhj8xahg3u/?utm_campaign=share&utm_medium=copy&rc=ex0share}{
+      \includegraphics[width=0.32\textwidth]{assets/final/Storytelling}
+    } }
+\vspace{-5pt}
+  \caption{Prezi Example \cite{npentrel2:npentrel15}}
+  \label{fig:preziExample}
+\vspace{-24pt}
+  \end{center}
+\end{wrapfigure}
+
+A prezi, if done right, is generally full of metaphors and visual connections. Our tool cannot mimic this creativity as it lacks the capability to abstract on such a high level. Therefore our product will be a lot more structure. However, it can use the basic elements and use semantic movements to use visual connections similar to those that prezis often feature. The movements we have are:
+\vspace{-12pt}
+\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+\item movement along the x-axis,
+\item movement along the y-axis, and
+\item rotations.
+\end{enumerate}
+\vspace{5pt}
+
+The movement along the x-axis has a mostly temporal semantics associated with it. Going to the left is connected with going backwards, whereas going to the right is associated with going forwards. Apart from going forwards and backwards, we can also move along the y-axis. Moving down intuitively means that we dig deeper into a topic and go to the roots whereas moving up means we will be on a higher level.\\
+
+The most interesting movement might be the rotations. Rotations aim to give the viewer the feeling that they are entering a topic and a different storyline. They come with a change of perspective which is underlined by the 3D transformation that the user sees.\\
+
+One might think that this is like a PowerPoint, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a birds perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentation is that through these overviews, dependencies become identifiable. More importantly they become accessible and allow viewers to go on small guided tours or small excursions into \textit{course-ancient} topics.\\
 
 
-One might think that this is like a powerpoint with small improvements.
-
-\ednote{meaning of moving right and down, rotation.}
 
 \ednote {path of going through the slides - identify didactic things!!, show possible paths thru presentation}
-
 \ednote{structuring of the presentation - link with primitives and spatial narrative, refer back to primitives: However, the relations can be much more expressive within impress.js.}
 %impress.js gives us all the necessary primitives that were outlined in section \ref{sec:primitives}.  
 
