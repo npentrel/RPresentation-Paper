@@ -631,18 +631,35 @@ When writing a document or course notes in \stex, the creator general writes a t
 \vspace{-50pt}
 \end{wrapfigure}
 
-If Annie, while browsing through the different dependencies, realizes that she needs to refresh her memory or learn more about any of the dependent information she can enter that level. The presentation will then continue on that level and give all the slides from that topic in the correct order. Once Annie has gone through this short excursion, she can return to the initial slide and resume the primary narrative path. These modular excursions are included in the presentation in 3D by making use of CSS3-transitions. Thus when the user enters an excursion a 90\degree rotation around the x-axis occurs and the user can now follow that story line.\\
+If Annie, while browsing through the different dependencies, realizes that she needs to refresh her memory or learn more about any of the dependent information she can enter that level. The presentation will then continue on that level and give all the slides from that topic in the correct order. Once Annie has gone through this short excursion, she can return to the initial slide and resume the primary narrative path. By adding a way to explore these other levels, the presentation adds more context and allows Annie to understand the subject on a deeper level. These modular excursions are included in the presentation in 3D by making use of CSS3-transitions (see \autoref{fig:dependencyLevelSnippet}). Thus when the user enters an excursion a 90\degree rotation around the x-axis occurs and the user can now follow that story line.\\
 
 \begin{wrapfigure}{r}{\textwidth}
 \vspace{-26pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
-<div class="step slide" data-x="8750" data-y="0" data-z="0" data-rotate-y="0"> Slide </div>
-<div class="step slide" data-x="8750" data-y="800" data-z="0" data-rotate-y="0"> Dependency 1 </div>
-<div class="step slide" data-x="8750" data-y="1600" data-z="0" data-rotate-y="0"> Dependency 2 </div>
+<div class="step slide" data-x="8750" data-y="0" data-z="0"
+	data-rotate-y="0"> 
+		Slide
+</div>
+<div class="step slide" data-x="8750" data-y="800" data-z="0"
+	data-rotate-y="0">
+		Dependency 1
+</div>
+<div class="step slide" data-x="8750" data-y="1600" data-z="0" 
+	data-rotate-y="0"> 
+		Dependency 2 
+</div>
+<div class="step slide" data-x="8750" data-y="1600" data-z="0" 
+	data-rotate-y="90">
+		Dependency 2 Continuation 1
+</div>
+<div class="step slide" data-x="8750" data-y="1600" data-z="1250" 
+	data-rotate-y="90">
+		Dependency 2 Continuation 2
+</div>
 \end{minted}
 \vspace{-5pt}
-  \caption{Code Snippet for a Dependency}
-  \label{fig:dependencySnippet}
+  \caption{Code Snippet for a Dependency Level}
+  \label{fig:dependencyLevelSnippet}
   \vspace{12pt}
 \end{wrapfigure}
 
@@ -665,33 +682,28 @@ If Annie, while browsing through the different dependencies, realizes that she n
 
 \ednote {change image}
 
-
-%Combining this information with the order in which these pieces of information occur, i.e. with narrative paths and levels, we now have an ordered information graph out of which we can build a presentation that Annie can interact with to learn about the pythagorean theorem. We will look at this graph in the presentation in \autoref{sec:RelationalPresentations}.
-
 \subsection{The Relational Presentation}
 \label{sec:RelationalPresentations}
 
+Combining the information about narrative paths, dependencies, and levels, we derived an ordered information graph out of which we have built a presentation that Annie can interact with to learn about the pythagorean theorem. In this section we will examine the structure of the created presentation.\\
+
+To begin with, let us examine the choice of layout. The goal of this presentation is to have all the information the pythagorean theorem depends on easily accessible so that Annie can reach \textit{course-ancient} information easily. The added expressiveness that impress.js offers allowed us to have this in a very structured format. Since Prezi was mentioned in the beginning of this paper as a commercial alternative that was considered for this project, let us examine a sample prezi from afar and outline some differences. 
+
+draw some conclusions as to why the outcome of this project is so very structured. 
 
 \ednote{meaning of moving right and down, rotation.}
-\ednote {path of going through the slides - identify didactic things!!}
-\ednote{show possible paths thru presentation}
-\ednote{structuring of the presentation - link with primitives and spatial narrative}
-\ednote{add example in slides and explain the different levels again}
-\ednote {explain ids of slides}
-\ednote{refer back to primitives: However, the relations can be much more expressive within impress.js.}
 
+\ednote {path of going through the slides - identify didactic things!!, show possible paths thru presentation}
+
+\ednote{structuring of the presentation - link with primitives and spatial narrative, refer back to primitives: However, the relations can be much more expressive within impress.js.}
 %impress.js gives us all the necessary primitives that were outlined in section \ref{sec:primitives}.  
 
-%into an interactive presentation. 
-
-% Layout
-%The exact layout of the frames and the best visualization of the relations between the frames is to be determined but figure \ref{fig:Annie-relsize} can be seen as a first draft. Ideally the added expressiveness that impress.js offers should lead to Annie having the information about the Pythagorean theorem on a slide-like structure, while having all the information the Pythagorean theorem depends on easily accessible so that she can reach \textit{course-old} information easily. \\
+\ednote {explain ids of slides - jsimpress}
 
 % for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
 
 %Similarly, we will employ visual relations to show related content. 
 
-If we were to learn about the pythagorean theorem and then suddenly realized that we lack knowledge the concept of squares we could then learn about that topic by going to that resource. In other words, we check the dependencies of the pythagorean theorem, go that that level and follow the narrative path about squares until we understand squares. By adding a way to explore these other levels, the presentation adds more context and allows viewers to understand the subject on a deeper level.
 
 \begin{wrapfigure}{c}{0.97\textwidth}
 \vspace{-26pt}
