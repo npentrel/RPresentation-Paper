@@ -185,6 +185,19 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 \clearpage
 \pagenumbering{arabic}
 
+\newpage
+\thispagestyle{empty}
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+\textsc{Aut viam inveniam aut faciam}\\
+
+\textit{(I'll either find a path or make one)}\\
+\vspace*{\fill}
+\end{center}
+
+\newpage
+
 \section{Introduction \& Motivation}
 \label{sec:introduction}
 
@@ -373,7 +386,7 @@ Apart from these basic attributes, impress.js offers the \texttt{data-scale} att
 In the following code snippets, a few other basic functionalities we will be using are explained \cite{andismith:npentrel15}. The opacity attribute allows us to discriminate between active and inactive slides which will later on allow us to hide content so as to not throw too much information at a user. Adding an overview can be accomplished with the last past of the CSS snippet and the html snippet below that.\\
 
 \begin{wrapfigure}{l}{\textwidth}
-\vspace{-26pt}
+\vspace{0pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 .step { opacity: 0.2; }
 .step.active { opacity: 1; }
@@ -405,7 +418,6 @@ To link back to a slide, slides are accessible via IDs. The slide with the ID \t
 
 \section{Towards a More Effective Presentation Format}
 \label{sec:TowardsAMoreEffectivePresentationFormat}
-\ednote{screenshot hack?}
 
 Building on the preliminaries, we will now commence the journey towards building a more effective presentation format to improve knowledge transfer by allowing flexibility in presentations. To create these presentations automatically, the tool \sys \cite{npentrel:npentrel15} was created.\\
 
@@ -561,7 +573,7 @@ pythagoreantheorem/measurements/area.omdoc?angle
 The system \sys parses the relational data and thus retrieves the dependencies of the topics. We already know that the level a piece of information is associated with infers that it is \textit{course-old} information \ednote{change order}. Dependencies give us the \textit{course-ancient} information, as dependencies intuitively link to information that happened more time ago.\\
 
 \begin{wrapfigure}{c}{\textwidth}
-\vspace{-26pt}
+\vspace{-0pt}
   \begin{center}
   \fbox{
       \includegraphics[width=0.97\textwidth]{assets/final/dependencyGraphPythTheo}
@@ -608,7 +620,7 @@ With the information about the order and the dependencies of information within 
 \begin{wrapfigure}{c}{\textwidth}
 \vspace{-50pt}
 \end{wrapfigure}
-
+\newpage
 \subsection{Levels}
 \label{sec:levels}
 
@@ -631,31 +643,21 @@ When writing a document or course notes in \stex, the creator general writes a t
 \vspace{-50pt}
 \end{wrapfigure}
 
-If Annie, while browsing through the different dependencies, realizes that she needs to refresh her memory or learn more about any of the dependent information she can enter that level. The presentation will then continue on that level and give all the slides from that topic in the correct order. Once Annie has gone through this short excursion, she can return to the initial slide and resume the primary narrative path. By adding a way to explore these other levels, the presentation adds more context and allows Annie to understand the subject on a deeper level. These modular excursions are included in the presentation in 3D by making use of CSS3-transitions (see \autoref{fig:dependencyLevelSnippet}). Thus when the user enters an excursion a 90\degree rotation around the x-axis occurs and the user can now follow that story line.\\
+If Annie, while browsing through the different dependencies, realizes that she needs to refresh her memory or learn more about any of the dependent information she can enter that level. The presentation will then continue on that level and give all the slides from that topic in the correct order. Once Annie has gone through this short excursion, she can return to the initial slide and resume the primary narrative path. By adding a way to explore these other levels, the presentation adds more context and allows Annie to understand the subject on a deeper level. These modular excursions are included in the presentation in 3D by making use of CSS3-transitions (see \autoref{fig:dependencyLevelSnippet}). Thus when the user enters an excursion a 90\degree\ rotation around the y-axis occurs and the user can now follow that story line.\\
 
 \begin{wrapfigure}{r}{\textwidth}
-\vspace{-26pt}
+\vspace{0pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 <div class="step slide" data-x="8750" data-y="0" data-z="0"
-	data-rotate-y="0"> 
-		Slide
-</div>
+	data-rotate-y="0"> Slide </div>
 <div class="step slide" data-x="8750" data-y="800" data-z="0"
-	data-rotate-y="0">
-		Dependency 1
-</div>
+	data-rotate-y="0"> Dependency 1 </div>
 <div class="step slide" data-x="8750" data-y="1600" data-z="0" 
-	data-rotate-y="0"> 
-		Dependency 2 
-</div>
+	data-rotate-y="0"> Dependency 2  </div>
 <div class="step slide" data-x="8750" data-y="1600" data-z="0" 
-	data-rotate-y="90">
-		Dependency 2 Continuation 1
-</div>
+	data-rotate-y="90"> Dependency 2 Continuation 1 </div>
 <div class="step slide" data-x="8750" data-y="1600" data-z="1250" 
-	data-rotate-y="90">
-		Dependency 2 Continuation 2
-</div>
+	data-rotate-y="90"> Dependency 2 Continuation 2 </div>
 \end{minted}
 \vspace{-5pt}
   \caption{Code Snippet for a Dependency Level}
@@ -667,10 +669,10 @@ If Annie, while browsing through the different dependencies, realizes that she n
 \vspace{-26pt}
   \begin{center}
   \fbox{
-      \includegraphics[width=0.97\textwidth]{assets/final/fullPresentation}
+      \includegraphics[width=0.77\textwidth]{assets/final/60degree}
     } 
 \vspace{-5pt}
-  \caption{Visualization of Dependencies}
+  \caption{Visualization of Dependencies and Levels at 60\degree}
   \label{fig:visualDependency}
 \vspace{-24pt}
   \end{center}
@@ -680,8 +682,6 @@ If Annie, while browsing through the different dependencies, realizes that she n
 \vspace{-50pt}
 \end{wrapfigure}
 
-\ednote {change image}
-
 \subsection{The Relational Presentation}
 \label{sec:RelationalPresentations}
 
@@ -690,6 +690,9 @@ Combining the information about narrative paths, dependencies, and levels, we de
 To begin with, let us examine the choice of layout. The goal of this presentation is to have all the information the pythagorean theorem depends on easily accessible so that Annie can reach \textit{course-ancient} information easily. The added expressiveness that impress.js offers allowed us to have this in a very structured format. Since Prezi was mentioned in the beginning of this paper as a commercial alternative that was considered for this project, let us examine a sample prezi from afar and outline some differences. 
 
 draw some conclusions as to why the outcome of this project is so very structured. 
+
+
+One might think that this is like a powerpoint with small improvements.
 
 \ednote{meaning of moving right and down, rotation.}
 
