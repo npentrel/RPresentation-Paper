@@ -50,6 +50,9 @@
 \def\stex{\texorpdfstring{\raisebox{-.5ex}S\kern-.5ex\TeX}{sTeX}\xspace}
 \def\sTeX{\stex}
 
+\usepackage{quoting}
+\quotingsetup{vskip=50pt}
+
 %\usepackage{csquotes}
 %\MakeOuterQuote{"}
 
@@ -192,7 +195,21 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 \begin{center}
 \textsc{Aut viam inveniam aut faciam}\\
 
+\vspace*{1cm}
+
 \textit{(I'll either find a path or make one)}\\
+
+\vspace*{4cm}
+
+\centering
+
+\begin{quoting}
+\begin{center}
+\noindent
+\textit{At this point, I would like to thank Prof. Dr. Michael Kohlhase for being an inspiring and helpful supervisor. Additionally, I would like to thank Mihnea Iancu and Tom Wiesing for aiding me in my research project.\\}
+\end{center}
+\end{quoting}
+
 \vspace*{\fill}
 \end{center}
 
@@ -620,6 +637,9 @@ With the information about the order and the dependencies of information within 
 \begin{wrapfigure}{c}{\textwidth}
 \vspace{-50pt}
 \end{wrapfigure}
+
+js.impress normally does not support the having different paths depending on pressing the up or down key. The JavaScript library had to be slightly adopted to handle this. As these are implementation details, this will not be further explained in this paper. The interested reader is encouraged to look at the code \cite{npentrel:npentrel15} directly.\\
+
 \newpage
 \subsection{Levels}
 \label{sec:levels}
@@ -721,25 +741,6 @@ One might think that this is like a PowerPoint, since PowerPoint offers similar 
 
 \section{Evaluation}
 \label{sec:eval}
-\ednote {rueckschauend bewerten und mit anderen dingen vergleichen so wie prezi best practices und prezis in general}
-
-\ednote {explain ids of slides - jsimpress}
-
-\ednote {- identify didactic things!!, show possible paths thru presentation}
-
-didactic idioms - digressions - going back to a different topic. 
-not linear but going overall 
-
-strawman. - cite MK -> IEEE paer
-
-in thesis a theoretical part like strawman theory
-
-
-didactic idioms - is there material on that?
-making up 
-
-
-
 
 Even though an evaluation is not fully possible given the limited time frame, the next subsections will attempt to evaluate the created system and the created presentations as well as their shortcomings. Afterwards we will briefly look at future work and possible extensions to our system.
 
@@ -750,9 +751,15 @@ The evaluation conducted in the following part is on the one hand, systematic an
 %Furthermore, with the above evaluation, we want to answer the main question of this proposed research, namely how and whether spatial narrative can be combined with inherent semantic closeness to facilitate and improve knowledge transfer.\\
 
 
-For browsers that cannot display the created presentations fallback styles could be added to make the content accessible.
+\ednote {rueckschauend bewerten und mit anderen dingen vergleichen so wie prezi best practices und prezis in general}
 
-\ednote{ImpressJS had to be adapted}
+\ednote {- identify didactic things!!, show possible paths thru presentation}
+didactic idioms - digressions - going back to a different topic. 
+not linear but going overall 
+strawman. - cite MK -> IEEE paper
+in thesis a theoretical part like strawman theory
+didactic idioms - is there material on that? -> making up 
+
 
 \section{Future Work and Possible Extensions}
 
@@ -775,6 +782,10 @@ learn what the user knows and what the user doesnt. - we dont always want to sho
 identify didactic things
 
 experiment with layouts
+
+
+For browsers that cannot display the created presentations fallback styles could be added to make the content accessible.
+
 
 \section{Conclusion}
 \label{sec:conclusion}
