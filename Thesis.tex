@@ -121,7 +121,7 @@
   \vspace{20mm}
   \begin{center}
     \huge
-    \textbf{The Combination of Spatial Narrative and Semantic Closeness to Derive Visualizations of Theory Graphs}
+    \textbf{The Combination of Spatial Narrative and Semantic Closeness to Derive Visualizations of Information Graphs}
   \end{center}
   \vspace*{4mm}
   \begin{center}
@@ -180,13 +180,12 @@ Visualization of knowledge is important to foster learning. To optimize the visu
 
 Taking the typical lecture as an example, it is often the case that, especially towards the end of the semester, students have difficulties remembering earlier topics. When a new topic is introduced it would be ideal to have a simple way to find dependencies and present students with an easy way to catch up.\\
 
-The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a content markup scheme for mathematical documents. Using OMDoc, the implemented system can present different pieces of mathematical concepts in an interactive and connected way that allows students to learn the concepts the current topic depends on, should they need to refresh their memories. Along these lines it examines if and how spatial narrative and semantic closeness can be combined to foster learning while discussing several different presentation schemata that are valuable for learning. This approach to presenting learning materials changes how we interact with course material which will allow students to learn better. Ultimately, this research is applicable to almost all areas in which knowledge needs to be transferred.\\ 
+The OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) format \cite{Kohlhase:OMDoc1.2} is a content markup scheme for mathematical documents. Using OMDoc, the implemented system can present different pieces of mathematical concepts in an interactive and connected way that allows students to learn the concepts the current topic depends on, should they need to refresh their memories. Along these lines it examines if and how spatial narrative and semantic closeness can be combined to foster learning. This approach to presenting learning materials changes how we interact with course material which will allow students to learn better. Ultimately, this research is applicable to almost all areas in which knowledge needs to be transferred.\\ 
 
 \newpage
 \tableofcontents
 
 \clearpage
-\pagenumbering{arabic}
 
 \newpage
 \thispagestyle{empty}
@@ -214,6 +213,7 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 \end{center}
 
 \newpage
+\pagenumbering{arabic}
 
 \section{Introduction \& Motivation}
 \label{sec:introduction}
@@ -239,7 +239,7 @@ The OMDoc (Open Mathematical Documents) format \cite{Kohlhase:OMDoc1.2} is a con
 \vspace{-10pt}
 \end{wrapfigure}
 
-Learning new things is a bit like hiking up a mountain. If you have ever gone hiking you know that it is relatively hard to hike up a steep mountain directly as shown in \autoref{fig:straight}. Some people do it but most people will rather hike up as shown in \autoref{fig:curvy}. Both paths lead to the goal. When we look at education, we normally only have one straight path. That is true for the narration in books, movies, Facebook timelines, and also traditional slide-based presentations. For three out of those four this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it can become possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that will allow the audience to take small detours and ultimately make the most out of the presentation.\\
+Learning new things is a bit like hiking up a mountain. If you have ever gone hiking, you know that it is relatively hard to hike up a steep mountain directly as shown in \autoref{fig:straight}. Some people do it but most people will rather hike up as shown in \autoref{fig:curvy}. Both paths lead to the goal. When we look at education, we normally only have one straight path. That is true for the narration in books, movies, and also traditional slide-based presentations. This has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it can become possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that will allow the audience to take small detours and ultimately make the most out of the presentation.\\
 
 This idea of linking content is not new. When Tim Berners-Lee laid out his Semantic Web Roadmap \cite{BernersLee:tsw98}, its intention was to transform the World Wide Web (WWW) from a web of mere human readable information to an information web with relations between different resources. Both the semantic web and the research at hand strive to connect pieces of information through adding context and thus to not just provide information, but rather knowledge. Within presentations, the intention is to present information in an interconnected way that provides context and thus facilitates understanding and learning.\\
 
@@ -256,7 +256,7 @@ This idea of linking content is not new. When Tim Berners-Lee laid out his Seman
 \vspace{-15pt}
 \end{wrapfigure}
 
-Let us dive into a contrived story that will guide us throughout this research: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem \autoref{fig:slideP}. She is then given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is.\\
+Let us dive into a contrived story that will guide us throughout this research: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem (see \autoref{fig:slideP}). She is then given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is.\\
 
 \begin{wrapfigure}{r}{0.4\textwidth}
 \vspace{-28pt}
@@ -271,49 +271,49 @@ Let us dive into a contrived story that will guide us throughout this research: 
 \vspace{-10pt}
 \end{wrapfigure}
 
-Annie's example shows the dependencies of different pieces of information (see \autoref{fig:PythDep}), i.e. the Pythagorean theorem depends on knowledge of area calculation, lengths, squares, right angles, and angles. As Annie and many of us who have witnessed many presentations know, traditional slide-based presentations lack the connectivity and flexibility to allow us to directly look related topics up. By adding connectivity and flexibility, we would allow Annie to not just look up the prerequisite knowledge such as what right angles are but hopefully also to understand the pythagorean theorem.\\
+Annie's example shows the dependencies of different pieces of information (see \autoref{fig:deppyg}), i.e. the Pythagorean theorem depends on knowledge of area calculation, lengths, squares, right angles, and angles. As Annie and many of us who have witnessed many presentations know, traditional slide-based presentations lack the connectivity and flexibility to allow us to directly look related topics up. By adding connectivity and flexibility, we would allow Annie to not just look up the prerequisite knowledge such as what right angles are but hopefully also to understand the pythagorean theorem.\\
 
-To achieve our goal to help Annie, we will set out to create a relational presentation system \sys to visually present information and its context which allows Annie to interact with the content and choose a path that matches her knowledge base. For this we will be using the OMDoc (Open Mathematical Documents) format which, given an annotated set of documents, will provide us with the necessary HTML-representation and PDF-representation of the information. It will also allow us to extract information about the semantic closeness of different pieces of information.\\
+To achieve our goal to help Annie, we will set out to create a relational presentation system \sys to visually present information and its context which allows Annie to interact with the content and choose a path that matches her knowledge base. For this we will be using the OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) format which, given an annotated set of documents, will provide us with the necessary XHTML-representation and PDF-representation of the information \cite{Kohlhase:OMDoc1.2}. It will also allow us to extract information about the semantic closeness of different pieces of information.\\
 
-This information alone would tell Annie where she might find the information she seeks but we will only use this as a starting point. We will use this information to visualize the dependencies of the information in a simple but effective approach using the presentation framework impress.js. The visualization of the information will make use of spatial narrative to connect information in a logical way. Thus the final product will allow Annie to intuitively interact with the presentation to find the information she needs.\\
+This information alone would tell Annie where she might find the information she seeks but it will only serve as a starting point. In face, this information will be used to visualize the dependencies of the information in a simple but effective approach using the presentation framework impress.js \cite{JSImpress:npentrel14}. The visualization of the information will make use of spatial narrative to connect information in a logical way. Thus the final product will allow Annie to intuitively interact with the presentation to find the information she needs.\\
 
-Along the way of helping Annie, we will explore the question how to allow users to go through flexible presentations where they can choose their own paths to explore the context of a topic as needed by browsing through related resources seamlessly. Specifically this research examines how spatial narrative can be combined with inherent semantic closeness of different pieces of information to facilitate knowledge transfer by providing the flexibility in a presentation to choose a path that fits.\\
+Along the way of helping Annie, we will explore the question of how to create a flexible presentation which allows Annie to choose her own path to explore the context of a topic as needed by browsing through related resources seamlessly. Specifically this research examines how spatial narrative can be combined with inherent semantic closeness of different pieces of information in order to facilitate knowledge transfer by providing the flexibility in a presentation to choose a path that fits.\\
 
 Overall, this work will showcase a tool for automatic contextual visualization of information through the usage of both spatial narrative and semantic closeness of information thus connecting information logically. The end product should be a system that creates presentations which allow users to choose their own narrative path by interacting with the presentation such that they can seamlessly explore related topics and brush up on half-forgotten topics.\\
 
-It is left to the reader to think about examples in his or her own life where he or she would have appreciated having these type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal, whether it be straight or curvy.\\
+It is left to the reader to think about examples in his or her own life where he or she would have appreciated having these type of flexible presentations. There are many stories such as Annie's in real life and it is therefore important to provide this context to facilitate learning and knowledge transfer as a whole so that each of us can choose a learning path that allows us to reach the goal, whether it be straight or curvy.
 
 \section{Related Work}
 \label{sec:relatedworks}
 
-When searching for related work there is little to be found. Some works have focused on making teaching more effective by providing students with all lecture materials directly after class which has been found to have a positive influence on learning \cite{DBLP:dblp_journals/tochi/BrothertonA04}. For this systems that can automatically capture and index classroom events as videos and images have been devised \cite{indexedclass:npentrel14}. Some of these systems use temporal information \cite{DBLP:dblp_journals/isci/ChungS97} to show multiple resources in sync as they appeared in the lecture. However, while this approach also aims at improving the learning experience, it does not in any way link content semantically based on dependencies or allow for more interactive presentations through combining semantic closeness and spatial narrative.\\
+When searching for related work there is little to be found. Some works have focused on making teaching more effective by providing students with all lecture materials directly after class which has been found to have a positive influence on learning \cite{DBLP:dblp_journals/tochi/BrothertonA04}. For this purpose, systems that can automatically capture and index classroom events as videos and images have been devised \cite{indexedclass:npentrel14}. Some of these systems use temporal information \cite{DBLP:dblp_journals/isci/ChungS97} to show multiple resources in sync as they appeared in the lecture. However, while this approach also aims at improving the learning experience, it does not in any way link content semantically based on dependencies or allow for more interactive presentations through combining semantic closeness and spatial narrative.\\
 
 Another piece of research has focused on the automatic generation of mind maps from text \cite{abdeen2009direct}. The software they developed uses Semantic Web technologies to create mind maps that show the relations between nodes that represent different objects. While the research at hand also intends to show the relation between pieces of information, it does it on a different level. For instance, it can represent that Shakespeare lived in Stratford but it would not be able to show the dependencies of mathematical concepts as it is limited to representing nodes in single words within the mind map. We, on the other hand, will focus on exactly that, i.e. dependencies and the creation of interactive presentations.\\
 
-There has also been research focusing on guided tours in mathematics \cite{SieBen:acgap00}. This creates guided tours on topics depending on the background of the user. While following the same ideal to improve knowledge transfer, it differs from this work in its presentation format. While Siekmann et al., focused on one topic and displaying it differently to users with different backgrounds, this research will show the topics of a whole course while allowing to see dependencies and while allowing to diverge from the prescribed presentation path.\\
+There has also been research focusing on guided tours in mathematics \cite{SieBen:acgap00}. This creates guided tours on topics depending on the background of the user. While working towards the same goal, namely to improve knowledge transfer, it differs from this work in its presentation format. While Siekmann et al., focused on one topic and displaying it differently to users with different backgrounds, this research will show the topics of a whole course while allowing to see dependencies and while allowing to diverge from the prescribed presentation path.\\
 
-Adding on to the research about guided tours in mathematics, there has also been research on semantic document navigation \cite{Koh:NavigationInMathDocs2012}. It demonstrates the need for assistance in form of navigation support for the reading of mathematical documents by creating a system that allows for semantic navigation in Excel spreadsheets. This research underlines the importance of a system that allows users like Annie to navigate information according to dependencies.\\
+Adding on to the research about guided tours in mathematics, there has also been research on semantic document navigation \cite{Koh:NavigationInMathDocs2012}. It demonstrates the need for assistance in form of navigation support for the reading of mathematical documents by creating a system that allows for semantic navigation in Excel spreadsheets. This research underlines the importance of a system that allows users like Annie to navigate information according to dependencies.
   
 \section{Preliminaries}
 \label{sec:preliminaries}
 
-In the following we will examine some prerequisite knowledge. By engaging with our example presentation we will show how the presentation can be improved to transfer knowledge more effectively.\\
+In the following we will examine some prerequisite knowledge. By engaging with our example presentation we will show how the presentation can be improved to transfer knowledge more effectively.
 
 \subsection{Terminology}
 \label{sec:terminology}
 
 Before discussing the buzzword knowledge transfer further, we will first engage in the conceptualization of the terms \textit{information}, \textit{knowledge}, and \textit{context}.\\
 
-The Oxford Dictionary of English \cite{OED:npentrel14} defines \textit{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling \autoref{fig:slideP} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textit{knowledge}, we will use the definition in Merriam-Webster's thesaurus \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". This \textit{association} is of special importance for the current project. We will define it as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see \autoref{fig:deppyg}).\\ 
+The Oxford Dictionary of English \cite{OED:npentrel14} defines \textit{information} as "what is conveyed or represented by a particular arrangement or sequence of things". Recalling \autoref{fig:slideP} and our contrived story of Annie, an example for information is the sequence \textit{$a^2 + b^2 = c^2$}. For the term \textit{knowledge}, we will use the definition in Merriam-Webster's thesaurus \cite{Webster:npentrel14} which defines it as the "fact or condition of knowing something with familiarity gained through experience or association". This \textit{association} is of special importance for the current project. We will define it as knowledge that is made up out of several pieces of information that are connected. In the example from above knowledge would be knowing when and how the Pythagorean theorem can be used by knowing the information that the usage of the Pythagorean theorem depends on (see \autoref{fig:deppyg} above).\\ 
 
-According to the Merriam-Webster thesaurus \cite{Webster:npentrel14}, \textit{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". Context can be easily explained with the example of Annie learning the Pythagorean theorem. The \textit{information} about the calculation of the length of the third side of the triangle is only helpful for Annie within the \textit{context} of the pieces of \textit{information} this depends on. Without this \textit{context}, Annie cannot understand the theorem. Figure \ref{fig:deppyg} illustrates the context by showing the dependencies of the theorem, i.e. calculating squares, area calculation, triangles, and right angles. It represents relatedness of \textit{concepts} by linking the different \textit{concepts} with lines, thus creating \textit{associations} between the different pieces of \textit{information}. We will be using the terms \textit{context} and \textit{network} almost interchangeably and depend on the reader to have the right intuition about these terms.\\
+According to the Merriam-Webster thesaurus \cite{Webster:npentrel14}, \textit{context} is defined as "the parts of a discourse that surround a word or passage and can throw light on its meaning". Context can be easily explained with the example of Annie learning the Pythagorean theorem. The \textit{information} about the calculation of the length of the third side of the triangle is only helpful for Annie within the \textit{context} of the pieces of \textit{information} this depends on. Without this \textit{context}, Annie cannot understand the theorem. Figure \ref{fig:deppyg} above illustrates the context by showing the dependencies of the theorem, i.e. calculating squares, area calculation, triangles, and right angles. It represents relatedness of \textit{concepts} by linking the different \textit{concepts} with lines, thus creating \textit{associations} between the different pieces of \textit{information}. The relatedness between the relevant concepts can also be imagined as a network. We will be using the terms \textit{context} and \textit{network} almost interchangeably and depend on the reader to have the right intuition about these terms.
 
 \subsection{OMDoc}
 \label{sec:OMDoc}
 
-OMDoc (\textbf{O}pen \textbf{M}athematical \textbf{Doc}uments) \cite{Kohlhase:OMDoc1.2} is an XML-based system that provides a data model and a format for content markup for mathematical documents. As such it is a semi-formal domain ontology. An ontology provides the framework for creating a semantic structure. It formally describes concepts within a specified area. A semi-formal ontology \cite{Sheth:npentrel14} is an ontology where formality of semantics is not a given. The semi-formal ontology can consist of partial or incomplete knowledge. \\
+OMDoc \cite{Kohlhase:OMDoc1.2} is an XML-based system that provides a data model and a format for content markup for mathematical documents. As such it is a semi-formal domain ontology. An ontology provides the framework for creating a semantic structure. It formally describes concepts within a specified area. A semi-formal ontology \cite{Sheth:npentrel14} is an ontology where formality of semantics is not a given. The semi-formal ontology can consist of partial or incomplete knowledge. \\
 
-If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in different ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and can be used to improve knowledge transfer.\\
+If OMDoc was used in every part of mathematics (and related fields), we would have a repository of mathematical knowledge that could be processed in various ways. This is possible because OMDoc provides the framework to create and store mathematical objects such as definitions and concepts. The relations between different mathematical objects and the attributes of mathematical objects can be added through annotations. This elevates the net of separate pieces of information that are stored individually to a semantic representation and can be used to improve knowledge transfer.
 
 
 \subsection{Status of Information within the (Dis)Course}
@@ -329,7 +329,7 @@ In this example in the first part of the sentence, \textit{discourse-new} inform
 
 These concepts can be adapted to the situation of teaching mathematics or computer science to students in a class. In general we will call the information that the speaker is passing on to the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
 
-Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course.\\
+Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course.
 
 \subsection{Primitives}
 \label{sec:primitives}
@@ -338,16 +338,16 @@ Within knowledge representation, five evaluation criteria for knowledge represen
 
 Visual and normal tree-like graph language have different primitives and it is interesting how the primitives of the former can be mapped to the primitives of the latter. When we consider tree-like graphs, there are two structural primitives, namely the nodes, which represent concepts, and the edges, which represent relations between nodes. Additionally we can add semantic primitives like attributes to the concepts and to the relations to add information or to show what kind of a relation it is. In normal graphs a relation between two nodes is often quite simple: there is one node that acts as the subject, one node that acts as an object, and the relation that acts as a predicate. Thus we can, for instance, express that the Pythagorean theorem depends on information about right angles (similar to \autoref{fig:deppyg}). These structural primitives and semantic primitives provide the basics that graphs can be built on.\\
 
-For impress.js, the primitive elements are text, images, slides, and the visual relation between the different frame-like structures. The slides can be mapped directly to the nodes/concepts that graphs use. Text and images are taken for granted within the slides. Similarly, the visual relation between different slides is very much like the relations between nodes. However, the relations can be much more expressive within impress.js.\\
+For impress.js, the primitive elements are text, images, slides, and the visual relation between the different frame-like structures. The slides can be mapped directly to the nodes/concepts which graphs use. Text and images are taken for granted within the slides. Similarly, the visual relation between different slides is very much like the relations between nodes. However, the relations can be much more expressive within impress.js.\\
 
-These relations or connections between different slides do not just connect content that depends on one another but also content that has a temporal connection, similar to slides following one after another. As such the temporal associations show the path that a traditional lecture would take. The dependencies that are visualized around each slide, mainly above or below the slide, allow for additional interactiveness.\\
+These relations or connections between different slides do not just connect content that depends on one another but also content that has a temporal connection, similar to slides following one after another. As such the temporal associations show the path that a traditional lecture would take. The dependencies that are visualized around each slide, mainly above or below the slide, allow for additional interactivity.
 
 \subsection{Spatial Narrative}
 \label{sec:spatialnarrative}
 
 The development of presentation tools like impress.js and Prezi, has changed how people think about presentations while making use of spatial narrative. Prezi is "a virtual whiteboard that transforms presentations from monologues into conversations: enabling people to see, understand, and remember ideas" \cite{Prezi:npentrel14}. When doing a good prezi presentation one has to understand the topic one is presenting on a deeper level and think about how one can portray connections between content visually.\\
 
-The concept of Spatial Narrative stems from the establishment of frameworks for "the creation of computer-assisted flexibile 'guided tours' based on the thematically and narrative linking of a set of locations within an area into a 'spatial narrative'" \cite{SpatialNarratives:npentrel14}. Teachers that are presenting a topic are an example for the experience of a tour guide for a certain topic.\\
+The concept of Spatial Narrative stems from the establishment of frameworks for "the creation of computer-assisted flexibile \textit{guided tours} based on the thematically and narrative linking of a set of locations within an area into a \textit{spatial narrative}" \cite{SpatialNarratives:npentrel14}. Teachers that are presenting a topic are an example for the experience of a tour guide for a certain topic.\\
 
 The benefits of spatial narrative is that the audience gains a more thorough understanding of the subject and has a better understanding of the interconnections between different pieces of information. By providing the audience with a story as a narrative one also makes use of the concept of Storytelling which is largely accredited with the benefit that the audience will have an easier time following the presenter. That is because our brains are not made to memorize a lot of unconnected pieces of information; it is far easier for us to remember information if it comes in story form \cite{Storytelling:npentrel14}.\\
 
@@ -364,7 +364,8 @@ The benefits of spatial narrative is that the audience gains a more thorough und
 \vspace{-10pt}
 \end{wrapfigure}
 
-In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she will be presented with the information about the Pythagorean theorem in a way that the \textit{course-ancient} and \textit{course-old} information this \textit{course-new} information depends on would be visually close and visually connected (see figure \ref{fig:arrowspyg}). It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.\\
+
+In this research we will use this knowledge to form an interconnected web of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. For Annie this means that she will be presented with the \textit{course-new} information about the Pythagorean theorem in a way that the dependent \textit{course-ancient} and \textit{course-old} information would be visually close and visually connected (see figure \ref{fig:arrowspyg}). It also means that Annie's teacher can answer Annie's questions easily by just going to the related \textit{course-ancient} information in a click.
 
 \subsection{impress.js}
 \label{sec:Impressjs}
@@ -379,7 +380,7 @@ For the implementation of \sys, impress.js will be used, as commercial applicati
   Slide Content
 </div>
 \end{minted}
-\vspace{-5pt}
+\vspace{-8pt}
   \caption{Code Snippet to Create a Slide}
   \label{fig:SSlide}
   \vspace{12pt}
@@ -400,7 +401,7 @@ For the implementation of \sys, impress.js will be used, as commercial applicati
 
 Apart from these basic attributes, impress.js offers the \texttt{data-scale} attribute to scale content, making slides appear bigger or smaller, and the \texttt{data-rotate} attribute which rotates slides in 3 dimensions using \texttt{data-rotate-x}, \texttt{data-rotate-y}, and \texttt{data-rotate-z}. As shown in \autoref{fig:Rotate} this allows the dependency graph to go into the third dimension.\\
 
-In the following code snippets, a few other basic functionalities we will be using are explained \cite{andismith:npentrel15}. The opacity attribute allows us to discriminate between active and inactive slides which will later on allow us to hide content so as to not throw too much information at a user. Adding an overview can be accomplished with the last past of the CSS snippet and the html snippet below that.\\
+In the following code snippets, a few other basic functionalities we will be using are illustrated \cite{andismith:npentrel15}. The opacity attribute allows us to discriminate between active and inactive slides which will later on allow us to hide content so as to not throw too much information at a user. Adding an overview can be accomplished with the last past of the CSS snippet and the html snippet below that.
 
 \begin{wrapfigure}{l}{\textwidth}
 \vspace{0pt}
@@ -409,19 +410,19 @@ In the following code snippets, a few other basic functionalities we will be usi
 .step.active { opacity: 1; }
 .step-overview .step { opacity: 1; cursor: pointer; }
 \end{minted}
-\vspace{-5pt}
+\vspace{-8pt}
   \caption{Code Snippet to Show and Hide Content}
   \label{fig:SSlide}
-  \vspace{30pt}
+  \vspace{20pt}
 \end{wrapfigure}
 
 \begin{wrapfigure}{l}{\textwidth}
-\vspace{-26pt}
+\vspace{-10pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 <div id="overview" class="step" data-x="8000" data-y="1000" data-scale="10">
 </div>
 \end{minted}
-\vspace{-7pt}
+\vspace{-11pt}
   \caption{Code Snippet for an Overview}
   \label{fig:SSlide}
   \vspace{12pt}
@@ -442,9 +443,9 @@ Building on the preliminaries, we will now commence the journey towards building
 \vspace{-26pt}
   \begin{center}
   \fbox{
-      \includegraphics[width=0.87\textwidth]{assets/final/Architecture}
+      \includegraphics[width=0.70\textwidth]{assets/final/Architecture}
     } 
-\vspace{-5pt}
+\vspace{-6pt}
   \caption{Architecture Diagram}
   \label{fig:architecture}
 \vspace{12pt}
@@ -455,7 +456,7 @@ Building on the preliminaries, we will now commence the journey towards building
 \vspace{-50pt}
 \end{wrapfigure}
 
-With the OMDoc framework and its tools it is possible to write down course notes or other documents in \stex. The Local MathHub Tool (lmh) uses these to create, among other things, PDF slides, XHTML slides, and relational information. To help Annie, let us use a document that explains the pythagorean theorem and related topics. The files that lmh creates, along with the \stex -files will be used as input in the next steps. For the implementation of  \sys Java was used. It would have been possible to choose other programming languages, however, using Java, we end up with platform-independent code.\\
+With the OMDoc framework and its tools it is possible to write down course notes or other documents in \textbf{S}emantically enhanced \TeX / \LaTeX\ (\stex). The Local MathHub Tool (lmh) uses these to create, among other things, PDF slides, XHTML slides, and relational information. To help Annie, let us use a document that explains the pythagorean theorem and related topics. The files that lmh creates, along with the \stex -files will be used as input in the next steps. For the implementation of  \sys Java was used. It would have been possible to choose other programming languages, however, using Java, we end up with platform-independent code.\\
 
 \sys itself operates in five main steps:\\
 \vspace{-12pt}
@@ -472,9 +473,9 @@ After asking the user for the location and names of the folders we want to work 
 
 In the next step the relational information is parsed and transformed into a hashtable. The keys are the slides which link to an array of dependent slides. The order of the slides and their dependencies are then combined to an information graph which we use to create a relational presentation out of the annotated document using the slide info. This slide information is created by either parsing the XHTML and directly copying the needed parts into the final presentation or by transforming the PDF into PNGs that are then included in the final presentation.\\
 
-For including the XHTML or the PNGs we use self-created boilerplate code, in which only some coordinates and the XHTML or the PNGs for the slide are added (see \autoref{sec:Impressjs}). The details of this process will be explained in subsection \ref{sec:narrativePaths}, \ref{sec:orderedInfoGraphs}, and \ref{sec:levels}. To complement the HTML, a CSS stylesheet is added which adds the Jacobs logo. The design of the template is based on a presentation by Sebastian Wolf's \cite{Wolf:npentrel15}.\\
+For including the XHTML or the PNGs we use self-created boilerplate code, in which only some coordinates and the XHTML or the PNGs for the slide are added (see \autoref{sec:Impressjs}). The details of this process will be explained in subsection \ref{sec:narrativePaths}, \ref{sec:orderedInfoGraphs}, and \ref{sec:levels}. To complement the HTML, a CSS stylesheet is added which adds the Jacobs logo. The design of the template is based on a presentation by S. Wolf \cite{Wolf:npentrel15}.\\
 
-To bring the presentation to life the framework impress.js which was introduced in \autoref{sec:Impressjs} was used because it easy to reuse the XHTML code that was automatically generated by lmh. An important additional reason for the choice of impress.js is that it enables us to use spatial Narrative as discussed in \autoref{sec:spatialnarrative} and \autoref{sec:Impressjs}. Due to the choice of impress.js \cite{JSImpress:npentrel14}, older browsers and mobile browsers are not able to display the created presentations properly. impress.js works in all modern browsers that support CSS 3D transforms.\\
+To bring the presentation to life the framework impress.js which was introduced in \autoref{sec:Impressjs} was used because it is simple to reuse the XHTML code that was automatically generated by lmh. An important additional reason for the choice of impress.js is that it enables us to use spatial Narrative as discussed in \autoref{sec:spatialnarrative} and \autoref{sec:Impressjs}. Due to the choice of impress.js \cite{JSImpress:npentrel14}, older browsers and mobile browsers are not able to display the created presentations properly. The library impress.js works in all modern browsers that support CSS 3D transforms.
 
 \subsection{Narrative Paths}
 \label{sec:narrativePaths}
@@ -489,7 +490,7 @@ One opportunity to employ spatial narrative is to place content which is inheren
   \fbox{
       \includegraphics[width=0.97\textwidth]{assets/final/inclusionGraphPythagorean}
     } 
-\vspace{-16pt}
+\vspace{-20pt}
   \caption{Inclusion Graph for the Pythagorean Theorem}
   \label{fig:inclusionGraph}
 \vspace{12pt}
@@ -497,11 +498,8 @@ One opportunity to employ spatial narrative is to place content which is inheren
 \end{wrapfigure}
 
 \begin{wrapfigure}{l}{\textwidth}
-\vspace{-80pt}
+\vspace{-60pt}
 \end{wrapfigure}
-
-
-\newpage
 
 \begin{wrapfigure}{l}{0.3\textwidth}
 \vspace{-28pt}
@@ -509,7 +507,7 @@ One opportunity to employ spatial narrative is to place content which is inheren
   \fbox{
       \includegraphics[width=0.28\textwidth]{assets/final/inclusionGraphCS}
     } 
-\vspace{-16pt}
+\vspace{-20pt}
   \caption{Inclusion Graph for GenCS}
   \label{fig:inclusionGraphGenCS}
 \vspace{-24pt}
@@ -521,27 +519,27 @@ In our system \sys, we parse the \stex files using a Depth First Search algorith
 The retrieved order is the intended narrative layer, which we will refer to as a \textit{primary narrative path} since we go from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as shown in \autoref{fig:narrativePathCode}. This code snippet creates the narrative path portrayed in \autoref{fig:primaryNarrativePath}.\\
 
 \begin{wrapfigure}{r}{\textwidth}
-\vspace{-26pt}
+\vspace{-0pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 <div class="step" data-x="1250" data-y="0"> ... </div>
 <div class="step" data-x="2500" data-y="0"> ... </div>
 <div class="step" data-x="3750" data-y="0"> ... </div>
 <div class="step" data-x="5000" data-y="0"> ... </div>
 \end{minted}
-\vspace{-5pt}
+\vspace{-8pt}
   \caption{Code Snippet for a Narrative Path}
   \label{fig:narrativePathCode}
   \vspace{12pt}
 \end{wrapfigure}
 
 \begin{wrapfigure}{c}{\textwidth}
-\vspace{-20pt}
+\vspace{-30pt}
   \begin{center}
   \fbox{
     \includegraphics[width=0.97\textwidth]{assets/final/primaryNarrativePath2}
     }
   \end{center}
-\vspace{-16pt}
+\vspace{-20pt}
   \caption{Primary Narrative Path}
   \label{fig:primaryNarrativePath}
 \vspace{12pt}
@@ -551,9 +549,9 @@ The retrieved order is the intended narrative layer, which we will refer to as a
 \vspace{-50pt}
 \end{wrapfigure}
 
-The primary narrative path, formed by a horizontal stream of slides, is the traditional path a presenter normally uses when preparing a PowerPoint presentation. This path happens to also contain temporal information which is illustrated by the arrow in \autoref{fig:primaryNarrativePath}. This temporal information is what we extracted from the \stex as the order in which the slides (or the information on the slides) should appear in.\\
+The primary narrative path, formed by a horizontal stream of slides, is the traditional path a presenter normally uses when preparing a PowerPoint presentation. This path happens to also contain temporal information which is illustrated by the arrow in \autoref{fig:primaryNarrativePath}. This temporal information is what we extracted from the \stex as the order in which the slides (or the information on the slides) should appear.\\
 
-This temporal information is also used to create narrative paths for subsections of the whole presentation that only explain one topic. In that these narrative paths are similar to the guided tours mentioned in \autoref{sec:relatedworks} in that they aim to explain one topic but they are different in that they just reuse slides that have already occurred. Going back to our example of Annie, an example of a subsection would be the information concerning angles. In essence, the \textit{intended narrative path} contains multiple \textit{narrative paths} of its own. These occur on different levels as explained in \autoref{sec:levels} and are based on the concept of Spatial Narratives (see \autoref{sec:spatialnarrative}).\\
+This temporal information is also used to create narrative paths for subsections of the whole presentation that only explain one topic. These narrative paths are similar to the guided tours mentioned in \autoref{sec:relatedworks} in that they aim to explain one topic but they are different in that they just reuse slides that have already occurred. Going back to our example of Annie, an example of a subsection would be the information concerning angles. In essence, the \textit{intended narrative path} contains multiple \textit{narrative paths} of its own. These occur on different levels as explained in \autoref{sec:levels} and are based on the concept of Spatial Narratives (see \autoref{sec:spatialnarrative}).
 
 \subsection{Ordered Information Graphs}
 \label{sec:orderedInfoGraphs}
@@ -561,7 +559,7 @@ This temporal information is also used to create narrative paths for subsections
 As described in \autoref{sec:TowardsAMoreEffectivePresentationFormat}, lmh outputs information about dependencies of topics. The general format of one relation can be seen in \autoref{fig:reldatacode} (lines 1-2). A specific example showing some of the dependencies for the pythagorean theorem example can be seen in lines 4-11.\\
 
 \begin{wrapfigure}{r}{\textwidth}
-\vspace{-26pt}
+\vspace{-0pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 theory path/to/file?theory_name
 Includes path/to/file path/to/dependent/file?theory_name
@@ -587,15 +585,15 @@ pythagoreantheorem/measurements/area.omdoc?angle
 
 \footnotetext{All the above paths were shortened by "http://mathhub.info/MiKoMH/" to maintain readability.}
 
-The system \sys parses the relational data and thus retrieves the dependencies of the topics. We already know that the level a piece of information is associated with infers that it is \textit{course-old} information \ednote{change order}. Dependencies give us the \textit{course-ancient} information, as dependencies intuitively link to information that happened more time ago.\\
+The system \sys parses the relational data and thus retrieves the dependencies of the topics. We already know that the level with which a piece of information is associated infers that it is \textit{course-old} information \ednote{change order}. Dependencies give us the \textit{course-ancient} information, as dependencies intuitively link to information obtained ago.\\
 
 \begin{wrapfigure}{c}{\textwidth}
-\vspace{-0pt}
+\vspace{-26pt}
   \begin{center}
   \fbox{
       \includegraphics[width=0.97\textwidth]{assets/final/dependencyGraphPythTheo}
     } 
-\vspace{-5pt}
+\vspace{-20pt}
   \caption{Dependency Graph}
   \label{fig:depGraphPythagoreanFull}
 \vspace{12pt}
@@ -606,16 +604,16 @@ The system \sys parses the relational data and thus retrieves the dependencies o
 \vspace{-50pt}
 \end{wrapfigure}
 
-With the information about the order and the dependencies of information within the paper, we now have an ordered information graph out of which we can build a first presentation that Annie can interact with to learn about the pythagorean theorem. \sys creates this presentation incrementally. As outlined in \autoref{sec:narrativePaths} and visible in \autoref{fig:primaryNarrativePath}, \sys creates the primary narrative path from the order of the slides. After adding each slide it checks whether there is \textit{course-ancient} information, i.e. whether there are dependencies, for that slide. If there are dependencies those are added below the slide itself (see \autoref{fig:visualDependency}). This is achieved by keeping the \texttt{data-x} value but increasing the \texttt{data-y} value (see \autoref{fig:dependencySnippet}).\\
+With the data about the order and the dependencies of information within the paper, we now have an ordered information graph out of which we can build a first presentation that Annie can interact with to learn about the pythagorean theorem. \sys creates this presentation incrementally. As outlined in \autoref{sec:narrativePaths} and illustrated in \autoref{fig:primaryNarrativePath}, \sys creates the primary narrative path from the order of the slides. After adding each slide it checks whether there is \textit{course-ancient} information, i.e. whether there are dependencies, for that slide. If there are dependencies those are added below the slide itself (see \autoref{fig:visualDependency}). This is achieved by keeping the \texttt{data-x} value but increasing the \texttt{data-y} value (see \autoref{fig:dependencySnippet}).
 
 \begin{wrapfigure}{r}{\textwidth}
-\vspace{-26pt}
+\vspace{-0pt}
 \begin{minted}[linenos=true, bgcolor=bg]{C}
 <div class="step slide" data-x="8750" data-y="0"> Slide </div>
 <div class="step slide" data-x="8750" data-y="800"> Dependency 1 </div>
 <div class="step slide" data-x="8750" data-y="1600"> Dependency 2 </div>
 \end{minted}
-\vspace{-5pt}
+\vspace{-8pt}
   \caption{Code Snippet for a Dependency}
   \label{fig:dependencySnippet}
   \vspace{12pt}
@@ -627,10 +625,10 @@ With the information about the order and the dependencies of information within 
   \fbox{
       \includegraphics[width=0.97\textwidth]{assets/final/fullPresentation}
     } 
-\vspace{-5pt}
+\vspace{-20pt}
   \caption{Visualization of Dependencies}
   \label{fig:visualDependency}
-\vspace{-24pt}
+\vspace{12pt}
   \end{center}
 \end{wrapfigure}
 
@@ -638,21 +636,20 @@ With the information about the order and the dependencies of information within 
 \vspace{-50pt}
 \end{wrapfigure}
 
-js.impress normally does not support the having different paths depending on pressing the up or down key. The JavaScript library had to be slightly adopted to handle this. As these are implementation details, this will not be further explained in this paper. The interested reader is encouraged to look at the code \cite{npentrel:npentrel15} directly.\\
+The library impress.js normally does not support the having different paths depending on pressing the up or down key. The JavaScript library had to be slightly adopted to handle this. As these are implementation details, this will not be further explained in this paper. The interested reader is encouraged to look at the code \cite{npentrel:npentrel15} directly.
 
-\newpage
 \subsection{Levels}
 \label{sec:levels}
 
-When writing a document or course notes in \stex, the creator general writes a top-level file such as \textit{notes.tex} from where other tex-files are included. These included files again include further tex-files etc.. Thus we are automatically provided with levels that we can use for splicing our primary narrative path into smaller narrative paths. In essence, on any level the order of information in that topic is a narrative path. In mathematical notation a level within a directed graph $G = \langle V, E \rangle $, with $V$ being a set of nodes and $E = V \times V$ being the set of directed edges, is the set $L_w = \lbrace v \vert \langle w, v \rangle \in E \rbrace$. From these levels we can infer the status of the information. Anything that is on the same level or in the sublevels thereof is generally considered to be \textit{course-old} information.\\
+When writing a document or course notes in \stex, the creator general writes a top-level file such as \textit{notes.tex} from where other tex-files are included. These included files again include further tex-files etc.. Thus we are automatically provided with levels that we can use for splicing our primary narrative path into smaller narrative paths. In essence, on any level the order of information in that topic is a narrative path. Expressed in mathematical notation a level within a directed graph $G = \langle V, E \rangle $, with $V$ being a set of nodes and $E = V \times V$ being the set of directed edges, is the set $L_w = \lbrace v \vert \langle w, v \rangle \in E \rbrace$. From these levels we can infer the status of the information. Anything that is on the same level or in the sublevels thereof is generally considered to be \textit{course-old} information.\\
 
 \begin{wrapfigure}{c}{\textwidth}
-\vspace{-26pt}
+\vspace{0pt}
   \begin{center}
   \fbox{
       \includegraphics[width=0.97\textwidth]{assets/final/levels}
     } 
-\vspace{-5pt}
+\vspace{-20pt}
   \caption{Inclusion Graph with Levels}
   \label{fig:levelsGraph}
 \vspace{12pt}
@@ -679,14 +676,14 @@ If Annie, while browsing through the different dependencies, realizes that she n
 <div class="step slide" data-x="8750" data-y="1600" data-z="1250" 
 	data-rotate-y="90"> Dependency 2 Continuation 2 </div>
 \end{minted}
-\vspace{-5pt}
+\vspace{-8pt}
   \caption{Code Snippet for a Dependency Level}
   \label{fig:dependencyLevelSnippet}
   \vspace{12pt}
 \end{wrapfigure}
 
 \begin{wrapfigure}{c}{1\textwidth}
-\vspace{-26pt}
+\vspace{-0pt}
   \begin{center}
   \fbox{
       \includegraphics[width=0.77\textwidth]{assets/final/60degree}
@@ -715,7 +712,7 @@ To begin with, let us examine the choice of layout. The goal of this presentatio
   \fbox{\href{http://prezi.com/i-bhj8xahg3u/?utm_campaign=share&utm_medium=copy&rc=ex0share}{
       \includegraphics[width=0.42\textwidth]{assets/final/Storytelling}
     } }
-\vspace{-5pt}
+\vspace{-20pt}
   \caption{Prezi Example \cite{npentrel2:npentrel15}}
   \label{fig:preziExample}
 \vspace{-24pt}
@@ -737,7 +734,7 @@ The movement along the x-axis has a mostly temporal semantics associated with it
 
 The most interesting movement might be the rotations. It should be briefly mentioned that too much rotation leads to seasickness in users, as anyone who has seen a bad prezi can attest to. These are generally rotations around the x-axis that rotate more than 20\degree, therefore our rotations are not affected. Instead of causing seasickness, our rotations aim to give the viewer the feeling that they are entering a topic and a different storyline. They come with a change of perspective which is underlined by the 3D transformation that the user sees. Overall, these movements add expressiveness to the relations and allow for intuitive interaction with the presentation.\\
 
-One might think that this is like a PowerPoint, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a birds perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentation is that through these overviews, dependencies become identifiable. More importantly they become accessible and allow viewers to go on small guided tours or small excursions into \textit{course-ancient} topics giving users the flexibility to choose their own path while going through the presentation.\\
+One might think that this is like a PowerPoint, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a birds perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentation is that through these overviews, dependencies become identifiable. More importantly they become accessible and allow viewers to go on small guided tours or small excursions into \textit{course-ancient} topics giving users the flexibility to choose their own path while going through the presentation.
 
 \section{Evaluation}
 \label{sec:eval}
@@ -750,7 +747,7 @@ Even though an evaluation is not fully possible given the limited time frame, th
   \fbox{
       \includegraphics[width=0.37\textwidth]{assets/final/initialIdea}
     }
-\vspace{-5pt}
+\vspace{-20pt}
   \caption{Initial Presentation Idea}
   \label{fig:initialIdea}
 \vspace{-24pt}
@@ -769,7 +766,7 @@ After having considere the systematic aspects, let us now look at the cognitive 
   \fbox{\href{http://prezi.com/i-bhj8xahg3u/?utm_campaign=share&utm_medium=copy&rc=ex0share}{
       \includegraphics[width=0.42\textwidth]{assets/final/ExamplePathTriangle}
     } }
-\vspace{-5pt}
+\vspace{-20pt}
   \caption{Path Example}
   \label{fig:pathExample}
 \vspace{-24pt}
@@ -780,7 +777,7 @@ Since a qualitative analysis was unfortunately not possible in this time frame, 
 
 In the book \textit{OMDoc - An Open Markup Format for Mathematical Documents} \cite{URL:omdocspec}, a didactic figure called the straw-man theory is introduced as an example for a naïve reduced approximation of the real theory that aims to show an example to explain why this approximation does not work. Our system is not sophisticated enough to examine these structures on its own and figure out which information is best to be shown. Instead, \sys simply finds where the dependent information has been taught before and reuses the order in which it was taught before. In essence, our system heavily relies on sensible input.\\
 
-Given this sensible input we offer the user digressions, where the user can go back to a different topic and follow its narrative path for a while. An example for this is highlighted with a blue triangle in \autoref{fig:pathExample}. These digressions are the added value that allow flexibility in these new presentation and transform the traditional presentations from linear presentations to what I call relational presentations.\\
+Given this sensible input we offer the user digressions, where the user can go back to a different topic and follow its narrative path for a while. An example for this is highlighted with a blue triangle in \autoref{fig:pathExample}. These digressions are the added value that allow flexibility in these new presentation and transform the traditional presentations from linear presentations to what I call relational presentations.
 
 
 \section{Future Work and Possible Extensions}
@@ -795,7 +792,7 @@ Overall it is even thinkable to create a different version of this system that c
 
 In terms of improving content, it would be interesting to not just provide paths to dependencies or prerequisite knowledge but also to knowledge that builds on the current topic. That way students that learn fast can already explore higher levels.\\
 
-This whole research project would also benefit from machine learning which could allow us to make smart offers of likely dependencies. On an individual basis we could use it to learn what the user knows and what the user does not know. Ideally we do not always want to show very low level dependencies, such as how to multiply, which our system could then learn. Combining machine learning with the identification of more didactic paths or figures within the data could further improve knowledge transfer.\\
+This whole research project would also benefit from machine learning which could allow us to make smart offers of likely dependencies. On an individual basis we could use it to learn what the user knows and what the user does not know. Ideally we do not always want to show very low level dependencies, such as how to multiply, which our system could then learn. Combining machine learning with the identification of more didactic paths or figures within the data could further improve knowledge transfer.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -806,10 +803,9 @@ This relational presentation combines spatial narrative with information about t
 
 Not just Annie has an easier way of going through the presentation on her own, Annie's teacher now has a tool that allows her to use her normal lecture material in a more interactive way. Thus when the teacher realizes that the students need to revise previous material, the teacher can easily go to that material and provide them with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
 
+In the future, I believe that this research could be adopted in more fields, transforming education into something that allows individuals to learn the way that is best for them. In the introduction, I introduced the metaphor of hiking up a mountain which can be done in different ways. The type of presentations this research built allow for a lot of different paths to reach a learning goal that fit individuals and allow for more interactivity.\\
 
-%But not only will \sys make courses more engaging, interactive, and easier to follow, it will also lead to better knowledge absorption because students learn the concepts and in addition intuitively understand how they relate to one another. This allows faster revision of material and facilitates studying without a teacher present.\\
-
-%Should this research prove successful it could be adapted for other areas. In the future creating a meaningful, interactive presentation might be just a matter of uploading an annotated document.
+The flexibility that comes with these presentations is undoubtedly preferable to traditional presentations as it offers clear benefits.\\
 
 \newpage
 
