@@ -536,7 +536,7 @@ The retrieved order is the intended narrative layer, which we will refer to as a
 
 The primary narrative path, formed by a horizontal stream of slides, is the traditional path a presenter normally uses when preparing a PowerPoint presentation. This path happens to also contain temporal information which is illustrated by the arrow in \autoref{fig:primaryNarrativePath}. This temporal information is what we extracted from the \stex as the order in which the slides (or the information on the slides) should appear in.\\
 
-This temporal information is also used to create narrative paths for subsections of the whole presentation that only explain one topic. In that these narrative paths are similar to the guided tours mentioned in \autoref{sec:relatedworks} in that they aim to explain one topic but they are different in that they just reuse slides that have already occurred. Going back to our example of Annie, an example of a subsection would be the information concerning angles. In essence, the \textit{intended narrative path} contains multiple \textit{narrative paths} of its own. These occur on different levels as explained in \autoref{sec:levels}.\\
+This temporal information is also used to create narrative paths for subsections of the whole presentation that only explain one topic. In that these narrative paths are similar to the guided tours mentioned in \autoref{sec:relatedworks} in that they aim to explain one topic but they are different in that they just reuse slides that have already occurred. Going back to our example of Annie, an example of a subsection would be the information concerning angles. In essence, the \textit{intended narrative path} contains multiple \textit{narrative paths} of its own. These occur on different levels as explained in \autoref{sec:levels} and are based on the concept of Spatial Narratives (see \autoref{sec:spatialnarrative}).\\
 
 \subsection{Ordered Information Graphs}
 \label{sec:orderedInfoGraphs}
@@ -689,11 +689,11 @@ Combining the information about narrative paths, dependencies, and levels, we de
 
 To begin with, let us examine the choice of layout. The goal of this presentation is to have all the information the pythagorean theorem depends on easily accessible so that Annie can reach \textit{course-ancient} information easily. The added expressiveness that impress.js offers allowed us to have this in a very structured format. Since Prezi was mentioned in the beginning of this paper as a commercial alternative that was considered for this project, let us examine a sample prezi from afar and outline some differences.\\
 
-\begin{wrapfigure}{l}{0.35\textwidth}
+\begin{wrapfigure}{l}{0.45\textwidth}
 \vspace{-26pt}
   \begin{center}
   \fbox{\href{http://prezi.com/i-bhj8xahg3u/?utm_campaign=share&utm_medium=copy&rc=ex0share}{
-      \includegraphics[width=0.32\textwidth]{assets/final/Storytelling}
+      \includegraphics[width=0.42\textwidth]{assets/final/Storytelling}
     } }
 \vspace{-5pt}
   \caption{Prezi Example \cite{npentrel2:npentrel15}}
@@ -702,7 +702,9 @@ To begin with, let us examine the choice of layout. The goal of this presentatio
   \end{center}
 \end{wrapfigure}
 
-A prezi, if done right, is generally full of metaphors and visual connections. Our tool cannot mimic this creativity as it lacks the capability to abstract on such a high level. Therefore our product will be a lot more structure. However, it can use the basic elements and use semantic movements to use visual connections similar to those that prezis often feature. The movements we have are:
+A prezi, if done right, is generally full of metaphors and meaningful visual connections. Our tool cannot mimic this creativity as it lacks the capability to abstract on such a high level. Therefore our product will be a lot more structured and focus on visualizing relations between content with movement and closeness. This also serves to keep the resulting presentation simple and easily usable.\\
+
+Still, it can use some of the primitives of impress.js (see \autoref{sec:primitives}) to create meaningful visual relations and create semantic movements. These meaningful visual connections are similar to those that prezis often feature. The relations between the content, such as it being the next slide in the narrative or it being a dependency are shown through the closeness and the placement of the slide as well as the movements that come with it. The following movements add to the meaning:\\
 \vspace{-12pt}
 \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
 \item movement along the x-axis,
@@ -711,41 +713,18 @@ A prezi, if done right, is generally full of metaphors and visual connections. O
 \end{enumerate}
 \vspace{5pt}
 
-The movement along the x-axis has a mostly temporal semantics associated with it. Going to the left is connected with going backwards, whereas going to the right is associated with going forwards. Apart from going forwards and backwards, we can also move along the y-axis. Moving down intuitively means that we dig deeper into a topic and go to the roots whereas moving up means we will be on a higher level.\\
+The movement along the x-axis has a mostly temporal semantics associated with it. Going to the left is connected with going backwards in the narrative, whereas going to the right is associated with going forwards in the narrative. Apart from going forwards and backwards, we can also move along the y-axis. Moving down intuitively means that we dig deeper into a topic and go to the roots whereas moving up means we will be on a higher level.\\
 
-The most interesting movement might be the rotations. Rotations aim to give the viewer the feeling that they are entering a topic and a different storyline. They come with a change of perspective which is underlined by the 3D transformation that the user sees.\\
+The most interesting movement might be the rotations. Rotations aim to give the viewer the feeling that they are entering a topic and a different storyline. They come with a change of perspective which is underlined by the 3D transformation that the user sees. Overall, these movements add expressiveness to the relations and allow for intuitive interaction with the presentation.\\
 
 One might think that this is like a PowerPoint, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a birds perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentation is that through these overviews, dependencies become identifiable. More importantly they become accessible and allow viewers to go on small guided tours or small excursions into \textit{course-ancient} topics.\\
 
+Through this flexibility the presentation allows users to choose their own path while going through the presentation. The didactic element
 
 
-\ednote {path of going through the slides - identify didactic things!!, show possible paths thru presentation}
-\ednote{structuring of the presentation - link with primitives and spatial narrative, refer back to primitives: However, the relations can be much more expressive within impress.js.}
-%impress.js gives us all the necessary primitives that were outlined in section \ref{sec:primitives}.  
+\ednote {- identify didactic things!!, show possible paths thru presentation}
 
 \ednote {explain ids of slides - jsimpress}
-
-% for creating a spatial narrative as outlined in section \ref{sec:spatialnarrative}. Knowing the dependencies and the status of the information will allow us to choose which information to show the user in the close surroundings of the current information we are showing.\\
-
-%Similarly, we will employ visual relations to show related content. 
-
-
-\begin{wrapfigure}{c}{0.97\textwidth}
-\vspace{-26pt}
-  \begin{center}
-  \fbox{
-      \includegraphics[width=0.97\textwidth]{assets/final/fullPresentation}
-    } 
-\vspace{-5pt}
-  \caption{Presentation Overview}
-  \label{fig:fullPresentation}
-\vspace{12pt}
-  \end{center}
-\end{wrapfigure}
-
-\begin{wrapfigure}{c}{\textwidth}
-\vspace{-50pt}
-\end{wrapfigure}
 
 
 \section{Evaluation}
@@ -782,6 +761,10 @@ Overall it is even thinkable to create a different version of this system that c
 machine learning to make smart offers of knowledge. 
 
 learn what the user knows and what the user doesnt. - we dont always want to show how to do multiplication
+
+identify didactic things
+
+experiment with layouts
 
 \section{Conclusion}
 \label{sec:conclusion}
