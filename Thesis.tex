@@ -582,7 +582,7 @@ The system \sys parses the relational data and thus retrieves the dependencies o
 \vspace{-30pt}
   \begin{center}
   \fbox{
-      \includegraphics[width=0.97\textwidth]{assets/final/dependencyGraphPythTheo}
+      \includegraphics[width=0.97\textwidth]{assets/final/dependencyGraphPythTheo2}
     } 
 \vspace{-20pt}
   \caption{Dependency Graph}
@@ -614,7 +614,7 @@ With the data about the order and the dependencies of information within the pap
 \vspace{-16pt}
   \begin{center}
   \fbox{
-      \includegraphics[width=0.97\textwidth]{assets/final/fullPresentation}
+      \includegraphics[width=0.87\textwidth]{assets/final/fullPresentation2}
     } 
 \vspace{-20pt}
   \caption{Visualization of Dependencies}
@@ -775,15 +775,15 @@ Given this sensible input our persona, Annie can make use of digressions, where 
 
 This section lists some ideas on future work regarding this topic and the created system \sys. Before embarking on improvements of the system, a qualitative and quantitative analysis of the produced visual presentations should be conducted to confirm that this system helps users. For the quantitative analysis it would be ideal to take a course that has already been taught using a more traditional approach to presentations which can then function as a control group. After teaching the whole course using the newly created presentation, the data of how the students in this test group performed can be compared with the gathered data from how students used to perform in the course. For a qualitative analysis, students who have been subject to the use of and who have actively used the new presentation could be interviewed.\\
 
-Apart from an analysis to evaluate the effectiveness of the created presentations, the whole system could be made more user friendly for both the creator and the users of the presentations. By improving the creation user interface and allowing for users to choose their own designs, it becomes more easy to use and more attractive for users. Adding an editor would make this much more user friendly for creators as well. To change a presentation after it has been created, a user currently has to understand how to manipulate HTML, JavaScript, and also CSS.\\
+Apart from an analysis to evaluate the effectiveness of the created presentations, the whole system could be made more user friendly for both the creator and the users of the presentations. By improving the creation user interface and allowing for users to choose their own designs, it becomes more easy to use and more attractive for users. Adding an editor would make this more user friendly for creators as well. To change a presentation after it has been created, a user currently has to understand how to manipulate HTML, JavaScript, and also CSS.\\
 
 In terms of improving the usability for the users that will view and interact with the presentations, one could try to find a way to make use of relative size to additionally convey importance using impress.js' \texttt{data-scale} attribute. This would further add more semantic meaning to the slides. Additionally, one could think about adding a progress bar by using the work of Matthias Bilger \cite{bilger:npentrel15} to motivate users to continue.\\
 
-Overall it is even thinkable to create a different version of this system that could be made available to common users outside this research domain. The idea would be to allow users to add slides in an editor and to allow them to add dependencies themselves. Possibly the system could even suggest dependencies. As an example, I could very well envision a biology presentation that explains Photosynthesis and allows the attentive student to catch up on processes that transform ADP to ATP.\\
+Overall it is even thinkable to create a different version of this system that could be made available to common users outside this research domain. The idea would be to allow users to add slides in an editor and to allow them to add dependencies themselves. Possibly the system could even suggest dependencies. As an example, I could very well envision a biology presentation that explains photosynthesis and allows the attentive student to catch up on dependencies such as the process that transforms ADP to ATP.\\
 
 In terms of improving content, it would be interesting to not just provide paths to dependencies or prerequisite knowledge but also to knowledge that builds on the current topic. That way students that learn fast can already explore higher levels.\\
 
-This whole research project would also benefit from machine learning which could allow us to make smart offers of likely dependencies. On an individual basis we could use it to learn what the user knows and what the user does not know. Ideally we do not always want to show very low level dependencies, such as how to multiply, which our system could then learn. Combining machine learning with the identification of more didactic paths or figures within the data could further improve knowledge transfer.
+This whole research project might also benefit from machine learning which could allow us to make smart offers of likely dependencies. On an individual basis we could use it to learn what the user knows and what the user does not know. Ideally we do not always want to show very low level dependencies, such as how to multiply, which our system could then learn. Combining machine learning with the identification of more didactic paths or figures within the data such as the example in \autoref{fig:pathExample} could further improve knowledge transfer.
 
 \section{Conclusion}
 \label{sec:conclusion}
