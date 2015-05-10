@@ -785,8 +785,6 @@ Given this sensible input we offer the user digressions, where the user can go b
 
 \section{Future Work and Possible Extensions}
 
-\ednote{think of more extensions when you write up the rest}
-
 This section lists some ideas on future work regarding this topic and the created system \sys. Before embarking on improvements of the system, a qualitative and quantitative analysis of the produced visual presentations should be conducted to confirm that this system helps users. For the quantitative analysis it would be ideal to take a course that has already been taught using a more traditional approach to presentations which can then function as a control group. After teaching the whole course using the newly created presentation, the data of how the students in this test group performed can be compared with the gathered data from how students used to perform in the course. For a qualitative analysis, students who have been subject to the use of and who have actively used the new presentation could be interviewed.\\
 
 Apart from an analysis to evaluate the effectiveness of the created presentations, the whole system could be made more user friendly for both the creator and the users of the presentations. By improving the creation user interface and allowing for users to choose their own designs, it becomes more easy to use and more attractive for users. Adding an editor would make this much more user friendly for creators as well. To change a presentation after it has been created, a user currently has to understand how to manipulate HTML, JavaScript, and also CSS.\\
@@ -795,30 +793,23 @@ In terms of improving the usability for the users that will view and interact wi
 
 Overall it is even thinkable to create a different version of this system that could be made available to common users outside this research domain. The idea would be to allow users to add slides in an editor and to allow them to add dependencies themselves. Possibly the system could even suggest dependencies. As an example, I could very well envision a biology presentation that explains Photosynthesis and allows the attentive student to catch up on processes that transform ADP to ATP.\\
 
-\ednote{not just prerequisite knowledge but also knowledge that builds on the current topic - bored students can thus already learn more!}
+In terms of improving content, it would be interesting to not just provide paths to dependencies or prerequisite knowledge but also to knowledge that builds on the current topic. That way students that learn fast can already explore higher levels.\\
 
-machine learning to make smart offers of knowledge. 
-
-learn what the user knows and what the user doesnt. - we dont always want to show how to do multiplication
-
-identify didactic things
-
-experiment with layouts
-
-
-For browsers that cannot display the created presentations fallback styles could be added to make the content accessible.
-
+This whole research project would also benefit from machine learning which could allow us to make smart offers of likely dependencies. On an individual basis we could use it to learn what the user knows and what the user does not know. Ideally we do not always want to show very low level dependencies, such as how to multiply, which our system could then learn. Combining machine learning with the identification of more didactic paths or figures within the data could further improve knowledge transfer.\\
 
 \section{Conclusion}
 \label{sec:conclusion}
-Spatial narrative, provide a framework for the creation of presentations that are easier to process for humans and thus facilitate knowledge transfer.\\
-%The proposed research will evaluate if and how spatial narrative can be combined with semantic closeness to form visual presentations that will facilitate knowledge transfer. The knowledge presentation systen \sys that we will implement will allow us to automatically create these visual presentations from the OMDoc format. Through using semantic closeness the presentations can be created with meaningful visual connections between information. Similarly to how the Semantic Web tries to add relations between different resources for machines, \sys will add meaningful relations between course content.\\
 
-%Going back to our contrived example, \sys will provide Annie's teacher with a tool that allows her to use her normal lecture material in a more interactive way. Thus when the teacher realizes that Annie needs to revise previous material, the teacher can easily go to that material and provide Annie with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
+In this research project we set out to help Annie understand the pythagorean theorem. Her problem was that she did not know about some of the dependent information, i.e. right angles, and since there was no easy way to access this information she could not understand the topic fully. To help her, we created a system \sys that parses the documents that the instructor wrote and created a relational presentation out of it.\\
+
+This relational presentation combines spatial narrative with information about the relations between different pieces of information. In doing so it creates presentations that use meaningful visual connections between pieces of information to allow for intuitive interaction with the presentation. This allows Annie choose her own path in going through the presentation while seamlessly looking up related information.\\
+
+Not just Annie has an easier way of going through the presentation on her own, Annie's teacher now has a tool that allows her to use her normal lecture material in a more interactive way. Thus when the teacher realizes that the students need to revise previous material, the teacher can easily go to that material and provide them with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
+
 
 %But not only will \sys make courses more engaging, interactive, and easier to follow, it will also lead to better knowledge absorption because students learn the concepts and in addition intuitively understand how they relate to one another. This allows faster revision of material and facilitates studying without a teacher present.\\
 
-%In essence, this proposed research will be beneficial for education and knowledge transfer. It aims to make the creation of engaging and interactive presentations simple and fast for current users of OMDoc. Should this research prove successful it could be adapted for other areas. In the future creating a meaningful, interactive presentation might be just a matter of uploading an annotated document.
+%Should this research prove successful it could be adapted for other areas. In the future creating a meaningful, interactive presentation might be just a matter of uploading an annotated document.
 
 \newpage
 
