@@ -253,15 +253,15 @@ Along the way of helping Annie, we will explore the question of how to create a 
 We will now commence the journey towards building a more effective presentation format to improve knowledge transfer in Mathematics by allowing flexibility in presentations. In the following we will assume the reader is familiar with OMDoc \cite{Kohlhase:OMDoc1.2} and with the open-source presentation framework \textit{impress.js} \cite{JSImpress:npentrel14} which will be used to create the final presentation in the form of an interconnected network of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. To create these presentations automatically, the tool \sys \cite{npentrel:npentrel15} was created. \\
 
 \begin{wrapfigure}{l}{\textwidth}
-\vspace{-0pt}
+\vspace{-22pt}
   \begin{center}
   \fbox{
-      \includegraphics[width=0.70\textwidth]{assets/final/Architecture}
+      \includegraphics[width=0.55\textwidth]{assets/final/Architecture}
     } 
 \vspace{-6pt}
   \caption{Architecture Diagram}
   \label{fig:architecture}
-\vspace{12pt}
+\vspace{0pt}
   \end{center}
 \end{wrapfigure}
 
@@ -269,7 +269,7 @@ We will now commence the journey towards building a more effective presentation 
 \vspace{-50pt}
 \end{wrapfigure}
 
-With the OMDoc framework and its tools it is possible to write down course notes or other documents in \textbf{S}emantically enhanced \TeX / \LaTeX\ (\stex). The Local MathHub Tool (lmh) uses these to create, among other things, PDF slides, XHTML slides, and relational information. To help Annie, let us use a document that explains the Pythagorean theorem and related topics. The files that lmh creates, along with the \stex -files will be used as input in the next steps. For the implementation of  \sys Java was used. It would have been possible to choose other programming languages, however, using Java, we end up with platform-independent code.\\
+With the OMDoc framework and its tools it is possible to write down course notes or other documents in \textbf{S}emantically enhanced \TeX / \LaTeX\ (\stex). The Local MathHub Tool (lmh) uses these to create, among other things, PDF slides, XHTML slides, and relational information. To help Annie, let us use a document that explains the Pythagorean theorem and related topics. The files that lmh creates, along with the \stex -files will be used as input in the next steps. For the implementation of  \sys Java was used.\\
 
 \sys itself operates in five main steps:\\
 \vspace{-12pt}
@@ -298,7 +298,7 @@ In linguistics the concept of information packaging \cite{CambridgeGrammar:npent
 
 In this example in the first part of the sentence, \textit{discourse-new} information pertaining to my sister and to a circus is introduced. In the second part, the underlined parts are considered \textit{discourse-old} since they have already been introduced. These terms are coined to refer to the accessibility of the information to participants of the discourse \cite{Newness:npentrel14}. The accessibility depends on the relative \textit{newness}, i.e. recency of mention, of this information.\\
 
-These concepts can be adapted to the situation of teaching mathematics or computer science to students in a class. In general we will call the information that the speaker is passing on to the addressees/students \textit{course-new}. Since we are in the setting of a university course, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
+These concepts can be adapted to the situation of teaching mathematics or computer science to students in a class. In general we will call the information that the speaker is passing on to the addressees/students \textit{course-new}. Since we are in a classroom setting, the \textit{course-new} information will generally depend on information that is \textit{course-old}. We will additionally introduce a third modus for information called \textit{course-ancient}. This covers the situation where the addressee has difficulties following the speaker since the \textit{course-new} information depends on \textit{course-old} information that might be 'too old' to be easily remembered, i.e. \textit{course-ancient}.\\
 
 Going back to the example of Annie, the information about the Pythagorean theorem that the teacher is just introducing would be considered \textit{course-new}. The information about the right angle which Annie cannot access anymore since she was taught about this too long ago is \textit{course-ancient}. The information about squares which Annie still remembers is \textit{course-old}. Through the semantic closeness that OMDoc provides, we will be able to determine the status of information within the (dis)course.
 
@@ -352,7 +352,7 @@ Temporal information is also used to create narrative paths for subsections of t
 \subsection{Ordered Information Graphs}
 \label{sec:orderedInfoGraphs}
 
-As described in \autoref{sec:TowardsAMoreEffectivePresentationFormat}, lmh outputs information about dependencies of topics.The system \sys parses this relational data and retrieves the dependencies of the topics which are visualized for Annie's example in \autoref{fig:depGraphPythagoreanFull}. Dependencies give us the \textit{course-ancient} information, as dependencies intuitively link to information obtained longer ago.\\
+As described in \autoref{sec:TowardsAMoreEffectivePresentationFormat}, lmh outputs information about dependencies of topics. \sys parses this relational data and retrieves the dependencies of the topics which are visualized for Annie's example in \autoref{fig:depGraphPythagoreanFull}. Dependencies give us the \textit{course-ancient} information, as dependencies intuitively link to information obtained longer ago.\\
 
 \begin{wrapfigure}{c}{\textwidth}
 \vspace{-30pt}
@@ -377,7 +377,7 @@ With the data about the order and the dependencies of information within the pap
 \vspace{-16pt}
   \begin{center}
   \fbox{
-      \includegraphics[width=0.87\textwidth]{assets/final/fullPresentation2}
+      \includegraphics[width=0.67\textwidth]{assets/final/fullPresentation2}
     } 
 \vspace{-7pt}
   \caption{Visualization of Dependencies}
@@ -409,13 +409,13 @@ When writing a document or course notes in \stex, the creator general writes a t
 \end{wrapfigure}
 
 
-\begin{wrapfigure}{l}{0.57\textwidth}
-\vspace{-26pt}
+\begin{wrapfigure}{l}{0.42\textwidth}
+\vspace{-20pt}
   \begin{center}
   \fbox{
-      \includegraphics[width=0.55\textwidth]{assets/final/60degree}
+      \includegraphics[width=0.4\textwidth]{assets/final/60degree}
     } 
-\vspace{-5pt}
+\vspace{-15pt}
   \caption [Caption for LOF]{Visualization of Dependencies and Levels at 60\degree\ \footnotemark}
   \label{fig:visualDependencyDegree}
 \vspace{-24pt}
@@ -447,25 +447,20 @@ The movement along the x-axis has a mostly temporal semantics associated with it
 
 The most interesting movement is the rotations which aim to give the viewer the feeling of entering a topic and a different storyline. Thus entering a different topic comes with a change of perspective which is underlined by the 3D transformation that the user sees. Overall, these movements add expressiveness to the relations and allow for intuitive interaction with the presentation. \footnote{To see the presentation in action visit: \href{http://npentrel.github.io/pythagoreantheorem.html\#/overview}{http://npentrel.github.io/pythagoreantheorem.html\#/overview}.}\\
 
-One might think that this is similar to a PowerPoint presentation, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a bird's eye perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentations is that through these overviews, dependencies become identifiable. More importantly this means that for Annie, dependencies become accessible and allow her to go on small guided tours or small excursions into \textit{course-ancient} topics giving her the flexibility to choose her own path while going through the presentation.
-
+One might think that this is similar to a PowerPoint presentation, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a bird's eye perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentations is that dependencies become identifiable. More importantly this means that for Annie, dependencies become accessible and allow her to go on small guided tours or small excursions into \textit{course-ancient} topics giving her the flexibility to choose her own path while going through the presentation.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-In this research project we set out to help Annie understand the Pythagorean theorem. Her problem was that she did not know about some of the dependent information, i.e. right angles, and since there was no easy way to access this information she could not understand the topic fully. To help her, we created a system \sys that parses the documents that the instructor wrote and created a relational presentation out of it.\\
+We set out to help Annie understand the Pythagorean theorem. Her problem was that she did not know about some of the dependent information, i.e. right angles, and since there was no easy way to access this information she could not understand the topic fully. To help her, we created a system \sys that parses the documents that the instructor wrote and created a relational presentation out of it.\\
 
 This relational presentation combines spatial narrative with information about the relations between different pieces of information into a visual information graph. In doing so it creates presentations that use meaningful visual connections between pieces of information to allow for intuitive interaction with the presentation. This allows Annie to choose her own path while going through the presentation and seamlessly looking up related information.\\
 
-The benefits are not just for Annie when she is going through the presentation on her own though, Annie's teacher now has a tool that allows him to use his normal lecture material in a more interactive way. Thus when the teacher realizes that the students need to revise previous material, the teacher can seamlessly go to that material and provide them with a good learning experience. This facilitates knowledge transfer and allows for a more engaging and interactive education.\\
+The benefits are not just for Annie when she is going through the presentation on her own though, Annie's teacher now has a tool that allows him to use his normal lecture material in a more interactive way. Thus when the teacher realizes that the students need to revise previous material, the teacher can seamlessly go to that material and provide them with a good learning experience. These digressions are the added value that allow flexibility in these new presentation and transform the traditional presentations from linear presentations to relational presentations. Overall this facilitates knowledge transfer and allows for a more engaging and interactive education.\\
 
-In the future, I believe that this research could be adopted in more fields, transforming education into something that allows individuals to learn the way that is best for them. In the introduction, I introduced the metaphor of hiking up a mountain which can be done in different ways. The type of presentations this research built allows for a lot of different paths to reach a learning goal. The flexibility that comes with these presentations is undoubtedly preferable to traditional presentations as it offers clear benefits in allowing to effortlessly change the path of the presentation at any point.\\
+Linking learning materials is useful for knowledge transfer and especially mathematics is a field that could profit from guided tours through topics as a way of learning topics according to users' individual knowledge bases. In future, I believe that this research could be adopted in more fields, transforming education into something that allows individuals to learn the way that is best for them. In the introduction, I introduced the metaphor of hiking up a mountain which can be done in different ways. The type of presentations this research built allows for a lot of different paths to reaching a learning goal. The flexibility that comes with these presentations is undoubtedly preferable to traditional presentations as it offers clear benefits in allowing to effortlessly change the path of the presentation at any point.\\
 
 To conclude, I leave the reader to ponder how much education would change if we could allow individuals to learn at their own pace following their own path and easily learning course-ancient information in guided tours. \sys definitely helped Annie and I strongly believe that the mentioned benefits would benefit all of us, whether in the role of the presenter or in the role of the viewer.
-
-\ednote{There some argued that the linking of learning materials is useful for knowledge transfer and that especially mathematics is a field that could profit from guided tours through topics as a way of learning topics according to users' individual knowledge bases.}
-
-\ednote{These digressions are the added value that allow flexibility in these new presentation and transform the traditional presentations from linear presentations to relational presentations.}
 
 \newpage
 
