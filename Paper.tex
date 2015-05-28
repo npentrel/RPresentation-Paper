@@ -47,40 +47,24 @@ The OMDoc (OpenMathematical Documents) format is a content markup scheme for mat
 \section{Introduction \& Motivation}
 \label{sec:introduction}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-\vspace{-28pt}
-  \begin{center}
+\begin{wrapfigure}{r}{0.36\textwidth}
+\vspace{-2em}\centering
   \fbox{
-    \includegraphics[width=0.28 \textwidth]{assets/final/straightMountain}
-    }
-\vspace{-20pt}
-  \caption{Straight Learning Path}
-  \label{fig:straight}
-\vspace{5pt}  
-      \fbox{
-    \includegraphics[width=0.28 \textwidth]{assets/final/curvyMountain}
-    }
-
-  \end{center}
-\vspace{-20pt}
-  \caption{Curvy Learning Path}
-  \label{fig:curvy}
-\vspace{-10pt}
+    \includegraphics[width=0.36 \textwidth]{assets/final/straightMountain}}    \vspace{-20pt}
+    \caption{Straight Learning Path}\label{fig:straight}
+    \vspace{5pt}  
+      \fbox{\includegraphics[width=0.37 \textwidth]{assets/final/curvyMountain}}
+      \vspace{-20pt}
+      \caption{Winding Learning Path}\label{fig:curvy}
+      \vspace{-10pt}
 \end{wrapfigure}
 
 Learning new things is a bit like hiking up a mountain. If you have ever gone hiking, you know that it is hard to hike up a steep mountain directly as shown in \autoref{fig:straight}. Some people do it but most people will rather hike up as shown in \autoref{fig:curvy}. Both paths lead to the goal though. Within Mathematics classes, there is normally only one straight path and this has not changed in decades. With the advancement of technology, we are however able to change the way presentations and their narratives work. We can make it possible to link content that logically belongs together, in other words, content that is semantically close. Through the linking of content it becomes possible for a presenter to seamlessly lead an audience, not along a predetermined straight path, but rather along the path that allows the audience to take small detours and ultimately make the most out of the presentation.
 
-\begin{wrapfigure}{l}{0.45\textwidth}
-\vspace{-28pt}
-  \begin{center}
-  \fbox{
-    \includegraphics[width=0.43 \textwidth]{assets/final/slide_theorem}
-    }
-  \end{center}
-\vspace{-20pt}
-  \caption{Theorem Slide}
-  \label{fig:slideP}
-\vspace{-15pt}
+\begin{wrapfigure}{l}{0.45\textwidth}\centering\vspace{-2em}
+  \fbox{\includegraphics[width=0.43 \textwidth]{assets/final/slide_theorem}}\vspace{-.5em}
+  \caption{Theorem Slide}\label{fig:slideP}
+  \vspace{-15pt}
 \end{wrapfigure}
 
 Let us dive into a contrived story that will guide us throughout this research: Annie, a young student learning mathematics, is watching her teacher give a presentation on how to use the Pythagorean theorem (see \autoref{fig:slideP}). She is then given a triangle with sides a = 3 cm and b = 4 cm. Now she wants to use the theorem to calculate the length of side c. Annie already knows how to calculate the square of a number and thus calculates that $c^2 = 25 \implies c = 5$. However Annie made a mistake and did not know what a right triangle is. Her teacher tells her that the question was a trick question and that the answer is wrong because the triangle she calculated this for is not a right triangle. Now Annie has to try to find out what a right triangle is.
@@ -96,27 +80,15 @@ Along the way of helping Annie, we will explore the question of how to create a 
 
 We will now commence the journey towards building a more effective presentation format to improve knowledge transfer in Mathematics by allowing flexibility in presentations. In the following we will assume the reader is familiar with OMDoc \cite{Kohlhase:OMDoc1.2} and with the open-source presentation framework \textit{impress.js} \cite{JSImpress:npentrel14} which will be used to create the final presentation in the form of an interconnected network of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. To create these presentations automatically, the tool \sys \cite{npentrel:npentrel15} was created. 
 
-\begin{wrapfigure}{l}{\textwidth}
-\vspace{-22pt}
-  \begin{center}
-  \fbox{
-      \includegraphics[width=0.55\textwidth]{assets/final/Architecture}
-    } 
-\vspace{-6pt}
-  \caption{Architecture Diagram}
-  \label{fig:architecture}
-\vspace{0pt}
-  \end{center}
-\end{wrapfigure}
-
-\begin{wrapfigure}{l}{\textwidth}
-\vspace{-50pt}
+\begin{wrapfigure}{l}{.55\textwidth}\centering\vspace{-2em}
+  \fbox{\includegraphics[width=0.55\textwidth]{assets/final/Architecture}} 
+  \vspace{-1em}
+  \caption{Architecture Diagram}\label{fig:architecture}\vspace{-1em}
 \end{wrapfigure}
 
 With the OMDoc framework and its tools it is possible to write down course notes or other documents in \textbf{S}emantically enhanced \TeX / \LaTeX\ (\stex). The Local MathHub Tool (lmh) uses these to create, among other things, PDF slides, XHTML slides, and relational information. To help Annie, let us use a document that explains the Pythagorean theorem and related topics. The files that lmh creates, along with the \stex -files will be used as input in the next steps. For the implementation of  \sys Java was used.
 
 \sys itself operates in five main steps:
-\vspace{-12pt}
 \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
 \item Get user input for the locations and names of folders.
 \item Parse \sTeX to retrieve the order of slides.
@@ -153,43 +125,25 @@ The information that OMDoc provides us with could also be simply visualized as a
 
 One opportunity to employ spatial narrative is to place content which is inherently related visually close together since this conveys the meaning that these objects belong together. In \textit{A mathematical approach to ontology authoring and documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order in which the mathematical objects from content layers are presented.
 
-\begin{wrapfigure}{c}{\textwidth}
-\vspace{-35pt}
-  \begin{center}
-  \fbox{
-      \includegraphics[width=0.65\textwidth]{assets/final/inclusionGraphPythagorean}
-    } 
-\vspace{-0pt}
-  \caption{Inclusion Graph for the Pythagorean Theorem}
-  \label{fig:inclusionGraph}
-\vspace{12pt}
-  \end{center}
+\begin{wrapfigure}l{.65\textwidth}\vspace{-2em}
+  \fbox{\includegraphics[width=0.65\textwidth]{assets/final/inclusionGraphPythagorean}} 
+  \caption{Inclusion Graph for the Pythagorean Theorem}\label{fig:inclusionGraph}
 \end{wrapfigure}
 
-\begin{wrapfigure}{l}{\textwidth}
-\vspace{-50pt}
+In our system, the \stex files are parsed using a Depth First Search algorithm to retrieve the narrative the writer intended to use. For the explanation of the Pytha\-go\-rean theorem this can be seen in \autoref{fig:inclusionGraph}. We will refer to this intended narrative layer as the \textit{primary narrative path} which we follow from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as portrayed in \autoref{fig:primaryNarrativePath}.
+
+\begin{wrapfigure}{c}{\textwidth}\centering\vspace{-2em}
+  \fbox{\includegraphics[width=0.97\textwidth]{assets/final/primaryNarrativePath2}}
+  \vspace{-1em}
+  \caption{Primary Narrative Path}\label{fig:primaryNarrativePath}
+  \vspace{-1em}
 \end{wrapfigure}
-
-In our system, the \stex files are parsed using a Depth First Search algorithm to retrieve the narrative the writer intended to use. For the explanation of the Pythagorean theorem this can be seen in \autoref{fig:inclusionGraph}. We will refer to this intended narrative layer as the \textit{primary narrative path} which we follow from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as portrayed in \autoref{fig:primaryNarrativePath}.
-
-\begin{wrapfigure}{c}{\textwidth}
-\vspace{-30pt}
-  \begin{center}
-  \fbox{
-    \includegraphics[width=0.97\textwidth]{assets/final/primaryNarrativePath2}
-    }
-  \end{center}
-\vspace{-20pt}
-  \caption{Primary Narrative Path}
-  \label{fig:primaryNarrativePath}
-\vspace{12pt}
-\end{wrapfigure}
-
-\begin{wrapfigure}{l}{\textwidth}
-\vspace{-50pt}
-\end{wrapfigure}
-
-The primary narrative path, formed by a horizontal stream of slides, is the traditional path a presenter normally uses when preparing a PowerPoint presentation. Thus it contains also temporal information which is illustrated by the arrow in \autoref{fig:primaryNarrativePath}. This temporal information is what we extracted from the \stex files as the order in which the slides (or the information on the slides) should appear.
+The primary narrative path, formed by a horizontal stream of slides, is the traditional
+path a presenter normally uses when preparing a PowerPoint presentation. Thus it contains
+also temporal information which is illustrated by the arrow in
+\autoref{fig:primaryNarrativePath}. This temporal information is what we extracted from
+the \stex files as the order in which the slides (or the information on the slides) should
+appear.
 
 Temporal information is also used to create narrative paths for subsections of the whole presentation that only explain one topic. These narrative paths are similar to short guided tours in that they aim to explain one topic but they are different in that they just reuse slides that have already occurred. Going back to our example of Annie, an example of a subsection would be the information concerning angles. In essence, the \textit{intended narrative path} contains multiple \textit{narrative paths} of its own which occur on different levels as explained in \autoref{sec:levels}.
 
@@ -198,78 +152,75 @@ Temporal information is also used to create narrative paths for subsections of t
 
 As described in \autoref{sec:TowardsAMoreEffectivePresentationFormat}, lmh outputs information about dependencies of topics. \sys parses this relational data and retrieves the dependencies of the topics which are visualized for Annie's example in \autoref{fig:depGraphPythagoreanFull}. Dependencies give us the \textit{course-ancient} information, as dependencies intuitively link to information obtained longer ago.
 
-\begin{wrapfigure}{c}{\textwidth}
-\vspace{-30pt}
-  \begin{center}
-  \fbox{
-      \includegraphics[width=0.97\textwidth]{assets/final/dependencyGraphPythTheo2}
-    } 
-\vspace{-20pt}
-  \caption{Dependency Graph}
-  \label{fig:depGraphPythagoreanFull}
-\vspace{0pt}
-  \end{center}
-\end{wrapfigure}
+\begin{figure}[ht]\vspace{-1em}
+  \fbox{\includegraphics[width=0.97\textwidth]{assets/final/dependencyGraphPythTheo2}} 
+  \vspace{-.5em}
+  \caption{Dependency Graph}\label{fig:depGraphPythagoreanFull}
+\end{figure}
 
-\begin{wrapfigure}{c}{\textwidth}
-\vspace{-60pt}
+\begin{wrapfigure}r{.67\textwidth}\vspace{-2em}
+  \fbox{\includegraphics[width=0.67\textwidth]{assets/final/fullPresentation2}} 
+  \vspace{-1em}
+  \caption{Visualization of Dependencies}\label{fig:visualDependency}
+  \vspace{-1em}
 \end{wrapfigure}
+With the data about the order and the dependencies of information within the paper, we now
+have an ordered information graph out of which we can build a first presentation that
+Annie can interact with to learn about the Pytha\-go\-rean theorem. \sys creates this
+presentation incrementally. As outlined in \autoref{sec:narrativePaths} and illustrated in
+\autoref{fig:primaryNarrativePath}, \sys creates the primary narrative path from the order
+of the slides. After adding each slide it checks whether there is \textit{course-ancient}
+information, i.e. whether there are dependencies, for that slide. If there are
+dependencies those are added below the slide itself (see
+\autoref{fig:visualDependency}).\footnote{library impress.js was adapted to support the
+  choosing of different paths by pressing the right or down key
+  \cite{npentrel:npentrel15}.}
 
-With the data about the order and the dependencies of information within the paper, we now have an ordered information graph out of which we can build a first presentation that Annie can interact with to learn about the Pythagorean theorem. \sys creates this presentation incrementally. As outlined in \autoref{sec:narrativePaths} and illustrated in \autoref{fig:primaryNarrativePath}, \sys creates the primary narrative path from the order of the slides. After adding each slide it checks whether there is \textit{course-ancient} information, i.e. whether there are dependencies, for that slide. If there are dependencies those are added below the slide itself (see \autoref{fig:visualDependency}).\footnote{library impress.js was adapted to support the choosing of different paths by pressing the right or down key \cite{npentrel:npentrel15}.}
-
-\begin{wrapfigure}{c}{1\textwidth}
-\vspace{-16pt}
-  \begin{center}
-  \fbox{
-      \includegraphics[width=0.67\textwidth]{assets/final/fullPresentation2}
-    } 
-\vspace{-7pt}
-  \caption{Visualization of Dependencies}
-  \label{fig:visualDependency}
-\vspace{-15pt}
-  \end{center}
-\end{wrapfigure}
-
-\begin{wrapfigure}{c}{\textwidth}
-\vspace{-140pt}
-\end{wrapfigure}
 
 \subsection{Levels}
 \label{sec:levels}
 
-When writing a document or course notes in \stex, the creator general writes a top-level file such as \textit{notes.tex} from where other \TeX\ files are included. These included files again include further \TeX\ files etc.. Thus we are automatically provided with levels that we can use for splicing our primary narrative path into smaller narrative paths. In essence, on any level the order of information in that topic is a narrative path itself. Expressed in mathematical notation a level within a directed graph $G = \langle V, E \rangle $, with $V$ being a set of nodes and $E = V \times V$ being the set of directed edges, is the set $L_w = \lbrace v \vert \langle w, v \rangle \in E \rbrace$. From these levels we can infer the status of the information. We already know that a dependent piece of information infers that it is \textit{course-ancient} information. Anything that is on the same level or in the sublevels thereof is considered to be \textit{course-old} information.
-
-\begin{wrapfigure}{c}{\textwidth}
-\vspace{-12pt}
-  \begin{center}
-  \fbox{
-      \includegraphics[width=0.6\textwidth]{assets/final/levels}
-    } 
-\vspace{-0pt}
-  \caption{Inclusion Graph with Levels}
-  \label{fig:levelsGraph}
-\vspace{12pt}
-  \end{center}
+\begin{wrapfigure}r{.6\textwidth}\vspace{-2em}
+  \fbox{\includegraphics[width=0.6\textwidth]{assets/final/levels}} 
+  \vspace{-1em}
+  \caption{Inclusion Graph with Levels}\label{fig:levelsGraph}
+\vspace{-1em}
 \end{wrapfigure}
+When writing a document or course notes in \stex, the creator general writes a top-level
+file such as \textit{notes.tex} from where other \TeX\ files are included. These included
+files again include further \TeX\ files etc.. Thus we are automatically provided with
+levels that we can use for splicing our primary narrative path into smaller narrative
+paths. In essence, on any level the order of information in that topic is a narrative path
+itself. Expressed in mathematical notation a level within a directed graph
+$G = \langle V, E \rangle $, with $V$ being a set of nodes and $E = V \times V$ being the
+set of directed edges, is the set
+$L_w = \lbrace v \vert \langle w, v \rangle \in E \rbrace$. From these levels we can infer
+the status of the information. We already know that a dependent piece of information
+infers that it is \textit{course-ancient} information. Anything that is on the same level
+or in the sublevels thereof is considered to be \textit{course-old} information.
 
-
-\begin{wrapfigure}{l}{0.42\textwidth}
-\vspace{-20pt}
-  \begin{center}
-  \fbox{
-      \includegraphics[width=0.4\textwidth]{assets/final/60degree}
-    } 
-\vspace{-15pt}
-  \caption [Caption for LOF]{Visualization of Dependencies and Levels at 60\degree\ \footnotemark}
+\begin{wrapfigure}{l}{0.43\textwidth}\vspace{-2em}
+  \fbox{\includegraphics[width=0.4\textwidth]{assets/final/60degree}} 
+  \vspace{-.5em}
+  \caption[Caption for LOF]{Visualization\footnotemark of Dependencies and Levels at
+    60\degree}
   \label{fig:visualDependencyDegree}
-\vspace{-24pt}
-  \end{center}
+\vspace{-1em}
 \end{wrapfigure}
+If Annie, while browsing through the different dependencies, realizes that she needs to
+refresh her memory or learn more about any of the dependent information she can enter the
+respective level. The presentation will then continue on that level and show all the
+slides from that topic in the correct order. Once Annie has gone through this short
+excursion, she can return to the initial slide and resume the primary narrative path. By
+adding a way to explore these other levels, the presentation adds more context and allows
+Annie to understand the subject on a deeper level. These modular excursions are included
+in the presentation in 3D by making use of CSS3-transitions. Thus when the user enters an
+excursion a 90\degree\ rotation around the y-axis occurs and the user can now follow that
+story line (see \autoref{fig:visualDependencyDegree}).
 
-
-If Annie, while browsing through the different dependencies, realizes that she needs to refresh her memory or learn more about any of the dependent information she can enter the respective level. The presentation will then continue on that level and show all the slides from that topic in the correct order. Once Annie has gone through this short excursion, she can return to the initial slide and resume the primary narrative path. By adding a way to explore these other levels, the presentation adds more context and allows Annie to understand the subject on a deeper level. These modular excursions are included in the presentation in 3D by making use of CSS3-transitions. Thus when the user enters an excursion a 90\degree\ rotation around the y-axis occurs and the user can now follow that story line (see \autoref{fig:visualDependencyDegree}).
-
-\footnotetext{The overlapping slides do not interfere as they are at a 90\degree\ angle. Therefore when seeing one slide, the other slide will be visible only from the side. Since a slide is very thin this makes it invisible.}
+\footnotetext{The overlapping slides do not interfere as they are at a 90\degree\
+  angle. Therefore when seeing one slide, the other slide will be visible only from the
+  side. Since a slide is very thin this makes it invisible.}
 
 \subsection{The Relational Presentation}
 \label{sec:RelationalPresentations}
@@ -279,19 +230,29 @@ Combining the information about narrative paths, dependencies, and levels, we de
 To begin with, let us examine the choice of layout. The goal of this presentation is to have all the information the Pythagorean theorem depends on easily accessible so that Annie can access \textit{course-ancient} information easily. The added expressiveness that impress.js offers allowed us to have this in a very structured format while focusing on visualizing relations between content with movement and closeness. This also serves to keep the resulting presentation simple and easily usable.
 
 While focusing on closeness and movement, it creates meaningful visual relations and semantic movements. The relations between the content, such as it being the next slide in the narrative or it being a dependency are shown through the closeness and the placement of the slide as well as the movements that come with it. The following movements exist:
-\vspace{-12pt}
-\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+\begin{inparaenum}[\em a\rm)]
 \item movement along the x-axis,
 \item movement along the y-axis, and
 \item rotations.
 \end{enumerate}
-\vspace{5pt}
 
 The movement along the x-axis has a mostly temporal semantics associated with it. Going to the left is connected with going backwards in the narrative, whereas going to the right is associated with going forwards in the narrative. Apart from going forwards and backwards, we can also move along the y-axis. Moving down intuitively means that we dig deeper into a topic and go to the roots of a problem, whereas moving back up means we will be on a higher level.
 
-The most interesting movement is the rotations which aim to give the viewer the feeling of entering a topic and a different storyline. Thus entering a different topic comes with a change of perspective which is underlined by the 3D transformation that the user sees. Overall, these movements add expressiveness to the relations and allow for intuitive interaction with the presentation. \footnote{To see the presentation in action visit: \href{http://npentrel.github.io/pythagoreantheorem.html\#/overview}{http://npentrel.github.io/pythagoreantheorem.html\#/overview}.}
+The most interesting movement is the rotations which aim to give the viewer the feeling of
+entering a topic and a different storyline. Thus entering a different topic comes with a
+change of perspective which is underlined by the 3D transformation that the user
+sees. Overall, these movements add expressiveness to the relations and allow for intuitive
+interaction with the presentation. \footnote{To see the presentation in action visit:
+  \href{http://npentrel.github.io/pythagoreantheorem.html\#/overview}{http://npentrel.github.io/pythagoreantheorem.html\#/overview}.}
 
-One might think that this is similar to a PowerPoint presentation, since PowerPoint offers similar animations to switch slides. The important addition is more obvious when regarding the presentation from a bird's eye perspective by looking at the overview in \autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these presentations is that dependencies become identifiable. More importantly this means that for Annie, dependencies become accessible and allow her to go on small guided tours or small excursions into \textit{course-ancient} topics giving her the flexibility to choose her own path while going through the presentation.
+One might think that this is similar to a PowerPoint presentation, since PowerPoint offers
+similar animations to switch slides. The important addition is more obvious when regarding
+the presentation from a bird's eye perspective by looking at the overview in
+\autoref{fig:visualDependency} or \autoref{fig:visualDependencyDegree}. The value in these
+presentations is that dependencies become identifiable. More importantly this means that
+for Annie, dependencies become accessible and allow her to go on small guided tours or
+small excursions into \textit{course-ancient} topics giving her the flexibility to choose
+her own path while going through the presentation.
 
 \section{Conclusion}
 \label{sec:conclusion}
