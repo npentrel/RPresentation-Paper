@@ -14,8 +14,6 @@
 # *.ps
 # *.eps
 *.pdf
-
-##auctex
 auto 
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
