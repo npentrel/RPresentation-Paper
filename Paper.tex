@@ -4,7 +4,6 @@
 \usepackage{xspace}
 \usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
 %\usepackage{etoolbox}
-\usepackage{enumitem}
 \usepackage{eurosym}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -89,14 +88,13 @@ We will now commence the journey towards building a more effective presentation 
 With the OMDoc framework and its tools it is possible to write down course notes or other documents in \textbf{S}emantically enhanced \TeX / \LaTeX\ (\stex). The Local MathHub Tool (lmh) uses these to create, among other things, PDF slides, XHTML slides, and relational information. To help Annie, let us use a document that explains the Pythagorean theorem and related topics. The files that lmh creates, along with the \stex -files will be used as input in the next steps. For the implementation of  \sys Java was used.
 
 \sys itself operates in five main steps:
-\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+\begin{compactenum}
 \item Get user input for the locations and names of folders.
 \item Parse \sTeX to retrieve the order of slides.
 \item Extract dependencies from relational info.
 \item Extract necessary XHTML or PNG parts for slides.
 \item Create presentation.
-\end{enumerate}
-\vspace{5pt}
+\end{compactenum}
 
 After asking the user for the location and names of the folders we want to work on, \sys can parse the provided \stex files in a recursive fashion to retrieve the slide order. It does this by starting with a given top level file which includes other files via \textit{mhinputref}s.
 
@@ -132,12 +130,13 @@ One opportunity to employ spatial narrative is to place content which is inheren
 
 In our system, the \stex files are parsed using a Depth First Search algorithm to retrieve the narrative the writer intended to use. For the explanation of the Pytha\-go\-rean theorem this can be seen in \autoref{fig:inclusionGraph}. We will refer to this intended narrative layer as the \textit{primary narrative path} which we follow from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as portrayed in \autoref{fig:primaryNarrativePath}.
 
-\begin{wrapfigure}{c}{\textwidth}\centering\vspace{-2em}
+\begin{figure}[ht]\centering
   \fbox{\includegraphics[width=0.97\textwidth]{assets/final/primaryNarrativePath2}}
-  \vspace{-1em}
+  \vspace{-.5em}
   \caption{Primary Narrative Path}\label{fig:primaryNarrativePath}
   \vspace{-1em}
-\end{wrapfigure}
+\end{figure}
+
 The primary narrative path, formed by a horizontal stream of slides, is the traditional
 path a presenter normally uses when preparing a PowerPoint presentation. Thus it contains
 also temporal information which is illustrated by the arrow in
@@ -234,7 +233,7 @@ While focusing on closeness and movement, it creates meaningful visual relations
 \item movement along the x-axis,
 \item movement along the y-axis, and
 \item rotations.
-\end{enumerate}
+\end{inparaenum}
 
 The movement along the x-axis has a mostly temporal semantics associated with it. Going to the left is connected with going backwards in the narrative, whereas going to the right is associated with going forwards in the narrative. Apart from going forwards and backwards, we can also move along the y-axis. Moving down intuitively means that we dig deeper into a topic and go to the roots of a problem, whereas moving back up means we will be on a higher level.
 
