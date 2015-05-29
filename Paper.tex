@@ -42,38 +42,32 @@ Visualization of knowledge is important to foster learning. Especially so in Mat
 \section{Introduction \& Motivation}
 \label{sec:introduction}
 
-\begin{wrapfigure}{r}{0.36\textwidth}
-\vspace{-2em}\centering
+\begin{wrapfigure}{r}{0.38\textwidth}
+\vspace{-2.1em}\centering
   \fbox{
-    \includegraphics[width=0.36 \textwidth]{assets/final/straightMountain}}    \vspace{-1.8em}
+    \includegraphics[width=0.37 \textwidth]{assets/final/straightMountain}}    \vspace{-1.8em}
     \caption{Straight Learning Path}\label{fig:straight}
     \vspace{5pt}  
-      \fbox{\includegraphics[width=0.37 \textwidth]{assets/final/curvyMountain}}
+      \fbox{\includegraphics[width=0.38 \textwidth]{assets/final/curvyMountain}}
       \vspace{-1.8em}
       \caption{Winding Learning Path}\label{fig:curvy}
-      \vspace{-2em}
+      \vspace{-2.8em}
 \end{wrapfigure}
 
 Learning new things is a bit like hiking up a mountain. If you have ever gone hiking, you
 know that it is hard to hike up a steep mountain directly as shown in
 \autoref{fig:straight}. Some people do it but most people will rather hike up as shown in
-\autoref{fig:curvy}. Both paths lead to the goal though. Within Mathematics classes, there
-is normally only one straight path and this has not changed in decades. With the
-advancement of technology, we are however able to change the way presentations and their
+\autoref{fig:curvy}. Both paths lead to the goal though. Within Mathematics classes, professors that teach using a blackboard have the ability to diverge from their teaching plan when needed. The lack of flexibility of slides might in fact be why the blackboard teaching approach prevails especially in Mathematics. Yet offline materials given to students such as slides, books, or other documents prescribe one straight path and this has not changed in decades. With the advancement of technology, we are however able to change the way classroom materials and their
 narratives work. We can make it possible to link content that logically belongs together,
 in other words, content that is semantically close. Through the linking of content it
 becomes possible for a presenter to seamlessly lead an audience, not along a predetermined
 straight path, but rather along the path that allows the audience to take small detours
-and ultimately make the most out of the presentation.\ednote{This intro does not work for
-  math. Math instruction is mostly done via blackboard, and teachers can flexibly take any
-  path they want with that in response to student understanding (or lack, ... ). Maybe we
-  can turn this around: math uses blackboard, because it is flexible. Presentations are
-  too inflexible for math, let's make them better.}
+and ultimately make the most out of the presentation.
 
 \begin{wrapfigure}{l}{0.45\textwidth}\centering\vspace{-2em}
   \fbox{\includegraphics[width=0.43 \textwidth]{assets/final/slide_theorem_cropped}}\vspace{-.5em}
   \caption{Theorem Slide}\label{fig:slideP}
-  \vspace{-15pt}
+  \vspace{-20pt}
 \end{wrapfigure}
 
 Let us use a contrived story to guide our intuitions: Annie, a young student learning
@@ -98,9 +92,10 @@ Along the way of helping Annie, we will explore the question of how to create a 
 We will now commence the journey towards building a more effective presentation format to improve knowledge transfer in Mathematics by allowing flexibility in presentations. In the following we will assume the reader is familiar with OMDoc \cite{Kohlhase:OMDoc1.2} and with the open-source presentation framework \textit{impress.js} \cite{JSImpress:npentrel14} which will be used to create the final presentation in the form of an interconnected network of information that tells a visual story based on semantic closeness to facilitate the transfer of knowledge. To create these presentations automatically, the tool \sys \cite{npentrel:npentrel15} was created. 
 
 \begin{wrapfigure}{l}{.55\textwidth}\centering\vspace{-2em}
-  \fbox{\includegraphics[width=0.55\textwidth]{assets/final/Architecture}} 
-  \vspace{-1em}
-  \caption{Architecture Diagram}\label{fig:architecture}\vspace{-1em}
+  \fbox{\includegraphics[width=0.53\textwidth]{assets/final/Architecture}} 
+  \vspace{-1.7em}
+  \caption{Architecture Diagram}\label{fig:architecture}
+  \vspace{-1.5em}
 \end{wrapfigure}
 
 With the OMDoc framework and its tools it is possible to write down course notes or other documents in \textbf{S}emantically enhanced \TeX / \LaTeX\ (\stex). The Local MathHub Tool (lmh) uses these to create, among other things, PDF slides, XHTML slides, and relational information. To help Annie, let us use a document that explains the Pythagorean theorem and related topics. The files that lmh creates, along with the \stex -files will be used as input in the next steps. For the implementation of  \sys Java was used.
@@ -154,8 +149,10 @@ The information that OMDoc provides us with could also be simply visualized as a
 One opportunity to employ spatial narrative is to place content which is inherently related visually close together since this conveys the meaning that these objects belong together. In \textit{A mathematical approach to ontology authoring and documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order in which the mathematical objects from content layers are presented.
 
 \begin{wrapfigure}l{.65\textwidth}\vspace{-2em}
-  \fbox{\includegraphics[width=0.65\textwidth]{assets/final/inclusionGraphPythagorean}} 
-  \caption{Inclusion Graph for the Pythagorean Theorem}\label{fig:inclusionGraph}
+  \fbox{\includegraphics[width=0.63\textwidth]{assets/final/inclusionGraphPythagorean}} 
+  \vspace{-1.8em}
+  \caption{Pythagorean Theorem Inclusion Graph}\label{fig:inclusionGraph}
+  \vspace{-2em}
 \end{wrapfigure}
 
 In our system, the \stex files are parsed using a Depth First Search algorithm to retrieve the narrative the writer intended to use. For the explanation of the Pytha\-go\-rean theorem this can be seen in \autoref{fig:inclusionGraph}. We will refer to this intended narrative layer as the \textit{primary narrative path} which we follow from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as portrayed in \autoref{fig:primaryNarrativePath}.
@@ -189,7 +186,7 @@ As described in \autoref{sec:TowardsAMoreEffectivePresentationFormat}, lmh outpu
 
 \begin{wrapfigure}r{.67\textwidth}\vspace{-2em}
   \fbox{\includegraphics[width=0.67\textwidth]{assets/final/fullPresentation2}} 
-  \vspace{-1em}
+  \vspace{-1.8em}
   \caption{Visualization of Dependencies}\label{fig:visualDependency}
   \vspace{-2em}
 \end{wrapfigure}
@@ -201,17 +198,17 @@ presentation incrementally. As outlined in \autoref{sec:narrativePaths} and illu
 of the slides. After adding each slide it checks whether there is \textit{course-ancient}
 information, i.e. whether there are dependencies, for that slide. If there are
 dependencies those are added below the slide itself (see
-\autoref{fig:visualDependency}).\footnote{library impress.js was adapted to support the
+\autoref{fig:visualDependency}).\footnote{The library impress.js was adapted to support the
   choosing of different paths by pressing the right or down key
   \cite{npentrel:npentrel15}.}
 
-
+\newpage
 \subsection{Levels}
 \label{sec:levels}
 
 \begin{wrapfigure}r{.63\textwidth}\vspace{-2em}
   \fbox{\includegraphics[width=0.6\textwidth]{assets/final/levels}} 
-  \vspace{-1em}
+  \vspace{-0.8em}
   \caption{Inclusion Graph with Levels}\label{fig:levelsGraph}
 \vspace{-2em}
 \end{wrapfigure}
@@ -229,11 +226,11 @@ infers that it is \textit{course-ancient} information. Anything that is on the s
 or in the sublevels thereof is considered to be \textit{course-old} information.
 
 \begin{wrapfigure}{l}{0.43\textwidth}\vspace{-2em}
-  \fbox{\includegraphics[width=0.4\textwidth]{assets/final/60degree}} 
-  \vspace{-.5em}
+  \fbox{\includegraphics[width=0.41\textwidth]{assets/final/60degree}} 
+  \vspace{-1.8em}
   \caption{Visualization of Dependencies and Levels at 60\degree}
   \label{fig:visualDependencyDegree}
-\vspace{-1em}
+\vspace{-1.8em}
 \end{wrapfigure}
 If Annie, while browsing through the different dependencies, realizes that she needs to
 refresh her memory or learn more about any of the dependent information she can enter the
