@@ -1,0 +1,64 @@
+Dear MathUI authors,
+
+The review results for your submission 
+   Relational Presentation Using Semantic Closeness
+to MathU 2015 is below and concludes ACCEPT WITH MINOR REVISIONS.
+
+Please take the time to double check your title and abstract before June 15th and the final version, based 
+on the comments, before June 25th so that I can update the web-page.
+
+Paul & Andrea
+
+
+----------------------- REVIEW 1 ---------------------
+PAPER: 5
+TITLE: Relational Presentation Using Semantic Closeness
+AUTHORS: Naomi Pentrel and Michael Kohlhase
+
+
+----------- REVIEW -----------
+The paper discusses an important issue in learning math which is how to retrieve a missing prerequisite knowledge (the authors refer to this as ancient knowledge) while learning a new math topic. The authors propose a way of visualization of a mathematical knowledge and the related concepts in a slide presentation that allows a learner to navigate through the presentation and look for related information according to her needs.
+
+The example of Annie learning about Pythagorean theorem is really helpful to understand the presentation system described in the paper and its purpose from the point of view of a learner. It is however not completely clear what the input to this system is and how the system can be used by a presenter.  
+
+The authors assume that the readers are familiar with some technicalities (e.g. OMDoc, or impress.js), but is this the case of all potential participants at the conference? A brief description of these could be helpful.
+
+Some figures are illegible (Fig. 5, 7 and 9 in particular). The authors should fix their dimensions so that one can read them easily.
+
+In the Conclusion, the first person is often used, whereas the paper is written by two authors.
+
+To conclude, the paper is relevant to the conference presenting an interesting contribution to the presentation format topic. A few improvements of both content and format, as specified above, would be appreciated.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 5
+TITLE: Relational Presentation Using Semantic Closeness
+AUTHORS: Naomi Pentrel and Michael Kohlhase
+
+
+----------- REVIEW -----------
+Blackboards have a big advantage against slide in the learning process. They allow spontaneous  changes or references to known knowledge. The paper describes a new concept for a semantic presentation format for mathematical lectures  allowing  a flexible linking of mathematical knowledge and supports  a customized learning. It allows to add to add information to a special object or issue.   Especially it can help students  to link new stuff with former knowledge. 
+The authors propose a graph concept basing on Semantic \TeX. The semantic power of Semantic \Tex is used for the enrichment of a slide lecture. The graph structure allows a sophisticated semantic  linking and a visualization. A demo demonstrates the concept. The UI is intuitive and it seems that also the creation of such an extended is easy. Nevertheless, it is not understandable why the same slides (basic measurements, right angle, calculating the area) are presented two times at different locations. To much redundancy should be avoided.    
+Nevertheless, I recommend strongly the proposed talk.
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 5
+TITLE: Relational Presentation Using Semantic Closeness
+AUTHORS: Naomi Pentrel and Michael Kohlhase
+
+
+----------- REVIEW -----------
+The paper describes a fresh approach to presenting math content that facilitates introduction to new subjects via revisiting former topics.
+The key idea of the suggested model is in "3D" exploration of the connected material.
+Besides offering a vivid alternative to hyper-linked pages, the authors offer a tool-set for creating such presentations from OMDoc contents. 
+
+I see this paper as a perfect fit for the scope of MathUI.
+
+A few questions/remarks:
+
+1) On Fig. 6. (Primary Narrative Path), do the slides 4 and 5 appear to be identical on purpose?
+
+2) Bio item Tea06. points to a non-longer existing URL: http://cnx.org/aboutus/publications/ConnexionsWhitePaper.pdf
+
+3) In the conclusion quite a few sentences are written from first person singular, while the paper is supposed to be a collaborative effort ;)
