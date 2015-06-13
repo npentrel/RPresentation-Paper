@@ -3,18 +3,6 @@ TODO Naomi:
 -Upload final version before June 25th
 
 
-
-
-
-TODO Michael:
--Double check title and abstract - June 15th
--Upload final version before June 25th
-
-2) The authors assume that the readers are familiar with some technicalities (e.g. OMDoc, or impress.js), but is this the case of all potential participants at the conference? A brief description of these could be helpful.
-
-I disagree with this comment. The intricacies of OMDoc and impress.js can be treated as a black box as the exact implementation of this system is irrelevant. As was pointed out during my thesis presentation, the system could be built with other tools and other input. - I believe we point out the needed functionality as needed. I have changed the wording slightly to point this out. What do you think? -> Please see the first paragraph of "Towards a More Effective Presentation Format"
-
-
 ----------------------- REVIEW 1 ---------------------
 
 1) It is however not completely clear what the input to this system is and how the system can be used by a presenter.  
@@ -26,3 +14,18 @@ I disagree with this comment. The intricacies of OMDoc and impress.js can be tre
 ----------------------- REVIEW 3 ---------------------
 
 2) Bio item Tea06. points to a non-longer existing URL: http://cnx.org/aboutus/publications/ConnexionsWhitePaper.pdf
+
+
+
+
+
+
+
+TODO Michael:
+-Double check title and abstract - June 15th
+-Upload final version before June 25th
+
+2) The authors assume that the readers are familiar with some technicalities (e.g. OMDoc, or impress.js), but is this the case of all potential participants at the conference? A brief description of these could be helpful.
+
+I disagree with this comment. The intricacies of OMDoc and impress.js can be treated as a black box as the exact implementation of this system is irrelevant. As was pointed out during my thesis presentation, the system could be built with other tools and other input. - I believe we point out the needed functionality as needed. I have changed the wording slightly to point this out. What do you think? -> Please see the first paragraph of "Towards a More Effective Presentation Format"
+
