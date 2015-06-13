@@ -8,9 +8,6 @@ TODO Naomi:
 1) It is however not completely clear what the input to this system is and how the system can be used by a presenter.  
 
 
-3) Some figures are illegible (Fig. 5, 7 and 9 in particular). The authors should fix their dimensions so that one can read them easily.
-
-
 ----------------------- REVIEW 3 ---------------------
 
 2) Bio item Tea06. points to a non-longer existing URL: http://cnx.org/aboutus/publications/ConnexionsWhitePaper.pdf
@@ -24,6 +21,8 @@ TODO Naomi:
 TODO Michael:
 -Double check title and abstract - June 15th
 -Upload final version before June 25th
+-Figure 5 and 7 should be a bit smaller maybe?
+
 
 2) The authors assume that the readers are familiar with some technicalities (e.g. OMDoc, or impress.js), but is this the case of all potential participants at the conference? A brief description of these could be helpful.
 

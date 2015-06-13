@@ -148,12 +148,12 @@ The information that OMDoc provides us with could also be simply visualized as a
 
 One opportunity to employ spatial narrative is to place content which is inherently related visually close together since this conveys the meaning that these objects belong together. In \textit{A mathematical approach to ontology authoring and documentation} \cite{LK:MathOntoAuthDoc09}, it is stated that "documents consist of narrative and content layers". In our case, the content layers are the mathematical objects, i.e. the statements or theories. Narrative layers refer to the order in which the mathematical objects from content layers are presented.
 
-\begin{wrapfigure}l{.65\textwidth}\vspace{-2em}
-  \fbox{\includegraphics[width=0.63\textwidth]{assets/final/inclusionGraphPythagorean}} 
-  \vspace{-1.8em}
+\begin{figure}[ht]\vspace{-1.5em}
+  \fbox{\includegraphics[width=1\textwidth]{assets/final/inclusionGraphPythagorean}} 
+  \vspace{-1.5em}
   \caption{Pythagorean Theorem Inclusion Graph}\label{fig:inclusionGraph}
-  \vspace{-2em}
-\end{wrapfigure}
+\vspace{-2em}
+\end{figure}
 
 In our system, the \stex files are parsed using a Depth First Search algorithm to retrieve the narrative the writer intended to use. For the explanation of the Pytha\-go\-rean theorem this can be seen in \autoref{fig:inclusionGraph}. We will refer to this intended narrative layer as the \textit{primary narrative path} which we follow from slide to slide on our path to the end of the presentation. To create this primary narrative path we add several slides with increasing x-coordinates.
 
@@ -169,20 +169,14 @@ Temporal information is also used to create narrative paths for subsections of t
 \subsection{Ordered Information Graphs}
 \label{sec:orderedInfoGraphs}
 
-As described in \autoref{sec:TowardsAMoreEffectivePresentationFormat}, lmh outputs information about dependencies of topics. \sys parses this relational data and retrieves the dependencies of the topics which are visualized for Annie's example in \autoref{fig:depGraphPythagoreanFull}. Dependencies give us the \textit{course-ancient} information, as dependencies intuitively link to information obtained longer ago.
-
-\begin{figure}[ht]\vspace{-1em}
-  \fbox{\includegraphics[width=0.97\textwidth]{assets/final/dependencyGraphPythTheo2}} 
-  \vspace{-.5em}
+\begin{wrapfigure}l{.42\textwidth}\vspace{-2em}
+  \fbox{\includegraphics[width=0.40\textwidth]{assets/final/pythdep2}} 
+  \vspace{-1.9em}
   \caption{Dependency Graph}\label{fig:depGraphPythagoreanFull}
-\end{figure}
-
-\begin{wrapfigure}r{.67\textwidth}\vspace{-2em}
-  \fbox{\includegraphics[width=0.67\textwidth]{assets/final/fullPresentation2}} 
-  \vspace{-1.8em}
-  \caption{Visualization of Dependencies}\label{fig:visualDependency}
   \vspace{-2em}
 \end{wrapfigure}
+As described in \autoref{sec:TowardsAMoreEffectivePresentationFormat}, lmh outputs information about dependencies of topics. \sys parses this relational data and retrieves the dependencies of the topics which are visualized for Annie's example in \autoref{fig:depGraphPythagoreanFull}. Dependencies give us the \textit{course-ancient} information, as dependencies intuitively link to information obtained longer ago.
+
 With the data about the order and the dependencies of information within the paper, we now
 have an ordered information graph out of which we can build a first presentation that
 Annie can interact with to learn about the Pytha\-go\-rean theorem. \sys creates this
@@ -194,15 +188,16 @@ dependencies those are added below the slide itself (see
   choosing of different paths by pressing the right or down key
   \cite{npentrel:npentrel15}.}
 
+\begin{figure}[ht]\vspace{-1.5em}
+  \fbox{\includegraphics[width=1\textwidth]{assets/final/fullPresentation2}} 
+  \vspace{-1.5em}
+  \caption{Visualization of Dependencies}\label{fig:visualDependency}
+\vspace{-2em}
+\end{figure}
+
 \subsection{Levels}
 \label{sec:levels}
 
-\begin{wrapfigure}r{.63\textwidth}\vspace{-2em}
-  \fbox{\includegraphics[width=0.6\textwidth]{assets/final/levels}} 
-  \vspace{-0.8em}
-  \caption{Inclusion Graph with Levels}\label{fig:levelsGraph}
-\vspace{-2em}
-\end{wrapfigure}
 When writing a document or course notes in \stex, the creator general writes a top-level
 file such as \textit{notes.tex} from where other \TeX\ files are included. These included
 files again include further \TeX\ files etc.. Thus we are automatically provided with
@@ -215,6 +210,13 @@ $L_w = \lbrace v \vert \langle w, v \rangle \in E \rbrace$. From these levels we
 the status of the information. We already know that a dependent piece of information
 infers that it is \textit{course-ancient} information. Anything that is on the same level
 or in the sublevels thereof is considered to be \textit{course-old} information.
+
+\begin{figure}[ht]\vspace{-1.5em}
+  \fbox{\includegraphics[width=1\textwidth]{assets/final/levels}} 
+  \vspace{-1.5em}
+  \caption{Inclusion Graph with Levels}\label{fig:levelsGraph}
+\vspace{-2em}
+\end{figure}
 
 \begin{wrapfigure}{l}{0.43\textwidth}\vspace{-2em}
   \fbox{\includegraphics[width=0.41\textwidth]{assets/final/60degree}} 
