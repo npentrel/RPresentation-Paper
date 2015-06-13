@@ -25,6 +25,4 @@ I disagree with this comment. The intricacies of OMDoc and impress.js can be tre
 
 ----------------------- REVIEW 3 ---------------------
 
-1) On Fig. 6. (Primary Narrative Path), do the slides 4 and 5 appear to be identical on purpose?
-
 2) Bio item Tea06. points to a non-longer existing URL: http://cnx.org/aboutus/publications/ConnexionsWhitePaper.pdf
