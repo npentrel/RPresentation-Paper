@@ -1,4 +1,12 @@
-Please take the time to double check your title and abstract before June 15th and the final version, based on the comments, before June 25th so that I can update the web-page.
+TODO Naomi:
+-Double check title and abstract - June 15th
+-Upload final version before June 25th
+
+TODO Michael:
+-Double check title and abstract - June 15th
+-Upload final version before June 25th
+
+
 
 
 ----------------------- REVIEW 1 ---------------------
@@ -10,19 +18,8 @@ Please take the time to double check your title and abstract before June 15th an
 3) Some figures are illegible (Fig. 5, 7 and 9 in particular). The authors should fix their dimensions so that one can read them easily.
 
 
------------------------ REVIEW 2 ---------------------
-PAPER: 5
-TITLE: Relational Presentation Using Semantic Closeness
-AUTHORS: Naomi Pentrel and Michael Kohlhase
-
-
-1) Nevertheless, it is not understandable why the same slides (basic measurements, right angle, calculating the area) are presented two times at different locations. To much redundancy should be avoided.    
-
-
 ----------------------- REVIEW 3 ---------------------
 
 1) On Fig. 6. (Primary Narrative Path), do the slides 4 and 5 appear to be identical on purpose?
 
 2) Bio item Tea06. points to a non-longer existing URL: http://cnx.org/aboutus/publications/ConnexionsWhitePaper.pdf
-
-3) In the conclusion quite a few sentences are written from first person singular, while the paper is supposed to be a collaborative effort ;)
