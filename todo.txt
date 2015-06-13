@@ -3,18 +3,7 @@ TODO Naomi:
 -Upload final version before June 25th
 
 
------------------------ REVIEW 1 ---------------------
-
-1) It is however not completely clear what the input to this system is and how the system can be used by a presenter.  
-
-
------------------------ REVIEW 3 ---------------------
-
 2) Bio item Tea06. points to a non-longer existing URL: http://cnx.org/aboutus/publications/ConnexionsWhitePaper.pdf
-
-
-
-
 
 
 
@@ -28,3 +17,7 @@ TODO Michael:
 
 I disagree with this comment. The intricacies of OMDoc and impress.js can be treated as a black box as the exact implementation of this system is irrelevant. As was pointed out during my thesis presentation, the system could be built with other tools and other input. - I believe we point out the needed functionality as needed. I have changed the wording slightly to point this out. What do you think? -> Please see the first paragraph of "Towards a More Effective Presentation Format"
 
+
+1) It is however not completely clear what the input to this system is and how the system can be used by a presenter. 
+
+Do you agree? I am not sure how much more detail they want.
