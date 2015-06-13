@@ -155,14 +155,7 @@ One opportunity to employ spatial narrative is to place content which is inheren
   \vspace{-2em}
 \end{wrapfigure}
 
-In our system, the \stex files are parsed using a Depth First Search algorithm to retrieve the narrative the writer intended to use. For the explanation of the Pytha\-go\-rean theorem this can be seen in \autoref{fig:inclusionGraph}. We will refer to this intended narrative layer as the \textit{primary narrative path} which we follow from slide to slide on our path to the end of the presentation. To create this primary narrative path we need to add several slides with increasing x-coordinates as portrayed in \autoref{fig:primaryNarrativePath}.
-
-\begin{figure}[ht]\centering
-  \fbox{\includegraphics[width=0.97\textwidth]{assets/final/primaryNarrativePath2}}
-  \vspace{-.5em}
-  \caption{Primary Narrative Path}\label{fig:primaryNarrativePath}
-  \vspace{-1em}
-\end{figure}
+In our system, the \stex files are parsed using a Depth First Search algorithm to retrieve the narrative the writer intended to use. For the explanation of the Pytha\-go\-rean theorem this can be seen in \autoref{fig:inclusionGraph}. We will refer to this intended narrative layer as the \textit{primary narrative path} which we follow from slide to slide on our path to the end of the presentation. To create this primary narrative path we add several slides with increasing x-coordinates.
 
 The primary narrative path, formed by a horizontal stream of slides, is the traditional
 path a presenter normally uses when preparing a PowerPoint presentation. Thus it contains
@@ -193,8 +186,7 @@ As described in \autoref{sec:TowardsAMoreEffectivePresentationFormat}, lmh outpu
 With the data about the order and the dependencies of information within the paper, we now
 have an ordered information graph out of which we can build a first presentation that
 Annie can interact with to learn about the Pytha\-go\-rean theorem. \sys creates this
-presentation incrementally. As outlined in \autoref{sec:narrativePaths} and illustrated in
-\autoref{fig:primaryNarrativePath}, \sys creates the primary narrative path from the order
+presentation incrementally. As outlined in \autoref{sec:narrativePaths}, \sys creates the primary narrative path from the order
 of the slides. After adding each slide it checks whether there is \textit{course-ancient}
 information, i.e. whether there are dependencies, for that slide. If there are
 dependencies those are added below the slide itself (see
@@ -202,7 +194,6 @@ dependencies those are added below the slide itself (see
   choosing of different paths by pressing the right or down key
   \cite{npentrel:npentrel15}.}
 
-\newpage
 \subsection{Levels}
 \label{sec:levels}
 
