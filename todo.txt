@@ -1,0 +1,39 @@
+Please take the time to double check your title and abstract before June 15th and the final version, based on the comments, before June 25th so that I can update the web-page.
+
+
+----------------------- REVIEW 1 ---------------------
+
+1) It is however not completely clear what the input to this system is and how the system can be used by a presenter.  
+
+
+2) The authors assume that the readers are familiar with some technicalities (e.g. OMDoc, or impress.js), but is this the case of all potential participants at the conference? A brief description of these could be helpful.
+
+3) Some figures are illegible (Fig. 5, 7 and 9 in particular). The authors should fix their dimensions so that one can read them easily.
+
+4) In the Conclusion, the first person is often used, whereas the paper is written by two authors.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 5
+TITLE: Relational Presentation Using Semantic Closeness
+AUTHORS: Naomi Pentrel and Michael Kohlhase
+
+
+1) Nevertheless, it is not understandable why the same slides (basic measurements, right angle, calculating the area) are presented two times at different locations. To much redundancy should be avoided.    
+
+
+----------------------- REVIEW 3 ---------------------
+
+The paper describes a fresh approach to presenting math content that facilitates introduction to new subjects via revisiting former topics.
+The key idea of the suggested model is in "3D" exploration of the connected material.
+Besides offering a vivid alternative to hyper-linked pages, the authors offer a tool-set for creating such presentations from OMDoc contents. 
+
+I see this paper as a perfect fit for the scope of MathUI.
+
+A few questions/remarks:
+
+1) On Fig. 6. (Primary Narrative Path), do the slides 4 and 5 appear to be identical on purpose?
+
+2) Bio item Tea06. points to a non-longer existing URL: http://cnx.org/aboutus/publications/ConnexionsWhitePaper.pdf
+
+3) In the conclusion quite a few sentences are written from first person singular, while the paper is supposed to be a collaborative effort ;)
